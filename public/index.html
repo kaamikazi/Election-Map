@@ -1,0 +1,206 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
+<meta name="theme-color" content="#131E29">
+<title>Election Map Studio</title>
+<link rel="stylesheet" href="styles.css">
+</head>
+<body data-mode="results">
+<div id="app">
+  <header>
+    <div class="brand"><b>Election Map Studio</b><span id="crumb">World results</span></div>
+    <div class="seg" id="modeSeg" role="group" aria-label="Map mode">
+      <button data-mode="results" aria-pressed="true">Results</button>
+      <button data-mode="flags" aria-pressed="false">Flags</button>
+    </div>
+    <div class="seg projSeg" id="projSeg" role="group" aria-label="Projection">
+      <button data-p="equalEarth" aria-pressed="true">Flat</button>
+      <button data-p="globe" aria-pressed="false">Globe</button>
+      <button data-p="mercator" aria-pressed="false">Mercator</button>
+    </div>
+    <button class="btn wide-only" data-act="import" id="openImport">Import</button>
+    <button class="btn wide-only" data-act="undo" id="btnUndo" disabled>Undo</button>
+    <button class="btn primary" id="openExport">Export<span class="wide-only"> PNG</span></button>
+  </header>
+
+  <main id="main">
+    <!-- Tablet: the rail collapses to these, and a group flies out over the map. -->
+    <nav id="railIcons" aria-label="Panels">
+      <button data-g="paint" aria-expanded="false"><svg viewBox="0 0 24 24" aria-hidden="true"><path d="M4 20c3 0 5-2 5-5l8-8a2.1 2.1 0 0 0-3-3l-8 8c-3 0-5 2-5 5v3h3z"/></svg><span>Paint</span></button>
+      <button data-g="find" aria-expanded="false"><svg viewBox="0 0 24 24" aria-hidden="true"><circle cx="10.5" cy="10.5" r="6"/><path d="M15 15l5 5"/></svg><span>Find</span></button>
+      <button data-g="layers" aria-expanded="false"><svg viewBox="0 0 24 24" aria-hidden="true"><path d="M12 4l9 5-9 5-9-5 9-5z"/><path d="M3 14l9 5 9-5"/></svg><span>Layers</span></button>
+      <button data-g="headline" aria-expanded="false"><svg viewBox="0 0 24 24" aria-hidden="true"><path d="M5 6h14M5 11h10M5 16h7"/></svg><span>Title</span></button>
+      <button data-g="style" aria-expanded="false"><svg viewBox="0 0 24 24" aria-hidden="true"><circle cx="12" cy="12" r="3"/><path d="M12 3v3M12 18v3M3 12h3M18 12h3M5.6 5.6l2.1 2.1M16.3 16.3l2.1 2.1M5.6 18.4l2.1-2.1M16.3 7.7l2.1-2.1"/></svg><span>Style</span></button>
+    </nav>
+
+    <section id="stage">
+      <div id="canvasWrap">
+        <canvas id="map" aria-label="Map. Tap a country to paint it."></canvas>
+        <div id="tip" role="status"></div>
+        <div id="zoomPad">
+          <button id="zIn" aria-label="Zoom in">+</button>
+          <button id="zOut" aria-label="Zoom out">−</button>
+          <button id="zReset" aria-label="Reset view">⤾</button>
+        </div>
+      </div>
+      <div id="strip">
+        <div id="bar"></div>
+        <div id="legend"></div>
+        <div id="stripEmpty">No results yet. Pick a party, then tap countries.</div>
+      </div>
+    </section>
+
+    <!--
+      Every panel lives here once. Desktop lays #rail and #side out as columns
+      either side of the map; tablet shows one group at a time over the map;
+      a phone turns the whole thing into a bottom sheet. The sections are the
+      same elements at every size, so nothing is ever duplicated or out of sync.
+    -->
+    <aside id="sheet" data-snap="peek" aria-label="Controls">
+      <button id="grab" aria-label="Show more controls"><i></i></button>
+      <div id="peek" aria-label="Parties"></div>
+      <div id="panels">
+        <section id="rail">
+          <div class="sec results-only" data-group="paint">
+            <h2>Colour by</h2>
+            <div id="metricList"></div>
+          </div>
+
+          <div class="sec flags-only" data-group="paint" data-half>
+            <h2>Flags</h2>
+            <p class="hint" id="flagsHint">Tap countries to add their flag. A country whose boundary data carries no ISO code has no flag, and stays blank.</p>
+            <div id="flagPicked"></div>
+            <button class="chip" id="clearFlags">Clear flags</button>
+          </div>
+
+          <div class="sec results-only" data-group="paint" data-half>
+            <h2>Parties and blocs</h2>
+            <div id="partyList"></div>
+            <button class="btn ghost" id="addParty">+ Add a party</button>
+            <p class="hint">Pick one, then tap countries on the map to colour them. Tap a coloured country again to clear it.</p>
+          </div>
+
+          <div class="sec results-only" data-group="paint">
+            <h2>Selected division</h2>
+            <div id="selPanel"></div>
+          </div>
+
+          <div class="sec" data-group="headline">
+            <h2>Headline</h2>
+            <label class="field"><input id="fTitle" placeholder="Who governs Europe, 2026" aria-label="Title"></label>
+            <label class="field"><input id="fSub" placeholder="Party of the sitting head of government" aria-label="Subtitle"></label>
+            <label class="field"><input id="fHandle" placeholder="@yourhandle" aria-label="Handle"></label>
+          </div>
+
+          <div class="sec" data-group="find" data-half>
+            <h2 id="findTitle">Find a country</h2>
+            <label class="field" id="search"><input id="fSearch" placeholder="Search 240 countries and territories" autocomplete="off" aria-label="Search"></label>
+            <div id="countryList"></div>
+          </div>
+
+          <div class="sec" data-group="find">
+            <h2>Zoom to</h2>
+            <div class="chips" id="regionChips"></div>
+          </div>
+
+          <div class="sec" data-group="style">
+            <h2>Map style</h2>
+            <div class="seg projSeg phone-only" role="group" aria-label="Projection">
+              <button data-p="equalEarth" aria-pressed="true">Flat</button>
+              <button data-p="globe" aria-pressed="false">Globe</button>
+              <button data-p="mercator" aria-pressed="false">Mercator</button>
+            </div>
+            <div class="toggles">
+              <label class="tog"><input type="checkbox" id="tTheme"> Light background</label>
+              <label class="tog"><input type="checkbox" id="tGrat"> Latitude and longitude lines</label>
+              <label class="tog"><input type="checkbox" id="tAnt"> Show Antarctica</label>
+              <label class="tog"><input type="checkbox" id="tDots" checked> Mark tiny countries with a dot</label>
+              <label class="tog"><input type="checkbox" id="tLabels"> Label coloured countries</label>
+            </div>
+          </div>
+
+          <div class="sec" data-group="style">
+            <h2>Your work</h2>
+            <div class="chips">
+              <button class="chip narrow-only" data-act="import">Import results or archive</button>
+              <button class="chip narrow-only" data-act="undo" disabled>Undo</button>
+              <button class="chip" id="btnSave">Save file</button>
+              <button class="chip" id="btnLoad">Open file</button>
+              <button class="chip" id="btnClear">Clear results</button>
+            </div>
+            <input type="file" id="fileIn" accept="application/json" hidden>
+          </div>
+        </section>
+
+        <section id="side">
+          <div class="sec" data-group="layers">
+            <h2 id="legendHead">Legend</h2>
+            <div id="legendTitle"></div>
+            <div id="legendBody"></div>
+          </div>
+
+          <div class="sec" data-group="layers" data-half>
+            <h2>Boundary layer</h2>
+            <div id="layerPanel"></div>
+          </div>
+        </section>
+      </div>
+    </aside>
+  </main>
+</div>
+
+<dialog id="exportDlg">
+  <div class="dlg-h"><b>Export image</b><button class="btn ghost" id="closeExport" aria-label="Close">×</button></div>
+  <div class="dlg-b">
+    <div id="exportWarn"></div>
+    <div id="previewBox"><canvas id="preview"></canvas></div>
+    <div class="row">
+      <div class="seg" id="sizeSeg">
+        <button data-w="1600" data-h="900" aria-pressed="true">16:9</button>
+        <button data-w="1200" data-h="1200" aria-pressed="false">Square</button>
+        <button data-w="1200" data-h="1500" aria-pressed="false">Portrait</button>
+      </div>
+    </div>
+    <div class="toggles">
+      <label class="tog"><input type="checkbox" id="xLegend" checked> Include the results bar and legend</label>
+      <label class="tog"><input type="checkbox" id="xTrans"> Transparent background</label>
+    </div>
+  </div>
+  <div class="dlg-f">
+    <button class="btn" id="btnCopy">Copy to clipboard</button>
+    <button class="btn primary" id="btnPng">Download PNG</button>
+  </div>
+</dialog>
+
+<dialog id="importDlg">
+  <div class="dlg-h"><b>Import</b><button class="btn ghost" id="closeImport" aria-label="Close">×</button></div>
+  <div class="dlg-b">
+    <div class="seg" id="adapterSeg"></div>
+    <div id="adapterInputs"></div>
+    <div class="row">
+      <button class="btn primary" id="btnPropose">Read table</button>
+      <span id="proposeErr" class="err"></span>
+    </div>
+    <div id="reviewBody"></div>
+  </div>
+  <div class="dlg-f">
+    <label class="tog replace">
+      <input type="checkbox" id="xReplace"> Replace everything on the map
+    </label>
+    <button class="btn" id="cancelImport">Cancel</button>
+    <button class="btn primary" id="btnApply" disabled>Apply</button>
+  </div>
+</dialog>
+
+<div id="toast" role="status"></div>
+
+<script src="vendor/d3-array.js"></script>
+<script src="vendor/d3-color.js"></script>
+<script src="vendor/d3-interpolate.js"></script>
+<script src="vendor/d3-geo.js"></script>
+<script src="vendor/topojson-client.js"></script>
+<script type="module" src="/src/main.js"></script>
+</body>
+</html>

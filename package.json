@@ -1,0 +1,34 @@
+{
+  "name": "election-map-studio",
+  "version": "2.0.0",
+  "private": true,
+  "description": "World and sub-national election map maker",
+  "type": "module",
+  "scripts": {
+    "dev": "node scripts/dev-server.js",
+    "build:admin1": "node scripts/build-admin1.js",
+    "build:admin1:50m": "node scripts/build-admin1.js --res 50m",
+    "test": "playwright test",
+    "fetch:parlgov": "node scripts/fetch-parlgov.js",
+    "build:parlgov": "node scripts/build-parlgov.js",
+    "build:boundaries": "node scripts/build-geoboundaries.js",
+    "build:constituencies": "node scripts/build-constituencies.js",
+    "build:flags": "node scripts/build-flags.js",
+    "verify:boundaries": "node scripts/verify-boundaries.js",
+    "measure:redraw": "node scripts/measure-redraw.js",
+    "series": "node scripts/make-series.js"
+  },
+  "dependencies": {
+    "d3-color": "^3.1.0",
+    "d3-geo": "^3.1.1",
+    "d3-interpolate": "^3.0.1",
+    "topojson-client": "^3.1.0",
+    "topojson-server": "^3.0.1",
+    "topojson-simplify": "^3.0.3"
+  },
+  "devDependencies": {
+    "@playwright/test": "^1.49.0",
+    "flag-icons": "7.5.0",
+    "i18n-iso-countries": "7.14.0"
+  }
+}

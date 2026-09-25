@@ -1,0 +1,5 @@
+# Fixtures and the v1 reference are read byte for byte by the test suite,
+# so every checkout keeps the line endings they were written with.
+* text=auto eol=lf
+*.png binary
+*.xlsx binary

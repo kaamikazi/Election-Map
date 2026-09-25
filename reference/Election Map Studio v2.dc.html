@@ -1,0 +1,733 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<script src="./support.js"></script>
+</head>
+<body>
+<x-dc>
+<helmet>
+<meta name="viewport" content="width=device-width, initial-scale=1" />
+<script src="https://cdn.jsdelivr.net/npm/d3@7/dist/d3.min.js"></script>
+<script src="https://cdn.jsdelivr.net/npm/topojson-client@3/dist/topojson-client.min.js"></script>
+<style>
+  html, body { margin: 0; padding: 0; background: #0D141C; }
+  * { box-sizing: border-box; }
+  a { color: #E8B33A; text-decoration: none; }
+  a:hover { color: #F3CB72; }
+  input, textarea, select, button { font-family: inherit; }
+  ::selection { background: #E8B33A; color: #0D141C; }
+</style>
+</helmet>
+<div style="min-height:100vh;background:#0D141C;color:#E6EBF0;font-family:Helvetica Neue, Helvetica, Arial, sans-serif;font-size:13px;display:flex;flex-direction:column">
+
+  <div style="display:flex;align-items:center;gap:24px;padding:14px 20px;border-bottom:1px solid #1E2A36;flex:0 0 auto;flex-wrap:wrap">
+    <div style="display:flex;align-items:baseline;gap:10px">
+      <div style="width:9px;height:9px;background:#E8B33A;border-radius:50%"></div>
+      <div style="font-size:15px;font-weight:600;letter-spacing:-0.01em">Election Map Studio</div>
+      <div style="font-size:11px;color:#7A8794;font-family:ui-monospace, SFMono-Regular, Menlo, monospace">v2</div>
+    </div>
+
+    <div style="display:flex;gap:2px;background:#111A24;border:1px solid #1E2A36;border-radius:6px;padding:2px">
+      <sc-for list="{{ views }}" as="v" hint-placeholder-count="3">
+        <button onClick="{{ v.pick }}" style="{{ v.style }}">{{ v.label }}</button>
+      </sc-for>
+    </div>
+
+    <div style="display:flex;align-items:center;gap:8px">
+      <div style="font-size:11px;color:#7A8794">Zoom</div>
+      <select value="{{ region }}" onChange="{{ setRegion }}" style="background:#111A24;color:#E6EBF0;border:1px solid #1E2A36;border-radius:6px;padding:6px 8px;font-size:12px">
+        <sc-for list="{{ regions }}" as="r" hint-placeholder-count="5">
+          <option value="{{ r.id }}">{{ r.label }}</option>
+        </sc-for>
+      </select>
+    </div>
+
+    <div style="flex:1 1 auto"></div>
+
+    <div style="display:flex;gap:8px">
+      <button onClick="{{ undo }}" style="background:#111A24;color:#B9C4CF;border:1px solid #1E2A36;border-radius:6px;padding:7px 12px;font-size:12px;cursor:pointer" style-hover="background:#18222E;color:#E6EBF0">Undo</button>
+      <button onClick="{{ openPaste }}" style="background:#111A24;color:#B9C4CF;border:1px solid #1E2A36;border-radius:6px;padding:7px 12px;font-size:12px;cursor:pointer" style-hover="background:#18222E;color:#E6EBF0">Paste a table</button>
+      <button onClick="{{ exportPng }}" style="background:#E8B33A;color:#0D141C;border:1px solid #E8B33A;border-radius:6px;padding:7px 14px;font-size:12px;font-weight:600;cursor:pointer" style-hover="background:#F3CB72">Export PNG</button>
+    </div>
+  </div>
+
+  <div style="display:flex;flex:1 1 auto;min-height:0;align-items:stretch;flex-wrap:wrap">
+
+    <div style="flex:0 0 288px;border-right:1px solid #1E2A36;display:flex;flex-direction:column;min-height:0">
+
+      <div style="padding:16px;border-bottom:1px solid #1E2A36">
+        <div style="font-size:11px;color:#7A8794;margin-bottom:10px">Colour by</div>
+        <div style="display:flex;flex-direction:column;gap:2px">
+          <sc-for list="{{ metrics }}" as="m" hint-placeholder-count="5">
+            <button onClick="{{ m.pick }}" style="{{ m.style }}">
+              <span>{{ m.label }}</span>
+              <span style="font-family:ui-monospace, SFMono-Regular, Menlo, monospace;font-size:10px;opacity:0.6">{{ m.domain }}</span>
+            </button>
+          </sc-for>
+        </div>
+      </div>
+
+      <div style="padding:16px;border-bottom:1px solid #1E2A36">
+        <div style="display:flex;justify-content:space-between;align-items:baseline;margin-bottom:10px">
+          <div style="font-size:11px;color:#7A8794">Parties</div>
+          <div style="font-size:11px;color:#4E5A66;font-family:ui-monospace, SFMono-Regular, Menlo, monospace">click map to assign</div>
+        </div>
+        <div style="display:flex;flex-direction:column;gap:3px">
+          <sc-for list="{{ partyRows }}" as="p" hint-placeholder-count="6">
+            <button onClick="{{ p.pick }}" style="{{ p.style }}">
+              <span style="{{ p.dot }}"></span>
+              <span style="flex:1 1 auto;text-align:left">{{ p.name }}</span>
+              <span style="font-family:ui-monospace, SFMono-Regular, Menlo, monospace;font-size:11px;color:#7A8794">{{ p.count }}</span>
+            </button>
+          </sc-for>
+        </div>
+      </div>
+
+      <div style="padding:16px;flex:1 1 auto;overflow:auto;min-height:0">
+        <div style="font-size:11px;color:#7A8794;margin-bottom:10px">Selected division</div>
+        <sc-if value="{{ hasSelection }}" hint-placeholder-val="{{ true }}">
+          <div>
+            <div style="font-size:16px;font-weight:600;margin-bottom:2px;letter-spacing:-0.01em">{{ sel.name }}</div>
+            <div style="font-size:11px;color:#7A8794;font-family:ui-monospace, SFMono-Regular, Menlo, monospace;margin-bottom:14px">{{ sel.partyName }}</div>
+            <div style="display:flex;flex-direction:column;gap:8px">
+              <sc-for list="{{ fields }}" as="f" hint-placeholder-count="4">
+                <label style="display:flex;align-items:center;gap:10px">
+                  <span style="flex:1 1 auto;font-size:12px;color:#B9C4CF">{{ f.label }}</span>
+                  <input type="number" value="{{ f.value }}" onChange="{{ f.onChange }}" style="width:76px;background:#111A24;color:#E6EBF0;border:1px solid #1E2A36;border-radius:5px;padding:6px 8px;font-size:12px;font-family:ui-monospace, SFMono-Regular, Menlo, monospace;text-align:right" />
+                  <span style="width:26px;font-size:11px;color:#4E5A66;font-family:ui-monospace, SFMono-Regular, Menlo, monospace">{{ f.unit }}</span>
+                </label>
+              </sc-for>
+            </div>
+            <button onClick="{{ clearSel }}" style="margin-top:16px;background:transparent;color:#7A8794;border:1px solid #1E2A36;border-radius:5px;padding:6px 10px;font-size:11px;cursor:pointer" style-hover="color:#C9553F;border-color:#C9553F">Clear assignment</button>
+          </div>
+        </sc-if>
+        <sc-if value="{{ noSelection }}" hint-placeholder-val="{{ false }}">
+          <div style="font-size:12px;color:#4E5A66;line-height:1.6;text-wrap:pretty">Nothing selected. Click a country on the map to assign the active party, then set its values here.</div>
+        </sc-if>
+      </div>
+    </div>
+
+    <div style="flex:1 1 520px;display:flex;flex-direction:column;min-width:0;min-height:0">
+      <div ref="{{ wrapRef }}" style="flex:1 1 auto;position:relative;min-height:420px">
+        <canvas ref="{{ canvasRef }}" onMouseMove="{{ onMove }}" onMouseLeave="{{ onLeave }}" onClick="{{ onClick }}" style="position:absolute;inset:0;width:100%;height:100%;display:block;cursor:crosshair"></canvas>
+        <div style="{{ tipStyle }}">
+          <div style="font-weight:600;margin-bottom:3px">{{ tip.name }}</div>
+          <div style="color:#B9C4CF;font-family:ui-monospace, SFMono-Regular, Menlo, monospace;font-size:11px">{{ tip.line }}</div>
+        </div>
+        <div style="position:absolute;left:14px;bottom:14px;font-size:10px;color:#3B4652;font-family:ui-monospace, SFMono-Regular, Menlo, monospace">{{ statusLine }}</div>
+      </div>
+
+      <div style="border-top:1px solid #1E2A36;padding:14px 18px;display:flex;flex-direction:column;gap:12px;flex:0 0 auto">
+        <div style="display:flex;height:9px;border-radius:5px;overflow:hidden;background:#111A24">
+          <sc-for list="{{ results }}" as="r" hint-placeholder-count="4">
+            <div style="{{ r.barStyle }}"></div>
+          </sc-for>
+        </div>
+        <div style="display:flex;gap:18px;flex-wrap:wrap">
+          <sc-for list="{{ results }}" as="r" hint-placeholder-count="4">
+            <div style="display:flex;align-items:center;gap:7px">
+              <span style="{{ r.dot }}"></span>
+              <span style="font-size:12px;color:#B9C4CF">{{ r.name }}</span>
+              <span style="font-size:12px;color:#E6EBF0;font-family:ui-monospace, SFMono-Regular, Menlo, monospace">{{ r.value }}</span>
+            </div>
+          </sc-for>
+        </div>
+      </div>
+    </div>
+
+    <div style="flex:0 0 232px;border-left:1px solid #1E2A36;padding:16px;display:flex;flex-direction:column;gap:14px;min-height:0;overflow:auto">
+      <div>
+        <div style="font-size:11px;color:#7A8794;margin-bottom:4px">Legend</div>
+        <div style="font-size:12px;color:#E6EBF0">{{ legendTitle }}</div>
+      </div>
+
+      <sc-if value="{{ legendIsSwatch }}" hint-placeholder-val="{{ true }}">
+        <div style="display:flex;flex-direction:column;gap:7px">
+          <sc-for list="{{ legendSwatches }}" as="s" hint-placeholder-count="5">
+            <div style="display:flex;align-items:center;gap:9px">
+              <span style="{{ s.chip }}"></span>
+              <span style="font-size:12px;color:#B9C4CF">{{ s.label }}</span>
+            </div>
+          </sc-for>
+        </div>
+      </sc-if>
+
+      <sc-if value="{{ legendIsRamp }}" hint-placeholder-val="{{ false }}">
+        <div style="display:flex;flex-direction:column;gap:10px">
+          <sc-for list="{{ legendRamps }}" as="row" hint-placeholder-count="3">
+            <div>
+              <div style="font-size:11px;color:#B9C4CF;margin-bottom:4px">{{ row.label }}</div>
+              <div style="display:flex;gap:1px;border-radius:3px;overflow:hidden">
+                <sc-for list="{{ row.cells }}" as="c" hint-placeholder-count="5">
+                  <div style="{{ c.style }}"></div>
+                </sc-for>
+              </div>
+            </div>
+          </sc-for>
+          <div style="display:flex;justify-content:space-between;font-size:10px;color:#4E5A66;font-family:ui-monospace, SFMono-Regular, Menlo, monospace">
+            <sc-for list="{{ legendTicks }}" as="t" hint-placeholder-count="3">
+              <span>{{ t.label }}</span>
+            </sc-for>
+          </div>
+          <div style="font-size:11px;color:#4E5A66;line-height:1.5;text-wrap:pretty">{{ legendNote }}</div>
+        </div>
+      </sc-if>
+
+      <div style="height:1px;background:#1E2A36"></div>
+
+      <div>
+        <div style="font-size:11px;color:#7A8794;margin-bottom:8px">Boundary layer</div>
+        <div style="display:flex;flex-direction:column;gap:3px">
+          <sc-for list="{{ layers }}" as="l" hint-placeholder-count="3">
+            <button onClick="{{ l.pick }}" style="{{ l.style }}">
+              <span style="flex:1 1 auto;text-align:left">{{ l.label }}</span>
+              <span style="font-size:10px;font-family:ui-monospace, SFMono-Regular, Menlo, monospace;opacity:0.7">{{ l.note }}</span>
+            </button>
+          </sc-for>
+        </div>
+        <div style="font-size:11px;color:#4E5A66;line-height:1.5;margin-top:9px;text-wrap:pretty">Admin-1 and constituency layers load per country from a served build. Not wired in this prototype.</div>
+      </div>
+    </div>
+  </div>
+
+  <sc-if value="{{ pasteOpen }}" hint-placeholder-val="{{ false }}">
+    <div style="position:fixed;inset:0;background:rgba(5,9,13,0.72);display:flex;align-items:center;justify-content:center;padding:32px;z-index:50">
+      <div style="background:#0F1721;border:1px solid #22303E;border-radius:10px;width:100%;max-width:760px;max-height:88vh;display:flex;flex-direction:column;overflow:hidden">
+        <div style="padding:18px 20px;border-bottom:1px solid #1E2A36;display:flex;align-items:baseline;gap:12px">
+          <div style="font-size:15px;font-weight:600;letter-spacing:-0.01em">Paste a table</div>
+          <div style="font-size:11px;color:#7A8794;flex:1 1 auto">TSV or CSV. Columns: region, party, vote share, seat share, turnout, margin.</div>
+          <button onClick="{{ closePaste }}" style="background:transparent;color:#7A8794;border:none;font-size:18px;cursor:pointer;line-height:1;padding:0 4px">×</button>
+        </div>
+
+        <div style="padding:20px;overflow:auto;display:flex;flex-direction:column;gap:16px">
+          <textarea ref="{{ pasteRef }}" placeholder="France	Progressive Alliance	41.2	52	68.4	9.1&#10;Brazil	Conservative Union	38.0	44	79.2	4.5" style="width:100%;height:132px;background:#0B121A;color:#E6EBF0;border:1px solid #1E2A36;border-radius:6px;padding:11px;font-size:12px;font-family:ui-monospace, SFMono-Regular, Menlo, monospace;line-height:1.65;resize:vertical"></textarea>
+
+          <div style="display:flex;gap:10px;align-items:center">
+            <button onClick="{{ runParse }}" style="background:#E8B33A;color:#0D141C;border:none;border-radius:6px;padding:8px 14px;font-size:12px;font-weight:600;cursor:pointer">Match rows</button>
+            <button onClick="{{ fillSample }}" style="background:#111A24;color:#B9C4CF;border:1px solid #1E2A36;border-radius:6px;padding:8px 14px;font-size:12px;cursor:pointer">Insert sample rows</button>
+            <div style="font-size:12px;color:#7A8794">{{ parseSummary }}</div>
+          </div>
+
+          <sc-if value="{{ hasUnmatched }}" hint-placeholder-val="{{ false }}">
+            <div style="border:1px solid #4A3A1E;background:#171208;border-radius:8px;overflow:hidden">
+              <div style="padding:11px 14px;border-bottom:1px solid #33291A;font-size:12px;color:#E8B33A">{{ unmatchedHeading }}</div>
+              <div style="max-height:220px;overflow:auto">
+                <sc-for list="{{ unmatched }}" as="u" hint-placeholder-count="3">
+                  <div style="display:flex;align-items:center;gap:12px;padding:9px 14px;border-bottom:1px solid #241C10">
+                    <span style="font-size:10px;color:#7A6A48;font-family:ui-monospace, SFMono-Regular, Menlo, monospace;width:44px">row {{ u.row }}</span>
+                    <span style="flex:1 1 auto;font-size:12px;font-family:ui-monospace, SFMono-Regular, Menlo, monospace">{{ u.raw }}</span>
+                    <select value="{{ u.value }}" onChange="{{ u.onChange }}" style="width:216px;background:#0B121A;color:#E6EBF0;border:1px solid #33291A;border-radius:5px;padding:6px 8px;font-size:12px">
+                      <option value="">Leave unmatched</option>
+                      <sc-for list="{{ countryOptions }}" as="c" hint-placeholder-count="6">
+                        <option value="{{ c.id }}">{{ c.name }}</option>
+                      </sc-for>
+                    </select>
+                  </div>
+                </sc-for>
+              </div>
+            </div>
+          </sc-if>
+        </div>
+
+        <div style="padding:14px 20px;border-top:1px solid #1E2A36;display:flex;justify-content:flex-end;gap:10px">
+          <button onClick="{{ closePaste }}" style="background:transparent;color:#7A8794;border:1px solid #1E2A36;border-radius:6px;padding:8px 14px;font-size:12px;cursor:pointer">Cancel</button>
+          <button onClick="{{ applyPaste }}" style="background:#E8B33A;color:#0D141C;border:none;border-radius:6px;padding:8px 16px;font-size:12px;font-weight:600;cursor:pointer">{{ applyLabel }}</button>
+        </div>
+      </div>
+    </div>
+  </sc-if>
+</div>
+</x-dc>
+<script type="text/x-dc" data-dc-script data-props="{}">
+const PARTIES = [
+  { id: 'prog', name: 'Progressive Alliance', color: '#4C86C6' },
+  { id: 'cons', name: 'Conservative Union', color: '#C9553F' },
+  { id: 'lib', name: 'Liberal Front', color: '#E8B33A' },
+  { id: 'green', name: 'Green Movement', color: '#5A9E6F' },
+  { id: 'nat', name: 'National Party', color: '#8B6BB1' },
+  { id: 'ind', name: 'Independents', color: '#7A8794' }
+];
+
+const METRICS = [
+  { id: 'flat', label: 'Flat party colour', domain: '—', unit: '' },
+  { id: 'vote', label: "Winner's vote share", d: [30, 70], unit: '%', note: 'A plurality near 30% is common; above 60% is a landslide, so the domain starts at 30.' },
+  { id: 'seats', label: 'Seat share', d: [30, 85], unit: '%', note: 'Seat shares skew higher than vote shares under most systems.' },
+  { id: 'turnout', label: 'Turnout', d: [35, 90], unit: '%', neutral: true, note: 'Party-neutral: a single hue, so turnout is never confused with who won.' },
+  { id: 'margin', label: 'Margin over runner-up', d: [0, 35], unit: 'pts', note: 'Steepest ramp. Near-ties sit in the palest bin and read close to white.' }
+];
+
+const REGIONS = [
+  { id: 'world', label: 'World', bbox: null },
+  { id: 'europe', label: 'Europe', bbox: [-12, 34, 42, 71] },
+  { id: 'africa', label: 'Africa', bbox: [-19, -36, 52, 38] },
+  { id: 'asia', label: 'Asia', bbox: [26, -11, 146, 56] },
+  { id: 'americas', label: 'Americas', bbox: [-130, -56, -34, 62] }
+];
+
+const LAYERS = [
+  { id: 'countries', label: 'Countries', note: '241' },
+  { id: 'admin1', label: 'Provinces / states', note: 'per country' },
+  { id: 'constituency', label: 'Constituencies', note: 'later' }
+];
+
+const SEED = [
+  ['France', 'prog', 41.2, 52, 68.4, 9.1], ['Germany', 'cons', 34.8, 39, 76.6, 5.2],
+  ['Spain', 'prog', 44.1, 48, 70.1, 12.4], ['Poland', 'nat', 37.5, 44, 74.4, 2.1],
+  ['Sweden', 'green', 33.2, 36, 84.2, 1.4], ['United Kingdom', 'lib', 39.7, 63, 59.8, 16.3],
+  ['Turkey', 'nat', 52.3, 57, 87.1, 8.8], ['India', 'cons', 37.1, 55, 67.4, 17.6],
+  ['Bangladesh', 'prog', 48.9, 71, 41.8, 24.2], ['Japan', 'lib', 35.4, 61, 55.9, 11.2],
+  ['Indonesia', 'prog', 46.2, 44, 81.3, 19.0], ['Brazil', 'cons', 38.0, 41, 79.2, 4.5],
+  ['Argentina', 'lib', 42.6, 47, 76.4, 6.7], ['Mexico', 'prog', 53.1, 58, 61.2, 28.4],
+  ['United States of America', 'cons', 49.8, 51, 63.1, 1.6], ['Canada', 'lib', 36.9, 47, 62.5, 3.1],
+  ['South Africa', 'prog', 40.2, 43, 58.6, 12.9], ['Nigeria', 'nat', 36.6, 38, 27.1, 3.9],
+  ['Kenya', 'ind', 32.8, 34, 65.4, 0.8], ['Egypt', 'nat', 58.4, 62, 44.2, 31.1],
+  ['Australia', 'green', 35.1, 42, 89.8, 2.4], ['Chile', 'prog', 43.3, 45, 55.7, 7.2],
+  ['Colombia', 'prog', 39.4, 40, 58.1, 5.6], ['Italy', 'cons', 36.2, 45, 63.9, 8.4],
+  ['Ukraine', 'lib', 41.8, 49, 62.8, 13.7], ['Kazakhstan', 'nat', 61.2, 68, 71.4, 34.8],
+  ['Thailand', 'prog', 38.9, 47, 75.2, 10.1], ['Philippines', 'cons', 44.7, 50, 82.6, 15.4],
+  ['Vietnam', 'ind', 55.1, 60, 68.9, 22.3], ['Morocco', 'lib', 33.4, 37, 50.4, 2.8],
+  ['Ethiopia', 'nat', 47.2, 54, 39.6, 20.6], ['Peru', 'ind', 31.9, 33, 70.2, 1.1]
+];
+
+const BINS = 5;
+const NEUTRAL = '#3E8E8A';
+
+class Component extends DCLogic {
+  state = {
+    metric: 'vote', view: 'flat', region: 'world', layer: 'countries',
+    party: 'prog', selected: null, tip: null,
+    assignments: {}, ready: false, count: 0,
+    pasteOpen: false, parsed: null, overrides: {}, tick: 0
+  };
+  history = [];
+
+  componentDidMount() {
+    this.wrap = null; this.canvas = null;
+    const boot = () => {
+      if (!window.d3 || !window.topojson) return setTimeout(boot, 60);
+      fetch('https://cdn.jsdelivr.net/npm/world-atlas@2/countries-110m.json')
+        .then(r => r.json())
+        .then(t => {
+          this.countries = window.topojson.feature(t, t.objects.countries);
+          this.byName = new Map();
+          this.countries.features.forEach(f => this.byName.set(this.norm(f.properties.name), f));
+          const a = {};
+          SEED.forEach(([n, p, v, s, t2, m]) => {
+            const f = this.byName.get(this.norm(n));
+            if (f) a[f.id] = { party: p, vote: v, seats: s, turnout: t2, margin: m };
+          });
+          this.setState({ ready: true, assignments: a, count: this.countries.features.length });
+          this.resize();
+        })
+        .catch(() => this.setState({ ready: false, count: -1 }));
+    };
+    boot();
+    this._ro = new ResizeObserver(() => this.resize());
+    this._onKey = e => {
+      if ((e.metaKey || e.ctrlKey) && e.key === 'z') { e.preventDefault(); this.undo(); }
+    };
+    window.addEventListener('keydown', this._onKey);
+  }
+  componentWillUnmount() { if (this._ro) this._ro.disconnect(); window.removeEventListener('keydown', this._onKey); }
+  componentDidUpdate() { this.paint(); }
+
+  norm(s) {
+    return String(s || '').normalize('NFD').replace(/[\u0300-\u036f]/g, '')
+      .toLowerCase().replace(/[^a-z0-9]+/g, '');
+  }
+
+  resize() {
+    const w = this.wrap, c = this.canvas;
+    if (!w || !c) return;
+    const r = w.getBoundingClientRect(), dpr = window.devicePixelRatio || 1;
+    c.width = Math.max(1, Math.round(r.width * dpr));
+    c.height = Math.max(1, Math.round(r.height * dpr));
+    this.cssW = r.width; this.cssH = r.height; this.dpr = dpr;
+    this.paint();
+  }
+
+  // ---- colour ----
+  metricDef(id) { return METRICS.find(m => m.id === (id || this.state.metric)); }
+
+  ramp(hex, t) {
+    const d3 = window.d3;
+    const base = d3.hcl(hex);
+    const pale = d3.hcl(base.h, base.c * 0.22, 94);
+    return d3.interpolateHcl(pale, base)(0.12 + t * 0.88) + '';
+  }
+  binOf(v, def) {
+    const [a, b] = def.d;
+    const t = Math.max(0, Math.min(1, (v - a) / (b - a)));
+    return Math.min(BINS - 1, Math.floor(t * BINS));
+  }
+  fillFor(rec) {
+    if (!rec) return '#16202B';
+    const m = this.state.metric;
+    const party = PARTIES.find(p => p.id === rec.party) || PARTIES[5];
+    if (m === 'flat') return party.color;
+    const def = this.metricDef(m);
+    const v = rec[m === 'seats' ? 'seats' : m];
+    if (v == null || isNaN(v)) return '#22303E';
+    const t = (this.binOf(v, def) + 0.5) / BINS;
+    return this.ramp(def.neutral ? NEUTRAL : party.color, t);
+  }
+
+  // ---- geo ----
+  makeProjection(w, h) {
+    const d3 = window.d3, v = this.state.view;
+    const p = v === 'globe' ? d3.geoOrthographic().rotate([-10, -15])
+      : v === 'mercator' ? d3.geoMercator()
+        : d3.geoNaturalEarth1();
+    const reg = REGIONS.find(r => r.id === this.state.region);
+    const pad = Math.min(w, h) * 0.05;
+    let obj = { type: 'Sphere' };
+    if (reg && reg.bbox) {
+      const [x0, y0, x1, y1] = reg.bbox;
+      obj = { type: 'Polygon', coordinates: [[[x0, y0], [x1, y0], [x1, y1], [x0, y1], [x0, y0]]] };
+      if (v === 'globe') p.rotate([-(x0 + x1) / 2, -(y0 + y1) / 2]);
+    }
+    if (v === 'mercator' && !(reg && reg.bbox)) {
+      obj = { type: 'Polygon', coordinates: [[[-180, -60], [180, -60], [180, 78], [-180, 78], [-180, -60]]] };
+    }
+    p.fitExtent([[pad, pad], [w - pad, h - pad]], obj);
+    return p;
+  }
+
+  // one draw path for screen and export
+  draw(ctx, w, h, opts) {
+    const d3 = window.d3, o = opts || {};
+    const k = o.scale || 1;
+    ctx.save();
+    ctx.fillStyle = o.bg || '#0D141C';
+    ctx.fillRect(0, 0, w, h);
+    if (!this.countries) { ctx.restore(); return; }
+    const proj = this.makeProjection(w, h);
+    const path = d3.geoPath(proj, ctx);
+    if (this.state.view !== 'mercator') {
+      ctx.beginPath(); path({ type: 'Sphere' });
+      ctx.fillStyle = '#0B121A'; ctx.fill();
+      ctx.strokeStyle = '#1B2733'; ctx.lineWidth = k; ctx.stroke();
+    }
+    ctx.beginPath(); path(d3.geoGraticule10());
+    ctx.strokeStyle = 'rgba(255,255,255,0.035)'; ctx.lineWidth = k; ctx.stroke();
+    const hov = o.hoverId;
+    this.countries.features.forEach(f => {
+      const rec = this.state.assignments[f.id];
+      ctx.beginPath(); path(f);
+      ctx.fillStyle = this.fillFor(rec); ctx.fill();
+      ctx.strokeStyle = '#0D141C'; ctx.lineWidth = 0.6 * k; ctx.stroke();
+    });
+    const selId = o.selectedId;
+    [[hov, '#FFFFFF', 1.4], [selId, '#E8B33A', 2.2]].forEach(([id, col, lw]) => {
+      if (id == null) return;
+      const f = this.countries.features.find(x => x.id === id);
+      if (!f) return;
+      ctx.beginPath(); path(f);
+      ctx.strokeStyle = col; ctx.lineWidth = lw * k; ctx.stroke();
+    });
+    ctx.restore();
+    this.proj = o.live ? proj : this.proj;
+  }
+
+  paint() {
+    const c = this.canvas;
+    if (!c || !this.countries) return;
+    const ctx = c.getContext('2d');
+    ctx.setTransform(this.dpr, 0, 0, this.dpr, 0, 0);
+    this.draw(ctx, this.cssW, this.cssH, {
+      scale: 1, live: true,
+      hoverId: this.state.tip ? this.state.tip.id : null,
+      selectedId: this.state.selected
+    });
+  }
+
+  hit(e) {
+    if (!this.proj || !this.countries) return null;
+    const r = this.canvas.getBoundingClientRect();
+    const pt = [e.clientX - r.left, e.clientY - r.top];
+    let ll;
+    try { ll = this.proj.invert(pt); } catch (_) { return null; }
+    if (!ll || isNaN(ll[0])) return null;
+    if (this.state.view === 'globe') {
+      const fwd = this.proj(ll);
+      if (!fwd || Math.hypot(fwd[0] - pt[0], fwd[1] - pt[1]) > 1) return null;
+    }
+    for (const f of this.countries.features) {
+      if (window.d3.geoContains(f, ll)) return { f, pt };
+    }
+    return null;
+  }
+
+  push() { this.history.push(JSON.stringify(this.state.assignments)); if (this.history.length > 60) this.history.shift(); }
+  undo = () => {
+    const prev = this.history.pop();
+    if (prev) this.setState({ assignments: JSON.parse(prev) });
+  };
+
+  tipLine(f) {
+    const rec = this.state.assignments[f.id];
+    if (!rec) return 'Unassigned';
+    const p = PARTIES.find(x => x.id === rec.party);
+    const bits = [p ? p.name : '—'];
+    if (rec.vote != null) bits.push(rec.vote.toFixed(1) + '% vote');
+    if (rec.seats != null) bits.push(rec.seats + '% seats');
+    if (this.state.metric === 'turnout' && rec.turnout != null) bits.push(rec.turnout.toFixed(1) + '% turnout');
+    if (this.state.metric === 'margin' && rec.margin != null) bits.push('+' + rec.margin.toFixed(1) + ' pts');
+    return bits.join('  ·  ');
+  }
+
+  // ---- paste ----
+  parse = () => {
+    const raw = (this.pasteEl && this.pasteEl.value || '').trim();
+    if (!raw) return this.setState({ parsed: { rows: [], matched: [], unmatched: [] }, overrides: {} });
+    const lines = raw.split(/\r?\n/).filter(l => l.trim());
+    const delim = (lines[0].match(/\t/g) || []).length >= (lines[0].match(/,/g) || []).length ? '\t' : ',';
+    const first = lines[0].split(delim).map(s => s.trim().toLowerCase());
+    const hasHeader = /region|country|name|state|province/.test(first[0]) && !/^\d/.test(first[1] || '');
+    const body = hasHeader ? lines.slice(1) : lines;
+    const matched = [], unmatched = [];
+    body.forEach((line, i) => {
+      const c = line.split(delim).map(s => s.trim().replace(/^"|"$/g, ''));
+      const num = j => { const v = parseFloat(c[j]); return isNaN(v) ? null : v; };
+      const pn = this.norm(c[1]);
+      const party = PARTIES.find(p => this.norm(p.name) === pn || p.id === pn ||
+        this.norm(p.name).indexOf(pn) === 0 && pn.length > 2);
+      const rec = { party: party ? party.id : 'ind', vote: num(2), seats: num(3), turnout: num(4), margin: num(5) };
+      const f = this.byName.get(this.norm(c[0]));
+      const row = { row: i + (hasHeader ? 2 : 1), raw: c[0] || '(blank)', rec };
+      if (f) matched.push(Object.assign({ id: f.id }, row)); else unmatched.push(row);
+    });
+    this.setState({ parsed: { matched, unmatched }, overrides: {} });
+  };
+
+  apply = () => {
+    const p = this.state.parsed;
+    if (!p) return;
+    this.push();
+    const a = Object.assign({}, this.state.assignments);
+    p.matched.forEach(m => { a[m.id] = m.rec; });
+    p.unmatched.forEach(u => {
+      const id = this.state.overrides[u.row];
+      if (id) a[id] = u.rec;
+    });
+    this.setState({ assignments: a, pasteOpen: false, parsed: null, overrides: {} });
+  };
+
+  exportPng = () => {
+    const W = 2400, H = 1350, k = W / 1600;
+    const cv = document.createElement('canvas');
+    cv.width = W; cv.height = H;
+    const ctx = cv.getContext('2d');
+    ctx.fillStyle = '#0D141C'; ctx.fillRect(0, 0, W, H);
+    const def = this.metricDef();
+    ctx.fillStyle = '#E6EBF0';
+    ctx.font = '600 ' + Math.round(46 * k) + 'px Helvetica Neue, Helvetica, Arial, sans-serif';
+    ctx.fillText(def.id === 'flat' ? 'Winning party' : def.label, 72 * k, 92 * k);
+    ctx.fillStyle = '#7A8794';
+    ctx.font = Math.round(24 * k) + 'px Helvetica Neue, Helvetica, Arial, sans-serif';
+    ctx.fillText(Object.keys(this.state.assignments).length + ' divisions assigned', 72 * k, 132 * k);
+
+    const mx = 40 * k, my = 180 * k, mw = W - 80 * k, mh = H - my - 200 * k;
+    const sub = document.createElement('canvas');
+    sub.width = Math.round(mw); sub.height = Math.round(mh);
+    this.draw(sub.getContext('2d'), mw, mh, { scale: k, selectedId: null, hoverId: null });
+    ctx.drawImage(sub, mx, my);
+
+    // legend, same bins as the screen
+    const lx = 72 * k, ly = H - 150 * k, cwid = 74 * k, chh = 22 * k;
+    ctx.font = Math.round(20 * k) + 'px Helvetica Neue, Helvetica, Arial, sans-serif';
+    if (def.id === 'flat') {
+      let x = lx;
+      this.activeParties().forEach(p => {
+        ctx.fillStyle = p.color; ctx.fillRect(x, ly, 22 * k, 22 * k);
+        ctx.fillStyle = '#B9C4CF'; ctx.fillText(p.name, x + 32 * k, ly + 17 * k);
+        x += ctx.measureText(p.name).width + 74 * k;
+      });
+    } else {
+      const rows = def.neutral ? [{ label: 'Turnout', color: NEUTRAL }]
+        : this.activeParties().map(p => ({ label: p.name, color: p.color }));
+      rows.slice(0, 3).forEach((r, ri) => {
+        const y = ly + ri * (chh + 10 * k) - (rows.length - 1) * 14 * k;
+        for (let i = 0; i < BINS; i++) {
+          ctx.fillStyle = this.ramp(r.color, (i + 0.5) / BINS);
+          ctx.fillRect(lx + i * (cwid + 2 * k), y, cwid, chh);
+        }
+        ctx.fillStyle = '#B9C4CF';
+        ctx.fillText(r.label, lx + BINS * (cwid + 2 * k) + 18 * k, y + 17 * k);
+      });
+      ctx.fillStyle = '#7A8794';
+      ctx.font = Math.round(18 * k) + 'px ui-monospace, Menlo, monospace';
+      ctx.fillText(def.d[0] + def.unit, lx, ly + 62 * k);
+      ctx.fillText(def.d[1] + '+' + def.unit, lx + BINS * (cwid + 2 * k) - 46 * k, ly + 62 * k);
+    }
+    ctx.fillStyle = '#3B4652';
+    ctx.font = Math.round(20 * k) + 'px ui-monospace, Menlo, monospace';
+    ctx.textAlign = 'right';
+    ctx.fillText('election-map-studio', W - 72 * k, H - 56 * k);
+
+    const a = document.createElement('a');
+    a.download = 'election-map-' + def.id + '.png';
+    a.href = cv.toDataURL('image/png');
+    a.click();
+  };
+
+  activeParties() {
+    const used = new Set(Object.values(this.state.assignments).map(r => r.party));
+    return PARTIES.filter(p => used.has(p.id));
+  }
+
+  btn(active, extra) {
+    return 'display:flex;align-items:center;gap:8px;width:100%;text-align:left;padding:8px 10px;border-radius:5px;cursor:pointer;font-size:12px;border:1px solid ' +
+      (active ? '#E8B33A' : 'transparent') + ';background:' + (active ? 'rgba(232,179,58,0.10)' : 'transparent') +
+      ';color:' + (active ? '#E8B33A' : '#B9C4CF') + ';justify-content:space-between;' + (extra || '');
+  }
+
+  renderVals() {
+    const s = this.state, def = this.metricDef();
+    const set = o => this.setState(o);
+    const counts = {};
+    Object.values(s.assignments).forEach(r => { counts[r.party] = (counts[r.party] || 0) + 1; });
+    const total = Object.keys(s.assignments).length || 1;
+    const active = this.activeParties();
+    const selRec = s.selected != null ? s.assignments[s.selected] : null;
+    const selF = s.selected != null && this.countries ? this.countries.features.find(f => f.id === s.selected) : null;
+
+    const editField = key => v => {
+      const val = v.target.value === '' ? null : parseFloat(v.target.value);
+      this.push();
+      const a = Object.assign({}, s.assignments);
+      a[s.selected] = Object.assign({}, a[s.selected], { [key]: val });
+      this.setState({ assignments: a });
+    };
+
+    const rampRows = def.id === 'flat' ? [] : (def.neutral
+      ? [{ label: 'Turnout', color: NEUTRAL }]
+      : active.map(p => ({ label: p.name, color: p.color })));
+
+    const p = s.parsed;
+    const nMatch = p ? p.matched.length : 0, nUn = p ? p.unmatched.length : 0;
+
+    return {
+      views: ['flat', 'globe', 'mercator'].map(v => ({
+        label: v === 'flat' ? 'Flat' : v === 'globe' ? 'Globe' : 'Mercator',
+        pick: () => set({ view: v }),
+        style: 'border:none;border-radius:4px;padding:6px 13px;font-size:12px;cursor:pointer;background:' +
+          (s.view === v ? '#E8B33A' : 'transparent') + ';color:' + (s.view === v ? '#0D141C' : '#B9C4CF') +
+          ';font-weight:' + (s.view === v ? '600' : '400')
+      })),
+      regions: REGIONS, region: s.region,
+      setRegion: e => set({ region: e.target.value }),
+      metrics: METRICS.map(m => ({
+        label: m.label, domain: m.d ? m.d[0] + '–' + m.d[1] + m.unit : '—',
+        pick: () => set({ metric: m.id }), style: this.btn(s.metric === m.id)
+      })),
+      partyRows: PARTIES.map(pa => ({
+        name: pa.name, count: counts[pa.id] || 0,
+        pick: () => set({ party: pa.id }), style: this.btn(s.party === pa.id),
+        dot: 'width:11px;height:11px;border-radius:3px;flex:0 0 auto;background:' + pa.color
+      })),
+      layers: LAYERS.map(l => ({
+        label: l.label, note: l.note,
+        pick: () => l.id === 'countries' && set({ layer: l.id }),
+        style: this.btn(s.layer === l.id, l.id === 'countries' ? '' : 'opacity:0.42;cursor:not-allowed;')
+      })),
+
+      wrapRef: el => { if (el && el !== this.wrap) { this.wrap = el; this._ro.observe(el); this.resize(); } },
+      canvasRef: el => { if (el && el !== this.canvas) { this.canvas = el; this.resize(); } },
+      onMove: e => {
+        const h = this.hit(e);
+        if (!h) return s.tip && set({ tip: null });
+        const t = { id: h.f.id, name: h.f.properties.name, line: this.tipLine(h.f), x: h.pt[0], y: h.pt[1] };
+        if (!s.tip || s.tip.id !== t.id || Math.abs(s.tip.x - t.x) > 3) set({ tip: t });
+      },
+      onLeave: () => set({ tip: null }),
+      onClick: e => {
+        const h = this.hit(e);
+        if (!h) return set({ selected: null });
+        this.push();
+        const a = Object.assign({}, s.assignments);
+        if (!a[h.f.id]) a[h.f.id] = { party: s.party, vote: null, seats: null, turnout: null, margin: null };
+        else a[h.f.id] = Object.assign({}, a[h.f.id], { party: s.party });
+        this.setState({ assignments: a, selected: h.f.id });
+      },
+
+      tip: s.tip || { name: '', line: '' },
+      tipStyle: 'position:absolute;pointer-events:none;background:#0F1721;border:1px solid #2A3A4A;border-radius:6px;padding:8px 11px;font-size:12px;box-shadow:0 6px 20px rgba(0,0,0,0.45);transform:translate(12px,-100%);opacity:' +
+        (s.tip ? '1' : '0') + ';left:' + (s.tip ? s.tip.x : 0) + 'px;top:' + (s.tip ? s.tip.y : 0) + 'px',
+      statusLine: s.count === -1 ? 'geography failed to load' : s.ready ? s.count + ' countries · ' + total + ' assigned' : 'loading geography…',
+
+      hasSelection: !!selRec, noSelection: !selRec,
+      sel: { name: selF ? selF.properties.name : '', partyName: selRec ? (PARTIES.find(x => x.id === selRec.party) || {}).name : '' },
+      fields: selRec ? [
+        { label: 'Vote share', unit: '%', value: selRec.vote ?? '', onChange: editField('vote') },
+        { label: 'Seat share', unit: '%', value: selRec.seats ?? '', onChange: editField('seats') },
+        { label: 'Turnout', unit: '%', value: selRec.turnout ?? '', onChange: editField('turnout') },
+        { label: 'Margin', unit: 'pts', value: selRec.margin ?? '', onChange: editField('margin') }
+      ] : [],
+      clearSel: () => {
+        this.push();
+        const a = Object.assign({}, s.assignments); delete a[s.selected];
+        this.setState({ assignments: a, selected: null });
+      },
+
+      results: active.map(pa => ({
+        name: pa.name, value: (counts[pa.id] || 0) + ' · ' + Math.round((counts[pa.id] || 0) / total * 100) + '%',
+        dot: 'width:9px;height:9px;border-radius:2px;background:' + pa.color,
+        barStyle: 'flex:' + (counts[pa.id] || 0) + ' 1 0;background:' + pa.color
+      })),
+
+      legendTitle: def.id === 'flat' ? 'Winning party' : def.label,
+      legendIsSwatch: def.id === 'flat', legendIsRamp: def.id !== 'flat',
+      legendSwatches: active.map(pa => ({
+        label: pa.name, chip: 'width:16px;height:16px;border-radius:3px;flex:0 0 auto;background:' + pa.color
+      })),
+      legendRamps: rampRows.map(r => ({
+        label: r.label,
+        cells: Array.from({ length: BINS }, (_, i) => ({
+          style: 'flex:1 1 0;height:15px;background:' + this.ramp(r.color, (i + 0.5) / BINS)
+        }))
+      })),
+      legendTicks: def.d ? [
+        { label: def.d[0] + def.unit },
+        { label: Math.round((def.d[0] + def.d[1]) / 2) + def.unit },
+        { label: def.d[1] + '+' + def.unit }
+      ] : [],
+      legendNote: def.note || '',
+
+      undo: this.undo, exportPng: this.exportPng,
+      openPaste: () => set({ pasteOpen: true }), closePaste: () => set({ pasteOpen: false, parsed: null }),
+      pasteOpen: s.pasteOpen,
+      pasteRef: el => { if (el) this.pasteEl = el; },
+      runParse: this.parse, applyPaste: this.apply,
+      fillSample: () => {
+        if (!this.pasteEl) return;
+        this.pasteEl.value = [
+          'region\tparty\tvote\tseats\tturnout\tmargin',
+          'France\tProgressive Alliance\t41.2\t52\t68.4\t9.1',
+          'Deutschland\tConservative Union\t34.8\t39\t76.6\t5.2',
+          'Norway\tGreen Movement\t31.4\t34\t77.2\t1.9',
+          'Türkiye\tNational Party\t52.3\t57\t87.1\t8.8',
+          'Nepal\tLiberal Front\t36.1\t40\t61.4\t4.2',
+          'Ivory Coast\tIndependents\t29.8\t31\t53.6\t0.6'
+        ].join('\n');
+        this.parse();
+      },
+      parseSummary: p ? (nMatch + ' of ' + (nMatch + nUn) + ' rows matched') : 'Nothing parsed yet',
+      hasUnmatched: !!p && nUn > 0,
+      unmatchedHeading: nUn + (nUn === 1 ? ' row didn’t match' : ' rows didn’t match') + ' — pick a division or leave it out',
+      unmatched: p ? p.unmatched.map(u => ({
+        row: u.row, raw: u.raw, value: s.overrides[u.row] || '',
+        onChange: e => this.setState({ overrides: Object.assign({}, s.overrides, { [u.row]: e.target.value }) })
+      })) : [],
+      countryOptions: this.countries
+        ? this.countries.features.map(f => ({ id: f.id, name: f.properties.name })).sort((a, b) => a.name.localeCompare(b.name))
+        : [],
+      applyLabel: p ? 'Apply ' + (nMatch + Object.values(s.overrides).filter(Boolean).length) + ' rows' : 'Apply'
+    };
+  }
+}
+</script>
+</body>
+</html>

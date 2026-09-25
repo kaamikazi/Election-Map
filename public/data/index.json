@@ -1,0 +1,3275 @@
+{
+  "version": 3,
+  "source": "https://raw.githubusercontent.com/nvkelso/natural-earth-vector/master/geojson/ne_10m_admin_1_states_provinces.geojson",
+  "vintage": {
+    "label": "Natural Earth admin-1, present-day boundaries",
+    "resolution": "10m",
+    "source": "https://raw.githubusercontent.com/nvkelso/natural-earth-vector/master/geojson/ne_10m_admin_1_states_provinces.geojson"
+  },
+  "generated": "2026-09-17T20:44:12.022Z",
+  "countries": {
+    "ABW": {
+      "name": "Aruba",
+      "layers": {
+        "admin1": {
+          "file": "data/admin1/ABW.topo.json",
+          "units": 1,
+          "bytes": 687,
+          "resolution": "10m",
+          "retain": 1,
+          "quantum": 100000
+        }
+      }
+    },
+    "AFG": {
+      "name": "Afghanistan",
+      "layers": {
+        "admin1": {
+          "file": "data/admin1/AFG.topo.json",
+          "units": 34,
+          "bytes": 66633,
+          "resolution": "10m",
+          "retain": 1,
+          "quantum": 100000
+        }
+      }
+    },
+    "AGO": {
+      "name": "Angola",
+      "layers": {
+        "admin1": {
+          "file": "data/admin1/AGO.topo.json",
+          "units": 18,
+          "bytes": 44888,
+          "resolution": "10m",
+          "retain": 1,
+          "quantum": 100000
+        }
+      }
+    },
+    "AIA": {
+      "name": "Anguilla",
+      "layers": {
+        "admin1": {
+          "file": "data/admin1/AIA.topo.json",
+          "units": 15,
+          "bytes": 4232,
+          "resolution": "10m",
+          "retain": 1,
+          "quantum": 100000
+        }
+      }
+    },
+    "ALB": {
+      "name": "Albania",
+      "layers": {
+        "admin1": {
+          "file": "data/admin1/ALB.topo.json",
+          "units": 12,
+          "bytes": 18244,
+          "resolution": "10m",
+          "retain": 1,
+          "quantum": 100000
+        }
+      }
+    },
+    "ALD": {
+      "name": "Aland",
+      "layers": {
+        "admin1": {
+          "file": "data/admin1/ALD.topo.json",
+          "units": 11,
+          "bytes": 5328,
+          "resolution": "10m",
+          "retain": 1,
+          "quantum": 100000
+        }
+      }
+    },
+    "AND": {
+      "name": "Andorra",
+      "layers": {
+        "admin1": {
+          "file": "data/admin1/AND.topo.json",
+          "units": 7,
+          "bytes": 2773,
+          "resolution": "10m",
+          "retain": 1,
+          "quantum": 100000
+        }
+      }
+    },
+    "ARE": {
+      "name": "United Arab Emirates",
+      "layers": {
+        "admin1": {
+          "file": "data/admin1/ARE.topo.json",
+          "units": 9,
+          "bytes": 15459,
+          "resolution": "10m",
+          "retain": 1,
+          "quantum": 100000
+        }
+      }
+    },
+    "ARG": {
+      "name": "Argentina",
+      "layers": {
+        "admin1": {
+          "file": "data/admin1/ARG.topo.json",
+          "units": 24,
+          "bytes": 75584,
+          "resolution": "10m",
+          "retain": 1,
+          "quantum": 100000
+        }
+      }
+    },
+    "ARM": {
+      "name": "Armenia",
+      "layers": {
+        "admin1": {
+          "file": "data/admin1/ARM.topo.json",
+          "units": 11,
+          "bytes": 13342,
+          "resolution": "10m",
+          "retain": 1,
+          "quantum": 100000
+        }
+      }
+    },
+    "ASM": {
+      "name": "American Samoa",
+      "layers": {
+        "admin1": {
+          "file": "data/admin1/ASM.topo.json",
+          "units": 5,
+          "bytes": 1531,
+          "resolution": "10m",
+          "retain": 1,
+          "quantum": 100000
+        }
+      }
+    },
+    "ATA": {
+      "name": "Antarctica",
+      "layers": {
+        "admin1": {
+          "file": "data/admin1/ATA.topo.json",
+          "units": 2,
+          "bytes": 131452,
+          "resolution": "10m",
+          "retain": 0.6,
+          "quantum": 100000
+        }
+      }
+    },
+    "ATC": {
+      "name": "Ashmore and Cartier Islands",
+      "layers": {
+        "admin1": {
+          "file": "data/admin1/ATC.topo.json",
+          "units": 1,
+          "bytes": 440,
+          "resolution": "10m",
+          "retain": 1,
+          "quantum": 100000
+        }
+      }
+    },
+    "ATF": {
+      "name": "French Southern and Antarctic Lands",
+      "layers": {
+        "admin1": {
+          "file": "data/admin1/ATF.topo.json",
+          "units": 4,
+          "bytes": 5890,
+          "resolution": "10m",
+          "retain": 1,
+          "quantum": 100000
+        }
+      }
+    },
+    "ATG": {
+      "name": "Antigua and Barbuda",
+      "layers": {
+        "admin1": {
+          "file": "data/admin1/ATG.topo.json",
+          "units": 8,
+          "bytes": 3242,
+          "resolution": "10m",
+          "retain": 1,
+          "quantum": 100000
+        }
+      }
+    },
+    "AUS": {
+      "name": "Australia",
+      "layers": {
+        "admin1": {
+          "file": "data/admin1/AUS.topo.json",
+          "units": 11,
+          "bytes": 131163,
+          "resolution": "10m",
+          "retain": 1,
+          "quantum": 100000
+        }
+      }
+    },
+    "AUT": {
+      "name": "Austria",
+      "layers": {
+        "admin1": {
+          "file": "data/admin1/AUT.topo.json",
+          "units": 9,
+          "bytes": 20766,
+          "resolution": "10m",
+          "retain": 1,
+          "quantum": 100000
+        }
+      }
+    },
+    "AZE": {
+      "name": "Azerbaijan",
+      "layers": {
+        "admin1": {
+          "file": "data/admin1/AZE.topo.json",
+          "units": 78,
+          "bytes": 43362,
+          "resolution": "10m",
+          "retain": 1,
+          "quantum": 100000
+        }
+      }
+    },
+    "BDI": {
+      "name": "Burundi",
+      "layers": {
+        "admin1": {
+          "file": "data/admin1/BDI.topo.json",
+          "units": 17,
+          "bytes": 11582,
+          "resolution": "10m",
+          "retain": 1,
+          "quantum": 100000
+        }
+      }
+    },
+    "BEL": {
+      "name": "Belgium",
+      "layers": {
+        "admin1": {
+          "file": "data/admin1/BEL.topo.json",
+          "units": 11,
+          "bytes": 15441,
+          "resolution": "10m",
+          "retain": 1,
+          "quantum": 100000
+        }
+      }
+    },
+    "BEN": {
+      "name": "Benin",
+      "layers": {
+        "admin1": {
+          "file": "data/admin1/BEN.topo.json",
+          "units": 12,
+          "bytes": 12711,
+          "resolution": "10m",
+          "retain": 1,
+          "quantum": 100000
+        }
+      }
+    },
+    "BFA": {
+      "name": "Burkina Faso",
+      "layers": {
+        "admin1": {
+          "file": "data/admin1/BFA.topo.json",
+          "units": 45,
+          "bytes": 43188,
+          "resolution": "10m",
+          "retain": 1,
+          "quantum": 100000
+        }
+      }
+    },
+    "BGD": {
+      "name": "Bangladesh",
+      "layers": {
+        "admin1": {
+          "file": "data/admin1/BGD.topo.json",
+          "units": 7,
+          "bytes": 30757,
+          "resolution": "10m",
+          "retain": 1,
+          "quantum": 100000
+        }
+      }
+    },
+    "BGR": {
+      "name": "Bulgaria",
+      "layers": {
+        "admin1": {
+          "file": "data/admin1/BGR.topo.json",
+          "units": 28,
+          "bytes": 28330,
+          "resolution": "10m",
+          "retain": 1,
+          "quantum": 100000
+        }
+      }
+    },
+    "BHR": {
+      "name": "Bahrain",
+      "layers": {
+        "admin1": {
+          "file": "data/admin1/BHR.topo.json",
+          "units": 5,
+          "bytes": 3015,
+          "resolution": "10m",
+          "retain": 1,
+          "quantum": 100000
+        }
+      }
+    },
+    "BHS": {
+      "name": "The Bahamas",
+      "layers": {
+        "admin1": {
+          "file": "data/admin1/BHS.topo.json",
+          "units": 30,
+          "bytes": 21684,
+          "resolution": "10m",
+          "retain": 1,
+          "quantum": 100000
+        }
+      }
+    },
+    "BIH": {
+      "name": "Bosnia and Herzegovina",
+      "layers": {
+        "admin1": {
+          "file": "data/admin1/BIH.topo.json",
+          "units": 18,
+          "bytes": 18096,
+          "resolution": "10m",
+          "retain": 1,
+          "quantum": 100000
+        }
+      }
+    },
+    "BLM": {
+      "name": "Saint Barthelemy",
+      "layers": {
+        "admin1": {
+          "file": "data/admin1/BLM.topo.json",
+          "units": 1,
+          "bytes": 510,
+          "resolution": "10m",
+          "retain": 1,
+          "quantum": 100000
+        }
+      }
+    },
+    "BLR": {
+      "name": "Belarus",
+      "layers": {
+        "admin1": {
+          "file": "data/admin1/BLR.topo.json",
+          "units": 7,
+          "bytes": 34943,
+          "resolution": "10m",
+          "retain": 1,
+          "quantum": 100000
+        }
+      }
+    },
+    "BLZ": {
+      "name": "Belize",
+      "layers": {
+        "admin1": {
+          "file": "data/admin1/BLZ.topo.json",
+          "units": 6,
+          "bytes": 9520,
+          "resolution": "10m",
+          "retain": 1,
+          "quantum": 100000
+        }
+      }
+    },
+    "BMU": {
+      "name": "Bermuda",
+      "layers": {
+        "admin1": {
+          "file": "data/admin1/BMU.topo.json",
+          "units": 11,
+          "bytes": 3611,
+          "resolution": "10m",
+          "retain": 1,
+          "quantum": 100000
+        }
+      }
+    },
+    "BOL": {
+      "name": "Bolivia",
+      "layers": {
+        "admin1": {
+          "file": "data/admin1/BOL.topo.json",
+          "units": 9,
+          "bytes": 29979,
+          "resolution": "10m",
+          "retain": 1,
+          "quantum": 100000
+        }
+      }
+    },
+    "BRA": {
+      "name": "Brazil",
+      "layers": {
+        "admin1": {
+          "file": "data/admin1/BRA.topo.json",
+          "units": 27,
+          "bytes": 130783,
+          "resolution": "10m",
+          "retain": 0.6,
+          "quantum": 100000
+        }
+      }
+    },
+    "BRB": {
+      "name": "Barbados",
+      "layers": {
+        "admin1": {
+          "file": "data/admin1/BRB.topo.json",
+          "units": 11,
+          "bytes": 4445,
+          "resolution": "10m",
+          "retain": 1,
+          "quantum": 100000
+        }
+      }
+    },
+    "BRN": {
+      "name": "Brunei",
+      "layers": {
+        "admin1": {
+          "file": "data/admin1/BRN.topo.json",
+          "units": 4,
+          "bytes": 3031,
+          "resolution": "10m",
+          "retain": 1,
+          "quantum": 100000
+        }
+      }
+    },
+    "BTN": {
+      "name": "Bhutan",
+      "layers": {
+        "admin1": {
+          "file": "data/admin1/BTN.topo.json",
+          "units": 20,
+          "bytes": 19818,
+          "resolution": "10m",
+          "retain": 1,
+          "quantum": 100000
+        }
+      }
+    },
+    "BWA": {
+      "name": "Botswana",
+      "layers": {
+        "admin1": {
+          "file": "data/admin1/BWA.topo.json",
+          "units": 15,
+          "bytes": 15472,
+          "resolution": "10m",
+          "retain": 1,
+          "quantum": 100000
+        }
+      }
+    },
+    "CAF": {
+      "name": "Central African Republic",
+      "layers": {
+        "admin1": {
+          "file": "data/admin1/CAF.topo.json",
+          "units": 17,
+          "bytes": 46103,
+          "resolution": "10m",
+          "retain": 1,
+          "quantum": 100000
+        }
+      }
+    },
+    "CAN": {
+      "name": "Canada",
+      "layers": {
+        "admin1": {
+          "file": "data/admin1/CAN.topo.json",
+          "units": 13,
+          "bytes": 147964,
+          "resolution": "10m",
+          "retain": 0.18,
+          "quantum": 100000
+        }
+      }
+    },
+    "CHE": {
+      "name": "Switzerland",
+      "layers": {
+        "admin1": {
+          "file": "data/admin1/CHE.topo.json",
+          "units": 26,
+          "bytes": 35079,
+          "resolution": "10m",
+          "retain": 1,
+          "quantum": 100000
+        }
+      }
+    },
+    "CHL": {
+      "name": "Chile",
+      "layers": {
+        "admin1": {
+          "file": "data/admin1/CHL.topo.json",
+          "units": 16,
+          "bytes": 134824,
+          "resolution": "10m",
+          "retain": 0.8,
+          "quantum": 100000
+        }
+      }
+    },
+    "CHN": {
+      "name": "China",
+      "layers": {
+        "admin1": {
+          "file": "data/admin1/CHN.topo.json",
+          "units": 32,
+          "bytes": 218487,
+          "resolution": "10m",
+          "retain": 1,
+          "quantum": 5000
+        }
+      }
+    },
+    "CIV": {
+      "name": "Ivory Coast",
+      "layers": {
+        "admin1": {
+          "file": "data/admin1/CIV.topo.json",
+          "units": 19,
+          "bytes": 43815,
+          "resolution": "10m",
+          "retain": 1,
+          "quantum": 100000
+        }
+      }
+    },
+    "CLP": {
+      "name": "Clipperton Island",
+      "layers": {
+        "admin1": {
+          "file": "data/admin1/CLP.topo.json",
+          "units": 1,
+          "bytes": 460,
+          "resolution": "10m",
+          "retain": 1,
+          "quantum": 100000
+        }
+      }
+    },
+    "CMR": {
+      "name": "Cameroon",
+      "layers": {
+        "admin1": {
+          "file": "data/admin1/CMR.topo.json",
+          "units": 10,
+          "bytes": 28060,
+          "resolution": "10m",
+          "retain": 1,
+          "quantum": 100000
+        }
+      }
+    },
+    "COD": {
+      "name": "Democratic Republic of the Congo",
+      "layers": {
+        "admin1": {
+          "file": "data/admin1/COD.topo.json",
+          "units": 11,
+          "bytes": 56685,
+          "resolution": "10m",
+          "retain": 1,
+          "quantum": 100000
+        }
+      }
+    },
+    "COG": {
+      "name": "Republic of the Congo",
+      "layers": {
+        "admin1": {
+          "file": "data/admin1/COG.topo.json",
+          "units": 12,
+          "bytes": 30884,
+          "resolution": "10m",
+          "retain": 1,
+          "quantum": 100000
+        }
+      }
+    },
+    "COK": {
+      "name": "Cook Islands",
+      "layers": {
+        "admin1": {
+          "file": "data/admin1/COK.topo.json",
+          "units": 11,
+          "bytes": 2669,
+          "resolution": "10m",
+          "retain": 1,
+          "quantum": 100000
+        }
+      }
+    },
+    "COL": {
+      "name": "Colombia",
+      "layers": {
+        "admin1": {
+          "file": "data/admin1/COL.topo.json",
+          "units": 34,
+          "bytes": 82571,
+          "resolution": "10m",
+          "retain": 1,
+          "quantum": 100000
+        }
+      }
+    },
+    "COM": {
+      "name": "Comoros",
+      "layers": {
+        "admin1": {
+          "file": "data/admin1/COM.topo.json",
+          "units": 3,
+          "bytes": 2030,
+          "resolution": "10m",
+          "retain": 1,
+          "quantum": 100000
+        }
+      }
+    },
+    "CPV": {
+      "name": "Cape Verde",
+      "layers": {
+        "admin1": {
+          "file": "data/admin1/CPV.topo.json",
+          "units": 22,
+          "bytes": 9019,
+          "resolution": "10m",
+          "retain": 1,
+          "quantum": 100000
+        }
+      }
+    },
+    "CRI": {
+      "name": "Costa Rica",
+      "layers": {
+        "admin1": {
+          "file": "data/admin1/CRI.topo.json",
+          "units": 7,
+          "bytes": 18653,
+          "resolution": "10m",
+          "retain": 1,
+          "quantum": 100000
+        }
+      }
+    },
+    "CSI": {
+      "name": "Coral Sea Islands",
+      "layers": {
+        "admin1": {
+          "file": "data/admin1/CSI.topo.json",
+          "units": 1,
+          "bytes": 1591,
+          "resolution": "10m",
+          "retain": 1,
+          "quantum": 100000
+        }
+      }
+    },
+    "CUB": {
+      "name": "Cuba",
+      "layers": {
+        "admin1": {
+          "file": "data/admin1/CUB.topo.json",
+          "units": 16,
+          "bytes": 43920,
+          "resolution": "10m",
+          "retain": 1,
+          "quantum": 100000
+        }
+      }
+    },
+    "CUW": {
+      "name": "Curaçao",
+      "layers": {
+        "admin1": {
+          "file": "data/admin1/CUW.topo.json",
+          "units": 1,
+          "bytes": 927,
+          "resolution": "10m",
+          "retain": 1,
+          "quantum": 100000
+        }
+      }
+    },
+    "CYM": {
+      "name": "Cayman Islands",
+      "layers": {
+        "admin1": {
+          "file": "data/admin1/CYM.topo.json",
+          "units": 1,
+          "bytes": 1352,
+          "resolution": "10m",
+          "retain": 1,
+          "quantum": 100000
+        }
+      }
+    },
+    "CYN": {
+      "name": "Northern Cyprus",
+      "layers": {
+        "admin1": {
+          "file": "data/admin1/CYN.topo.json",
+          "units": 1,
+          "bytes": 2793,
+          "resolution": "10m",
+          "retain": 1,
+          "quantum": 100000
+        }
+      }
+    },
+    "CYP": {
+      "name": "Cyprus",
+      "layers": {
+        "admin1": {
+          "file": "data/admin1/CYP.topo.json",
+          "units": 5,
+          "bytes": 7341,
+          "resolution": "10m",
+          "retain": 1,
+          "quantum": 100000
+        }
+      }
+    },
+    "CZE": {
+      "name": "Czech Republic",
+      "layers": {
+        "admin1": {
+          "file": "data/admin1/CZE.topo.json",
+          "units": 14,
+          "bytes": 29316,
+          "resolution": "10m",
+          "retain": 1,
+          "quantum": 100000
+        }
+      }
+    },
+    "DEU": {
+      "name": "Germany",
+      "layers": {
+        "admin1": {
+          "file": "data/admin1/DEU.topo.json",
+          "units": 16,
+          "bytes": 85478,
+          "resolution": "10m",
+          "retain": 1,
+          "quantum": 100000
+        }
+      }
+    },
+    "DJI": {
+      "name": "Djibouti",
+      "layers": {
+        "admin1": {
+          "file": "data/admin1/DJI.topo.json",
+          "units": 6,
+          "bytes": 4176,
+          "resolution": "10m",
+          "retain": 1,
+          "quantum": 100000
+        }
+      }
+    },
+    "DMA": {
+      "name": "Dominica",
+      "layers": {
+        "admin1": {
+          "file": "data/admin1/DMA.topo.json",
+          "units": 10,
+          "bytes": 4547,
+          "resolution": "10m",
+          "retain": 1,
+          "quantum": 100000
+        }
+      }
+    },
+    "DNK": {
+      "name": "Denmark",
+      "layers": {
+        "admin1": {
+          "file": "data/admin1/DNK.topo.json",
+          "units": 5,
+          "bytes": 25937,
+          "resolution": "10m",
+          "retain": 1,
+          "quantum": 100000
+        }
+      }
+    },
+    "DOM": {
+      "name": "Dominican Republic",
+      "layers": {
+        "admin1": {
+          "file": "data/admin1/DOM.topo.json",
+          "units": 32,
+          "bytes": 19740,
+          "resolution": "10m",
+          "retain": 1,
+          "quantum": 100000
+        }
+      }
+    },
+    "DZA": {
+      "name": "Algeria",
+      "layers": {
+        "admin1": {
+          "file": "data/admin1/DZA.topo.json",
+          "units": 48,
+          "bytes": 52412,
+          "resolution": "10m",
+          "retain": 1,
+          "quantum": 100000
+        }
+      }
+    },
+    "ECU": {
+      "name": "Ecuador",
+      "layers": {
+        "admin1": {
+          "file": "data/admin1/ECU.topo.json",
+          "units": 24,
+          "bytes": 42357,
+          "resolution": "10m",
+          "retain": 1,
+          "quantum": 100000
+        }
+      }
+    },
+    "EGY": {
+      "name": "Egypt",
+      "layers": {
+        "admin1": {
+          "file": "data/admin1/EGY.topo.json",
+          "units": 27,
+          "bytes": 37425,
+          "resolution": "10m",
+          "retain": 1,
+          "quantum": 100000
+        }
+      }
+    },
+    "ERI": {
+      "name": "Eritrea",
+      "layers": {
+        "admin1": {
+          "file": "data/admin1/ERI.topo.json",
+          "units": 6,
+          "bytes": 13549,
+          "resolution": "10m",
+          "retain": 1,
+          "quantum": 100000
+        }
+      }
+    },
+    "ESB": {
+      "name": "Dhekelia Sovereign Base Area",
+      "layers": {
+        "admin1": {
+          "file": "data/admin1/ESB.topo.json",
+          "units": 1,
+          "bytes": 1685,
+          "resolution": "10m",
+          "retain": 1,
+          "quantum": 100000
+        }
+      }
+    },
+    "ESP": {
+      "name": "Spain",
+      "layers": {
+        "admin1": {
+          "file": "data/admin1/ESP.topo.json",
+          "units": 52,
+          "bytes": 90514,
+          "resolution": "10m",
+          "retain": 1,
+          "quantum": 100000
+        }
+      }
+    },
+    "EST": {
+      "name": "Estonia",
+      "layers": {
+        "admin1": {
+          "file": "data/admin1/EST.topo.json",
+          "units": 15,
+          "bytes": 22978,
+          "resolution": "10m",
+          "retain": 1,
+          "quantum": 100000
+        }
+      }
+    },
+    "ETH": {
+      "name": "Ethiopia",
+      "layers": {
+        "admin1": {
+          "file": "data/admin1/ETH.topo.json",
+          "units": 11,
+          "bytes": 31539,
+          "resolution": "10m",
+          "retain": 1,
+          "quantum": 100000
+        }
+      }
+    },
+    "FIN": {
+      "name": "Finland",
+      "layers": {
+        "admin1": {
+          "file": "data/admin1/FIN.topo.json",
+          "units": 18,
+          "bytes": 55934,
+          "resolution": "10m",
+          "retain": 1,
+          "quantum": 100000
+        }
+      }
+    },
+    "FJI": {
+      "name": "Fiji",
+      "layers": {
+        "admin1": {
+          "file": "data/admin1/FJI.topo.json",
+          "units": 5,
+          "bytes": 14781,
+          "resolution": "10m",
+          "retain": 1,
+          "quantum": 100000
+        }
+      }
+    },
+    "FLK": {
+      "name": "Falkland Islands",
+      "layers": {
+        "admin1": {
+          "file": "data/admin1/FLK.topo.json",
+          "units": 1,
+          "bytes": 15335,
+          "resolution": "10m",
+          "retain": 1,
+          "quantum": 100000
+        }
+      }
+    },
+    "FRA": {
+      "name": "France",
+      "layers": {
+        "admin1": {
+          "file": "data/admin1/FRA.topo.json",
+          "units": 101,
+          "bytes": 128540,
+          "resolution": "10m",
+          "retain": 1,
+          "quantum": 100000
+        }
+      }
+    },
+    "FRO": {
+      "name": "Faroe Islands",
+      "layers": {
+        "admin1": {
+          "file": "data/admin1/FRO.topo.json",
+          "units": 1,
+          "bytes": 6131,
+          "resolution": "10m",
+          "retain": 1,
+          "quantum": 100000
+        }
+      }
+    },
+    "FSM": {
+      "name": "Federated States of Micronesia",
+      "layers": {
+        "admin1": {
+          "file": "data/admin1/FSM.topo.json",
+          "units": 4,
+          "bytes": 3358,
+          "resolution": "10m",
+          "retain": 1,
+          "quantum": 100000
+        }
+      }
+    },
+    "GAB": {
+      "name": "Gabon",
+      "layers": {
+        "admin1": {
+          "file": "data/admin1/GAB.topo.json",
+          "units": 9,
+          "bytes": 24245,
+          "resolution": "10m",
+          "retain": 1,
+          "quantum": 100000
+        }
+      }
+    },
+    "GBR": {
+      "name": "United Kingdom",
+      "layers": {
+        "admin1": {
+          "file": "data/admin1/GBR.topo.json",
+          "units": 232,
+          "bytes": 148969,
+          "resolution": "10m",
+          "retain": 1,
+          "quantum": 10000
+        }
+      }
+    },
+    "GEO": {
+      "name": "Georgia",
+      "layers": {
+        "admin1": {
+          "file": "data/admin1/GEO.topo.json",
+          "units": 12,
+          "bytes": 12968,
+          "resolution": "10m",
+          "retain": 1,
+          "quantum": 100000
+        }
+      }
+    },
+    "GGY": {
+      "name": "Guernsey",
+      "layers": {
+        "admin1": {
+          "file": "data/admin1/GGY.topo.json",
+          "units": 1,
+          "bytes": 993,
+          "resolution": "10m",
+          "retain": 1,
+          "quantum": 100000
+        }
+      }
+    },
+    "GHA": {
+      "name": "Ghana",
+      "layers": {
+        "admin1": {
+          "file": "data/admin1/GHA.topo.json",
+          "units": 10,
+          "bytes": 30596,
+          "resolution": "10m",
+          "retain": 1,
+          "quantum": 100000
+        }
+      }
+    },
+    "GIB": {
+      "name": "Gibraltar",
+      "layers": {
+        "admin1": {
+          "file": "data/admin1/GIB.topo.json",
+          "units": 1,
+          "bytes": 434,
+          "resolution": "10m",
+          "retain": 1,
+          "quantum": 100000
+        }
+      }
+    },
+    "GIN": {
+      "name": "Guinea",
+      "layers": {
+        "admin1": {
+          "file": "data/admin1/GIN.topo.json",
+          "units": 34,
+          "bytes": 36498,
+          "resolution": "10m",
+          "retain": 1,
+          "quantum": 100000
+        }
+      }
+    },
+    "GMB": {
+      "name": "Gambia",
+      "layers": {
+        "admin1": {
+          "file": "data/admin1/GMB.topo.json",
+          "units": 6,
+          "bytes": 6608,
+          "resolution": "10m",
+          "retain": 1,
+          "quantum": 100000
+        }
+      }
+    },
+    "GNB": {
+      "name": "Guinea Bissau",
+      "layers": {
+        "admin1": {
+          "file": "data/admin1/GNB.topo.json",
+          "units": 9,
+          "bytes": 20872,
+          "resolution": "10m",
+          "retain": 1,
+          "quantum": 100000
+        }
+      }
+    },
+    "GNQ": {
+      "name": "Equatorial Guinea",
+      "layers": {
+        "admin1": {
+          "file": "data/admin1/GNQ.topo.json",
+          "units": 7,
+          "bytes": 6187,
+          "resolution": "10m",
+          "retain": 1,
+          "quantum": 100000
+        }
+      }
+    },
+    "GRC": {
+      "name": "Greece",
+      "layers": {
+        "admin1": {
+          "file": "data/admin1/GRC.topo.json",
+          "units": 14,
+          "bytes": 68549,
+          "resolution": "10m",
+          "retain": 1,
+          "quantum": 100000
+        }
+      }
+    },
+    "GRD": {
+      "name": "Grenada",
+      "layers": {
+        "admin1": {
+          "file": "data/admin1/GRD.topo.json",
+          "units": 7,
+          "bytes": 2489,
+          "resolution": "10m",
+          "retain": 1,
+          "quantum": 100000
+        }
+      }
+    },
+    "GRL": {
+      "name": "Greenland",
+      "layers": {
+        "admin1": {
+          "file": "data/admin1/GRL.topo.json",
+          "units": 6,
+          "bytes": 128217,
+          "resolution": "10m",
+          "retain": 0.6,
+          "quantum": 100000
+        }
+      }
+    },
+    "GTM": {
+      "name": "Guatemala",
+      "layers": {
+        "admin1": {
+          "file": "data/admin1/GTM.topo.json",
+          "units": 22,
+          "bytes": 24659,
+          "resolution": "10m",
+          "retain": 1,
+          "quantum": 100000
+        }
+      }
+    },
+    "GUM": {
+      "name": "Guam",
+      "layers": {
+        "admin1": {
+          "file": "data/admin1/GUM.topo.json",
+          "units": 1,
+          "bytes": 974,
+          "resolution": "10m",
+          "retain": 1,
+          "quantum": 100000
+        }
+      }
+    },
+    "GUY": {
+      "name": "Guyana",
+      "layers": {
+        "admin1": {
+          "file": "data/admin1/GUY.topo.json",
+          "units": 10,
+          "bytes": 20810,
+          "resolution": "10m",
+          "retain": 1,
+          "quantum": 100000
+        }
+      }
+    },
+    "HKG": {
+      "name": "Hong Kong S.A.R.",
+      "layers": {
+        "admin1": {
+          "file": "data/admin1/HKG.topo.json",
+          "units": 18,
+          "bytes": 9023,
+          "resolution": "10m",
+          "retain": 1,
+          "quantum": 100000
+        }
+      }
+    },
+    "HMD": {
+      "name": "Heard Island and McDonald Islands",
+      "layers": {
+        "admin1": {
+          "file": "data/admin1/HMD.topo.json",
+          "units": 1,
+          "bytes": 1072,
+          "resolution": "10m",
+          "retain": 1,
+          "quantum": 100000
+        }
+      }
+    },
+    "HND": {
+      "name": "Honduras",
+      "layers": {
+        "admin1": {
+          "file": "data/admin1/HND.topo.json",
+          "units": 18,
+          "bytes": 28797,
+          "resolution": "10m",
+          "retain": 1,
+          "quantum": 100000
+        }
+      }
+    },
+    "HRV": {
+      "name": "Croatia",
+      "layers": {
+        "admin1": {
+          "file": "data/admin1/HRV.topo.json",
+          "units": 21,
+          "bytes": 45523,
+          "resolution": "10m",
+          "retain": 1,
+          "quantum": 100000
+        }
+      }
+    },
+    "HTI": {
+      "name": "Haiti",
+      "layers": {
+        "admin1": {
+          "file": "data/admin1/HTI.topo.json",
+          "units": 10,
+          "bytes": 11927,
+          "resolution": "10m",
+          "retain": 1,
+          "quantum": 100000
+        }
+      }
+    },
+    "HUN": {
+      "name": "Hungary",
+      "layers": {
+        "admin1": {
+          "file": "data/admin1/HUN.topo.json",
+          "units": 43,
+          "bytes": 30172,
+          "resolution": "10m",
+          "retain": 1,
+          "quantum": 100000
+        }
+      }
+    },
+    "IDN": {
+      "name": "Indonesia",
+      "layers": {
+        "admin1": {
+          "file": "data/admin1/IDN.topo.json",
+          "units": 33,
+          "bytes": 136591,
+          "resolution": "10m",
+          "retain": 0.6,
+          "quantum": 100000
+        }
+      }
+    },
+    "IMN": {
+      "name": "Isle of Man",
+      "layers": {
+        "admin1": {
+          "file": "data/admin1/IMN.topo.json",
+          "units": 1,
+          "bytes": 1397,
+          "resolution": "10m",
+          "retain": 1,
+          "quantum": 100000
+        }
+      }
+    },
+    "IND": {
+      "name": "India",
+      "layers": {
+        "admin1": {
+          "file": "data/admin1/IND.topo.json",
+          "units": 36,
+          "bytes": 152098,
+          "resolution": "10m",
+          "retain": 1,
+          "quantum": 10000
+        }
+      }
+    },
+    "IOA": {
+      "name": "Indian Ocean Territories",
+      "layers": {
+        "admin1": {
+          "file": "data/admin1/IOA.topo.json",
+          "units": 2,
+          "bytes": 1072,
+          "resolution": "10m",
+          "retain": 1,
+          "quantum": 100000
+        }
+      }
+    },
+    "IOT": {
+      "name": "British Indian Ocean Territory",
+      "layers": {
+        "admin1": {
+          "file": "data/admin1/IOT.topo.json",
+          "units": 1,
+          "bytes": 1590,
+          "resolution": "10m",
+          "retain": 1,
+          "quantum": 100000
+        }
+      }
+    },
+    "IRL": {
+      "name": "Ireland",
+      "layers": {
+        "admin1": {
+          "file": "data/admin1/IRL.topo.json",
+          "units": 34,
+          "bytes": 58802,
+          "resolution": "10m",
+          "retain": 1,
+          "quantum": 100000
+        }
+      }
+    },
+    "IRN": {
+      "name": "Iran",
+      "layers": {
+        "admin1": {
+          "file": "data/admin1/IRN.topo.json",
+          "units": 31,
+          "bytes": 49664,
+          "resolution": "10m",
+          "retain": 1,
+          "quantum": 100000
+        }
+      }
+    },
+    "IRQ": {
+      "name": "Iraq",
+      "layers": {
+        "admin1": {
+          "file": "data/admin1/IRQ.topo.json",
+          "units": 18,
+          "bytes": 31458,
+          "resolution": "10m",
+          "retain": 1,
+          "quantum": 100000
+        }
+      }
+    },
+    "ISL": {
+      "name": "Iceland",
+      "layers": {
+        "admin1": {
+          "file": "data/admin1/ISL.topo.json",
+          "units": 9,
+          "bytes": 38764,
+          "resolution": "10m",
+          "retain": 1,
+          "quantum": 100000
+        }
+      }
+    },
+    "ISR": {
+      "name": "Israel",
+      "layers": {
+        "admin1": {
+          "file": "data/admin1/ISR.topo.json",
+          "units": 6,
+          "bytes": 10304,
+          "resolution": "10m",
+          "retain": 1,
+          "quantum": 100000
+        }
+      }
+    },
+    "ITA": {
+      "name": "Italy",
+      "layers": {
+        "admin1": {
+          "file": "data/admin1/ITA.topo.json",
+          "units": 110,
+          "bytes": 128555,
+          "resolution": "10m",
+          "retain": 1,
+          "quantum": 100000
+        }
+      }
+    },
+    "JAM": {
+      "name": "Jamaica",
+      "layers": {
+        "admin1": {
+          "file": "data/admin1/JAM.topo.json",
+          "units": 14,
+          "bytes": 9113,
+          "resolution": "10m",
+          "retain": 1,
+          "quantum": 100000
+        }
+      }
+    },
+    "JEY": {
+      "name": "Jersey",
+      "layers": {
+        "admin1": {
+          "file": "data/admin1/JEY.topo.json",
+          "units": 1,
+          "bytes": 953,
+          "resolution": "10m",
+          "retain": 1,
+          "quantum": 100000
+        }
+      }
+    },
+    "JOR": {
+      "name": "Jordan",
+      "layers": {
+        "admin1": {
+          "file": "data/admin1/JOR.topo.json",
+          "units": 12,
+          "bytes": 9744,
+          "resolution": "10m",
+          "retain": 1,
+          "quantum": 100000
+        }
+      }
+    },
+    "JPN": {
+      "name": "Japan",
+      "layers": {
+        "admin1": {
+          "file": "data/admin1/JPN.topo.json",
+          "units": 47,
+          "bytes": 99169,
+          "resolution": "10m",
+          "retain": 1,
+          "quantum": 100000
+        }
+      }
+    },
+    "KAB": {
+      "name": "Baykonur Cosmodrome",
+      "layers": {
+        "admin1": {
+          "file": "data/admin1/KAB.topo.json",
+          "units": 1,
+          "bytes": 1197,
+          "resolution": "10m",
+          "retain": 1,
+          "quantum": 100000
+        }
+      }
+    },
+    "KAS": {
+      "name": "Siachen Glacier",
+      "layers": {
+        "admin1": {
+          "file": "data/admin1/KAS.topo.json",
+          "units": 1,
+          "bytes": 820,
+          "resolution": "10m",
+          "retain": 1,
+          "quantum": 100000
+        }
+      }
+    },
+    "KAZ": {
+      "name": "Kazakhstan",
+      "layers": {
+        "admin1": {
+          "file": "data/admin1/KAZ.topo.json",
+          "units": 16,
+          "bytes": 53143,
+          "resolution": "10m",
+          "retain": 1,
+          "quantum": 100000
+        }
+      }
+    },
+    "KEN": {
+      "name": "Kenya",
+      "layers": {
+        "admin1": {
+          "file": "data/admin1/KEN.topo.json",
+          "units": 8,
+          "bytes": 27405,
+          "resolution": "10m",
+          "retain": 1,
+          "quantum": 100000
+        }
+      }
+    },
+    "KGZ": {
+      "name": "Kyrgyzstan",
+      "layers": {
+        "admin1": {
+          "file": "data/admin1/KGZ.topo.json",
+          "units": 8,
+          "bytes": 25579,
+          "resolution": "10m",
+          "retain": 1,
+          "quantum": 100000
+        }
+      }
+    },
+    "KHM": {
+      "name": "Cambodia",
+      "layers": {
+        "admin1": {
+          "file": "data/admin1/KHM.topo.json",
+          "units": 24,
+          "bytes": 34294,
+          "resolution": "10m",
+          "retain": 1,
+          "quantum": 100000
+        }
+      }
+    },
+    "KIR": {
+      "name": "Kiribati",
+      "layers": {
+        "admin1": {
+          "file": "data/admin1/KIR.topo.json",
+          "units": 2,
+          "bytes": 6607,
+          "resolution": "10m",
+          "retain": 1,
+          "quantum": 100000
+        }
+      }
+    },
+    "KNA": {
+      "name": "Saint Kitts and Nevis",
+      "layers": {
+        "admin1": {
+          "file": "data/admin1/KNA.topo.json",
+          "units": 14,
+          "bytes": 4022,
+          "resolution": "10m",
+          "retain": 1,
+          "quantum": 100000
+        }
+      }
+    },
+    "KOR": {
+      "name": "South Korea",
+      "layers": {
+        "admin1": {
+          "file": "data/admin1/KOR.topo.json",
+          "units": 17,
+          "bytes": 42773,
+          "resolution": "10m",
+          "retain": 1,
+          "quantum": 100000
+        }
+      }
+    },
+    "KOS": {
+      "name": "Kosovo",
+      "layers": {
+        "admin1": {
+          "file": "data/admin1/KOS.topo.json",
+          "units": 30,
+          "bytes": 13898,
+          "resolution": "10m",
+          "retain": 1,
+          "quantum": 100000
+        }
+      }
+    },
+    "KWT": {
+      "name": "Kuwait",
+      "layers": {
+        "admin1": {
+          "file": "data/admin1/KWT.topo.json",
+          "units": 6,
+          "bytes": 4445,
+          "resolution": "10m",
+          "retain": 1,
+          "quantum": 100000
+        }
+      }
+    },
+    "LAO": {
+      "name": "Laos",
+      "layers": {
+        "admin1": {
+          "file": "data/admin1/LAO.topo.json",
+          "units": 17,
+          "bytes": 31295,
+          "resolution": "10m",
+          "retain": 1,
+          "quantum": 100000
+        }
+      }
+    },
+    "LBN": {
+      "name": "Lebanon",
+      "layers": {
+        "admin1": {
+          "file": "data/admin1/LBN.topo.json",
+          "units": 6,
+          "bytes": 8416,
+          "resolution": "10m",
+          "retain": 1,
+          "quantum": 100000
+        }
+      }
+    },
+    "LBR": {
+      "name": "Liberia",
+      "layers": {
+        "admin1": {
+          "file": "data/admin1/LBR.topo.json",
+          "units": 15,
+          "bytes": 23566,
+          "resolution": "10m",
+          "retain": 1,
+          "quantum": 100000
+        }
+      }
+    },
+    "LBY": {
+      "name": "Libya",
+      "layers": {
+        "admin1": {
+          "file": "data/admin1/LBY.topo.json",
+          "units": 22,
+          "bytes": 17815,
+          "resolution": "10m",
+          "retain": 1,
+          "quantum": 100000
+        }
+      }
+    },
+    "LCA": {
+      "name": "Saint Lucia",
+      "layers": {
+        "admin1": {
+          "file": "data/admin1/LCA.topo.json",
+          "units": 11,
+          "bytes": 3609,
+          "resolution": "10m",
+          "retain": 1,
+          "quantum": 100000
+        }
+      }
+    },
+    "LIE": {
+      "name": "Liechtenstein",
+      "layers": {
+        "admin1": {
+          "file": "data/admin1/LIE.topo.json",
+          "units": 11,
+          "bytes": 3862,
+          "resolution": "10m",
+          "retain": 1,
+          "quantum": 100000
+        }
+      }
+    },
+    "LKA": {
+      "name": "Sri Lanka",
+      "layers": {
+        "admin1": {
+          "file": "data/admin1/LKA.topo.json",
+          "units": 25,
+          "bytes": 26061,
+          "resolution": "10m",
+          "retain": 1,
+          "quantum": 100000
+        }
+      }
+    },
+    "LSO": {
+      "name": "Lesotho",
+      "layers": {
+        "admin1": {
+          "file": "data/admin1/LSO.topo.json",
+          "units": 10,
+          "bytes": 13478,
+          "resolution": "10m",
+          "retain": 1,
+          "quantum": 100000
+        }
+      }
+    },
+    "LTU": {
+      "name": "Lithuania",
+      "layers": {
+        "admin1": {
+          "file": "data/admin1/LTU.topo.json",
+          "units": 10,
+          "bytes": 21705,
+          "resolution": "10m",
+          "retain": 1,
+          "quantum": 100000
+        }
+      }
+    },
+    "LUX": {
+      "name": "Luxembourg",
+      "layers": {
+        "admin1": {
+          "file": "data/admin1/LUX.topo.json",
+          "units": 3,
+          "bytes": 3816,
+          "resolution": "10m",
+          "retain": 1,
+          "quantum": 100000
+        }
+      }
+    },
+    "LVA": {
+      "name": "Latvia",
+      "layers": {
+        "admin1": {
+          "file": "data/admin1/LVA.topo.json",
+          "units": 119,
+          "bytes": 60313,
+          "resolution": "10m",
+          "retain": 1,
+          "quantum": 100000
+        }
+      }
+    },
+    "MAC": {
+      "name": "Macau S.A.R",
+      "layers": {
+        "admin1": {
+          "file": "data/admin1/MAC.topo.json",
+          "units": 1,
+          "bytes": 1485,
+          "resolution": "10m",
+          "retain": 1,
+          "quantum": 100000
+        }
+      }
+    },
+    "MAF": {
+      "name": "Saint Martin",
+      "layers": {
+        "admin1": {
+          "file": "data/admin1/MAF.topo.json",
+          "units": 1,
+          "bytes": 632,
+          "resolution": "10m",
+          "retain": 1,
+          "quantum": 100000
+        }
+      }
+    },
+    "MAR": {
+      "name": "Morocco",
+      "layers": {
+        "admin1": {
+          "file": "data/admin1/MAR.topo.json",
+          "units": 16,
+          "bytes": 21637,
+          "resolution": "10m",
+          "retain": 1,
+          "quantum": 100000
+        }
+      }
+    },
+    "MCO": {
+      "name": "Monaco",
+      "layers": {
+        "admin1": {
+          "file": "data/admin1/MCO.topo.json",
+          "units": 1,
+          "bytes": 506,
+          "resolution": "10m",
+          "retain": 1,
+          "quantum": 100000
+        }
+      }
+    },
+    "MDA": {
+      "name": "Moldova",
+      "layers": {
+        "admin1": {
+          "file": "data/admin1/MDA.topo.json",
+          "units": 40,
+          "bytes": 25838,
+          "resolution": "10m",
+          "retain": 1,
+          "quantum": 100000
+        }
+      }
+    },
+    "MDG": {
+      "name": "Madagascar",
+      "layers": {
+        "admin1": {
+          "file": "data/admin1/MDG.topo.json",
+          "units": 22,
+          "bytes": 45406,
+          "resolution": "10m",
+          "retain": 1,
+          "quantum": 100000
+        }
+      }
+    },
+    "MDV": {
+      "name": "Maldives",
+      "layers": {
+        "admin1": {
+          "file": "data/admin1/MDV.topo.json",
+          "units": 21,
+          "bytes": 18413,
+          "resolution": "10m",
+          "retain": 1,
+          "quantum": 100000
+        }
+      }
+    },
+    "MEX": {
+      "name": "Mexico",
+      "layers": {
+        "admin1": {
+          "file": "data/admin1/MEX.topo.json",
+          "units": 33,
+          "bytes": 137683,
+          "resolution": "10m",
+          "retain": 1,
+          "quantum": 100000
+        }
+      }
+    },
+    "MHL": {
+      "name": "Marshall Islands",
+      "layers": {
+        "admin1": {
+          "file": "data/admin1/MHL.topo.json",
+          "units": 2,
+          "bytes": 2754,
+          "resolution": "10m",
+          "retain": 1,
+          "quantum": 100000
+        }
+      }
+    },
+    "MKD": {
+      "name": "Macedonia",
+      "layers": {
+        "admin1": {
+          "file": "data/admin1/MKD.topo.json",
+          "units": 84,
+          "bytes": 53757,
+          "resolution": "10m",
+          "retain": 1,
+          "quantum": 100000
+        }
+      }
+    },
+    "MLI": {
+      "name": "Mali",
+      "layers": {
+        "admin1": {
+          "file": "data/admin1/MLI.topo.json",
+          "units": 9,
+          "bytes": 23832,
+          "resolution": "10m",
+          "retain": 1,
+          "quantum": 100000
+        }
+      }
+    },
+    "MLT": {
+      "name": "Malta",
+      "layers": {
+        "admin1": {
+          "file": "data/admin1/MLT.topo.json",
+          "units": 68,
+          "bytes": 18294,
+          "resolution": "10m",
+          "retain": 1,
+          "quantum": 100000
+        }
+      }
+    },
+    "MMR": {
+      "name": "Myanmar",
+      "layers": {
+        "admin1": {
+          "file": "data/admin1/MMR.topo.json",
+          "units": 14,
+          "bytes": 73774,
+          "resolution": "10m",
+          "retain": 1,
+          "quantum": 100000
+        }
+      }
+    },
+    "MNE": {
+      "name": "Montenegro",
+      "layers": {
+        "admin1": {
+          "file": "data/admin1/MNE.topo.json",
+          "units": 21,
+          "bytes": 11831,
+          "resolution": "10m",
+          "retain": 1,
+          "quantum": 100000
+        }
+      }
+    },
+    "MNG": {
+      "name": "Mongolia",
+      "layers": {
+        "admin1": {
+          "file": "data/admin1/MNG.topo.json",
+          "units": 22,
+          "bytes": 40062,
+          "resolution": "10m",
+          "retain": 1,
+          "quantum": 100000
+        }
+      }
+    },
+    "MNP": {
+      "name": "Northern Mariana Islands",
+      "layers": {
+        "admin1": {
+          "file": "data/admin1/MNP.topo.json",
+          "units": 4,
+          "bytes": 2790,
+          "resolution": "10m",
+          "retain": 1,
+          "quantum": 100000
+        }
+      }
+    },
+    "MOZ": {
+      "name": "Mozambique",
+      "layers": {
+        "admin1": {
+          "file": "data/admin1/MOZ.topo.json",
+          "units": 11,
+          "bytes": 41993,
+          "resolution": "10m",
+          "retain": 1,
+          "quantum": 100000
+        }
+      }
+    },
+    "MRT": {
+      "name": "Mauritania",
+      "layers": {
+        "admin1": {
+          "file": "data/admin1/MRT.topo.json",
+          "units": 13,
+          "bytes": 17497,
+          "resolution": "10m",
+          "retain": 1,
+          "quantum": 100000
+        }
+      }
+    },
+    "MSR": {
+      "name": "Montserrat",
+      "layers": {
+        "admin1": {
+          "file": "data/admin1/MSR.topo.json",
+          "units": 3,
+          "bytes": 1129,
+          "resolution": "10m",
+          "retain": 1,
+          "quantum": 100000
+        }
+      }
+    },
+    "MUS": {
+      "name": "Mauritius",
+      "layers": {
+        "admin1": {
+          "file": "data/admin1/MUS.topo.json",
+          "units": 16,
+          "bytes": 5163,
+          "resolution": "10m",
+          "retain": 1,
+          "quantum": 100000
+        }
+      }
+    },
+    "MWI": {
+      "name": "Malawi",
+      "layers": {
+        "admin1": {
+          "file": "data/admin1/MWI.topo.json",
+          "units": 28,
+          "bytes": 26515,
+          "resolution": "10m",
+          "retain": 1,
+          "quantum": 100000
+        }
+      }
+    },
+    "MYS": {
+      "name": "Malaysia",
+      "layers": {
+        "admin1": {
+          "file": "data/admin1/MYS.topo.json",
+          "units": 16,
+          "bytes": 44440,
+          "resolution": "10m",
+          "retain": 1,
+          "quantum": 100000
+        }
+      }
+    },
+    "NAM": {
+      "name": "Namibia",
+      "layers": {
+        "admin1": {
+          "file": "data/admin1/NAM.topo.json",
+          "units": 13,
+          "bytes": 26364,
+          "resolution": "10m",
+          "retain": 1,
+          "quantum": 100000
+        }
+      }
+    },
+    "NCL": {
+      "name": "New Caledonia",
+      "layers": {
+        "admin1": {
+          "file": "data/admin1/NCL.topo.json",
+          "units": 3,
+          "bytes": 11887,
+          "resolution": "10m",
+          "retain": 1,
+          "quantum": 100000
+        }
+      }
+    },
+    "NER": {
+      "name": "Niger",
+      "layers": {
+        "admin1": {
+          "file": "data/admin1/NER.topo.json",
+          "units": 8,
+          "bytes": 16367,
+          "resolution": "10m",
+          "retain": 1,
+          "quantum": 100000
+        }
+      }
+    },
+    "NFK": {
+      "name": "Norfolk Island",
+      "layers": {
+        "admin1": {
+          "file": "data/admin1/NFK.topo.json",
+          "units": 1,
+          "bytes": 708,
+          "resolution": "10m",
+          "retain": 1,
+          "quantum": 100000
+        }
+      }
+    },
+    "NGA": {
+      "name": "Nigeria",
+      "layers": {
+        "admin1": {
+          "file": "data/admin1/NGA.topo.json",
+          "units": 37,
+          "bytes": 48971,
+          "resolution": "10m",
+          "retain": 1,
+          "quantum": 100000
+        }
+      }
+    },
+    "NIC": {
+      "name": "Nicaragua",
+      "layers": {
+        "admin1": {
+          "file": "data/admin1/NIC.topo.json",
+          "units": 17,
+          "bytes": 23432,
+          "resolution": "10m",
+          "retain": 1,
+          "quantum": 100000
+        }
+      }
+    },
+    "NIU": {
+      "name": "Niue",
+      "layers": {
+        "admin1": {
+          "file": "data/admin1/NIU.topo.json",
+          "units": 1,
+          "bytes": 826,
+          "resolution": "10m",
+          "retain": 1,
+          "quantum": 100000
+        }
+      }
+    },
+    "NLD": {
+      "name": "Netherlands",
+      "layers": {
+        "admin1": {
+          "file": "data/admin1/NLD.topo.json",
+          "units": 15,
+          "bytes": 16330,
+          "resolution": "10m",
+          "retain": 1,
+          "quantum": 100000
+        }
+      }
+    },
+    "NOR": {
+      "name": "Norway",
+      "layers": {
+        "admin1": {
+          "file": "data/admin1/NOR.topo.json",
+          "units": 21,
+          "bytes": 149242,
+          "resolution": "10m",
+          "retain": 1,
+          "quantum": 100000
+        }
+      }
+    },
+    "NPL": {
+      "name": "Nepal",
+      "layers": {
+        "admin1": {
+          "file": "data/admin1/NPL.topo.json",
+          "units": 14,
+          "bytes": 25264,
+          "resolution": "10m",
+          "retain": 1,
+          "quantum": 100000
+        }
+      }
+    },
+    "NRU": {
+      "name": "Nauru",
+      "layers": {
+        "admin1": {
+          "file": "data/admin1/NRU.topo.json",
+          "units": 14,
+          "bytes": 2950,
+          "resolution": "10m",
+          "retain": 1,
+          "quantum": 100000
+        }
+      }
+    },
+    "NZL": {
+      "name": "New Zealand",
+      "layers": {
+        "admin1": {
+          "file": "data/admin1/NZL.topo.json",
+          "units": 24,
+          "bytes": 47865,
+          "resolution": "10m",
+          "retain": 1,
+          "quantum": 100000
+        }
+      }
+    },
+    "OMN": {
+      "name": "Oman",
+      "layers": {
+        "admin1": {
+          "file": "data/admin1/OMN.topo.json",
+          "units": 11,
+          "bytes": 13724,
+          "resolution": "10m",
+          "retain": 1,
+          "quantum": 100000
+        }
+      }
+    },
+    "PAK": {
+      "name": "Pakistan",
+      "layers": {
+        "admin1": {
+          "file": "data/admin1/PAK.topo.json",
+          "units": 8,
+          "bytes": 43528,
+          "resolution": "10m",
+          "retain": 1,
+          "quantum": 100000
+        }
+      }
+    },
+    "PAN": {
+      "name": "Panama",
+      "layers": {
+        "admin1": {
+          "file": "data/admin1/PAN.topo.json",
+          "units": 12,
+          "bytes": 32127,
+          "resolution": "10m",
+          "retain": 1,
+          "quantum": 100000
+        }
+      }
+    },
+    "PCN": {
+      "name": "Pitcairn Islands",
+      "layers": {
+        "admin1": {
+          "file": "data/admin1/PCN.topo.json",
+          "units": 1,
+          "bytes": 798,
+          "resolution": "10m",
+          "retain": 1,
+          "quantum": 100000
+        }
+      }
+    },
+    "PER": {
+      "name": "Peru",
+      "layers": {
+        "admin1": {
+          "file": "data/admin1/PER.topo.json",
+          "units": 26,
+          "bytes": 60158,
+          "resolution": "10m",
+          "retain": 1,
+          "quantum": 100000
+        }
+      }
+    },
+    "PGA": {
+      "name": "Spratly Is.",
+      "layers": {
+        "admin1": {
+          "file": "data/admin1/PGA.topo.json",
+          "units": 1,
+          "bytes": 1485,
+          "resolution": "10m",
+          "retain": 1,
+          "quantum": 100000
+        }
+      }
+    },
+    "PHL": {
+      "name": "Philippines",
+      "layers": {
+        "admin1": {
+          "file": "data/admin1/PHL.topo.json",
+          "units": 118,
+          "bytes": 115665,
+          "resolution": "10m",
+          "retain": 1,
+          "quantum": 100000
+        }
+      }
+    },
+    "PLW": {
+      "name": "Palau",
+      "layers": {
+        "admin1": {
+          "file": "data/admin1/PLW.topo.json",
+          "units": 16,
+          "bytes": 4441,
+          "resolution": "10m",
+          "retain": 1,
+          "quantum": 100000
+        }
+      }
+    },
+    "PNG": {
+      "name": "Papua New Guinea",
+      "layers": {
+        "admin1": {
+          "file": "data/admin1/PNG.topo.json",
+          "units": 20,
+          "bytes": 58050,
+          "resolution": "10m",
+          "retain": 1,
+          "quantum": 100000
+        }
+      }
+    },
+    "POL": {
+      "name": "Poland",
+      "layers": {
+        "admin1": {
+          "file": "data/admin1/POL.topo.json",
+          "units": 16,
+          "bytes": 28051,
+          "resolution": "10m",
+          "retain": 1,
+          "quantum": 100000
+        }
+      }
+    },
+    "PRI": {
+      "name": "Puerto Rico",
+      "layers": {
+        "admin1": {
+          "file": "data/admin1/PRI.topo.json",
+          "units": 1,
+          "bytes": 3916,
+          "resolution": "10m",
+          "retain": 1,
+          "quantum": 100000
+        }
+      }
+    },
+    "PRK": {
+      "name": "North Korea",
+      "layers": {
+        "admin1": {
+          "file": "data/admin1/PRK.topo.json",
+          "units": 11,
+          "bytes": 33589,
+          "resolution": "10m",
+          "retain": 1,
+          "quantum": 100000
+        }
+      }
+    },
+    "PRT": {
+      "name": "Portugal",
+      "layers": {
+        "admin1": {
+          "file": "data/admin1/PRT.topo.json",
+          "units": 20,
+          "bytes": 29477,
+          "resolution": "10m",
+          "retain": 1,
+          "quantum": 100000
+        }
+      }
+    },
+    "PRY": {
+      "name": "Paraguay",
+      "layers": {
+        "admin1": {
+          "file": "data/admin1/PRY.topo.json",
+          "units": 18,
+          "bytes": 31015,
+          "resolution": "10m",
+          "retain": 1,
+          "quantum": 100000
+        }
+      }
+    },
+    "PSX": {
+      "name": "Gaza Strip",
+      "layers": {
+        "admin1": {
+          "file": "data/admin1/PSX.topo.json",
+          "units": 2,
+          "bytes": 3117,
+          "resolution": "10m",
+          "retain": 1,
+          "quantum": 100000
+        }
+      }
+    },
+    "PYF": {
+      "name": "French Polynesia",
+      "layers": {
+        "admin1": {
+          "file": "data/admin1/PYF.topo.json",
+          "units": 5,
+          "bytes": 11661,
+          "resolution": "10m",
+          "retain": 1,
+          "quantum": 100000
+        }
+      }
+    },
+    "QAT": {
+      "name": "Qatar",
+      "layers": {
+        "admin1": {
+          "file": "data/admin1/QAT.topo.json",
+          "units": 7,
+          "bytes": 4926,
+          "resolution": "10m",
+          "retain": 1,
+          "quantum": 100000
+        }
+      }
+    },
+    "ROU": {
+      "name": "Romania",
+      "layers": {
+        "admin1": {
+          "file": "data/admin1/ROU.topo.json",
+          "units": 42,
+          "bytes": 54151,
+          "resolution": "10m",
+          "retain": 1,
+          "quantum": 100000
+        }
+      }
+    },
+    "RUS": {
+      "name": "Russia",
+      "layers": {
+        "admin1": {
+          "file": "data/admin1/RUS.topo.json",
+          "units": 86,
+          "bytes": 225397,
+          "resolution": "10m",
+          "retain": 0.35,
+          "quantum": 5000
+        }
+      }
+    },
+    "RWA": {
+      "name": "Rwanda",
+      "layers": {
+        "admin1": {
+          "file": "data/admin1/RWA.topo.json",
+          "units": 5,
+          "bytes": 7789,
+          "resolution": "10m",
+          "retain": 1,
+          "quantum": 100000
+        }
+      }
+    },
+    "SAH": {
+      "name": "Western Sahara",
+      "layers": {
+        "admin1": {
+          "file": "data/admin1/SAH.topo.json",
+          "units": 1,
+          "bytes": 3360,
+          "resolution": "10m",
+          "retain": 1,
+          "quantum": 100000
+        }
+      }
+    },
+    "SAU": {
+      "name": "Saudi Arabia",
+      "layers": {
+        "admin1": {
+          "file": "data/admin1/SAU.topo.json",
+          "units": 13,
+          "bytes": 38443,
+          "resolution": "10m",
+          "retain": 1,
+          "quantum": 100000
+        }
+      }
+    },
+    "SDN": {
+      "name": "Sudan",
+      "layers": {
+        "admin1": {
+          "file": "data/admin1/SDN.topo.json",
+          "units": 17,
+          "bytes": 23060,
+          "resolution": "10m",
+          "retain": 1,
+          "quantum": 100000
+        }
+      }
+    },
+    "SDS": {
+      "name": "S. Sudan",
+      "layers": {
+        "admin1": {
+          "file": "data/admin1/SDS.topo.json",
+          "units": 10,
+          "bytes": 19558,
+          "resolution": "10m",
+          "retain": 1,
+          "quantum": 100000
+        }
+      }
+    },
+    "SEN": {
+      "name": "Senegal",
+      "layers": {
+        "admin1": {
+          "file": "data/admin1/SEN.topo.json",
+          "units": 14,
+          "bytes": 26675,
+          "resolution": "10m",
+          "retain": 1,
+          "quantum": 100000
+        }
+      }
+    },
+    "SGP": {
+      "name": "Singapore",
+      "layers": {
+        "admin1": {
+          "file": "data/admin1/SGP.topo.json",
+          "units": 5,
+          "bytes": 2303,
+          "resolution": "10m",
+          "retain": 1,
+          "quantum": 100000
+        }
+      }
+    },
+    "SGS": {
+      "name": "South Georgia and the Islands",
+      "layers": {
+        "admin1": {
+          "file": "data/admin1/SGS.topo.json",
+          "units": 1,
+          "bytes": 6775,
+          "resolution": "10m",
+          "retain": 1,
+          "quantum": 100000
+        }
+      }
+    },
+    "SHN": {
+      "name": "Saint Helena",
+      "layers": {
+        "admin1": {
+          "file": "data/admin1/SHN.topo.json",
+          "units": 3,
+          "bytes": 1372,
+          "resolution": "10m",
+          "retain": 1,
+          "quantum": 100000
+        }
+      }
+    },
+    "SLB": {
+      "name": "Solomon Islands",
+      "layers": {
+        "admin1": {
+          "file": "data/admin1/SLB.topo.json",
+          "units": 10,
+          "bytes": 23695,
+          "resolution": "10m",
+          "retain": 1,
+          "quantum": 100000
+        }
+      }
+    },
+    "SLE": {
+      "name": "Sierra Leone",
+      "layers": {
+        "admin1": {
+          "file": "data/admin1/SLE.topo.json",
+          "units": 4,
+          "bytes": 12458,
+          "resolution": "10m",
+          "retain": 1,
+          "quantum": 100000
+        }
+      }
+    },
+    "SLV": {
+      "name": "El Salvador",
+      "layers": {
+        "admin1": {
+          "file": "data/admin1/SLV.topo.json",
+          "units": 14,
+          "bytes": 17069,
+          "resolution": "10m",
+          "retain": 1,
+          "quantum": 100000
+        }
+      }
+    },
+    "SMR": {
+      "name": "San Marino",
+      "layers": {
+        "admin1": {
+          "file": "data/admin1/SMR.topo.json",
+          "units": 9,
+          "bytes": 2741,
+          "resolution": "10m",
+          "retain": 1,
+          "quantum": 100000
+        }
+      }
+    },
+    "SOL": {
+      "name": "Somaliland",
+      "layers": {
+        "admin1": {
+          "file": "data/admin1/SOL.topo.json",
+          "units": 1,
+          "bytes": 3813,
+          "resolution": "10m",
+          "retain": 1,
+          "quantum": 100000
+        }
+      }
+    },
+    "SOM": {
+      "name": "Somalia",
+      "layers": {
+        "admin1": {
+          "file": "data/admin1/SOM.topo.json",
+          "units": 13,
+          "bytes": 10660,
+          "resolution": "10m",
+          "retain": 1,
+          "quantum": 100000
+        }
+      }
+    },
+    "SPM": {
+      "name": "Saint Pierre and Miquelon",
+      "layers": {
+        "admin1": {
+          "file": "data/admin1/SPM.topo.json",
+          "units": 2,
+          "bytes": 1554,
+          "resolution": "10m",
+          "retain": 1,
+          "quantum": 100000
+        }
+      }
+    },
+    "SRB": {
+      "name": "Republic of Serbia",
+      "layers": {
+        "admin1": {
+          "file": "data/admin1/SRB.topo.json",
+          "units": 25,
+          "bytes": 74109,
+          "resolution": "10m",
+          "retain": 1,
+          "quantum": 100000
+        }
+      }
+    },
+    "STP": {
+      "name": "Sao Tome and Principe",
+      "layers": {
+        "admin1": {
+          "file": "data/admin1/STP.topo.json",
+          "units": 2,
+          "bytes": 1562,
+          "resolution": "10m",
+          "retain": 1,
+          "quantum": 100000
+        }
+      }
+    },
+    "SUR": {
+      "name": "Suriname",
+      "layers": {
+        "admin1": {
+          "file": "data/admin1/SUR.topo.json",
+          "units": 10,
+          "bytes": 14205,
+          "resolution": "10m",
+          "retain": 1,
+          "quantum": 100000
+        }
+      }
+    },
+    "SVK": {
+      "name": "Slovakia",
+      "layers": {
+        "admin1": {
+          "file": "data/admin1/SVK.topo.json",
+          "units": 8,
+          "bytes": 22536,
+          "resolution": "10m",
+          "retain": 1,
+          "quantum": 100000
+        }
+      }
+    },
+    "SVN": {
+      "name": "Slovenia",
+      "layers": {
+        "admin1": {
+          "file": "data/admin1/SVN.topo.json",
+          "units": 193,
+          "bytes": 77128,
+          "resolution": "10m",
+          "retain": 1,
+          "quantum": 100000
+        }
+      }
+    },
+    "SWE": {
+      "name": "Sweden",
+      "layers": {
+        "admin1": {
+          "file": "data/admin1/SWE.topo.json",
+          "units": 21,
+          "bytes": 66267,
+          "resolution": "10m",
+          "retain": 1,
+          "quantum": 100000
+        }
+      }
+    },
+    "SWZ": {
+      "name": "Swaziland",
+      "layers": {
+        "admin1": {
+          "file": "data/admin1/SWZ.topo.json",
+          "units": 4,
+          "bytes": 4748,
+          "resolution": "10m",
+          "retain": 1,
+          "quantum": 100000
+        }
+      }
+    },
+    "SXM": {
+      "name": "Sint Maarten",
+      "layers": {
+        "admin1": {
+          "file": "data/admin1/SXM.topo.json",
+          "units": 1,
+          "bytes": 475,
+          "resolution": "10m",
+          "retain": 1,
+          "quantum": 100000
+        }
+      }
+    },
+    "SYC": {
+      "name": "Seychelles",
+      "layers": {
+        "admin1": {
+          "file": "data/admin1/SYC.topo.json",
+          "units": 26,
+          "bytes": 8336,
+          "resolution": "10m",
+          "retain": 1,
+          "quantum": 100000
+        }
+      }
+    },
+    "SYR": {
+      "name": "Syria",
+      "layers": {
+        "admin1": {
+          "file": "data/admin1/SYR.topo.json",
+          "units": 15,
+          "bytes": 23075,
+          "resolution": "10m",
+          "retain": 1,
+          "quantum": 100000
+        }
+      }
+    },
+    "TCA": {
+      "name": "Turks and Caicos Islands",
+      "layers": {
+        "admin1": {
+          "file": "data/admin1/TCA.topo.json",
+          "units": 6,
+          "bytes": 3454,
+          "resolution": "10m",
+          "retain": 1,
+          "quantum": 100000
+        }
+      }
+    },
+    "TCD": {
+      "name": "Chad",
+      "layers": {
+        "admin1": {
+          "file": "data/admin1/TCD.topo.json",
+          "units": 22,
+          "bytes": 33895,
+          "resolution": "10m",
+          "retain": 1,
+          "quantum": 100000
+        }
+      }
+    },
+    "TGO": {
+      "name": "Togo",
+      "layers": {
+        "admin1": {
+          "file": "data/admin1/TGO.topo.json",
+          "units": 5,
+          "bytes": 9607,
+          "resolution": "10m",
+          "retain": 1,
+          "quantum": 100000
+        }
+      }
+    },
+    "THA": {
+      "name": "Thailand",
+      "layers": {
+        "admin1": {
+          "file": "data/admin1/THA.topo.json",
+          "units": 77,
+          "bytes": 151850,
+          "resolution": "10m",
+          "retain": 1,
+          "quantum": 100000
+        }
+      }
+    },
+    "TJK": {
+      "name": "Tajikistan",
+      "layers": {
+        "admin1": {
+          "file": "data/admin1/TJK.topo.json",
+          "units": 5,
+          "bytes": 20242,
+          "resolution": "10m",
+          "retain": 1,
+          "quantum": 100000
+        }
+      }
+    },
+    "TKM": {
+      "name": "Turkmenistan",
+      "layers": {
+        "admin1": {
+          "file": "data/admin1/TKM.topo.json",
+          "units": 5,
+          "bytes": 21762,
+          "resolution": "10m",
+          "retain": 1,
+          "quantum": 100000
+        }
+      }
+    },
+    "TLS": {
+      "name": "East Timor",
+      "layers": {
+        "admin1": {
+          "file": "data/admin1/TLS.topo.json",
+          "units": 13,
+          "bytes": 8236,
+          "resolution": "10m",
+          "retain": 1,
+          "quantum": 100000
+        }
+      }
+    },
+    "TON": {
+      "name": "Tonga",
+      "layers": {
+        "admin1": {
+          "file": "data/admin1/TON.topo.json",
+          "units": 5,
+          "bytes": 3181,
+          "resolution": "10m",
+          "retain": 1,
+          "quantum": 100000
+        }
+      }
+    },
+    "TTO": {
+      "name": "Trinidad and Tobago",
+      "layers": {
+        "admin1": {
+          "file": "data/admin1/TTO.topo.json",
+          "units": 16,
+          "bytes": 7207,
+          "resolution": "10m",
+          "retain": 1,
+          "quantum": 100000
+        }
+      }
+    },
+    "TUN": {
+      "name": "Tunisia",
+      "layers": {
+        "admin1": {
+          "file": "data/admin1/TUN.topo.json",
+          "units": 23,
+          "bytes": 26310,
+          "resolution": "10m",
+          "retain": 1,
+          "quantum": 100000
+        }
+      }
+    },
+    "TUR": {
+      "name": "Turkey",
+      "layers": {
+        "admin1": {
+          "file": "data/admin1/TUR.topo.json",
+          "units": 81,
+          "bytes": 82934,
+          "resolution": "10m",
+          "retain": 1,
+          "quantum": 100000
+        }
+      }
+    },
+    "TUV": {
+      "name": "Tuvalu",
+      "layers": {
+        "admin1": {
+          "file": "data/admin1/TUV.topo.json",
+          "units": 1,
+          "bytes": 1148,
+          "resolution": "10m",
+          "retain": 1,
+          "quantum": 100000
+        }
+      }
+    },
+    "TWN": {
+      "name": "Taiwan",
+      "layers": {
+        "admin1": {
+          "file": "data/admin1/TWN.topo.json",
+          "units": 21,
+          "bytes": 16591,
+          "resolution": "10m",
+          "retain": 1,
+          "quantum": 100000
+        }
+      }
+    },
+    "TZA": {
+      "name": "United Republic of Tanzania",
+      "layers": {
+        "admin1": {
+          "file": "data/admin1/TZA.topo.json",
+          "units": 30,
+          "bytes": 41954,
+          "resolution": "10m",
+          "retain": 1,
+          "quantum": 100000
+        }
+      }
+    },
+    "UGA": {
+      "name": "Uganda",
+      "layers": {
+        "admin1": {
+          "file": "data/admin1/UGA.topo.json",
+          "units": 112,
+          "bytes": 50888,
+          "resolution": "10m",
+          "retain": 1,
+          "quantum": 100000
+        }
+      }
+    },
+    "UKR": {
+      "name": "Ukraine",
+      "layers": {
+        "admin1": {
+          "file": "data/admin1/UKR.topo.json",
+          "units": 25,
+          "bytes": 108382,
+          "resolution": "10m",
+          "retain": 1,
+          "quantum": 100000
+        }
+      }
+    },
+    "UMI": {
+      "name": "United States Minor Outlying Islands",
+      "layers": {
+        "admin1": {
+          "file": "data/admin1/UMI.topo.json",
+          "units": 8,
+          "bytes": 2220,
+          "resolution": "10m",
+          "retain": 1,
+          "quantum": 1000000
+        }
+      }
+    },
+    "URY": {
+      "name": "Uruguay",
+      "layers": {
+        "admin1": {
+          "file": "data/admin1/URY.topo.json",
+          "units": 19,
+          "bytes": 27608,
+          "resolution": "10m",
+          "retain": 1,
+          "quantum": 100000
+        }
+      }
+    },
+    "USA": {
+      "name": "United States of America",
+      "layers": {
+        "admin1": {
+          "file": "data/admin1/USA.topo.json",
+          "units": 51,
+          "bytes": 120501,
+          "resolution": "10m",
+          "retain": 0.25,
+          "quantum": 100000
+        }
+      }
+    },
+    "USG": {
+      "name": "US Naval Base Guantanamo Bay",
+      "layers": {
+        "admin1": {
+          "file": "data/admin1/USG.topo.json",
+          "units": 1,
+          "bytes": 960,
+          "resolution": "10m",
+          "retain": 1,
+          "quantum": 100000
+        }
+      }
+    },
+    "UZB": {
+      "name": "Uzbekistan",
+      "layers": {
+        "admin1": {
+          "file": "data/admin1/UZB.topo.json",
+          "units": 14,
+          "bytes": 28840,
+          "resolution": "10m",
+          "retain": 1,
+          "quantum": 100000
+        }
+      }
+    },
+    "VAT": {
+      "name": "Vatican",
+      "layers": {
+        "admin1": {
+          "file": "data/admin1/VAT.topo.json",
+          "units": 1,
+          "bytes": 437,
+          "resolution": "10m",
+          "retain": 1,
+          "quantum": 100000
+        }
+      }
+    },
+    "VCT": {
+      "name": "Saint Vincent and the Grenadines",
+      "layers": {
+        "admin1": {
+          "file": "data/admin1/VCT.topo.json",
+          "units": 6,
+          "bytes": 2630,
+          "resolution": "10m",
+          "retain": 1,
+          "quantum": 100000
+        }
+      }
+    },
+    "VEN": {
+      "name": "Venezuela",
+      "layers": {
+        "admin1": {
+          "file": "data/admin1/VEN.topo.json",
+          "units": 26,
+          "bytes": 70599,
+          "resolution": "10m",
+          "retain": 1,
+          "quantum": 100000
+        }
+      }
+    },
+    "VGB": {
+      "name": "British Virgin Islands",
+      "layers": {
+        "admin1": {
+          "file": "data/admin1/VGB.topo.json",
+          "units": 1,
+          "bytes": 1556,
+          "resolution": "10m",
+          "retain": 1,
+          "quantum": 100000
+        }
+      }
+    },
+    "VIR": {
+      "name": "United States Virgin Islands",
+      "layers": {
+        "admin1": {
+          "file": "data/admin1/VIR.topo.json",
+          "units": 3,
+          "bytes": 1449,
+          "resolution": "10m",
+          "retain": 1,
+          "quantum": 100000
+        }
+      }
+    },
+    "VNM": {
+      "name": "Vietnam",
+      "layers": {
+        "admin1": {
+          "file": "data/admin1/VNM.topo.json",
+          "units": 63,
+          "bytes": 78846,
+          "resolution": "10m",
+          "retain": 1,
+          "quantum": 100000
+        }
+      }
+    },
+    "VUT": {
+      "name": "Vanuatu",
+      "layers": {
+        "admin1": {
+          "file": "data/admin1/VUT.topo.json",
+          "units": 6,
+          "bytes": 11904,
+          "resolution": "10m",
+          "retain": 1,
+          "quantum": 100000
+        }
+      }
+    },
+    "WLF": {
+      "name": "Wallis and Futuna",
+      "layers": {
+        "admin1": {
+          "file": "data/admin1/WLF.topo.json",
+          "units": 3,
+          "bytes": 1285,
+          "resolution": "10m",
+          "retain": 1,
+          "quantum": 100000
+        }
+      }
+    },
+    "WSB": {
+      "name": "Akrotiri Sovereign Base Area",
+      "layers": {
+        "admin1": {
+          "file": "data/admin1/WSB.topo.json",
+          "units": 1,
+          "bytes": 937,
+          "resolution": "10m",
+          "retain": 1,
+          "quantum": 100000
+        }
+      }
+    },
+    "WSM": {
+      "name": "Samoa",
+      "layers": {
+        "admin1": {
+          "file": "data/admin1/WSM.topo.json",
+          "units": 11,
+          "bytes": 4459,
+          "resolution": "10m",
+          "retain": 1,
+          "quantum": 100000
+        }
+      }
+    },
+    "YEM": {
+      "name": "Yemen",
+      "layers": {
+        "admin1": {
+          "file": "data/admin1/YEM.topo.json",
+          "units": 21,
+          "bytes": 25655,
+          "resolution": "10m",
+          "retain": 1,
+          "quantum": 100000
+        }
+      }
+    },
+    "ZAF": {
+      "name": "South Africa",
+      "layers": {
+        "admin1": {
+          "file": "data/admin1/ZAF.topo.json",
+          "units": 9,
+          "bytes": 40950,
+          "resolution": "10m",
+          "retain": 1,
+          "quantum": 100000
+        }
+      }
+    },
+    "ZMB": {
+      "name": "Zambia",
+      "layers": {
+        "admin1": {
+          "file": "data/admin1/ZMB.topo.json",
+          "units": 10,
+          "bytes": 38852,
+          "resolution": "10m",
+          "retain": 1,
+          "quantum": 100000
+        }
+      }
+    },
+    "ZWE": {
+      "name": "Zimbabwe",
+      "layers": {
+        "admin1": {
+          "file": "data/admin1/ZWE.topo.json",
+          "units": 10,
+          "bytes": 33290,
+          "resolution": "10m",
+          "retain": 1,
+          "quantum": 100000
+        }
+      }
+    }
+  }
+}

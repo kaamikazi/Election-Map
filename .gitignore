@@ -1,0 +1,8 @@
+node_modules/
+data/raw/
+test-results/
+playwright-report/
+*.log
+tests/.tmp/
+tests/shots/
+build/
