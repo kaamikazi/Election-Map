@@ -71,10 +71,16 @@ async function ready() {
 
 async function drawPreview() {
   if (!(await ready())) return;
-  const cv = composite(outW, outH, options());
   const pv = $('#preview');
   pv.width = outW; pv.height = outH;
-  pv.getContext('2d').drawImage(cv, 0, 0);
+  try {
+    pv.getContext('2d').drawImage(composite(outW, outH, options()), 0, 0);
+  } catch (err) { exportError(err); }
+}
+
+function exportError(err) {
+  $('#exportWarn').innerHTML = `<ul class="warns"><li>${esc(err.message)}</li></ul>`;
+  toast(`Export stopped: ${err.message}`);
 }
 
 export function initExportDialog() {
@@ -99,10 +105,12 @@ export function initExportDialog() {
 
   $('#btnPng').addEventListener('click', async () => {
     if (!(await ready())) return;
-    composite(outW * PNG_SCALE, outH * PNG_SCALE, options()).toBlob((b) => {
-      dl(b, slug('election-map') + '.png');
-      toast('PNG downloaded');
-    }, 'image/png');
+    try {
+      composite(outW * PNG_SCALE, outH * PNG_SCALE, options()).toBlob((b) => {
+        dl(b, slug('election-map') + '.png');
+        toast('PNG downloaded');
+      }, 'image/png');
+    } catch (err) { exportError(err); }
   });
 
   $('#btnCopy').addEventListener('click', async () => {

@@ -2,10 +2,13 @@
 
 import { $ } from './dom.js';
 import { toast } from './toast.js';
-import { state, REGIONS, reserveIds, clearAssignments, emit, pushHistory,
-         toDocument, migrate, undo, canUndo } from '../state.js';
+import { state, REGIONS, clearAssignments, emit, pushHistory,
+         toDocument, undo, canUndo } from '../state.js';
 import { clamp } from '../geo.js';
 import { dl, slug } from '../export.js';
+import { restoreDocument } from '../restore.js';
+
+const undoMap = () => Promise.resolve().then(() => undo()).catch((err) => toast(`Undo failed: ${err.message}`));
 
 export function initControls() {
   /* ---- projection: the header control, and the phone's copy in Map style ---- */
@@ -55,22 +58,25 @@ export function initControls() {
 
   /* ---- undo: in the header, and in the sheet where the header has no room ---- */
   document.addEventListener('click', (e) => {
-    if (e.target.closest('[data-act="undo"]')) undo();
+    if (e.target.closest('[data-act="undo"]')) undoMap();
   });
 
   /* ---- flags ---- */
   $('#clearFlags').addEventListener('click', () => {
     if (!Object.keys(state.flagged).length) return;
-    pushHistory();
+    pushHistory('flags');
     state.flagged = {};
     emit('assign');
     toast('Flags cleared');
   });
   document.addEventListener('keydown', (e) => {
-    if ((e.metaKey || e.ctrlKey) && e.key.toLowerCase() === 'z') {
-      e.preventDefault();
-      undo();
-    }
+    if (!(e.metaKey || e.ctrlKey) || e.key.toLowerCase() !== 'z') return;
+    // Inside a text field, Ctrl+Z belongs to the field: it undoes typing, and
+    // must never reach past it to undo a paint or an import.
+    const t = e.target;
+    if (t && (t.isContentEditable || t.closest('input, textarea, select, [contenteditable]'))) return;
+    e.preventDefault();
+    undoMap();
   });
 
   /* ---- your work ---- */
@@ -93,13 +99,10 @@ export function initControls() {
     try {
       // v1 files carry no version field and store a bare party id per country;
       // migrate() turns those into records so they load unchanged.
-      Object.assign(state, migrate(JSON.parse(await f.text())));
-      reserveIds(state.parties.map((p) => p.id));
-      syncFormFromState();
-      emit('parties');
+      await restoreDocument(JSON.parse(await f.text()));
       toast('Map loaded');
     } catch (err) {
-      toast('That file could not be read');
+      toast(`Map not loaded: ${err.message}`);
     }
     e.target.value = '';
   });

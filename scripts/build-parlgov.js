@@ -28,6 +28,7 @@ const RAW = path.join(ROOT, 'data', 'raw', 'parlgov');
 const OUT = path.join(ROOT, 'public', 'data');
 const ELECTIONS = path.join(OUT, 'elections');
 const WORLD = path.join(OUT, 'world-50m.topo.json');
+const COVERAGE = JSON.parse(fs.readFileSync(path.join(ROOT, 'data', 'parlgov-coverage.json'), 'utf8'));
 
 /**
  * ParlGov 2024 is released CC0 1.0, so attribution is not a licence condition —
@@ -200,6 +201,18 @@ function buildGoverning(rows, parties) {
     intervals.forEach((cab, i) => {
       const next = intervals[i + 1];
       cab.to = next ? next.from : null;
+      cab.endBasis = next ? 'next recorded cabinet; continuity not independently audited' : 'open at release cutoff';
+      const correction = COVERAGE.intervals.find((x) => x.iso3 === iso3 && x.id === cab.id);
+      if (correction) {
+        if (cab.from !== correction.from || cab.to !== correction.nextRecorded ||
+            correction.coverageTo < cab.from || correction.coverageTo > cab.to || !correction.evidence.length) {
+          throw new Error(`Coverage evidence no longer matches ${iso3} cabinet ${cab.id}; review data/parlgov-coverage.json`);
+        }
+        cab.recordedTo = cab.to;
+        cab.to = correction.coverageTo;
+        cab.coverage = correction;
+        cab.endBasis = correction.basis;
+      }
       // The PM's party is the headline answer to "who governs".
       const pm = cab.parties.find((p) => p.pm) || null;
       cab.pm_party_id = pm ? pm.party_id : null;
@@ -296,8 +309,11 @@ async function main() {
   await fsp.writeFile(path.join(ELECTIONS, 'index.json'), JSON.stringify(index, null, 2));
 
   const gov = {
-    version: 1,
+    version: 2,
     source: SOURCE,
+    coverageReview: COVERAGE.release,
+    // Conservative last dated observation, not a claimed cabinet end date.
+    coverageThrough: [...governing.values()].flatMap((c) => c.intervals).map((c) => c.from).sort().at(-1),
     generated: new Date().toISOString(),
     countries: {}
   };

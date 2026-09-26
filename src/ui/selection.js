@@ -8,7 +8,7 @@ import { FIELDS } from '../metrics.js';
  * under the cursor, so the inputs are written once per selection and the
  * number fields commit on change rather than on every keystroke.
  */
-export function syncSelection() {
+export function syncSelection(force = false) {
   const box = $('#selPanel');
   const key = state.selected;
   const rec = key ? recordFor(key) : null;
@@ -30,7 +30,7 @@ export function syncSelection() {
   };
 
   // Already showing this division — refresh only what can have changed elsewhere.
-  if (box.dataset.for === key) {
+  if (!force && box.dataset.for === key) {
     box.querySelector('.selparty').textContent = caption();
     return;
   }

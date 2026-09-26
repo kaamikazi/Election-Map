@@ -1,6 +1,6 @@
 import { $, esc } from './dom.js';
 import { toast } from './toast.js';
-import { state, tally, addParty, removeParty, setPartyColor, emit } from '../state.js';
+import { state, tally, addParty, removeParty, setPartyColor, emit, pushColourHistory } from '../state.js';
 import { familyLabel } from '../families.js';
 
 /**
@@ -28,7 +28,12 @@ export function syncParties() {
       setActive(p.id);
     });
 
-    el.querySelector('input[type="color"]').addEventListener('input', (ev) => {
+    // One undo per picker session, however many input events a drag fires.
+    let recorded = false;
+    const picker = el.querySelector('input[type="color"]');
+    picker.addEventListener('change', () => { recorded = false; });
+    picker.addEventListener('input', (ev) => {
+      if (!recorded) { pushColourHistory(p); recorded = true; }
       el.querySelector('.swatch').style.background = ev.target.value;
       el.style.setProperty('--pc', ev.target.value);
       setPartyColor(p, ev.target.value);

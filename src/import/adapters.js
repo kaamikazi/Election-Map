@@ -39,17 +39,20 @@ function activeLayer() {
 const clipboard = {
   id: 'clipboard',
   label: 'Paste a table',
-  hint: 'Tab-separated from a spreadsheet, or a table copied from a web page. CSV works too.',
+  hint: 'Paste TSV or CSV. For numeric cells: blank keeps values only in same-dataset updates; 0 is a value; [clear] deletes a value.',
   inputs: [
     {
       name: 'text',
       type: 'textarea',
       label: 'Table',
       placeholder: 'Region\tParty\tVotes\tSeats\nPraha\tSpolu\t28,4\t12'
-    }
+    },
+    { name: 'sourceLabel', type: 'text', label: 'Source', placeholder: 'Reviewed source name' },
+    { name: 'sourceUrl', type: 'text', label: 'Source URL', placeholder: 'Exact results page or revision' },
+    { name: 'datasetId', type: 'text', label: 'Dataset identity', placeholder: 'Country · full date · office/type · round (optional)' }
   ],
 
-  propose({ text }) {
+  propose({ text, sourceLabel, sourceUrl, datasetId }) {
     const { rows, delimiter } = parseTable(text);
     if (!rows.length) throw new Error('There is nothing to read in that text');
 
@@ -59,8 +62,10 @@ const clipboard = {
     return {
       source: {
         kind: 'clipboard',
-        label: 'Pasted table',
-        url: null,
+        importId: crypto.randomUUID(),
+        label: sourceLabel?.trim() || 'Pasted table',
+        url: sourceUrl?.trim() || null,
+        datasetId: datasetId?.trim() || null,
         fetchedAt: new Date().toISOString().slice(0, 10),
         // A pasted table says nothing about when its results happened, and
         // today's date is not an answer to that. See asOf in proposal.js.
@@ -152,6 +157,7 @@ const archive = {
     return {
       source: {
         kind: 'archive',
+        datasetId: `parlgov:government:${date}:${grouping || 'family'}`,
         label: src ? src.label : 'ParlGov',
         url: src ? src.url : null,
         fetchedAt: date,
@@ -160,8 +166,14 @@ const archive = {
         asOf: date,
         universe,
         gaps: gaps.map((c) => ({
-          unit: c.mapName, lastCabinet: c.lastCabinet, since: c.since, years: c.years
+          unit: c.mapName, lastCabinet: c.lastCabinet, since: c.since, years: c.years,
+          nextRecorded: c.nextRecorded, basis: c.basis, detail: c.detail, evidence: c.evidence
         })),
+        notes: [
+          ...(date < '1945-01-01' ? ['Pre-1945 archive observations are experimental.'] : []),
+          ...covered.flatMap((c) => (c.cabinet.coverage?.notes || [])
+            .filter((n) => date >= n.from && date < n.to).map((n) => n.text))
+        ],
         what: 'Party of the head of government',
         // Framing and titling the review screen cannot guess at.
         title: `Who governed, ${y}`,

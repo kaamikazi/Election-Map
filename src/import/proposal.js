@@ -14,6 +14,7 @@ import { matchUnit, rankCandidates, normalise, learnAlias } from './match.js';
 import { boundsOf, BOUNDARY } from '../geo.js';
 import { applyPartials } from './partition.js';
 import { VINTAGE_GRACE_YEARS } from '../vintage.js';
+import { sourceRecord, recordSources, summariseSources } from '../provenance.js';
 
 export const VALUE_ROLES = ['vote', 'seats', 'turnout', 'margin'];
 
@@ -28,6 +29,9 @@ export const VALUE_ROLES = ['vote', 'seats', 'turnout', 'margin'];
  *   scope    alias scope key
  */
 export function buildProposal({ source, rows, columns, index, scope, hints }) {
+  // A year identifies neither an office nor a round. Treat it as unknown even
+  // when pasted into the optional identity field.
+  if (source?.datasetId && /^\d{4}$/.test(source.datasetId.trim())) source = { ...source, datasetId: null };
   const unitCol = columns.find((c) => c.role === 'unit');
   const partyCol = columns.find((c) => c.role === 'party');
   const valueCols = columns.filter((c) => VALUE_ROLES.includes(c.role));
@@ -43,10 +47,16 @@ export function buildProposal({ source, rows, columns, index, scope, hints }) {
     const notes = [];
 
     for (const col of valueCols) {
-      const cell = cells[col.index] || '';
+      const cell = cells[col.index] ?? '';
       raw[col.role] = cell;
+      // Blank/unavailable is missing. [clear] is an intentional deletion.
+      if (String(cell).trim().toLowerCase() === '[clear]') {
+        values[col.role] = null;
+        notes.push(`${col.role}: clear existing value`);
+        continue;
+      }
       const { value, note } = parseNumber(cell);
-      values[col.role] = value;
+      if (value !== null) values[col.role] = value;
       // A cell that could not be read gets a note, never a silent zero.
       if (note) notes.push(note);
     }
@@ -241,7 +251,7 @@ export function warnings(proposal) {
       out.push({
         kind: 'silent',
         text: `${silent.length} unit${silent.length === 1 ? '' : 's'} already on the map ` +
-              `${silent.length === 1 ? 'is' : 'are'} not in this table and will be left alone.`
+              `${silent.length === 1 ? 'is' : 'are'} not in this table. Replace removes them; update or combine retains them.`
       });
     }
   }
@@ -304,42 +314,75 @@ export function vintageBlock(proposal, boundary = BOUNDARY) {
 /**
  * Apply the matched rows.
  *
- * Merging is the default and never clears a unit the table does not mention —
- * a table of 40 Czech regions should not wipe the rest of a map. "Replace all"
- * is a separate, explicit choice. Rows that failed are left untouched and stay
- * on screen so they can be fixed and applied again; the whole thing is one
- * undo entry.
+ * Unknown or changed identities replace by default. Explicit same-dataset
+ * updates preserve missing values; combinations retain other regions but
+ * never carry metrics across an unknown/changed identity. One undo entry.
  *
  * @returns {{applied: number, skipped: number, parties: number}}
  */
-export function applyProposal(proposal, { replace = false, learn = true, acceptVintageGap = false } = {}) {
+export function defaultImportMode(proposal) {
+  const id = proposal.source?.datasetId;
+  const records = Object.values(state.assign);
+  return id && records.length && records.every((r) => r.datasetId === id) ? 'update' : 'replace';
+}
+
+export function importBlock(proposal, mode, confirmSame = false) {
+  if (!['replace', 'update', 'combine'].includes(mode)) return 'Choose how this import relates to the map.';
+  if (mode !== 'update' || !Object.keys(state.assign).length) return null;
+  const id = proposal.source?.datasetId;
+  const records = Object.values(state.assign);
+  if (id && records.some((r) => r.datasetId && r.datasetId !== id)) {
+    return 'Dataset identities differ. Replace the map or intentionally combine sources.';
+  }
+  if ((!id || records.some((r) => !r.datasetId)) && !confirmSame) {
+    return 'Identity is unknown. Confirm that the country, election date, office/type and round are the same.';
+  }
+  return null;
+}
+
+export function applyProposal(proposal, { replace, mode = replace === true ? 'replace' : defaultImportMode(proposal), confirmSame = false, learn = true, acceptVintageGap = false } = {}) {
   // Before anything is written: results that predate their boundaries do not
   // apply by accident. See vintageBlock above for what was measured.
   const blocked = acceptVintageGap ? null : vintageBlock(proposal);
   if (blocked) {
     return { applied: 0, skipped: proposal.rows.length, parties: 0, blocked };
   }
+  const identityError = importBlock(proposal, mode, confirmSame);
+  if (identityError) return { applied: 0, skipped: proposal.rows.length, parties: 0, identityError };
 
   const usable = proposal.rows.filter((r) => r.unit && r.status === 'matched');
   if (!usable.length) return { applied: 0, skipped: proposal.rows.length, parties: 0 };
 
-  pushHistory();
+  pushHistory('import');
 
-  const assign = replace ? {} : Object.assign({}, state.assign);
+  const assign = mode === 'replace' ? {} : Object.assign({}, state.assign);
+  const src = proposal.source || {};
+  const incoming = sourceRecord({ ...src, vintageOverride: acceptVintageGap ? vintageBlock(proposal) : null });
   let created = 0;
 
   for (const row of usable) {
-    const party = partyFor(row, () => created++);
-    const previous = assign[row.unit] || {};
-    assign[row.unit] = {
-      party: party.id,
-      label: (row.hint && row.hint.label) || (row.raw.party ? row.raw.party.trim() : (previous.label || null)),
-      // A value the table does not carry keeps whatever was already there.
-      vote: pick(row.values.vote, previous.vote),
-      seats: pick(row.values.seats, previous.seats),
-      turnout: pick(row.values.turnout, previous.turnout),
-      margin: pick(row.values.margin, previous.margin)
-    };
+    const old = assign[row.unit];
+    const keep = mode === 'update' || (mode === 'combine' && src.datasetId && old?.datasetId === src.datasetId);
+    const previous = keep && old ? old : {};
+    const provenance = recordSources(previous);
+    const hasParty = !!(row.hint || row.raw.party?.trim());
+    const party = hasParty ? partyFor(row, () => created++) : { id: previous.party ?? null };
+    const record = { ...previous, party: party.id,
+      label: row.hint?.label || row.raw.party?.trim() || previous.label || null,
+      datasetId: src.datasetId || previous.datasetId || null, provenance };
+    if (hasParty) {
+      provenance.party = incoming;
+      if (record.label) provenance.label = incoming;
+    }
+    for (const key of VALUE_ROLES) {
+      const supplied = Object.hasOwn(row.values, key);
+      record[key] = supplied ? row.values[key] : previous[key] ?? null;
+      if (supplied) {
+        if (record[key] === null) delete provenance[key];
+        else provenance[key] = incoming;
+      }
+    }
+    assign[row.unit] = record;
 
     // A name the person fixed by hand is worth remembering; one that matched on
     // its own is already handled by the rules above it.
@@ -355,7 +398,6 @@ export function applyProposal(proposal, { replace = false, learn = true, acceptV
   // An adapter may know how the map should be framed and titled. Framing to the
   // data matters most when generating many maps across years: coverage changes,
   // so the right frame changes with it.
-  const src = proposal.source || {};
   if (src.fitToData) {
     const box = boundsOf(Object.keys(assign));
     if (box) { state.fit = box; state.zoom = 1; state.pan = [0, 0]; }
@@ -363,28 +405,26 @@ export function applyProposal(proposal, { replace = false, learn = true, acceptV
   if (src.title != null) state.title = src.title;
   if (src.sub != null) state.sub = src.sub;
 
-  state.provenance = proposal.source ? {
-    source: proposal.source.label,
-    url: proposal.source.url || null,
+  state.provenance = summariseSources(assign, {
+    source: src.label,
+    url: src.url || null,
     // When the results happened, which is not when they were downloaded. Null
     // when the source does not say, because today's date is not an answer.
-    asOf: proposal.source.asOf || null,
-    fetchedAt: proposal.source.fetchedAt || null,
+    asOf: src.asOf || null,
+    fetchedAt: src.fetchedAt || null,
     covered: Object.keys(assign).length,
-    universe: proposal.source.universe || null,
-    what: proposal.source.what || null,
+    universe: mode === 'combine' ? null : src.universe || null,
+    what: src.what || null,
     // The exact thing that was read, so a posted map can be checked against it.
-    cite: proposal.source.cite || null,
+    cite: src.cite || null,
     // A gap the person chose to draw over travels with the map, because the
     // person who sees the map is not the person who made that choice.
     vintageOverride: acceptVintageGap ? vintageBlock(proposal) : null
-  } : state.provenance;
+  });
 
   emit('parties');
   return { applied: usable.length, skipped: proposal.rows.length - usable.length, parties: created };
 }
-
-const pick = (next, previous) => (next != null ? next : (previous != null ? previous : null));
 
 function partyFor(row, onCreate) {
   // An adapter's hint identifies the slot: two rows with the same key are the

@@ -27,7 +27,7 @@ import { FAMILIES, familyLabel, UNFAMILIED } from './families.js';
 import { adapterById } from './import/adapters.js';
 import { buildProposal, applyProposal, counts } from './import/proposal.js';
 import { boundsOf, BY_KEY, LAYER, WORLD, BOUNDARY } from './geo.js';
-import { composite, legendRowsAt } from './export.js';
+import { composite, legendRowsAt, footerRowsAt } from './export.js';
 import { boundaryWarnings, vintageLine } from './vintage.js';
 
 /** The plan for the run in progress. One at a time; this is a generator, not a view. */
@@ -110,6 +110,7 @@ export async function planSeries({
   const skipped = [];
   const union = new Set();
   let maxRows = 0;
+  const footerRows = { source: 0, limitations: 0 };
 
   for (const year of yearsFrom(from, to, step)) {
     let draft;
@@ -131,6 +132,9 @@ export async function planSeries({
     const keys = Object.keys(state.assign);
     for (const k of keys) union.add(k);
     maxRows = Math.max(maxRows, legendRowsAt(width));
+    const footer = footerRowsAt(width);
+    footerRows.source = Math.max(footerRows.source, footer.source);
+    footerRows.limitations = Math.max(footerRows.limitations, footer.limitations);
 
     frames.push(frameRecord({ year, keys, counts: c, proposal, grouping, scope }));
   }
@@ -143,6 +147,7 @@ export async function planSeries({
     fit: boundsOf([...union], margin),
     unionUnits: union.size,
     legendRows: maxRows,
+    footerRows,
     palette,
     frames,
     skipped,
@@ -200,9 +205,8 @@ function frameRecord({ year, keys, counts: c, proposal, grouping, scope }) {
      * whole difference between "we do not know" and "nothing was happening",
      * and a reader looking at a sparse 1946 deserves to be told which.
      */
-    recordGaps: (src.gaps || []).map((g) => ({
-      unit: g.unit, lastCabinet: g.lastCabinet, since: g.since, years: g.years
-    })),
+    recordGaps: (src.gaps || []).map((g) => ({ ...g })),
+    coverageNotes: src.notes || [],
     boundaries: boundaryRecord(),
     // Named border changes this frame draws over. At world level these are the
     // whole vintage story, because a world outline carries no registry entry.
@@ -287,6 +291,7 @@ async function drawPlanned(f, opts) {
     withLegend: true,
     transparent: false,
     lockLegendRows: plan.legendRows,
+    lockFooterRows: plan.footerRows,
     report
   });
   return {

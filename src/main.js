@@ -12,7 +12,7 @@ import { syncMetrics, initMetrics } from './ui/metric-panel.js';
 import { syncSelection } from './ui/selection.js';
 import { syncLegend } from './ui/legend.js';
 import { initInteraction } from './ui/interaction.js';
-import { initControls, syncUndo } from './ui/controls.js';
+import { initControls, syncUndo, syncFormFromState } from './ui/controls.js';
 import { initExportDialog } from './ui/export-dialog.js';
 import { initReview } from './ui/review.js';
 import { initLayers, syncLayers } from './ui/layers.js';
@@ -40,7 +40,7 @@ onChange((kind) => {
     syncActive();
     return;
   }
-  if (kind === 'parties') { syncParties(); syncMode(); }
+  if (kind === 'parties') { syncParties(); syncMode(); syncFormFromState(); }
   if (kind === 'assign') syncTallies();
   if (kind === 'metric' || kind === 'parties') syncMetrics();
   if (kind === 'parties' || kind === 'assign') syncLayers();
@@ -50,7 +50,7 @@ onChange((kind) => {
   }
   if (kind !== 'view') {
     syncLegend();
-    syncSelection();
+    syncSelection(kind === 'parties');
     syncFlagPanel();
     syncActive();
   }

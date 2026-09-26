@@ -47,7 +47,17 @@ export async function initLayers() {
 }
 
 export function syncLayers() {
-  if (countries) render();
+  if (!countries) return;
+  const iso = BOUNDARY ? BOUNDARY.iso : '';
+  $('#crumb').textContent = crumbFor();
+  if (iso !== shownIso) {
+    shownIso = iso;
+    sources = [];
+    if (iso) boundarySources(iso).then((list) => {
+      if (shownIso === iso) { sources = list; render(); }
+    });
+  }
+  render();
 }
 
 function render() {

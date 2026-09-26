@@ -9,8 +9,8 @@
  * reads only what lands here.
  *
  * The file ids below belong to release 2024 (V1). If the DOI publishes a new
- * version the ids change; this script re-reads the dataset metadata each run
- * and resolves files by name, so a new release is picked up without editing.
+ * version the ids change; this script resolves names from metadata but refuses
+ * an unaudited release rather than silently replacing the historical inputs.
  */
 
 import fs from 'node:fs';
@@ -44,6 +44,9 @@ async function main() {
   if (!res.ok) throw new Error(`Dataverse metadata failed: ${res.status} ${res.statusText}`);
   const meta = await res.json();
   const version = meta.data.latestVersion;
+  if (version.versionNumber !== 1 || version.versionMinorNumber !== 0) {
+    throw new Error('This build is audited against ParlGov 2024 V1. Review the new release and coverage evidence before downloading it.');
+  }
 
   const license = version.license ? version.license.name : '(none stated)';
   console.log(`        release ${version.versionNumber}.${version.versionMinorNumber}, ${license}`);

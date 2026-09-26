@@ -120,6 +120,7 @@ test('merging leaves units the table never mentions alone', async ({ page }) => 
   });
 
   await propose(page, EN);
+  await page.selectOption('#importMode', 'combine');
   const r = await page.evaluate(async () => {
     document.querySelector('#btnApply').click();
     await new Promise((r) => setTimeout(r, 200));
@@ -140,7 +141,8 @@ test('replace all is a separate, explicit choice', async ({ page }) => {
 
   await propose(page, EN);
   const r = await page.evaluate(async () => {
-    document.querySelector('#xReplace').checked = true;
+    document.querySelector('#importMode').value = 'replace';
+    document.querySelector('#importMode').dispatchEvent(new Event('change'));
     document.querySelector('#btnApply').click();
     await new Promise((r) => setTimeout(r, 200));
     const { state } = await import('/src/state.js');

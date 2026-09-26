@@ -180,7 +180,7 @@ export function assertFlagsReady() {
 
 // A single-country layer's badge is loaded as the layer is, so it is ready
 // before anyone can ask for an export of it.
-onLayerActive(async () => {
-  const a2 = badgeFlag();
+onLayerActive(async (id, data) => {
+  const a2 = data.boundary ? flagOfIso3(data.boundary.iso) : null;
   if (a2) await ensure([{ a2, set: '4x3' }]);
 });

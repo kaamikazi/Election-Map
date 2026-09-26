@@ -1,0 +1,60 @@
+{
+  "version": 1,
+  "release": "doi:10.7910/DVN/2VZ5ZC, V1",
+  "reviewed": "2026-09-26",
+  "description": "Coverage limits for the recorded cabinet, not a replacement history. Dates are exclusive. An uncertain interval never implies that no government existed.",
+  "intervals": [
+    {
+      "iso3": "AUT", "id": "1554", "from": "1932-05-20", "nextRecorded": "1945-04-27",
+      "coverageTo": "1933-09-21", "basis": "explicit cabinet end in release description",
+      "reason": "Dollfuss I ended; intervening cabinets are absent from this release's view.",
+      "evidence": ["https://dataverse.harvard.edu/api/access/datafile/10437086"],
+      "sourceLocator": "parlgov-stable.db, cabinet.id=1554, description"
+    },
+    {
+      "iso3": "DEU", "id": "1578", "from": "1933-01-31", "nextRecorded": "1949-09-20",
+      "coverageTo": "1933-03-24", "basis": "end of democratic coverage; not cabinet termination",
+      "reason": "Release description marks the end of the Weimar Republic. No continuous democratic cabinet record until the next recorded cabinet. The release start date is retained as recorded, not independently certified.",
+      "evidence": ["https://dataverse.harvard.edu/api/access/datafile/10437086"],
+      "sourceLocator": "parlgov-stable.db, cabinet.id=1578, description; codebook Overview (established democracies)"
+    },
+    {
+      "iso3": "DNK", "id": "1241", "from": "1939-04-03", "nextRecorded": "1945-05-05",
+      "coverageTo": "1939-09-15", "basis": "conservative coverage cutoff at documented cabinet change",
+      "reason": "ParlGov's election-based numbering differs from the official cabinet list. The government covering the recorded April start ends on 15 September. Later wartime cabinets are not supplied by this record.",
+      "evidence": ["https://stm.dk/regeringen/regeringer-siden-1848/regeringen-stauning-iii/", "https://stm.dk/regeringen/regeringer-siden-1848/regeringen-stauning-iv/"],
+      "sourceLocator": "Official Stauning III and IV date ranges; do not equate ParlGov Stauning V with official Stauning V"
+    },
+    {
+      "iso3": "NLD", "id": "1254", "from": "1939-08-10", "nextRecorded": "1945-06-24",
+      "coverageTo": "1940-09-03", "basis": "documented successor takes office",
+      "reason": "De Geer II ends on 2 September inclusive. Gerbrandy begins on 3 September; missing successor records are not filled by De Geer.",
+      "evidence": ["https://www.nationaalarchief.nl/onderzoeken/index/nt00334/aa5122bf-5b67-46ff-8dbc-9a2126e412e3", "https://www.nationaalarchief.nl/onderzoeken/index/nt00334/123c021d-eb80-4583-9791-486b1de43d8f"]
+    },
+    {
+      "iso3": "FIN", "id": "1199", "from": "1937-03-12", "nextRecorded": "1944-09-21",
+      "coverageTo": "1939-12-01", "basis": "official cabinet end",
+      "reason": "Cajander III ended; intervening governments are missing from this release's view.",
+      "evidence": ["https://valtioneuvosto.fi/en/governments-and-ministers/governments/-/gov/cajander-iii"]
+    },
+    {
+      "iso3": "MLT", "id": "1474", "from": "1955-02-28", "nextRecorded": "1962-03-05",
+      "coverageTo": "1955-02-28", "basis": "whole interval uncertain; precise dates not verified",
+      "reason": "Official biography supports a 1955-1958 premiership, not continuity through 1962. Exact appointment and termination days have not been verified here. Suppress this interval instead of inventing them.",
+      "evidence": ["https://www.gov.mt/en/Government/Government%20of%20Malta/Prime%20Ministers%20of%20Malta/Pages/Mr-Dom-Mintoff.aspx"]
+    },
+    {
+      "iso3": "NOR", "id": "1222", "from": "1936-10-19", "nextRecorded": "1945-06-25",
+      "coverageTo": "1945-06-25", "basis": "official head-of-government continuity, including exile",
+      "reason": "Nygaardsvold remained head of government until 25 June 1945. This confirms the PM party only, not unchanged coalition membership or territorial control.",
+      "evidence": ["https://www.regjeringen.no/en/the-government/previous-governments/regjeringer-siden-1814/historiske-regjeringer/norways-governments-1940-1945/johan-nygaardsvolds-government/id438691/"],
+      "notes": [{ "from": "1940-06-07", "to": "1945-06-25", "text": "Norway: recognised government, including wartime exile; not territorial control." }]
+    },
+    {
+      "iso3": "CAN", "id": "1171", "from": "1911-10-10", "nextRecorded": "1917-10-12",
+      "coverageTo": "1917-10-12", "basis": "official ministry dates",
+      "reason": "Borden's ninth ministry covers the full six years and two days; no duration cap.",
+      "evidence": ["https://www.ourcommons.ca/MarleauMontpetit/DocumentViewer.aspx?DocId=1001&Language=E&Sec=Ch25&Seq=8"]
+    }
+  ]
+}

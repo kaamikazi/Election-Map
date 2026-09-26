@@ -10,6 +10,7 @@ import { BOUNDARY, LAYER, WORLD } from './geo.js';
 import { vintageLine } from './vintage.js';
 import { documentPartials } from './import/partition.js';
 import { assertFlagsReady, badgeFlag, raster, flagOfKey, FLAG_SET } from './flags.js';
+import { documentSources } from './provenance.js';
 
 /**
  * @param {number} W
@@ -34,6 +35,7 @@ export function composite(W, H, opts) {
      * it; the shorter legends simply leave the reserved space empty.
      */
     lockLegendRows = null,
+    lockFooterRows = null,
     // An object drawMap fills in with what it did — the projection in
     // particular. Optional, and read by anything that has to compare two draws.
     report: outReport = null
@@ -93,6 +95,11 @@ export function composite(W, H, opts) {
     : flat ? legRows * 32 * k
       : rampLegendHeight(c, k, W - pad * 2);
   const prov = flagMode ? flagsLine() : provenanceLine();
+  c.font = `400 ${Math.round(17 * k)}px ${FONT}`;
+  const provRows = Math.max(prov ? lines(c, coverageLine(999) + prov, W - pad * 2) : 0, lockFooterRows?.source || 0);
+  const extraProvH = Math.max(0, provRows - 1) * 22 * k;
+  const limitations = flagMode ? '' : coverageLimitations();
+  const limitRows = Math.max(limitations ? lines(c, limitations, W - pad * 2) : 0, lockFooterRows?.limitations || 0);
   // What the map is drawn on, whenever that is a claim rather than a schematic.
   const vint = vintageLine(BOUNDARY);
   // Units the data only partly covers, named rather than patterned: hatching
@@ -104,11 +111,13 @@ export function composite(W, H, opts) {
   const gap = flagMode ? '' : overrideLine();
   const footH = (showLegend ? 18 * k + legendH : 0) + (prov ? 30 * k : 0)
     + (vint ? 24 * k : 0) + (partial.length ? 24 * k : 0) + (gap ? 24 * k : 0)
+    + extraProvH + limitRows * 22 * k
     + (state.handle.trim() ? 40 * k : 0) + pad * 0.5;
 
   // ---- map
   const mapTop = top;
   const mapBot = H - footH - pad * 0.4;
+  if (mapBot - mapTop < 80 * k) throw new Error('Attribution and caveats leave too little map space. Use a taller export or fewer sources.');
   const report = outReport || {};
   drawMap(c, W, H, {
     inset: [mapTop, pad * 0.5, H - mapBot, pad * 0.5],
@@ -142,7 +151,15 @@ export function composite(W, H, opts) {
     c.font = `400 ${Math.round(17 * k)}px ${FONT}`;
     c.textBaseline = 'alphabetic'; c.textAlign = 'left';
     c.fillStyle = T.muted;
-    c.fillText((flagMode ? '' : coverageLine(report.inView)) + prov, pad, y + 20 * k);
+    wrap(c, (flagMode ? '' : coverageLine(report.inView)) + prov, pad, y + 20 * k, W - pad * 2, 22 * k);
+    y += extraProvH;
+  }
+  if (limitations) {
+    c.font = `400 ${Math.round(17 * k)}px ${FONT}`;
+    c.fillStyle = T.text;
+    c.textAlign = 'left'; c.textBaseline = 'alphabetic';
+    wrap(c, limitations, pad, y + (prov ? 42 : 20) * k, W - pad * 2, 22 * k);
+    y += limitRows * 22 * k;
   }
 
   // ---- what the boundaries are, when they are current-day and the map is not
@@ -197,9 +214,21 @@ export function composite(W, H, opts) {
  * a complete one, which is the more damaging mistake.
  */
 
-function provenanceLine() {
+export function provenanceLine() {
   const p = state.provenance;
   if (!p) return '';
+  // Derive from the current values, including later manual edits. Saved legacy
+  // maps cannot prove record-level provenance and must say so.
+  const sources = documentSources(state.assign);
+  if (sources.length) {
+    const label = (s, i) => {
+      const date = s.asOf ? ` (${s.asOfPrecision === 'year' ? s.asOf.slice(0, 4) : s.asOf})` : '';
+      const url = s.cite?.permalink || s.url;
+      const batch = sources.length > 1 && s.importId ? ` [import ${i + 1}]` : '';
+      return s.source + batch + date + (url ? ` · ${url}` : '') + (s.cite?.license ? ` · ${s.cite.license}` : '');
+    };
+    return (sources.length > 1 ? 'Mixed sources: ' : 'Source: ') + sources.map(label).join(' | ');
+  }
   if (!p.source) return '';
   // A Wikipedia article changes. Citing the title cites something that can be
   // different by the time a reader checks it, so the footer carries the link to
@@ -209,6 +238,24 @@ function provenanceLine() {
     return `Source: ${p.source} · ${cite.permalink} · ${cite.license || 'Wikipedia, CC BY-SA 4.0'}`;
   }
   return 'Source: ' + p.source;
+}
+
+export function coverageLimitations() {
+  const sources = documentSources(state.assign);
+  const gaps = [...new Set(sources.flatMap((s) => (s.gaps || []).map((g) => g.unit)))];
+  const notes = [...new Set(sources.flatMap((s) => s.notes || []))];
+  return [gaps.length ? `Uncertain / missing archive coverage: ${gaps.join(', ')}.` : '', ...notes].filter(Boolean).join(' ');
+}
+
+export function footerRowsAt(width) {
+  const c = document.createElement('canvas').getContext('2d');
+  const k = width / 1600;
+  c.font = `400 ${Math.round(17 * k)}px ${FONT}`;
+  const source = provenanceLine(), limitations = coverageLimitations();
+  return {
+    source: source ? lines(c, coverageLine(999) + source, width - 108 * k) : 0,
+    limitations: limitations ? lines(c, limitations, width - 108 * k) : 0
+  };
 }
 
 /**
@@ -222,7 +269,7 @@ function provenanceLine() {
 function coverageLine(inView) {
   const p = state.provenance;
   if (!p || p.covered == null) return '';
-  const n = p.covered;
+  const n = Object.keys(state.assign).length;
   // "7 countries" under a map of Bangladesh's divisions is the wrong noun.
   const noun = LAYER === WORLD
     ? (n === 1 ? 'country' : 'countries')
@@ -302,9 +349,12 @@ export function legendRowsAt(W) {
  * viewer no way to tell which units are describing ground that voted.
  */
 function overrideLine() {
-  const o = state.provenance && state.provenance.vintageOverride;
-  if (!o) return '';
-  return `Results from ${o.resultsYear} drawn on ${o.noun} representing ` +
+  const overrides = documentSources(state.assign).map((s) => s.vintageOverride).filter(Boolean);
+  if (!overrides.length && state.provenance?.vintageOverride) overrides.push(state.provenance.vintageOverride);
+  if (!overrides.length) return '';
+  const o = overrides[0];
+  const years = [...new Set(overrides.map((v) => v.resultsYear))].sort().join(', ');
+  return `Results from ${years} drawn on ${o.noun} representing ` +
          `${o.boundaryVintage}: ${o.noun} redrawn in between may not be the ones that voted.`;
 }
 
@@ -458,7 +508,18 @@ export function roundRect(c, x, y, w, h, r) {
 }
 
 function splitLines(c, text, maxW) {
-  const words = text.split(/\s+/), out = []; let line = '';
+  // Exact revision URLs may be wider than a phone-format canvas. Break long
+  // tokens as needed, preserving every character of the attribution.
+  const words = text.split(/\s+/).flatMap((word) => {
+    if (c.measureText(word).width <= maxW) return [word];
+    const chunks = []; let chunk = '';
+    for (const char of word) {
+      if (chunk && c.measureText(chunk + char).width > maxW) { chunks.push(chunk); chunk = ''; }
+      chunk += char;
+    }
+    if (chunk) chunks.push(chunk);
+    return chunks;
+  }), out = []; let line = '';
   for (const w of words) {
     const t = line ? line + ' ' + w : w;
     if (c.measureText(t).width > maxW && line) { out.push(line); line = w; }

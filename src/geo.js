@@ -128,13 +128,19 @@ export const isLayerLoaded = (id) => loaded.has(id);
  * these files are the largest thing the app fetches.
  */
 export async function loadLayer(id) {
-  await loadLayerData(id);
+  await prepareLayer(id);
   activate(id);
   // Anything that must be ready before this layer can be exported — its flag
   // badge, today — is awaited here, so a caller that loads a layer and then
   // exports cannot race an image decode.
-  for (const hook of layerHooks) await hook(id);
   return FEATS;
+}
+
+/** Fetch, validate and prepare without changing visible geometry. */
+export async function prepareLayer(id) {
+  const data = await loadLayerData(id);
+  for (const hook of layerHooks) await hook(id, data);
+  return data;
 }
 
 const layerHooks = [];
@@ -164,6 +170,10 @@ export async function loadLayerData(id) {
 
   const object = topo.objects.units;
   const feats = prepare(topojson.feature(topo, object).features, (f) => f.properties.id);
+  if (!feats.length || feats.length !== entry.units ||
+      feats.some((f) => !f.key || !f.geometry) || new Set(feats.map((f) => f.key)).size !== feats.length) {
+    throw new Error(`Invalid geometry for ${id}. Rebuild or restore its boundary file.`);
+  }
 
   const layer = {
     feats,
@@ -177,8 +187,9 @@ export async function loadLayerData(id) {
   return layer;
 }
 
-function activate(id) {
+export function activate(id) {
   const layer = loaded.get(id);
+  if (!layer) throw new Error(`Layer ${id} has not been prepared`);
   LAYER = id;
   FEATS = layer.feats;
   BORDERS = layer.borders;

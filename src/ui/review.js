@@ -12,7 +12,8 @@ import { toast } from './toast.js';
 import { ROLES } from '../import/parse.js';
 import { ADAPTERS, adapterById } from '../import/adapters.js';
 import {
-  buildProposal, applyProposal, counts, warnings, recount, setRowUnit, vintageBlock
+  buildProposal, applyProposal, counts, warnings, recount, setRowUnit, vintageBlock,
+  defaultImportMode, importBlock
 } from '../import/proposal.js';
 import { findPartitions } from '../import/partition.js';
 import { flagOfKey, flagImg } from '../flags.js';
@@ -22,6 +23,8 @@ let proposal = null;    // the built Proposal
 let current = ADAPTERS[0];
 // Ticked by hand, per import, never carried over. See blockHtml().
 let overrideGap = false;
+let importMode = 'replace';
+let confirmSame = false;
 
 /**
  * Answers to choices an adapter asked for, keyed by the input name it wanted
@@ -112,6 +115,7 @@ function clearReview(keepAnswers = false) {
   proposal = null;
   // A decision made about one import does not carry to the next one.
   overrideGap = false;
+  confirmSame = false;
   if (!keepAnswers) answers = {};
   $('#reviewBody').innerHTML = '';
   $('#btnApply').disabled = true;
@@ -133,6 +137,7 @@ async function propose(keepAnswers = false) {
     return;
   }
   draft = result;
+  importMode = defaultImportMode(draft);
   rebuild();
 }
 
@@ -193,8 +198,9 @@ function renderReview() {
   // A standing block disables Apply outright. Leaving the button live and
   // failing on click would teach people that the button lies.
   const blocked = !overrideGap && vintageBlock(proposal);
-  $('#btnApply').disabled = usable === 0 || !!blocked;
-  $('#btnApply').textContent = blocked ? 'Blocked'
+  const identityError = importBlock(proposal, importMode, confirmSame);
+  $('#btnApply').disabled = usable === 0 || !!blocked || !!identityError;
+  $('#btnApply').textContent = identityError ? 'Confirm dataset' : blocked ? 'Blocked'
     : usable ? `Apply ${usable} row${usable === 1 ? '' : 's'}` : 'Apply';
 
   $('#reviewBody').innerHTML = `
@@ -207,6 +213,19 @@ function renderReview() {
           <b>${c[k]}</b> ${STATUS_LABEL[k]}</span>`).join('')}
     </div>
     ${blockHtml()}
+    <label class="field"><span>How does this data relate to the map?</span>
+      <select id="importMode">
+        <option value="replace" ${importMode === 'replace' ? 'selected' : ''}>Different / unknown dataset — replace this layer</option>
+        <option value="update" ${importMode === 'update' ? 'selected' : ''}>Update the same election / dataset</option>
+        <option value="combine" ${importMode === 'combine' ? 'selected' : ''}>Intentionally combine sources / datasets</option>
+      </select></label>
+    <p class="hint">${importMode === 'replace'
+      ? 'Old regions and metrics are removed. Only reviewed rows in this import remain.'
+      : importMode === 'update'
+        ? 'Omitted regions and missing values remain, with their original sources. A year alone does not identify an election.'
+        : 'Omitted regions remain with their own sources. Changed or unknown datasets reset all metrics in touched regions. Exports disclose mixed sources.'}</p>
+    ${importMode === 'update' ? `<label class="tog"><input type="checkbox" id="confirmSame" ${confirmSame ? 'checked' : ''}> I checked the country, date, office/type and round: this is the same dataset.</label>` : ''}
+    ${identityError ? `<p class="err">${esc(identityError)}</p>` : ''}
     ${warns.length ? `<ul class="warns">${warns.map((w) =>
       `<li>${esc(w.text)}</li>`).join('')}</ul>` : ''}
     ${partialsHtml()}
@@ -214,6 +233,9 @@ function renderReview() {
     <div class="rows">${rowsHtml()}</div>
     <datalist id="unitOptions">${
       draft.names.map((n) => `<option value="${esc(n)}"></option>`).join('')}</datalist>`;
+
+  $('#importMode').onchange = (e) => { importMode = e.target.value; confirmSame = false; renderReview(); };
+  if ($('#confirmSame')) $('#confirmSame').onchange = (e) => { confirmSame = e.target.checked; renderReview(); };
 
   // Changing a choice — which table was read, say — has to happen before any
   // matching is trusted, so it throws the proposal away and asks again.
@@ -393,8 +415,8 @@ function rowsHtml() {
 /* ---------------------------------------------------------------- apply */
 
 function apply() {
-  const replace = $('#xReplace').checked;
-  const result = applyProposal(proposal, { replace, acceptVintageGap: overrideGap });
+  const result = applyProposal(proposal, { mode: importMode, confirmSame, acceptVintageGap: overrideGap });
+  if (result.identityError) return toast(result.identityError);
 
   // Refused outright, rather than having matched nothing: a different failure
   // and it has to read as one.

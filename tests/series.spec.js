@@ -193,7 +193,8 @@ test('an unlocked legend is what would have moved it', async ({ page }) => {
     // them changes by a whole legend row.
     const boxH = (o) => {
       const report = {};
-      composite(1600, 900, { ...o, report });
+      // Hold source/coverage caveat space constant to isolate legend jitter.
+      composite(1600, 900, { lockFooterRows: { source: 2, limitations: 3 }, ...o, report });
       return report.projection.box[1];
     };
 

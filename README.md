@@ -216,10 +216,18 @@ resolving to one unit, vote shares summing well past 100, two party names
 collapsing into one slot, and units already on the map the table is silent
 about.
 
-Applying **merges** and never clears a unit the table does not mention;
-"Replace everything" is a separate, explicit checkbox. Matched rows apply even
-when others fail, and the failures stay on screen to be fixed and applied
-again. The whole apply is one undo entry.
+Review distinguishes **different/unknown dataset** (replace this layer),
+**same-dataset update**, and **intentional combination**. Only an exact known
+dataset identity defaults to an update; a year alone is not an identity.
+Unknown identities need an explicit same-election confirmation to keep old
+metrics. Combining retains omitted regions but resets metrics in touched
+regions whose identity changed or is unknown. Every retained value keeps its
+own source, including in saved documents and mixed-source exports.
+
+In numeric columns, blanks mean missing, `0` is a value, and `[clear]` deliberately
+removes a value. Rows that fail stay available for correction. Each apply is one
+undo entry, including title and framing. Saved maps load and validate their
+geometry before replacing the working document; failed opens preserve it.
 
 ### Wikipedia
 
@@ -600,15 +608,13 @@ a silence in the record expands to fill the silence. The archive was asserting
 that the NSDAP governed Germany until September 1949 and that a chancellor
 assassinated in 1934 governed Austria until 1945.
 
-`MAX_CABINET_YEARS = 6` in `src/archive.js`: past six years from its own start,
-a derived interval is the record running out rather than a cabinet still
-sitting, and the country goes uncovered with a reason of `record gap`. Six is
-measured — across 1,584 intervals the longest genuine one is Canada's Borden
-ministry at 6.0 years, and every longer interval is a gap.
-
-The separation is that tight, so the rule catches less than it looks like it
-should, and [docs/archive-gaps.md](docs/archive-gaps.md) names the two cases
-that survive below the cap rather than tuning the threshold until they vanish.
+The former six-year cap was not reliable evidence: it missed Denmark and the
+Netherlands while suppressing valid Norwegian and Canadian coverage. It has
+been replaced with a reviewed interval table in `data/parlgov-coverage.json`.
+Explicit coverage cutoffs, reasons and sources are applied during the build;
+unverified intervals remain uncovered. Exports and series manifests disclose
+the gaps. [docs/archive-gaps.md](docs/archive-gaps.md) records the release audit,
+the evidence for both ends of each correction, and remaining limitations.
 
 A single map never touches any of this. It took putting the 1940s on screen,
 which is an argument for generating runs rather than samples.

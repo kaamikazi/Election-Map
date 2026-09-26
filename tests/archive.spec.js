@@ -31,7 +31,13 @@ test('governing.json intervals are ordered and do not overlap', () => {
       expect(iv.from, `${iso3}: cabinet with no start date`).toBeTruthy();
       if (prev) {
         expect(prev.from <= iv.from, `${iso3}: intervals out of order`).toBe(true);
-        expect(prev.to, `${iso3}: ${prev.name} does not end where ${iv.name} starts`).toBe(iv.from);
+        if (prev.coverage) {
+          expect(prev.to <= iv.from, `${iso3}: evidence must not overlap the next cabinet`).toBe(true);
+          expect(prev.recordedTo).toBe(iv.from);
+          expect(prev.coverage.evidence.length).toBeGreaterThan(0);
+        } else {
+          expect(prev.to, `${iso3}: unexplained interval gap`).toBe(iv.from);
+        }
       }
       prev = iv;
     }
@@ -256,70 +262,30 @@ test('colour overrides survive re-running the same year', async ({ page }) => {
  * each cabinet's end from the next one's start, so the last cabinet before a
  * silence expands to fill it. See docs/archive-gaps.md.
  */
-test('a cabinet does not outlive the record that describes it', async ({ page }) => {
+test('documented coverage gaps replace the duration cap', async ({ page }) => {
   await page.goto('/');
   const r = await page.evaluate(async () => {
-    const { loadGoverning, cabinetRecordOn, MAX_CABINET_YEARS } = await import('/src/archive.js');
+    const { loadGoverning, cabinetRecordOn } = await import('/src/archive.js');
     await loadGoverning();
-    const at = (iso, date) => {
-      const rec = cabinetRecordOn(iso, date);
-      return {
-        name: rec.cabinet ? rec.cabinet.name : null,
-        reason: rec.reason,
-        years: rec.gap ? rec.gap.years : null
-      };
-    };
+    const at = (iso, date) => cabinetRecordOn(iso, date);
     return {
-      cap: MAX_CABINET_YEARS,
-      // Real while it was real …
-      germany1935: at('DEU', '1935-01-01'),
-      // … and refused once the interval is only the record running out.
-      germany1945: at('DEU', '1945-01-01'),
-      germany1948: at('DEU', '1948-01-01'),
-      // The first properly recorded post-war cabinet is unaffected.
-      germany1950: at('DEU', '1950-01-01'),
-      // A chancellor killed in 1934 does not govern Austria in 1945.
-      austria1945: at('AUT', '1945-01-01'),
-      austria1946: at('AUT', '1946-01-01'),
-      // Denmark is the case the cap does NOT fix, kept here so the limit is
-      // asserted rather than forgotten: on 1 January 1945 this cabinet is 5.75
-      // years old, inside the cap, and Stauning had been dead for two of them.
-      denmark1945: at('DNK', '1945-01-01'),
-      // It is caught a few months later, which is the shape of the residue:
-      // the cap bounds the error, it does not eliminate it.
-      denmark1945may: at('DNK', '1945-04-20'),
-      // And an ordinary long ministry is left alone.
-      canada1916: at('CAN', '1916-01-01'),
-      ireland2015: at('IRL', '2015-01-01')
+      de: at('DEU', '1935-01-01'), at: at('AUT', '1934-01-01'),
+      dk: at('DNK', '1945-01-01'), nl: at('NLD', '1941-01-01'),
+      no: at('NOR', '1945-01-01'), ca: at('CAN', '1917-10-11'),
+      deAfter: at('DEU', '1950-01-01'), atAfter: at('AUT', '1946-01-01'),
+      ie: at('IRL', '2015-01-01')
     };
   });
-
-  expect(r.cap).toBe(6);
-
-  expect(r.germany1935.name).toBe('Hitler');
-  expect(r.germany1945.name).toBe(null);
-  expect(r.germany1945.reason).toBe('record gap');
-  expect(r.germany1945.years).toBeGreaterThan(6);
-  expect(r.germany1948.name).toBe(null);
-  expect(r.germany1950.name).toMatch(/Adenauer/);
-
-  expect(r.austria1945.name).toBe(null);
-  expect(r.austria1945.reason).toBe('record gap');
-  expect(r.austria1946.name).toMatch(/Figl/);
-
-  /*
-   * Documented, not fixed. Tightening the cap to catch this would cut Canada's
-   * Borden ministry (6.0 years, genuine) and Luxembourg's Bech I (5.7, genuine),
-   * so the threshold stays where the data separates and the remaining error is
-   * written down instead. docs/archive-gaps.md names it and the Netherlands.
-   */
-  expect(r.denmark1945.name).toBe('Stauning V');
-  expect(r.denmark1945may.name).toBe(null);
-  expect(r.denmark1945may.reason).toBe('record gap');
-
-  // The threshold was measured against these, not chosen around them.
-  expect(r.canada1916.name).toMatch(/Borden/);
-  expect(r.ireland2015.name).toMatch(/Kenny/);
+  for (const key of ['de', 'at', 'dk', 'nl']) {
+    expect(r[key].cabinet).toBe(null);
+    expect(r[key].reason).toBe('record gap');
+    expect(r[key].gap.evidence.length).toBeGreaterThan(0);
+  }
+  expect(r.no.cabinet.name).toMatch(/Nygaardsvold/);
+  expect(r.ca.cabinet.name).toBe('Borden I');
+  expect(r.deAfter.cabinet.name).toMatch(/Adenauer/);
+  expect(r.atAfter.cabinet.name).toMatch(/Figl/);
+  expect(r.ie.cabinet.name).toMatch(/Kenny/);
 });
 
 test('a map of 1945 does not colour a country the archive cannot vouch for', async ({ page }) => {

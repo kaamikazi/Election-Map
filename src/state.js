@@ -74,7 +74,7 @@ export const ALIAS = {
   'the gambia': 'Gambia', 'the bahamas': 'Bahamas'
 };
 
-export const SCHEMA_VERSION = 5;
+export const SCHEMA_VERSION = 6;
 
 /**
  * Milestone 3 keyed layers as `admin1:<ISO3>` when Natural Earth was the only
@@ -189,31 +189,134 @@ export const activeParties = () => state.parties.filter((p) => tally(p.id) > 0);
 const history = [];
 const HISTORY_LIMIT = 60;
 
-/**
- * Everything a single undo has to put back. Assignments alone are not enough:
- * an apply can replace the party list too, and restoring assignments that
- * point at party ids no longer in the document leaves an uncolourable map.
+export const DOCUMENT_DEFAULTS = JSON.parse(JSON.stringify(state));
+
+/*
+ * Undo is scoped to the operation, not the document.
+ *
+ * Each operation names the keys it owns (`hard`) and the keys it may change as
+ * a side effect (`soft`). Undo always puts the hard keys back. A soft key goes
+ * back only if it still holds the value the operation left it with — so an
+ * archive import that set the headline is undone with its headline, but a
+ * headline typed after the import survives the undo.
+ *
+ * Snapshotting every key instead made Ctrl+Z after a paint wipe a headline, a
+ * zoom and a colour that had nothing to do with the paint. Text fields, view
+ * and style are never recorded by an operation that did not change them.
  */
-const UNDOABLE = ['parties', 'assign', 'metric', 'provenance', 'active', 'selected',
-                  'layer', 'layerAssign', 'mode', 'flagged'];
+const SCOPES = {
+  // painting, clearing, typing a value, clearing the map
+  assign: { hard: ['assign', 'selected', 'provenance'] },
+  flags: { hard: ['flagged'] },
+  mode: { hard: ['mode'] },
+  // an import or an archive document: results, parties and where they came from
+  import: {
+    hard: ['parties', 'assign', 'provenance', 'active', 'selected'],
+    soft: ['metric', 'title', 'sub', 'fit', 'zoom', 'pan']
+  },
+  party: { hard: ['parties', 'assign', 'provenance', 'active', 'selected'] },
+  // a layer switch brings its geometry, assignments and framing back together
+  layer: {
+    hard: ['layer', 'assign', 'provenance', 'layerAssign', 'selected'],
+    soft: ['fit', 'zoom', 'pan', 'rotate']
+  },
+  // opening a file replaces the whole document, so undoing it restores the whole
+  // previous one — the only operation that owns every key
+  document: { hard: Object.keys(DOCUMENT_DEFAULTS) }
+};
 
-const snapshot = () => JSON.stringify(Object.fromEntries(UNDOABLE.map((k) => [k, state[k]])));
+const pick = (keys) => JSON.stringify(Object.fromEntries(keys.map((k) => [k, state[k]])));
 
-/** Snapshot before a mutation that a person would expect to undo. */
-export function pushHistory() {
-  history.push(snapshot());
+/**
+ * Snapshot before a mutation a person would expect to undo. `scope` says which
+ * keys the operation owns; there is no default, because "everything" is the
+ * bug this replaced.
+ */
+export function pushHistory(scope) {
+  const s = SCOPES[scope];
+  if (!s) throw new Error(`pushHistory needs an operation scope, not ${JSON.stringify(scope)}`);
+  const entry = { scope, hard: pick(s.hard), soft: s.soft ? pick(s.soft) : null, after: null };
+  history.push(entry);
+  if (history.length > HISTORY_LIMIT) history.shift();
+  // The soft keys' post-operation values are read once the operation's
+  // synchronous work is done: a layer switch frames the new layer, and an
+  // import titles the map, in the same task as the change itself.
+  if (s.soft) queueMicrotask(() => { if (!entry.after) entry.after = pick(s.soft); });
+  return entry;
+}
+
+/**
+ * A colour change is its own entry: one party's colour and its override, and
+ * nothing else. A picker drag is many input events and one undo, so the caller
+ * records once per picker session.
+ */
+export function pushColourHistory(party) {
+  const key = party.parlgov_id;
+  history.push({
+    scope: 'colour', id: party.id, color: party.color, overrideKey: key ?? null,
+    hadOverride: key != null && Object.hasOwn(state.overrides, key),
+    override: key != null ? state.overrides[key] : undefined
+  });
   if (history.length > HISTORY_LIMIT) history.shift();
 }
 
 export const canUndo = () => history.length > 0;
 
-export function undo() {
-  const prev = history.pop();
-  if (prev == null) return false;
-  Object.assign(state, JSON.parse(prev));
+function restoreSoft(entry) {
+  if (!entry.soft) return;
+  const before = JSON.parse(entry.soft);
+  const after = JSON.parse(entry.after || entry.soft);
+  for (const key of Object.keys(before)) {
+    if (JSON.stringify(state[key]) === JSON.stringify(after[key])) state[key] = before[key];
+  }
+}
+
+function settle() {
+  if (!state.parties.some((p) => p.id === state.active) && state.parties.length) state.active = state.parties[0].id;
   if (state.selected && !state.assign[state.selected]) state.selected = null;
   emit('parties');
-  return true;
+}
+
+/**
+ * Undo the most recent operation. Returns true, or a promise of true when the
+ * operation changed the boundary layer and its geometry has to load first.
+ */
+export function undo() {
+  const entry = history.at(-1);
+  if (entry == null) return false;
+  // Undone within the operation's own task: what is on screen now is its result.
+  if (entry.soft && !entry.after) entry.after = pick(SCOPES[entry.scope].soft);
+
+  if (entry.scope === 'colour') {
+    history.pop();
+    const party = state.parties.find((p) => p.id === entry.id);
+    if (party) party.color = entry.color;
+    if (entry.overrideKey != null) {
+      if (entry.hadOverride) state.overrides[entry.overrideKey] = entry.override;
+      else delete state.overrides[entry.overrideKey];
+    }
+    emit('style');
+    return true;
+  }
+
+  const hard = JSON.parse(entry.hard);
+  const apply = () => {
+    history.pop();
+    Object.assign(state, hard);
+    restoreSoft(entry);
+    settle();
+    return true;
+  };
+  if (hard.layer != null && hard.layer !== state.layer) {
+    // The previous layer's geometry has to be loaded and active before its
+    // assignments go back, or the map would draw one layer's keys on another.
+    return import('./geo.js').then(async (geo) => {
+      await geo.prepareLayer(hard.layer);
+      geo.activate(hard.layer);
+      return apply();
+    });
+  }
+  return apply();
 }
 
 /* ---------------- mutations ---------------- */
@@ -226,13 +329,18 @@ const blank = (party) => ({ party, vote: null, seats: null, turnout: null, margi
  * they describe the contest, not the winner.
  */
 export function toggleCountry(name) {
-  pushHistory();
+  pushHistory('assign');
   const rec = state.assign[name];
   if (rec && rec.party === state.active) {
     delete state.assign[name];
     if (state.selected === name) state.selected = null;
   } else {
     state.assign[name] = rec ? Object.assign({}, rec, { party: state.active }) : blank(state.active);
+    if (rec?.provenance) {
+      state.assign[name].provenance = { ...rec.provenance, party: { source: 'Manual / unverified data', datasetId: null } };
+      state.assign[name].label = null;
+      delete state.assign[name].provenance.label;
+    }
     state.selected = name;
   }
   emit('assign');
@@ -240,7 +348,7 @@ export function toggleCountry(name) {
 
 /** Flags mode's painting: same gesture, its own selection. */
 export function toggleFlag(key) {
-  pushHistory();
+  pushHistory('flags');
   if (state.flagged[key]) delete state.flagged[key];
   else state.flagged[key] = true;
   emit('assign');
@@ -249,7 +357,7 @@ export function toggleFlag(key) {
 export function setMode(mode) {
   if (mode !== 'results' && mode !== 'flags') return;
   if (state.mode === mode) return;
-  pushHistory();
+  pushHistory('mode');
   state.mode = mode;
   emit('parties');
 }
@@ -260,14 +368,17 @@ export const paint = (key) => (state.mode === 'flags' ? toggleFlag(key) : toggle
 export function setValue(name, key, value) {
   const rec = state.assign[name];
   if (!rec) return;
-  pushHistory();
+  pushHistory('assign');
   state.assign[name] = Object.assign({}, rec, { [key]: value });
+  if (rec.provenance) state.assign[name].provenance = {
+    ...rec.provenance, [key]: { source: 'Manual / unverified data', datasetId: null }
+  };
   emit('assign');
 }
 
 export function clearCountry(name) {
   if (!state.assign[name]) return;
-  pushHistory();
+  pushHistory('assign');
   delete state.assign[name];
   if (state.selected === name) state.selected = null;
   emit('assign');
@@ -292,7 +403,7 @@ export function setMetric(id) {
  */
 export function switchLayer(id) {
   if (id === state.layer) return false;
-  pushHistory();
+  pushHistory('layer');
 
   // Provenance describes a set of assignments, so it is parked with them.
   state.layerAssign[state.layer] = { assign: state.assign, provenance: state.provenance };
@@ -322,7 +433,7 @@ export function layerCounts() {
  * parties this rebuilds.
  */
 export function applyDocument({ parties, assign, provenance }) {
-  pushHistory();
+  pushHistory('import');
   state.parties = parties;
   state.assign = assign;
   state.active = parties.length ? parties[0].id : null;
@@ -356,7 +467,7 @@ export function addParty() {
 /** Returns false when this is the last party — the caller says so. */
 export function removeParty(id) {
   if (state.parties.length === 1) return false;
-  pushHistory();
+  pushHistory('party');
   state.parties = state.parties.filter((q) => q.id !== id);
   for (const k in state.assign) if (state.assign[k].party === id) delete state.assign[k];
   if (state.selected && !state.assign[state.selected]) state.selected = null;
@@ -365,7 +476,7 @@ export function removeParty(id) {
 }
 
 export function clearAssignments() {
-  pushHistory();
+  pushHistory('assign');
   state.assign = {};
   state.selected = null;
   state.provenance = null;
