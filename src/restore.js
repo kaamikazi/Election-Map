@@ -1,5 +1,6 @@
 /** A file open and a cross-layer undo share the same atomic restoration path. */
 import { state, migrate, reserveIds, pushHistory, emit, DOCUMENT_DEFAULTS } from './state.js';
+import { prepareIdentity } from './identity.js';
 import { prepareLayer, loadLayerData, activate } from './geo.js';
 
 const object = (v) => v && typeof v === 'object' && !Array.isArray(v);
@@ -20,6 +21,7 @@ export function validateDocument(input) {
   const doc = { ...structuredClone(DOCUMENT_DEFAULTS), ...migrate(input) };
   // Ignore unrecognised fields; they must never become application state.
   for (const key of Object.keys(doc)) if (!Object.hasOwn(DOCUMENT_DEFAULTS, key)) delete doc[key];
+  if (!['classic', 'history'].includes(doc.identity)) fail('map identity');
   const ids = new Set();
   for (const p of doc.parties) {
     if (!object(p) || !Number.isFinite(p.id) || ids.has(p.id) || typeof p.name !== 'string' ||
@@ -82,6 +84,7 @@ export async function restoreDocument(input, { remember = true } = {}) {
   const before = JSON.stringify(state);
   try {
     const doc = validateDocument(structuredClone(input));
+    await prepareIdentity(doc.identity);
     const active = await prepareLayer(doc.layer);
     const checkKeys = (assign, layer, id) => {
       const missing = Object.keys(assign).filter((key) => !layer.byKey.has(key));

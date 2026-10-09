@@ -22,6 +22,7 @@
  * path, and there is no frame here the export dialog could not produce.
  */
 
+import { prepareIdentity } from './identity.js';
 import { state, setMetric, nextId } from './state.js';
 import { FAMILIES, familyLabel, UNFAMILIED } from './families.js';
 import { adapterById } from './import/adapters.js';
@@ -102,6 +103,7 @@ export async function planSeries({
   from, to, step = 1, scope = 'Europe', grouping = 'family',
   width = 1600, height = 900, margin = 0.12
 } = {}) {
+  await prepareIdentity();
   const adapter = adapterById('archive');
   const palette = seedPalette(grouping);
   setMetric('flat');
@@ -149,6 +151,7 @@ export async function planSeries({
     legendRows: maxRows,
     footerRows,
     palette,
+    identity: state.identity, theme: state.theme,
     frames,
     skipped,
     generatedAt: new Date().toISOString()
@@ -266,6 +269,8 @@ export function renderFrame(i, opts = {}) {
 }
 
 async function drawPlanned(f, opts) {
+  state.identity = plan.identity; state.theme = plan.theme;
+  await prepareIdentity();
   const adapter = adapterById('archive');
   const draft = await adapter.propose({
     year: String(f.year), scope: plan.scope, grouping: plan.grouping
@@ -333,6 +338,7 @@ export function manifest() {
     range: { from: plan.from, to: plan.to, step: plan.step },
     scope: plan.scope,
     grouping: plan.grouping,
+    presentation: { identity: plan.identity, theme: plan.theme },
     size: { width: plan.width, height: plan.height },
     frames: plan.frames.length,
     // Stated so the claim "the frame does not move" is checkable from the

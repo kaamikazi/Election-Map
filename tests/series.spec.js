@@ -23,7 +23,7 @@ async function open(page) {
  * the ocean colour. If two frames share a projection, their coastlines fall on
  * exactly the same pixels however differently they are coloured in.
  */
-const SILHOUETTE = `(cv) => {
+const SILHOUETTE = `(cv, projection) => {
   const c = cv.getContext('2d');
   const d = c.getImageData(0, 0, cv.width, cv.height).data;
   const at = (x, y) => {
@@ -34,17 +34,14 @@ const SILHOUETTE = `(cv) => {
   const isOcean = ([r, g, b]) =>
     Math.abs(r - 0x10) < 10 && Math.abs(g - 0x1C) < 10 && Math.abs(b - 0x27) < 10;
 
-  // The map panel is the only thing filled with ocean, so its rows locate it.
-  // Restricting to the panel is the whole point: the title says a different
-  // year in every frame and the legend has different entries, so a mask over
-  // the whole canvas measures the caption changing and calls it movement.
-  // A row counts as panel only when a real stretch of it is ocean. A single
-  // matching pixel is not evidence: antialiased title text over the page colour
-  // lands within tolerance of the ocean colour often enough to shift the
-  // detected top by a few pixels and report movement that is not there.
+  // Sample only the reported map rectangle. A dark party swatch in the
+  // footer can match the ocean threshold; it is not part of the coastline.
+  // Within this rectangle, still locate the painted ocean from its pixels.
   const MIN_OCEAN = Math.round(cv.width / 20);
   let top = -1, bot = -1;
-  for (let y = 0; y < cv.height; y++) {
+  const start = Math.ceil(projection.inset[0]);
+  const end = Math.floor(cv.height - projection.inset[2]);
+  for (let y = start; y < end; y++) {
     let n = 0;
     for (let x = 0; x < cv.width && n < MIN_OCEAN; x++) if (isOcean(at(x, y))) n++;
     if (n >= MIN_OCEAN) { if (top < 0) top = y; bot = y; }
@@ -78,7 +75,7 @@ test('the frame does not move between any two frames', async ({ page }) => {
         img.onload = () => { cv.getContext('2d').drawImage(img, 0, 0); res(); };
         img.src = out.dataUrl;
       });
-      const sil = silhouette(cv);
+      const sil = silhouette(cv, out.projection);
       shots.push({
         year: out.frame.year,
         covered: out.frame.coverage.covered,

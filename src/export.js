@@ -3,7 +3,9 @@
  * screen uses), the results bar, the legend, and the handle strip.
  */
 
-import { state, THEMES, FONT, standings, activeParties } from './state.js';
+import { presentation, bodyFont, capsFont, displayFont, historyIdentity, assertIdentityReady,
+         drawIdentityHeader, drawIdentityFrame } from './identity.js';
+import { state, standings, activeParties } from './state.js';
 import { drawMap } from './render.js';
 import { BINS, NEUTRAL, metricDef, binColor, ticksFor } from './metrics.js';
 import { BOUNDARY, LAYER, WORLD } from './geo.js';
@@ -44,11 +46,12 @@ export function composite(W, H, opts) {
   // one is not, stop here and say which, rather than ship a blank country.
   // Callers await prepareExport() in flags.js first.
   assertFlagsReady();
+  assertIdentityReady();
 
   const cv = document.createElement('canvas');
   cv.width = W; cv.height = H;
   const c = cv.getContext('2d');
-  const T = THEMES[state.theme];
+  const T = presentation();
   const k = W / 1600;
   const pad = 54 * k;
   const flagMode = state.mode === 'flags';
@@ -56,7 +59,7 @@ export function composite(W, H, opts) {
   if (!trans) { c.fillStyle = T.bg; c.fillRect(0, 0, W, H); }
 
   // ---- header text
-  let top = pad;
+  let top = historyIdentity() ? drawIdentityHeader(c, W, k, pad) : pad;
   const title = state.title.trim();
   const sub = state.sub.trim();
   // A single-country layer carries its country's flag beside the headline. Not
@@ -65,15 +68,17 @@ export function composite(W, H, opts) {
   const badge = title ? badgeFlag() : null;
   const indent = badge ? drawBadge(c, badge, pad, top, k) : 0;
   if (title) {
-    c.font = `700 ${Math.round(46 * k)}px ${FONT}`;
+    c.font = historyIdentity()
+      ? `italic 400 ${Math.round(46 * k)}px ${displayFont()}`
+      : `700 ${Math.round(46 * k)}px ${bodyFont()}`;
     c.fillStyle = T.text; c.textAlign = 'left'; c.textBaseline = 'top';
-    c.letterSpacing = `${-0.6 * k}px`;
+    c.letterSpacing = (historyIdentity() ? 0 : -0.6 * k) + 'px';
     wrap(c, title, pad + indent, top, W - pad * 2 - indent, 54 * k);
     top += lines(c, title, W - pad * 2 - indent) * 54 * k + 6 * k;
     c.letterSpacing = '0px';
   }
   if (sub) {
-    c.font = `400 ${Math.round(22 * k)}px ${FONT}`;
+    c.font = `400 ${Math.round(22 * k)}px ${bodyFont()}`;
     c.fillStyle = T.muted;
     wrap(c, sub, pad + indent, top, W - pad * 2 - indent, 30 * k);
     top += lines(c, sub, W - pad * 2 - indent) * 30 * k;
@@ -86,7 +91,7 @@ export function composite(W, H, opts) {
   const total = counts.reduce((s, x) => s + x.n, 0);
   const showLegend = withLegend && total > 0;
 
-  c.font = `600 ${Math.round(20 * k)}px ${FONT}`;
+  c.font = `600 ${Math.round(20 * k)}px ${capsFont()}`;
   const def = metricDef(state.metric);
   const flat = def.id === 'flat';
   const ownRows = showLegend && flat ? layoutLegend(c, counts, W - pad * 2, k).rows : 0;
@@ -95,7 +100,7 @@ export function composite(W, H, opts) {
     : flat ? legRows * 32 * k
       : rampLegendHeight(c, k, W - pad * 2);
   const prov = flagMode ? flagsLine() : provenanceLine();
-  c.font = `400 ${Math.round(17 * k)}px ${FONT}`;
+  c.font = `400 ${Math.round(17 * k)}px ${bodyFont()}`;
   const provRows = Math.max(prov ? lines(c, coverageLine(999) + prov, W - pad * 2) : 0, lockFooterRows?.source || 0);
   const extraProvH = Math.max(0, provRows - 1) * 22 * k;
   const limitations = flagMode ? '' : coverageLimitations();
@@ -126,13 +131,15 @@ export function composite(W, H, opts) {
     report
   });
 
+  if (historyIdentity()) drawIdentityFrame(c, W, H, k, mapTop, mapBot, pad);
+
   // ---- results bar + legend
   let y = mapBot + 10 * k;
   if (showLegend) {
     const bh = 15 * k, bw = W - pad * 2;
     let x = pad;
     c.save();
-    roundRect(c, pad, y, bw, bh, 4 * k); c.clip();
+    roundRect(c, pad, y, bw, bh, historyIdentity() ? 0 : 4 * k); c.clip();
     c.fillStyle = T.track; c.fillRect(pad, y, bw, bh);
     counts.forEach(({ p, n }) => {
       const w = bw * n / total;
@@ -148,14 +155,14 @@ export function composite(W, H, opts) {
 
   // ---- where the numbers came from, and how much of the map they cover
   if (prov) {
-    c.font = `400 ${Math.round(17 * k)}px ${FONT}`;
+    c.font = `400 ${Math.round(17 * k)}px ${bodyFont()}`;
     c.textBaseline = 'alphabetic'; c.textAlign = 'left';
     c.fillStyle = T.muted;
     wrap(c, (flagMode ? '' : coverageLine(report.inView)) + prov, pad, y + 20 * k, W - pad * 2, 22 * k);
     y += extraProvH;
   }
   if (limitations) {
-    c.font = `400 ${Math.round(17 * k)}px ${FONT}`;
+    c.font = `400 ${Math.round(17 * k)}px ${bodyFont()}`;
     c.fillStyle = T.text;
     c.textAlign = 'left'; c.textBaseline = 'alphabetic';
     wrap(c, limitations, pad, y + (prov ? 42 : 20) * k, W - pad * 2, 22 * k);
@@ -164,7 +171,7 @@ export function composite(W, H, opts) {
 
   // ---- what the boundaries are, when they are current-day and the map is not
   if (vint) {
-    c.font = `400 ${Math.round(16 * k)}px ${FONT}`;
+    c.font = `400 ${Math.round(16 * k)}px ${bodyFont()}`;
     c.textBaseline = 'alphabetic'; c.textAlign = 'left';
     c.fillStyle = T.muted;
     c.fillText(vint, pad, y + (prov ? 44 : 20) * k);
@@ -172,7 +179,7 @@ export function composite(W, H, opts) {
 
   // ---- units the table only partly describes
   if (partial.length) {
-    c.font = `400 ${Math.round(16 * k)}px ${FONT}`;
+    c.font = `400 ${Math.round(16 * k)}px ${bodyFont()}`;
     c.textBaseline = 'alphabetic'; c.textAlign = 'left';
     c.fillStyle = T.muted;
     c.fillText(partial.join('  ·  '), pad, y + ((prov ? 44 : 20) + (vint ? 22 : 0)) * k);
@@ -180,7 +187,7 @@ export function composite(W, H, opts) {
 
   // ---- results drawn over boundaries that postdate them, by choice
   if (gap) {
-    c.font = `400 ${Math.round(16 * k)}px ${FONT}`;
+    c.font = `400 ${Math.round(16 * k)}px ${bodyFont()}`;
     c.textBaseline = 'alphabetic'; c.textAlign = 'left';
     // Brighter than the citations around it: this is the line that says the
     // map may be describing the wrong ground, and it should not read as a
@@ -192,7 +199,7 @@ export function composite(W, H, opts) {
 
   // ---- handle + stamp
   if (state.handle.trim()) {
-    c.font = `600 ${Math.round(19 * k)}px ${FONT}`;
+    c.font = `600 ${Math.round(19 * k)}px ${bodyFont()}`;
     c.textBaseline = 'alphabetic';
     c.textAlign = 'left'; c.fillStyle = T.text;
     c.fillText(state.handle.trim(), pad, H - pad * 0.62);
@@ -200,7 +207,7 @@ export function composite(W, H, opts) {
     // "September 2026" under a map titled 1977 reads as the wrong year twice.
     if (!state.provenance) {
       c.textAlign = 'right'; c.fillStyle = T.muted;
-      c.font = `400 ${Math.round(17 * k)}px ${FONT}`;
+      c.font = `400 ${Math.round(17 * k)}px ${bodyFont()}`;
       c.fillText(new Date().toLocaleDateString(undefined, { day: 'numeric', month: 'long', year: 'numeric' }),
         W - pad, H - pad * 0.62);
     }
@@ -250,7 +257,7 @@ export function coverageLimitations() {
 export function footerRowsAt(width) {
   const c = document.createElement('canvas').getContext('2d');
   const k = width / 1600;
-  c.font = `400 ${Math.round(17 * k)}px ${FONT}`;
+  c.font = `400 ${Math.round(17 * k)}px ${bodyFont()}`;
   const source = provenanceLine(), limitations = coverageLimitations();
   return {
     source: source ? lines(c, coverageLine(999) + source, width - 108 * k) : 0,
@@ -336,7 +343,7 @@ export function legendRowsAt(W) {
   const pad = 54 * k;
   const counts = standings();
   if (!counts.reduce((s, x) => s + x.n, 0)) return 0;
-  c.font = `600 ${Math.round(20 * k)}px ${FONT}`;
+  c.font = `600 ${Math.round(20 * k)}px ${capsFont()}`;
   return layoutLegend(c, counts, W - pad * 2, k).rows;
 }
 
@@ -398,18 +405,18 @@ function layoutLegend(c, counts, maxW, k) {
 }
 
 function drawLegend(c, counts, ox, oy, maxW, k, T) {
-  c.font = `600 ${Math.round(20 * k)}px ${FONT}`;
+  c.font = `600 ${Math.round(20 * k)}px ${capsFont()}`;
   const { items } = layoutLegend(c, counts, maxW, k);
   c.textBaseline = 'middle'; c.textAlign = 'left';
   items.forEach((it) => {
     const y = oy + it.row * 32 * k + 10 * k, x = ox + it.x;
     c.fillStyle = it.p.color;
-    roundRect(c, x, y - 8 * k, 16 * k, 16 * k, 4 * k); c.fill();
+    roundRect(c, x, y - 8 * k, 16 * k, 16 * k, historyIdentity() ? 0 : 4 * k); c.fill();
     // Hatched fills get a hatched swatch, or the legend describes a map that
     // is not the one above it.
     if (it.p.hatch) {
       c.save();
-      roundRect(c, x, y - 8 * k, 16 * k, 16 * k, 4 * k); c.clip();
+      roundRect(c, x, y - 8 * k, 16 * k, 16 * k, historyIdentity() ? 0 : 4 * k); c.clip();
       c.strokeStyle = T.hatchInk; c.lineWidth = 2 * k;
       for (let i = -16; i <= 16; i += 4) {
         c.beginPath();
@@ -420,11 +427,11 @@ function drawLegend(c, counts, ox, oy, maxW, k, T) {
       c.restore();
     }
     c.fillStyle = T.text;
-    c.font = `600 ${Math.round(20 * k)}px ${FONT}`;
+    c.font = `600 ${Math.round(20 * k)}px ${capsFont()}`;
     c.fillText(it.p.name, x + 26 * k, y);
     const nx = x + 26 * k + c.measureText(it.p.name).width + 10 * k;
     c.fillStyle = T.muted;
-    c.font = `400 ${Math.round(20 * k)}px ${FONT}`;
+    c.font = `400 ${Math.round(20 * k)}px ${capsFont()}`;
     c.fillText(String(it.n), nx, y);
   });
 }
@@ -456,7 +463,7 @@ const rowCount = (n) => Math.min(n, PER_COL);
 function rampGeometry(c, k, maxW) {
   const rows = rampRows();
   const cols = colCount(rows.length);
-  c.font = `600 ${Math.round(20 * k)}px ${FONT}`;
+  c.font = `600 ${Math.round(20 * k)}px ${capsFont()}`;
   const labelW = Math.max(...rows.map((r) => c.measureText(r.label).width));
   const colGap = 40 * k;
   const available = (maxW - colGap * (cols - 1)) / cols - labelW - 18 * k;
@@ -484,7 +491,7 @@ function drawRampLegend(c, def, ox, oy, k, maxW, T) {
       c.fillRect(x + b * (cw + gap), y, cw, ch);
     }
     c.fillStyle = T.text;
-    c.font = `600 ${Math.round(20 * k)}px ${FONT}`;
+    c.font = `600 ${Math.round(20 * k)}px ${capsFont()}`;
     c.fillText(r.label, x + stripW + 18 * k, y + ch / 2);
   });
 
@@ -492,7 +499,7 @@ function drawRampLegend(c, def, ox, oy, k, maxW, T) {
   const ticks = ticksFor(def);
   const ty = oy + (rowCount(rows.length) * (CELL_H + ROW_GAP) - ROW_GAP + 13) * k;
   c.fillStyle = T.muted;
-  c.font = `400 ${Math.round(17 * k)}px ${FONT}`;
+  c.font = `400 ${Math.round(17 * k)}px ${bodyFont()}`;
   c.textAlign = 'left'; c.fillText(ticks[0], ox, ty);
   c.textAlign = 'center'; c.fillText(ticks[1], ox + stripW / 2, ty);
   c.textAlign = 'right'; c.fillText(ticks[2], ox + stripW, ty);

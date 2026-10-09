@@ -6,6 +6,7 @@ import { state, REGIONS, clearAssignments, emit, pushHistory,
          toDocument, undo, canUndo } from '../state.js';
 import { clamp } from '../geo.js';
 import { dl, slug } from '../export.js';
+import { prepareIdentity } from '../identity.js';
 import { restoreDocument } from '../restore.js';
 
 const undoMap = () => Promise.resolve().then(() => undo()).catch((err) => toast(`Undo failed: ${err.message}`));
@@ -45,6 +46,17 @@ export function initControls() {
   const fields = { fTitle: 'title', fSub: 'sub', fHandle: 'handle' };
   Object.entries(fields).forEach(([id, key]) => {
     $('#' + id).addEventListener('input', (e) => { state[key] = e.target.value; });
+  });
+
+  $('#fIdentity').addEventListener('change', async (e) => {
+    const identity = e.target.value;
+    e.target.disabled = true;
+    try {
+      await prepareIdentity(identity);
+      state.identity = identity;
+      emit('view');
+    } catch (err) { toast(err.message); }
+    finally { e.target.disabled = false; e.target.value = state.identity; }
   });
 
   /* ---- style toggles ---- */
@@ -122,6 +134,7 @@ export function syncFormFromState() {
   $('#fTitle').value = state.title || '';
   $('#fSub').value = state.sub || '';
   $('#fHandle').value = state.handle || '';
+  $('#fIdentity').value = state.identity;
   $('#tTheme').checked = state.theme === 'light';
   $('#tGrat').checked = !!state.grat;
   $('#tAnt').checked = !!state.antarctica;

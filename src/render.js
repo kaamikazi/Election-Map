@@ -4,7 +4,8 @@
  * If a second drawing path ever appears here, the two will drift apart.
  */
 
-import { state, THEMES, FONT, partyFor, recordFor } from './state.js';
+import { presentation, capsFont, historyIdentity } from './identity.js';
+import { state, partyFor, recordFor } from './state.js';
 import { fillFor } from './metrics.js';
 import {
   FEATS, BORDERS, OUTLINE, BY_KEY, backdrop,
@@ -34,7 +35,7 @@ export function drawMap(c, W, H, opt) {
       inViewOf: null, report: null },
     opt || {}
   );
-  const T = THEMES[state.theme];
+  const T = presentation();
 
   /* The active metric decides the fill; on "flat" this is the party colour. */
   const fill = (key) => {
@@ -170,16 +171,16 @@ export function drawMap(c, W, H, opt) {
 
   // labels
   if (state.labels) {
-    c.font = `600 ${11 * o.k}px ${FONT}`;
+    c.font = `600 ${11 * o.k}px ${capsFont()}`;
     c.textAlign = 'center'; c.textBaseline = 'middle';
     for (const f of FEATS) {
       if (flagMode ? !state.flagged[f.key] : !fill(f.key)) continue;
       if (path.area(f) < 900 * o.k * o.k) continue;
       const cc = path.centroid(f);
       if (!isFinite(cc[0])) continue;
-      c.lineWidth = 3 * o.k; c.strokeStyle = 'rgba(0,0,0,.45)';
+      c.lineWidth = 3 * o.k; c.strokeStyle = historyIdentity() ? '#1d1610' : 'rgba(0,0,0,.45)';
       c.strokeText(f.name, cc[0], cc[1]);
-      c.fillStyle = '#fff'; c.fillText(f.name, cc[0], cc[1]);
+      c.fillStyle = historyIdentity() ? '#efe3c4' : '#fff'; c.fillText(f.name, cc[0], cc[1]);
     }
   }
 

@@ -1,5 +1,6 @@
+import { presentation } from '../identity.js';
 import { $, esc } from './dom.js';
-import { state, activeParties, THEMES } from '../state.js';
+import { state, activeParties } from '../state.js';
 import { NEUTRAL, metricDef, rampSwatches, ticksFor } from '../metrics.js';
 import { hatchCss } from '../render.js';
 import { BY_KEY } from '../geo.js';
@@ -30,7 +31,7 @@ function flagLegend() {
 
 /** A swatch has to look like the fill it stands for, hatching included. */
 const swatchStyle = (p) =>
-  p.hatch ? `background:${hatchCss(p.color, THEMES[state.theme].hatchInk)}` : `background:${p.color}`;
+  p.hatch ? `background:${hatchCss(p.color, presentation().hatchInk)}` : `background:${p.color}`;
 
 /**
  * The legend changes shape with the metric: a swatch row when the fill is a

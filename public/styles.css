@@ -603,3 +603,5 @@ img.flag.sm{width:16px;height:12px;flex-basis:16px}
 @media (prefers-reduced-motion:reduce){
   *,*::before,*::after{transition:none!important;animation:none!important;scroll-behavior:auto!important}
 }
+
+.identity-note{font-size:12px;color:var(--muted);margin:6px 0 12px}

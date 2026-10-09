@@ -137,6 +137,7 @@ export const state = {
   zoom: 1, pan: [0, 0],
   fit: null,           // [[lon,lat],[lon,lat]] or null
   theme: 'dark',
+  identity: 'classic', // 'history' applies the channel identity; classic files stay unchanged
   grat: false, antarctica: false, dots: true, labels: false,
   /*
    * 'results' or 'flags'. Results is the default and the only mode in which a

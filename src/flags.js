@@ -13,6 +13,7 @@
 
 import { NUMERIC_TO_A2, ALPHA3_TO_A2, FLAG_SET } from './flag-codes.js';
 import { state } from './state.js';
+import { prepareIdentity } from './identity.js';
 import { LAYER, WORLD, BOUNDARY, BY_KEY, onLayerActive } from './geo.js';
 
 export { FLAG_SET };
@@ -156,6 +157,7 @@ export function flagsNeeded() {
  * any export, and it throws — naming the flags — rather than letting one through.
  */
 export async function prepareExport() {
+  await prepareIdentity();
   const { failed } = await ensure(flagsNeeded());
   if (failed.length) {
     throw new Error('These flags did not load: ' +
