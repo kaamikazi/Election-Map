@@ -29,6 +29,7 @@ import { buildProposal, applyProposal, counts } from './import/proposal.js';
 import { boundsOf, BY_KEY, LAYER, WORLD, BOUNDARY } from './geo.js';
 import { composite, legendRowsAt, footerRowsAt } from './export.js';
 import { boundaryWarnings, vintageLine } from './vintage.js';
+import { approveCurrentMap } from './export.js';
 
 /** The plan for the run in progress. One at a time; this is a generator, not a view. */
 let plan = null;
@@ -100,7 +101,7 @@ const yearsFrom = (from, to, step) => {
  */
 export async function planSeries({
   from, to, step = 1, scope = 'Europe', grouping = 'family',
-  width = 1600, height = 900, margin = 0.12
+  width = 1600, height = 900, margin = 0.12, handle = ''
 } = {}) {
   const adapter = adapterById('archive');
   const palette = seedPalette(grouping);
@@ -142,7 +143,10 @@ export async function planSeries({
   if (!frames.length) throw new Error('No year in that range produced a map');
 
   plan = {
-    from, to, step, scope, grouping, width, height,
+    from, to, step, scope, grouping, width, height, handle,
+    display: { theme: state.theme, proj: state.proj, labels: state.labels,
+      dots: state.dots, grat: state.grat, antarctica: state.antarctica },
+    reviewDigest: null,
     // One frame for the whole run, over everything any year covers.
     fit: boundsOf([...union], margin),
     unionUnits: union.size,
@@ -270,7 +274,8 @@ async function drawPlanned(f, opts) {
   const draft = await adapter.propose({
     year: String(f.year), scope: plan.scope, grouping: plan.grouping
   });
-  applyProposal(buildProposal(draft), { replace: true });
+  const proposal = buildProposal(draft);
+  applyProposal(proposal, { replace: true });
 
   // The run's frame, not this year's. Set after apply, which is where the
   // adapter's own fit-to-data lands.
@@ -281,6 +286,19 @@ async function drawPlanned(f, opts) {
   state.selected = null;
   if (opts.handle != null) state.handle = opts.handle;
   if (opts.sub != null) state.sub = opts.sub;
+
+  if (plan.reviewDigest) {
+    if (opts.handle !== plan.handle || opts.sub != null ||
+        Object.entries(plan.display).some(([key, value]) => JSON.stringify(state[key]) !== JSON.stringify(value))) {
+      throw new Error('The reviewed series display changed. Generate a draft and review the run again.');
+    }
+    const current = frameRecord({ year: f.year, keys: Object.keys(state.assign),
+      counts: counts(proposal), proposal, grouping: plan.grouping, scope: plan.scope });
+    if (JSON.stringify(current) !== JSON.stringify(f)) {
+      throw new Error(`Frame ${f.year} no longer matches the reviewed series. Generate a new draft.`);
+    }
+    approveCurrentMap();
+  }
 
   // What the draw actually did, so "the frame did not move" is a measurement
   // rather than an intention. Comparing rendered pixels cannot answer it: an
@@ -304,6 +322,20 @@ async function drawPlanned(f, opts) {
 
 export const seriesPlan = () => plan;
 export const frameCount = () => (plan ? plan.frames.length : 0);
+
+export async function seriesReviewDigest() {
+  const { generatedAt, review, ...stable } = manifest();
+  const bytes = new TextEncoder().encode(JSON.stringify(stable));
+  const hash = await crypto.subtle.digest('SHA-256', bytes);
+  return [...new Uint8Array(hash)].map((n) => n.toString(16).padStart(2, '0')).join('');
+}
+
+export async function approveSeriesPlan(expectedDigest) {
+  const actual = await seriesReviewDigest();
+  if (!expectedDigest || expectedDigest !== actual) throw new Error('Series dates, frames, sources, boundaries or caveats changed since review.');
+  plan.reviewDigest = actual;
+  return actual;
+}
 
 /* --------------------------------------------------------------- manifest */
 
@@ -330,10 +362,14 @@ export function manifest() {
     kind: 'election-map-studio/series',
     version: 1,
     generatedAt: plan.generatedAt,
+    review: plan.reviewDigest ? { status: 'reviewed', planSha256: plan.reviewDigest }
+      : { status: 'draft', reason: 'Every frame needs explicit review as one defined run.' },
     range: { from: plan.from, to: plan.to, step: plan.step },
     scope: plan.scope,
     grouping: plan.grouping,
     size: { width: plan.width, height: plan.height },
+    handle: plan.handle,
+    display: plan.display,
     frames: plan.frames.length,
     // Stated so the claim "the frame does not move" is checkable from the
     // manifest alone, without measuring pixels.

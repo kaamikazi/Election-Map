@@ -1,0 +1,250 @@
+{
+  "version": 1,
+  "note": "Official electoral-authority, statistical-office or government publications registered for exact national results and category indexes. Each source names the publishing authority and its role. A fetched page establishes nothing by itself: a registered parser must find the stated facts at a recorded locator, and anything it cannot read stays null.",
+  "sources": [
+    {
+      "id": "cze-volby-president-2023",
+      "country": "CZE",
+      "category": "presidential",
+      "authority": "Czech Statistical Office (volby.cz), results of the State Election Commission",
+      "role": "Official results publication of the Czech presidential election",
+      "terms": "Official public results; reuse terms not separately reviewed — cite volby.cz / Czech Statistical Office",
+      "parser": "cze-volby-president",
+      "resources": [
+        {
+          "key": "cze-prez2023-pe2",
+          "url": "https://volby.gov.cz/pls/prez2023/pe2?xjazyk=EN"
+        }
+      ]
+    },
+    {
+      "id": "cze-volby-index",
+      "country": "CZE",
+      "categories": [
+        "presidential",
+        "legislative"
+      ],
+      "authority": "Czech Statistical Office (volby.cz)",
+      "role": "Complete official index of national elections by category and year",
+      "terms": "Official public index",
+      "parser": "cze-volby-index",
+      "resources": [
+        {
+          "key": "cze-volby-index",
+          "url": "https://volby.gov.cz/index_en.htm"
+        }
+      ]
+    },
+    {
+      "id": "aut-bmi-president-2022",
+      "country": "AUT",
+      "category": "presidential",
+      "authority": "Federal Ministry of the Interior (BMI), Federal Electoral Board results",
+      "role": "Official final result of the 2022 federal presidential election, as determined by the Federal Electoral Board",
+      "terms": "Official public results; reuse terms not separately reviewed — cite BMI",
+      "parser": "aut-bmi-president",
+      "resources": [
+        {
+          "key": "aut-bp2022-start",
+          "url": "https://www.bmi.gv.at/412/Bundespraesidentenwahlen/Bundespraesidentenwahl_2022/start.aspx"
+        }
+      ]
+    },
+    {
+      "id": "aut-bmi-index",
+      "country": "AUT",
+      "categories": [
+        "presidential",
+        "legislative"
+      ],
+      "authority": "Federal Ministry of the Interior (BMI)",
+      "role": "Official lists of federal presidential and National Council elections",
+      "terms": "Official public index",
+      "parser": "aut-bmi-index",
+      "resources": [
+        {
+          "key": "aut-bp-index",
+          "url": "https://www.bmi.gv.at/412/Bundespraesidentenwahlen/start.aspx"
+        },
+        {
+          "key": "aut-nr-index",
+          "url": "https://www.bmi.gv.at/412/Nationalratswahlen/start.aspx"
+        }
+      ]
+    },
+    {
+      "id": "are-uae-federal-supreme-council",
+      "country": "ARE",
+      "category": "presidential",
+      "authority": "UAE Government portal (u.ae), The Federal Supreme Council",
+      "role": "Official statement of the indirect election of the President by the Federal Supreme Council",
+      "terms": "Official government information page",
+      "parser": "are-fsc-president",
+      "resources": [
+        {
+          "key": "are-fsc",
+          "url": "https://u.ae/en/about-the-uae/the-uae-government/the-federal-supreme-council"
+        }
+      ]
+    },
+    {
+      "id": "chl-tricel-president-2025",
+      "country": "CHL",
+      "category": "presidential",
+      "authority": "Tribunal Calificador de Elecciones (TRICEL)",
+      "role": "Constitutional electoral court: qualifies the presidential election and proclaims the President-elect",
+      "terms": "Official court publication; reuse terms not separately reviewed — cite TRICEL",
+      "parser": "chl-tricel-president",
+      "resources": [
+        {
+          "key": "chl-tricel-first-round",
+          "url": "https://tribunalcalificador.cl/resultados-oficiales-presidentes-primera-vuelta-2025/"
+        },
+        {
+          "key": "chl-tricel-proclamation",
+          "url": "https://tribunalcalificador.cl/tribunal-calificador-de-elecciones-proclamo-al-senor-jose-antonio-kast-rist-como-presidente-electo-de-la-republica-de-chile/"
+        }
+      ]
+    },
+    {
+      "id": "usa-fec-electoral-votes-2024",
+      "country": "USA",
+      "category": "presidential",
+      "authority": "Federal Election Commission (Official 2024 Presidential General Election Results)",
+      "role": "Official compilation of state-certified results including electoral votes",
+      "terms": "US government work; public domain",
+      "parser": "usa-fec-electoral-votes",
+      "resources": [
+        {
+          "key": "usa-fec-2024-pdf",
+          "url": "https://www.fec.gov/resources/cms-content/documents/2024presgeresults.pdf"
+        }
+      ]
+    },
+    {
+      "id": "che-parlament-president-2026",
+      "country": "CHE",
+      "category": "presidential",
+      "authority": "Swiss Federal Assembly (parlament.ch)",
+      "role": "Parliament website: dispatch of the election of the President of the Confederation and the Parliament's archive of past elections",
+      "terms": "Official parliament website; reuse terms not separately reviewed — cite parlament.ch",
+      "parser": "che-parlament-president",
+      "resources": [
+        {
+          "key": "che-president-2026-news",
+          "url": "https://www.parlament.ch/fr/services/news/Pages/2025/20251210125032947194158159026_bsf112.aspx"
+        },
+        {
+          "key": "che-president-archive",
+          "url": "https://www.parlament.ch/fr/%C3%BCber-das-parlament/archive/retrospective-des-elections/election-du-president"
+        }
+      ]
+    },
+    {
+      "id": "cze-volby-president-2018",
+      "country": "CZE",
+      "category": "presidential",
+      "authority": "Czech Statistical Office (volby.cz), results of the State Election Commission",
+      "role": "Official results publication of the Czech presidential election (historical backfill)",
+      "terms": "Official public results; reuse terms not separately reviewed — cite volby.cz / Czech Statistical Office",
+      "parser": "cze-volby-president",
+      "history": true,
+      "resources": [
+        {
+          "key": "cze-prez2018-pe2",
+          "url": "https://volby.gov.cz/pls/prez2018/pe2?xjazyk=EN"
+        }
+      ]
+    },
+    {
+      "id": "cze-volby-president-2013",
+      "country": "CZE",
+      "category": "presidential",
+      "authority": "Czech Statistical Office (volby.cz), results of the State Election Commission",
+      "role": "Official results publication of the Czech presidential election (historical backfill)",
+      "terms": "Official public results; reuse terms not separately reviewed — cite volby.cz / Czech Statistical Office",
+      "parser": "cze-volby-president",
+      "history": true,
+      "resources": [
+        {
+          "key": "cze-prez2013-pe2",
+          "url": "https://volby.gov.cz/pls/prez2013/pe2?xjazyk=EN"
+        }
+      ]
+    }
+  ],
+  "attemptedUnsupported": [
+    {
+      "country": "BRA",
+      "category": "presidential",
+      "authority": "Tribunal Superior Eleitoral",
+      "url": "https://resultados.tse.jus.br/oficial/ele2022/545/dados-simplificados/br/br-c0001-e000545-r.json",
+      "outcome": "HTTP 404 NoSuchKey (5 Oct 2026); 2022 simplified results no longer served at this path",
+      "alternative": "TSE open-data CSV archives (dadosabertos.tse.jus.br) — large zipped files, adapter not yet built"
+    },
+    {
+      "country": "POL",
+      "category": "presidential",
+      "authority": "Państwowa Komisja Wyborcza",
+      "url": "https://prezydent2025.pkw.gov.pl/prezydent2025/en/wyniki/pl",
+      "outcome": "Results rendered by JavaScript; the served HTML contains no result table",
+      "alternative": "PKW downloadable result sheets (dane_w_arkuszach) — not yet registered"
+    },
+    {
+      "country": "FIN",
+      "category": "presidential",
+      "authority": "Ministry of Justice election results service",
+      "url": "https://tulospalvelu.vaalit.fi/PRE-2024/en/tulos_kokomaa.html",
+      "outcome": "HTTP 404 at the guessed path",
+      "alternative": "Locate the archived PRE-2024 result index"
+    },
+    {
+      "country": "SVK",
+      "category": "presidential",
+      "authority": "Statistical Office of the Slovak Republic",
+      "url": "https://volby.statistics.sk/prez/prez2024/en/vysledky_hlasovania_sr.html",
+      "outcome": "HTTP 404 at the guessed path",
+      "alternative": "Locate the prez2024 result index"
+    },
+    {
+      "country": "LTU",
+      "category": "presidential",
+      "authority": "Central Electoral Commission",
+      "url": "https://www.vrk.lt/en/2024-prezidento",
+      "outcome": "HTTP 403 JavaScript/cookie challenge",
+      "alternative": "VRK open data API"
+    },
+    {
+      "country": "IND",
+      "category": "presidential",
+      "authority": "Election Commission of India (press note ECI/PN/63/2022, copy on the Odisha CEO site)",
+      "url": "https://ceoodisha.nic.in/docs/PressRelease/PN_63-President%20Election%20Results.pdf",
+      "outcome": "Connection timeout from this network (8 Oct 2026); eci.gov.in returns HTTP 406 to registered clients",
+      "alternative": "Rajya Sabha Secretariat (Returning Officer) notification in the Gazette of India"
+    },
+    {
+      "country": "CHE",
+      "category": "presidential",
+      "authority": "Federal Department of Economic Affairs (wbf.admin.ch)",
+      "url": "https://www.wbf.admin.ch/en/presidential-year-2026",
+      "outcome": "Connection reset (8 Oct 2026)",
+      "alternative": "parlament.ch (registered)"
+    },
+    {
+      "country": "GRC",
+      "category": "presidential",
+      "authority": "Hellenic Parliament",
+      "url": "https://www.hellenicparliament.gr/",
+      "outcome": "No official result page for the 12 February 2025 election located; only secondary reports found",
+      "alternative": "Hellenic Parliament plenary minutes for 12 February 2025"
+    },
+    {
+      "country": "CHN",
+      "category": "presidential",
+      "authority": "National People's Congress",
+      "url": "http://www.npc.gov.cn/englishnpc/",
+      "outcome": "No NPC page for the 10 March 2023 election located; only state-media republications found",
+      "alternative": "NPC announcement (公告) of the first session of the 14th NPC"
+    }
+  ]
+}

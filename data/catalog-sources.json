@@ -1,0 +1,187 @@
+{
+  "researchedProviders": [
+    {
+      "documentation": "https://www.electionguide.org/p/about/",
+      "id": "ifes-electionguide",
+      "nextAction": "Obtain suitable data reuse permission or use national declarations.",
+      "pagination": "Past page exposes only most recent 200 events, not a complete worldwide latest check.",
+      "reason": "Public web search available, but published terms restrict copying/derivative use without written permission. No bulk result adapter enabled; no permission request sent.",
+      "state": "reuse-restricted",
+      "terms": "https://www.ifes.org/terms-and-conditions",
+      "url": "https://www.electionguide.org/"
+    },
+    {
+      "export": "https://www.idea.int/data-tools/export?loc=home&themeId=293&type=region_only&world=all",
+      "id": "idea-turnout",
+      "nextAction": "Check public export access and resource-specific reuse terms; do not use election year alone as an exact event identity.",
+      "reason": "Website returned HTTP 403 in direct acquisition; export is XLSX. Registered-voter and estimated voting-age denominators must remain separate; archive eligibility excludes some elections.",
+      "state": "access-unresolved",
+      "terms": "https://www.idea.int/terms-and-conditions",
+      "url": "https://www.idea.int/data-tools/data/voter-turnout-database"
+    },
+    {
+      "id": "clea",
+      "nextAction": "Check documented release/download access after Phase A; record failure, continue supported history.",
+      "reason": "Direct host acquisition returned HTTP 403. Research pages describe ODbL and dissemination conditions; registration/download access needs checking before any bulk import.",
+      "state": "access-unresolved",
+      "terms": "https://electiondataarchive.org/about/licensing/",
+      "url": "https://electiondataarchive.org/data-and-documentation/clea-lower-chamber-elections-archive/"
+    },
+    {
+      "endpoint": "https://query.wikidata.org/sparql",
+      "id": "wikidata-presidential",
+      "nextAction": "Implement documented segmented class/country discovery with completeness proof and statement-reference validation before enabling an adapter.",
+      "reason": "Entity search and class enumeration succeeded. Complete presidential queries timed out at 20–25 seconds; incomplete query results were not imported. Contributed CC0 claims would require separate authority and editorial review.",
+      "researchedAt": "2026-10-01",
+      "state": "bounded-discovery-incomplete",
+      "terms": "https://www.wikidata.org/wiki/Wikidata:Licensing",
+      "url": "https://www.wikidata.org/wiki/Q858439"
+    }
+  ],
+  "sources": [
+    {
+      "baseUrl": "https://api.data.ipu.org/v1/",
+      "boundaryCompatibility": "National schematic country display only; no historical or constituency boundary claim.",
+      "cacheHours": 24,
+      "categories": [
+        "legislative",
+        "upper-house"
+      ],
+      "dateRange": {
+        "from": "1900-01-01",
+        "to": null
+      },
+      "documentation": [
+        "https://data.ipu.org/data-tools/api/",
+        "https://data.ipu.org/data-dictionary/"
+      ],
+      "entities": [
+        "countries",
+        "parliaments",
+        "chambers",
+        "elections",
+        "political_parties"
+      ],
+      "id": "ipu-parline",
+      "licence": {
+        "attribution": "Inter-Parliamentary Union, Parline. CC BY-NC-SA 4.0.",
+        "name": "CC BY-NC-SA 4.0",
+        "terms": "https://www.ipu.org/terms-use",
+        "url": "https://creativecommons.org/licenses/by-nc-sa/4.0/"
+      },
+      "maxPages": 50,
+      "pageSize": 250,
+      "parser": "ipu-jsonapi-v1",
+      "provider": "Inter-Parliamentary Union / Parline",
+      "reliabilityNotes": [
+        "Provider data, largely reported by parliaments; not independent editorial verification.",
+        "last_election is a provider assertion; a complete index search does not prove certification or absence of a newer unreported election.",
+        "Current chamber membership is not an election result. Use seats_per_parties from the election entity only.",
+        "Some old events contain only archived HTML links, without structured results."
+      ],
+      "scope": "worldwide national parliaments",
+      "updateCadence": "provider-maintained; per-field validity and next-check dates may be present"
+    },
+    {
+      "boundaryCompatibility": "Country name/code crosswalk only",
+      "cacheHours": 168,
+      "id": "un-scope",
+      "licence": {
+        "name": "UN information; membership reference",
+        "url": "https://www.un.org/en/about-us/terms-of-use"
+      },
+      "parser": "un-membership-nav-v1",
+      "provider": "United Nations Dag Hammarskjöld Library",
+      "reliabilityNotes": [
+        "Core membership is a versioned jurisdiction registration, not evidence of an election. ISO territories and user-assigned codes are supplementary."
+      ],
+      "resources": [
+        {
+          "key": "members",
+          "url": "https://research.un.org/en/unmembers/currentmembers"
+        },
+        {
+          "key": "observers",
+          "url": "https://research.un.org/en/unmembers/observers"
+        }
+      ]
+    },
+    {
+      "boundaryCompatibility": "National schematic world outline only",
+      "cacheHours": 24,
+      "country": "FRA",
+      "id": "france-president",
+      "licence": {
+        "name": "French public election information; retain attribution",
+        "url": "https://www.interieur.gouv.fr/mentions-legales"
+      },
+      "parser": "france-president-html-v1",
+      "provider": "French Ministry of Interior / Constitutional Council",
+      "reliabilityNotes": [
+        "Published national totals and rounds; declared outcome requires Constitutional Council evidence, never argmax.",
+        "The archive index is searched for newer presidential releases; archive coverage alone is not a guarantee of freshness."
+      ],
+      "resources": [
+        {
+          "key": "index",
+          "url": "https://www.archives-resultats-elections.interieur.gouv.fr/"
+        },
+        {
+          "key": "results",
+          "url": "https://www.archives-resultats-elections.interieur.gouv.fr/resultats/presidentielle-2022/FE.php"
+        },
+        {
+          "key": "declaration",
+          "url": "https://www.conseil-constitutionnel.fr/decision/2022/2022197PDR.htm"
+        },
+        {
+          "key": "first-round",
+          "url": "https://www.conseil-constitutionnel.fr/decision/2022/2022195PDR.htm"
+        }
+      ]
+    },
+    {
+      "boundaryCompatibility": "National schematic world outline only",
+      "cacheHours": 24,
+      "country": "USA",
+      "id": "usa-electoral-college",
+      "licence": {
+        "name": "US government public information",
+        "url": "https://www.archives.gov/global-pages/privacy.html"
+      },
+      "parser": "fec-presidential-xlsx-v1",
+      "provider": "US Federal Election Commission / National Archives",
+      "registeredIdentity": {
+        "date": "2024-11-05",
+        "dateResource": "calendar",
+        "direction": "indirectly_elected",
+        "locator": "2024pdates.pdf page 1: General Election Date 11/05/2024",
+        "note": "Popular ballot date; Electoral College voting is a subsequent distinct stage, not a runoff.",
+        "round": null
+      },
+      "reliabilityNotes": [
+        "Electoral College outcome, not national popular vote. No popular vote share is derived from electoral votes.",
+        "The national public ballot and subsequent electoral vote are distinct rounds/stages of an indirect election."
+      ],
+      "resources": [
+        {
+          "key": "index",
+          "url": "https://www.fec.gov/introduction-campaign-finance/election-results-and-voting-information/"
+        },
+        {
+          "key": "results",
+          "url": "https://www.fec.gov/resources/cms-content/documents/2024presgeresults.xlsx"
+        },
+        {
+          "key": "calendar",
+          "url": "https://www.fec.gov/resources/cms-content/documents/2024pdates.pdf"
+        },
+        {
+          "key": "nara",
+          "url": "https://www.archives.gov/electoral-college/2024"
+        }
+      ]
+    }
+  ],
+  "version": 1
+}

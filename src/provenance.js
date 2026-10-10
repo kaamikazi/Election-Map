@@ -9,7 +9,9 @@ export function sourceRecord(src = {}) {
     importId: src.importId || null,
     asOfPrecision: src.asOfPrecision || null, fetchedAt: src.fetchedAt || null,
     cite: src.cite || null, gaps: src.gaps || [], notes: src.notes || [],
-    vintageOverride: src.vintageOverride || null
+    vintageOverride: src.vintageOverride || null,
+    ...(src.evidence ? { evidence: src.evidence } : {}),
+    ...(src.catalog ? { catalog: src.catalog } : {})
   };
 }
 

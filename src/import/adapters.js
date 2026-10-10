@@ -16,6 +16,8 @@ import { state, REGIONS } from '../state.js';
 import { FEATS, BY_KEY, LAYER, WORLD, BOUNDARY, unitList } from '../geo.js';
 import { parseTable, guessColumns } from './parse.js';
 import { buildIndex, scopeKey } from './match.js';
+import { databaseDraft } from './database.js';
+import { catalogDraft, CATALOG_VIEWS } from './catalog.js';
 import { familyColor, familyLabel, UNFAMILIED } from '../families.js';
 import { loadGoverning, governingOn, lastCoveredDate, source as archiveSource } from '../archive.js';
 import {
@@ -157,12 +159,12 @@ const archive = {
     return {
       source: {
         kind: 'archive',
+        scopeName: region,
         datasetId: `parlgov:government:${date}:${grouping || 'family'}`,
         label: src ? src.label : 'ParlGov',
         url: src ? src.url : null,
-        fetchedAt: date,
-        // The archive is asked for a date and answers about that date, so the
-        // two coincide here. They do not for every adapter.
+        // This is a vendored release, not a fetch made on the historical date.
+        fetchedAt: null,
         asOf: date,
         universe,
         gaps: gaps.map((c) => ({
@@ -543,6 +545,20 @@ function bareTitle(title) {
 
 /* ---------------------------------------------------------------- registry */
 
-export const ADAPTERS = [clipboard, wikipedia, archive];
+const database = {
+  id: 'database', label: 'Election database',
+  hint: 'Registered sources, captured evidence and validated boundary codes. Every map still needs import and publication review.',
+  inputs: [{ name: 'query', type: 'text', label: 'Find election', placeholder: 'Country code, date, office or provider; e.g. GBR 2024' }],
+  propose(answers) { return databaseDraft(answers, activeLayer()); }
+};
+
+const catalog = { id: 'catalog', label: 'Worldwide catalog',
+  hint: 'National results, latest-selection evidence and metric-specific gaps. World outlines are schematic; imports remain drafts.',
+  inputs: [{name:'view',type:'select',label:'View',options:CATALOG_VIEWS},
+    ...['country','date','office','chamber','status','source'].map(name=>({name,type:'text',advanced:!['country','date'].includes(name),label:name[0].toUpperCase()+name.slice(1),placeholder:name==='country'?'ISO code, e.g. BGD':name==='date'?'Year or exact date':'Optional filter'})),
+    {name:'available',type:'select',advanced:true,label:'Available metric',options:[{value:'',label:'Any'},...CATALOG_VIEWS.filter(v=>!['browse','coverage'].includes(v.value))]}],
+  propose(answers) { return catalogDraft(answers, activeLayer()); }
+};
+export const ADAPTERS = [clipboard, wikipedia, archive, database, catalog];
 
 export const adapterById = (id) => ADAPTERS.find((a) => a.id === id) || ADAPTERS[0];

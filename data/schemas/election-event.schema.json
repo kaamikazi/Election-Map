@@ -1,0 +1,31 @@
+{
+  "$schema":"https://json-schema.org/draft/2020-12/schema",
+  "$id":"election-map/election-event/v1",
+  "title":"Source-specific national election event and metric capabilities",
+  "description":"A record hash and machine eligibility are not independent verification. Runtime validation also checks pagination, geometry hashes, metric reconciliation and exact-plan replacement.",
+  "type":"object",
+  "required":["id","country","category","office","date","sourceId","sourceElectionId","holdingStatus","rounds","parties","candidates","citations","completion","review"],
+  "properties":{
+    "id":{"type":"string"},"country":{"type":"string","pattern":"^[A-Z]{3}$"},
+    "scope":{"enum":["core","supplementary","outside-registered-scope"]},
+    "category":{"enum":["legislative","presidential","upper-house"]},
+    "office":{"type":"string","minLength":1},"chamber":{"type":["string","null"]},
+    "date":{"type":"string","format":"date"},"endDate":{"type":["string","null"]},
+    "direction":{"type":["string","null"]},"sourceId":{"type":"string"},"sourceElectionId":{"type":"string"},
+    "holdingStatus":{"enum":["held","upcoming","appointment","unconfirmed"]},
+    "rounds":{"type":"array","items":{"type":"object","properties":{"number":{"type":["integer","null"],"minimum":1},"date":{"type":"string","format":"date"}}}},
+    "parties":{"type":"array","items":{"$ref":"#/$defs/contestant"}},
+    "candidates":{"type":"array","items":{"$ref":"#/$defs/contestant"}},
+    "citations":{"type":"array","minItems":1,"items":{"type":"object","required":["sourceId","sha256","receiptId","url","retrievedAt","locator"]}},
+    "certificationStatus":{"type":["string","null"]},"sourceUpdateTime":{"type":["string","null"]},
+    "governmentFormation":{"type":["object","null"]},
+    "completion":{"type":"object","required":["state"],"properties":{"state":{"enum":["completed","unknown"]}}},
+    "review":{"type":"object","required":["state"],"properties":{"state":{"enum":["verified","imported-with-warning","needs-review","rejected"]}}},
+    "metrics":{"type":"object","description":"Each capability records eligible/value or an exact unavailable reason; derivations retain inputs, formula and limitations."}
+  },
+  "$defs":{"contestant":{"type":"object","required":["id","name"],"properties":{
+    "id":{"type":"string"},"name":{"type":"string"},"votes":{"type":["integer","null"],"minimum":0},
+    "seats":{"type":["integer","null"],"minimum":0},"voteShare":{"type":["number","null"],"minimum":0,"maximum":100},
+    "elected":{"type":["boolean","null"]},"allianceMembers":{"type":["array","null"]}
+  }}}
+}

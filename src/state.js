@@ -9,6 +9,8 @@
  * the map behaves exactly as v1 did.
  */
 
+import { freshPublication, PUBLICATION_DEFAULTS } from './publication.js';
+
 export const PALETTE = ['#3B7DD8', '#D0453E', '#E08A2E', '#3E9E6E', '#8659C4', '#2AA3A3', '#C7B02E', '#8A8F98'];
 
 export const FONT = '"Helvetica Neue",Helvetica,Arial,sans-serif';
@@ -74,7 +76,7 @@ export const ALIAS = {
   'the gambia': 'Gambia', 'the bahamas': 'Bahamas'
 };
 
-export const SCHEMA_VERSION = 6;
+export const SCHEMA_VERSION = 8;
 
 /**
  * Milestone 3 keyed layers as `admin1:<ISO3>` when Natural Earth was the only
@@ -148,7 +150,12 @@ export const state = {
   // The countries a flags map shows, by unit key. Deliberately not `assign`:
   // switching mode must not cost anyone a finished results map, and a flag
   // selection is not a result.
-  flagged: {}
+  flagged: {},
+  // What the map is, for publication: which election, what status, how much
+  // is counted, and whether a reviewer has marked it ready. The headline and
+  // subtitle are `title` and `sub` above — one place, not two. See
+  // publication.js for the rules that read this.
+  publication: freshPublication()
 };
 state.active = state.parties[0].id;
 
@@ -212,7 +219,7 @@ const SCOPES = {
   // an import or an archive document: results, parties and where they came from
   import: {
     hard: ['parties', 'assign', 'provenance', 'active', 'selected'],
-    soft: ['metric', 'title', 'sub', 'fit', 'zoom', 'pan']
+    soft: ['metric', 'title', 'sub', 'fit', 'zoom', 'pan', 'publication']
   },
   party: { hard: ['parties', 'assign', 'provenance', 'active', 'selected'] },
   // a layer switch brings its geometry, assignments and framing back together
@@ -225,6 +232,7 @@ const SCOPES = {
   document: { hard: Object.keys(DOCUMENT_DEFAULTS) }
 };
 
+const DATA_SCOPES = new Set(['assign', 'flags', 'mode', 'import', 'party', 'layer']);
 const pick = (keys) => JSON.stringify(Object.fromEntries(keys.map((k) => [k, state[k]])));
 
 /**
@@ -237,6 +245,10 @@ export function pushHistory(scope) {
   if (!s) throw new Error(`pushHistory needs an operation scope, not ${JSON.stringify(scope)}`);
   const entry = { scope, hard: pick(s.hard), soft: s.soft ? pick(s.soft) : null, after: null };
   history.push(entry);
+  // Changing what the map shows withdraws a reviewer's "ready to publish": the
+  // map they reviewed is no longer the map on screen. Undo does not give it
+  // back, because the map after an undo has not been reviewed either.
+  if (DATA_SCOPES.has(scope) && state.publication) state.publication.ready = false;
   if (history.length > HISTORY_LIMIT) history.shift();
   // The soft keys' post-operation values are read once the operation's
   // synchronous work is done: a layer switch frames the new layer, and an
@@ -251,6 +263,7 @@ export function pushHistory(scope) {
  * records once per picker session.
  */
 export function pushColourHistory(party) {
+  if (state.publication) state.publication.ready = false;
   const key = party.parlgov_id;
   history.push({
     scope: 'colour', id: party.id, color: party.color, overrideKey: key ?? null,
@@ -274,6 +287,7 @@ function restoreSoft(entry) {
 function settle() {
   if (!state.parties.some((p) => p.id === state.active) && state.parties.length) state.active = state.parties[0].id;
   if (state.selected && !state.assign[state.selected]) state.selected = null;
+  if (state.publication) { state.publication.ready = false; state.publication.approvalFingerprint = null; }
   emit('parties');
 }
 
@@ -506,6 +520,18 @@ export function migrate(doc) {
   if (out.provenance === undefined) out.provenance = null;
   if (out.mode !== 'flags') out.mode = 'results';
   if (!out.flagged || typeof out.flagged !== 'object') out.flagged = {};
+  // Schema 8. Earlier documents gain explicit time/caption/review defaults; old
+  // ready booleans have no receipt and therefore remain drafts on open.
+  out.publication = { ...PUBLICATION_DEFAULTS, ...(out.publication || {}) };
+  // Older files may already contain an explicit non-UTC offset. Preserve the
+  // instant, and keep that offset for redisplay instead of using this browser's.
+  const previousTime = out.publication.updatedAt;
+  const offset = typeof previousTime === 'string'
+    ? previousTime.match(/(Z|[+-]\d{2}:\d{2})$/)?.[1] : null;
+  if (offset && Number.isFinite(Date.parse(previousTime))) {
+    out.publication.updatedAt = new Date(previousTime).toISOString();
+    if (!doc.publication?.timeInputOffset) out.publication.timeInputOffset = offset === 'Z' ? '+00:00' : offset;
+  }
   return out;
 }
 

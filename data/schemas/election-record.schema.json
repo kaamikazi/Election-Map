@@ -1,0 +1,41 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "$id": "election-map-studio/canonical-election-record/v1",
+  "title": "Evidence-backed canonical election record",
+  "type": "object",
+  "required": ["version", "id", "electionKey", "country", "electionDate", "electionIdentity", "office", "round", "tier", "jurisdictionLevel", "regionKey", "layer", "party", "partyIdentity", "votes", "voteShare", "seats", "turnout", "winner", "citation", "sourceUpdateTime", "boundaryVintage", "confidence", "missingFields", "resultStatus", "voteSystem", "seatSystem"],
+  "properties": {
+    "version": { "const": 1 },
+    "id": { "type": "string" },
+    "electionKey": { "type": "string", "pattern": "^election-[a-f0-9]{24}$" },
+    "country": { "type": "string", "pattern": "^[A-Z]{3}$" },
+    "electionDate": { "type": "string", "format": "date" },
+    "electionIdentity": {
+      "type": "object", "required": ["country", "date", "office", "round", "tier", "jurisdiction", "sourceId", "sourceElectionId"],
+      "properties": {
+        "country": { "type": "string" }, "date": { "type": "string", "format": "date" },
+        "office": { "type": "string", "minLength": 1 }, "round": { "type": ["integer", "null"], "minimum": 1 },
+        "tier": { "type": "string" }, "jurisdiction": { "type": "string" },
+        "sourceId": { "type": "string" }, "sourceElectionId": { "type": "string", "minLength": 1 }
+      }
+    },
+    "office": { "type": "string" }, "round": { "type": ["integer", "null"], "minimum": 1 },
+    "tier": { "type": "string" }, "jurisdictionLevel": { "type": "string" },
+    "regionKey": { "type": "string" }, "layer": { "type": "string" },
+    "party": { "type": ["string", "null"] }, "partyIdentity": { "type": ["string", "null"] },
+    "votes": { "type": ["integer", "null"], "minimum": 0 },
+    "voteShare": { "type": ["number", "null"], "minimum": 0, "maximum": 100 },
+    "seats": { "type": ["integer", "null"], "minimum": 0 },
+    "turnout": { "type": ["number", "null"], "minimum": 0, "maximum": 100 },
+    "winner": { "type": ["boolean", "null"] },
+    "sourceUpdateTime": { "type": ["string", "null"], "format": "date-time" },
+    "boundaryVintage": { "type": ["integer", "null"] },
+    "resultStatus": { "enum": ["official-final", "official-partial", "projected", "recount", "disputed", "historical", "cancelled", "upcoming", "polls-open"] },
+    "confidence": { "type": "object", "required": ["basis", "factVerification"] },
+    "missingFields": { "type": "array", "items": { "type": "string" } },
+    "citation": { "type": "object", "required": ["sourceId", "provider", "url", "sha256", "receiptId", "locator"],
+      "properties": { "url": { "type": "string", "format": "uri" }, "sha256": { "type": "string", "pattern": "^[a-f0-9]{64}$" }, "receiptId": { "type": "string", "pattern": "^[a-f0-9]{64}$" }, "locator": { "type": "object", "required": ["resource", "record", "columns"] } } },
+    "review": { "type": "object", "required": ["state", "reasons", "evidence"], "properties": { "state": { "enum": ["verified", "imported-with-warning", "needs-review", "rejected"] }, "reasons": { "type": "array" } } },
+    "geometryValidation": { "type": "object", "required": ["layer", "sha256", "vintage"] }
+  }
+}

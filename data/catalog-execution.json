@@ -1,0 +1,63 @@
+{
+  "version": 1,
+  "executionStartUtc": "2026-10-07T18:53:15.000Z",
+  "asiaDhakaDate": "2026-10-08",
+  "asiaDhakaTime": "2026-10-08 00:53:15 Asia/Dhaka (UTC+06:00)",
+  "historicalExpansionPaused": false,
+  "latestEvidenceMode": true,
+  "note": "Third worldwide snapshot. The cutoff is the actual execution-start instant of this pass (new developments since 5 October). Earlier snapshots are preserved below and in their immutable generations.",
+  "previousSnapshots": [
+    {
+      "cutoffUtc": "2026-10-01T05:00:35.000Z",
+      "asiaDhakaDate": "2026-10-01",
+      "generation": "a952b479f0d0018aefa90f9f36f360ac6b7967f7fab6f14212849a6d5e14f9aa",
+      "note": "First milestone cutoff (1 October 2026); immutable generation retained"
+    },
+    {
+      "cutoffUtc": "2026-10-05T17:01:31.000Z",
+      "asiaDhakaDate": "2026-10-05",
+      "generation": "321c90c7abbde6492dfcdefb3298e6976bbdabac5a98d8eea112818ba61fa390",
+      "batches": {
+        "catalog": "3d60be5524b456f3d747f2a28e10072f24c34b66a6d9a32e9876ece67f97b2cc",
+        "discovery": "eb5a7d3373fbbec77fd37c9fc59091d687e89a866322dab48788e5ce5f120922",
+        "official": "091a161bffd7017a9c904fa7ec1f62ae89a76c3d8fff6b23454e63cfa60ce585"
+      },
+      "evidenceBundle": "build/evidence-bundles/2026-10-05-v10",
+      "reproduce": "node scripts/verify-catalog-bootstrap.js --bundle build/evidence-bundles/2026-10-05-v10",
+      "note": "5 October 2026 snapshot under status model v4, rebuilt offline from its own pinned evidence (bundle v6) with corrected candidate-table parsing and latest-cycle checks; same evidence and cutoff. Three official records (CZE 2013 and 2018, CHE December 2025) were captured after the cutoff (7 October 19:00 UTC) and are labelled retrospective: they describe facts effective long before it. Archived records come from the 5 October chain only. Earlier generations remain on disk, immutable.",
+      "supersedes": [
+        {
+          "generation": "b2c39acfd243c7f474bb2733398682f4699af7772d8b82a72dd1612ce7195426",
+          "reason": "Interim rebuild in this pass, before claim extraction was limited to result disputes with clean claimant names (section headings, time phrases, \"contested by\" competition and pre-election complaints); never registered as final."
+        },
+        {
+          "generation": "43284854c40fcd51a5725722ff6bc05aad10b5aae20c50152ccaa3637993bfa2",
+          "reason": "Interim rebuild in this pass, before lead-sentence winners (IND, GRC), the separate presidential vote date (NRU) and the removal of archived records from articles the current rules reject (AGO, MHL, MUS, SUR); never registered as final."
+        },
+        {
+          "generation": "678e1ff1284655e2201c9d54b48780a963f9336fce61451946a12f9171cd91c9",
+          "reason": "Interim rebuild in this pass, before the later-cycle check and the held-statement fix (EST, SUR); never registered as final."
+        },
+        {
+          "generation": "ff7d84b0a35d29203d39e3b2afbd3986a71457de5f37aa7f58d9c1ca3dfb367a",
+          "reason": "Candidate-table defects: one person on several ballot lines counted as several elected candidates (PAN outcome withheld); summary rows chose the name column and a party primary was taken as the national table (e.g. KOR, GHA, HRV figures); a vandalised Wikidata label was named as the SYR winner. Ledger changes: PAN gains its outcome, SYR winner Bashar al-Assad, MEX/PRY winner names from the article, GRC assembly tallies captured; EST latest presidential is the 2 September 2026 election (Ülle Madise) instead of 2021; SUR 2010 outcome withheld because discovery lists the 2025 cycle. IND and GRC winners from scoped lead sentences; NRU presidential vote dated 14 October 2025 from the article instead of the parliamentary polling day; archived general-election records the current rules reject (AGO, MHL, MUS, SUR) removed. Claims recorded only for result disputes, with claimants named cleanly (no outcome changed)."
+        },
+        {
+          "generation": "71bc765ede6b152173be064e1beae54eeed726431a6dd81781c1cc636662948c",
+          "reason": "Status evidence was not scoped to infobox sections: a presidential TBD/Reporting row made the BIH legislature partial"
+        },
+        {
+          "generation": "3aa37205284fc6a1e0fa15efe41263fd6e4e06c5db0fb1b850ec309b08b55636",
+          "reason": "Carried archived records from the later 7 October snapshot; never use"
+        }
+      ],
+      "retrospectiveFindings": "build/catalog/retrospective-2026-10-05.json"
+    }
+  ],
+  "phaseOrder": [
+    "latest-worldwide-ledger-pass",
+    "historical-backfill"
+  ],
+  "scope": "UN member and observer states; supplementary jurisdictions separate",
+  "historicalExpansionNote": "Resumed after the 5 October 2026 country pass: every core legislative/presidential entry ends in sourced results, sourced non-applicability or a concrete unresolved entry (73 unresolved, each with attempts and a next action). Backfill dedupes by election identity while retaining every source record."
+}

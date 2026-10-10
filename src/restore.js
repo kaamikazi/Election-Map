@@ -1,6 +1,7 @@
 /** A file open and a cross-layer undo share the same atomic restoration path. */
 import { state, migrate, reserveIds, pushHistory, emit, DOCUMENT_DEFAULTS } from './state.js';
 import { prepareLayer, loadLayerData, activate } from './geo.js';
+import { publicationError } from './publication.js';
 
 const object = (v) => v && typeof v === 'object' && !Array.isArray(v);
 const fail = (what) => { throw new Error(`Invalid map: ${what}. Open a valid Election Map Studio JSON file.`); };
@@ -16,7 +17,7 @@ export function validateDocument(input) {
   };
   safeKeys(input);
   if (!object(input) || !Array.isArray(input.parties) || !object(input.assign)) fail('missing parties or assignments');
-  if (input.version != null && (!Number.isInteger(input.version) || input.version > 6)) fail('unsupported document version');
+  if (input.version != null && (!Number.isInteger(input.version) || input.version > 8)) fail('unsupported document version');
   const doc = { ...structuredClone(DOCUMENT_DEFAULTS), ...migrate(input) };
   // Ignore unrecognised fields; they must never become application state.
   for (const key of Object.keys(doc)) if (!Object.hasOwn(DOCUMENT_DEFAULTS, key)) delete doc[key];
@@ -35,6 +36,8 @@ export function validateDocument(input) {
       (doc.fit !== null && (!Array.isArray(doc.fit) || doc.fit.length !== 2 || !doc.fit.every(pair)))) fail('map framing');
   for (const key of ['grat', 'antarctica', 'dots', 'labels']) if (typeof doc[key] !== 'boolean') fail(key);
   for (const key of ['aliases', 'overrides', 'layerAssign', 'flagged']) if (!object(doc[key])) fail(key);
+  const pubError = publicationError(doc.publication);
+  if (pubError) fail(pubError);
   const validateSource = (p) => {
     if (!object(p)) fail('source attribution');
     for (const key of ['source', 'url', 'asOf', 'asOfPrecision', 'datasetId', 'fetchedAt']) {

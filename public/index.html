@@ -10,7 +10,7 @@
 <body data-mode="results">
 <div id="app">
   <header>
-    <div class="brand"><b>Election Map Studio</b><span id="crumb">World results</span></div>
+    <div class="brand"><b>Election Map Studio</b><span id="crumb">World results</span><span id="pubChip" class="pubchip" title="Publication status of this map"></span></div>
     <div class="seg" id="modeSeg" role="group" aria-label="Map mode">
       <button data-mode="results" aria-pressed="true">Results</button>
       <button data-mode="flags" aria-pressed="false">Flags</button>
@@ -152,25 +152,69 @@
 </div>
 
 <dialog id="exportDlg">
-  <div class="dlg-h"><b>Export image</b><button class="btn ghost" id="closeExport" aria-label="Close">×</button></div>
-  <div class="dlg-b">
+  <div class="dlg-h"><b>Review and export</b><span id="pubStateDlg" class="pubchip"></span><button class="btn ghost" id="closeExport" aria-label="Close">×</button></div>
+  <div class="dlg-b exportgrid">
+    <section id="pubReview" aria-label="Publication review">
+      <div id="pubBlockers" role="status"></div>
+      <div id="pubWarnings"></div>
+
+      <div class="pubgrid">
+        <label class="field span2"><span>Election identity</span>
+          <input id="pubElectionId" placeholder="Country · date · office · round" autocomplete="off"></label>
+        <label class="field"><span>Country, territory or organisation</span><input id="pubCountry" autocomplete="off"></label>
+        <label class="field"><span>Office contested</span><input id="pubOffice" placeholder="President, lower house …" autocomplete="off"></label>
+        <label class="field"><span>Election type</span><input id="pubType" placeholder="General, presidential, referendum …" autocomplete="off"></label>
+        <label class="field"><span>Round</span><input id="pubRound" type="number" min="1" step="1" placeholder="None"></label>
+        <label class="field"><span>Election date</span><input id="pubDate" type="date"></label>
+        <label class="field"><span>Map purpose</span><select id="pubPurpose"></select></label>
+        <label class="field"><span>Result status</span><select id="pubStatus"></select></label>
+        <label class="field"><span>Percentage counted</span><input id="pubCounted" type="number" min="0" max="100" step="0.1" placeholder="Not stated"></label>
+        <label class="field"><span>Source update: date and time at the offset below</span><input id="pubUpdated" type="datetime-local"></label>
+        <label class="field"><span>UTC offset for that time</span><input id="pubOffset" value="+00:00" placeholder="+00:00 or +06:00"><small>UTC +00:00 · Bangladesh +06:00. Use the source's stated offset; browser timezone is ignored.</small><small id="pubTimeIssue" class="err"></small></label>
+        <label class="field span2"><span>Headline</span><input id="pubHeadline" autocomplete="off"></label>
+        <label class="field span2"><span>Subtitle</span><input id="pubSub" autocomplete="off"></label>
+        <label class="field span2"><span>Editorial note or caveat</span><textarea id="pubNote" rows="2"></textarea></label>
+      </div>
+
+      <dl id="pubFacts"></dl>
+      <label class="tog readytog"><input type="checkbox" id="pubReady"> Reviewed — ready to publish</label>
+    </section>
+
+    <section id="exportSide" aria-label="Export">
     <div id="exportWarn"></div>
-    <div id="previewBox"><canvas id="preview"></canvas></div>
+
     <div class="row">
-      <div class="seg" id="sizeSeg">
-        <button data-w="1600" data-h="900" aria-pressed="true">16:9</button>
-        <button data-w="1200" data-h="1200" aria-pressed="false">Square</button>
-        <button data-w="1200" data-h="1500" aria-pressed="false">Portrait</button>
+      <div class="seg" id="profileSeg" role="group" aria-label="Export profile">
+        <button data-profile="x-landscape" aria-pressed="true">X landscape</button>
+        <button data-profile="x-square" aria-pressed="false">X square</button>
+        <button data-profile="x-portrait" aria-pressed="false">X portrait</button>
+        <button data-profile="custom" aria-pressed="false">Custom</button>
       </div>
     </div>
+    <div class="row" id="customSize" hidden>
+      <label class="field inline"><span>Width</span><input id="customW" type="number" min="600" max="4096" step="1" value="1600"></label>
+      <label class="field inline"><span>Height</span><input id="customH" type="number" min="600" max="4096" step="1" value="1000"></label>
+    </div>
+    <p id="profileDims" class="hint"></p>
+    <div id="previewBox"><canvas id="preview"></canvas></div>
+    <dl id="exportTexts"></dl>
     <div class="toggles">
       <label class="tog"><input type="checkbox" id="xLegend" checked> Include the results bar and legend</label>
       <label class="tog"><input type="checkbox" id="xTrans"> Transparent background</label>
     </div>
+    <fieldset id="packProfiles">
+      <legend>Images in the publication pack</legend>
+      <label class="tog"><input type="checkbox" name="packProfile" value="x-landscape" checked> X landscape · 1600 × 900</label>
+      <label class="tog"><input type="checkbox" name="packProfile" value="x-square" checked> X square · 1200 × 1200</label>
+      <label class="tog"><input type="checkbox" name="packProfile" value="x-portrait" checked> X portrait · 1080 × 1350</label>
+      <label class="tog"><input type="checkbox" name="packProfile" value="custom"> The custom size above</label>
+    </fieldset>
+    </section>
   </div>
   <div class="dlg-f">
-    <button class="btn" id="btnCopy">Copy to clipboard</button>
-    <button class="btn primary" id="btnPng">Download PNG</button>
+    <button class="btn" id="btnCopy">Copy image</button>
+    <button class="btn" id="btnPng">Download PNG</button>
+    <button class="btn primary" id="btnPack">Export publication pack</button>
   </div>
 </dialog>
 

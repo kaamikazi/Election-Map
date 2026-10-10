@@ -1,0 +1,18 @@
+{
+  "fixture": "UK 2024 Aberafan Maesteg candidate rows, extracted for offline tests",
+  "sourceUrl": "https://electionresults.parliament.uk/general-elections/6/candidacies.csv",
+  "parentSha256": "50e7705fb9a3946c6ecc3e1554b1bac47714ac85ed06952979975288e2e1ecae",
+  "fixtureSha256": "bf0a01bb9d4de722bb434ddf8db4861a46f732adbffa1227eb3ea933308763a3",
+  "parentRecords": [
+    2,
+    3,
+    4,
+    5,
+    6,
+    7,
+    8,
+    9
+  ],
+  "licence": "Contains Parliamentary information licensed under the Open Parliament Licence v3.0.",
+  "note": "Test variants are synthetic. This subset is not a complete national source snapshot."
+}

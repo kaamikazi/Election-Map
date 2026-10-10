@@ -79,9 +79,7 @@ export function initReview() {
 /** Render whatever fields the adapter says it needs. */
 function renderInputs() {
   const box = $('#adapterInputs');
-  box.innerHTML =
-    `<p class="hint">${esc(current.hint || '')}</p>` +
-    current.inputs.map((f) => {
+  const renderField = (f) => {
       const id = 'in_' + f.name;
       if (f.type === 'textarea') {
         return `<label class="field"><textarea id="${id}" rows="7"
@@ -99,7 +97,11 @@ function renderInputs() {
       return `<label class="field inline"><span>${esc(f.label)}</span>
         <input id="${id}" type="${esc(f.type)}" value="${esc(f.value || '')}"
         placeholder="${esc(f.placeholder || '')}"></label>`;
-    }).join('');
+    };
+  const advanced = current.inputs.filter(f => f.advanced);
+  box.innerHTML = `<p class="hint">${esc(current.hint || '')}</p>` +
+    current.inputs.filter(f => !f.advanced).map(renderField).join('') +
+    (advanced.length ? `<details class="advanced-filters"><summary>More catalog filters</summary>${advanced.map(renderField).join('')}</details>` : '');
 
   $('#btnPropose').textContent = current.id === 'clipboard' ? 'Read table' : 'Fetch';
 }
@@ -134,6 +136,19 @@ async function propose(keepAnswers = false) {
 
   if (result && result.choose) {
     renderChoice(result.choose);
+    return;
+  }
+  if (result?.reviewOnly) {
+    const q = result.reviewOnly;
+    $('#btnApply').disabled = true;
+    $('#btnApply').textContent = 'Source review required';
+    $('#reviewBody').innerHTML = `<p class="hint">${esc(q.note)}</p>
+      <p>${esc([q.identity.country, q.identity.date, q.identity.office, 'round ' + (q.identity.round ?? 'unknown'), q.identity.sourceId].join(' · '))}</p>
+      ${q.records.map((r) => `<article class="block"><b>${esc(r.party || 'Party unknown')} · ${esc(r.regionName)} · ${esc(r.review.state)}</b>
+        <p>Votes ${esc(r.votes ?? 'not supplied')} · vote share ${esc(r.voteShare ?? 'not supplied')} · seats ${esc(r.seats ?? 'not supplied')} · winner ${esc(r.winner === null ? 'not supplied' : String(r.winner))}</p>
+        <ul>${r.review.reasons.map((x) => `<li>${esc(x.text)}</li>`).join('')}</ul>
+        <p><a href="${esc(r.citation.url)}" target="_blank" rel="noopener">Source evidence</a>${q.evidenceFiles[r.citation.sha256] ? ` · <a href="${esc(q.evidencePrefix + q.evidenceFiles[r.citation.sha256])}" target="_blank" rel="noopener">Captured raw file</a>` : ''} · source record ${r.citation.locator.record}</p>
+        <p style="overflow-wrap:anywhere">Raw SHA-256: ${esc(r.citation.sha256)}<br>Review record hash: ${esc(r.recordHash)}</p></article>`).join('')}`;
     return;
   }
   draft = result;

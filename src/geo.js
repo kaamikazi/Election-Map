@@ -38,6 +38,9 @@ export let OUTLINE = null;
 export let BOUNDARY = null;
 
 const loaded = new Map();      // layer id -> { feats, borders, byKey, boundary }
+const digest = async (bytes) => [...new Uint8Array(await crypto.subtle.digest('SHA-256', bytes))]
+  .map((v) => v.toString(16).padStart(2, '0')).join('');
+export const layerHash = () => loaded.get(LAYER)?.sha256 || null;
 let registry = null;           // public/data/boundaries.json, once
 
 /** `gb:BGD:ADM1` -> { src: 'gb', iso3: 'BGD', level: 'ADM1' } */
@@ -62,7 +65,8 @@ function prepare(features, keyOf) {
 export async function loadWorld(url) {
   const res = await fetch(url);
   if (!res.ok) throw new Error('Could not load ' + url + ' (' + res.status + ')');
-  const world = await res.json();
+  const bytes = await res.arrayBuffer();
+  const world = JSON.parse(new TextDecoder().decode(bytes));
 
   const fc = topojson.feature(world, world.objects.countries);
   const feats = prepare(
@@ -71,6 +75,7 @@ export async function loadWorld(url) {
   );
 
   loaded.set(WORLD, {
+    sha256: await digest(bytes),
     feats,
     borders: topojson.mesh(world, world.objects.countries, (a, b) => a !== b),
     outline: null,
@@ -166,7 +171,8 @@ export async function loadLayerData(id) {
 
   const res = await fetch(entry.file);
   if (!res.ok) throw new Error(`Could not load ${entry.file} (${res.status})`);
-  const topo = await res.json();
+  const bytes = await res.arrayBuffer();
+  const topo = JSON.parse(new TextDecoder().decode(bytes));
 
   const object = topo.objects.units;
   const feats = prepare(topojson.feature(topo, object).features, (f) => f.properties.id);
@@ -176,6 +182,7 @@ export async function loadLayerData(id) {
   }
 
   const layer = {
+    sha256: await digest(bytes),
     feats,
     borders: topojson.mesh(topo, object, (a, b) => a !== b),
     // The country's own edge, drawn harder than the divisions inside it.

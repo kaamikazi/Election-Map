@@ -15,6 +15,7 @@ import { boundsOf, BOUNDARY } from '../geo.js';
 import { applyPartials } from './partition.js';
 import { VINTAGE_GRACE_YEARS } from '../vintage.js';
 import { sourceRecord, recordSources, summariseSources } from '../provenance.js';
+import { suggestPublication } from '../publication.js';
 
 export const VALUE_ROLES = ['vote', 'seats', 'turnout', 'margin'];
 
@@ -28,7 +29,7 @@ export const VALUE_ROLES = ['vote', 'seats', 'turnout', 'margin'];
  *   index    unit index from buildIndex()
  *   scope    alias scope key
  */
-export function buildProposal({ source, rows, columns, index, scope, hints }) {
+export function buildProposal({ source, rows, columns, index, scope, hints, unitKeys }) {
   // A year identifies neither an office nor a round. Treat it as unknown even
   // when pasted into the optional identity field.
   if (source?.datasetId && /^\d{4}$/.test(source.datasetId.trim())) source = { ...source, datasetId: null };
@@ -61,7 +62,9 @@ export function buildProposal({ source, rows, columns, index, scope, hints }) {
       if (note) notes.push(note);
     }
 
-    const hit = unitCol ? matchUnit(rawUnit, index, scope) : { unit: null, how: 'none' };
+    const key = unitKeys?.[i];
+    const hit = key ? (index.nameOf.has(key) ? { unit: key, how: 'source code' } : { unit: null, how: 'invalid source code' })
+      : unitCol ? matchUnit(rawUnit, index, scope) : { unit: null, how: 'none' };
     let status = hit.unit ? 'matched' : (hit.ambiguous ? 'ambiguous' : 'unmatched');
     if (!rawUnit) { status = 'unmatched'; notes.push('no region name in this row'); }
     if (hit.ambiguous) notes.push('more than one unit normalises to this name');
@@ -321,6 +324,7 @@ export function vintageBlock(proposal, boundary = BOUNDARY) {
  * @returns {{applied: number, skipped: number, parties: number}}
  */
 export function defaultImportMode(proposal) {
+  if (proposal.source?.completeSnapshot) return 'replace';
   const id = proposal.source?.datasetId;
   const records = Object.values(state.assign);
   return id && records.length && records.every((r) => r.datasetId === id) ? 'update' : 'replace';
@@ -361,6 +365,7 @@ export function applyProposal(proposal, { replace, mode = replace === true ? 're
   let created = 0;
 
   for (const row of usable) {
+    const rowIncoming = row.hint?.source ? sourceRecord(row.hint.source) : incoming;
     const old = assign[row.unit];
     const keep = mode === 'update' || (mode === 'combine' && src.datasetId && old?.datasetId === src.datasetId);
     const previous = keep && old ? old : {};
@@ -370,16 +375,18 @@ export function applyProposal(proposal, { replace, mode = replace === true ? 're
     const record = { ...previous, party: party.id,
       label: row.hint?.label || row.raw.party?.trim() || previous.label || null,
       datasetId: src.datasetId || previous.datasetId || null, provenance };
+    if (row.hint?.canonical) record.ingestion = structuredClone(row.hint.canonical);
+    if (row.hint?.catalog) { record.catalog = structuredClone(row.hint.catalog); delete record.ingestion; }
     if (hasParty) {
-      provenance.party = incoming;
-      if (record.label) provenance.label = incoming;
+      provenance.party = rowIncoming;
+      if (record.label) provenance.label = rowIncoming;
     }
     for (const key of VALUE_ROLES) {
       const supplied = Object.hasOwn(row.values, key);
       record[key] = supplied ? row.values[key] : previous[key] ?? null;
       if (supplied) {
         if (record[key] === null) delete provenance[key];
-        else provenance[key] = incoming;
+        else provenance[key] = rowIncoming;
       }
     }
     assign[row.unit] = record;
@@ -405,6 +412,11 @@ export function applyProposal(proposal, { replace, mode = replace === true ? 're
   if (src.title != null) state.title = src.title;
   if (src.sub != null) state.sub = src.sub;
 
+  // A replacement is a different map, so it starts a fresh publication record
+  // with only what the source can honestly say. An update or combination keeps
+  // the reviewer's metadata; pushHistory has already withdrawn "ready".
+  if (mode === 'replace') state.publication = suggestPublication(src, { scope: src.scopeName });
+
   state.provenance = summariseSources(assign, {
     source: src.label,
     url: src.url || null,
@@ -419,7 +431,8 @@ export function applyProposal(proposal, { replace, mode = replace === true ? 're
     cite: src.cite || null,
     // A gap the person chose to draw over travels with the map, because the
     // person who sees the map is not the person who made that choice.
-    vintageOverride: acceptVintageGap ? vintageBlock(proposal) : null
+    vintageOverride: acceptVintageGap ? vintageBlock(proposal) : null,
+    ...(src.catalog ? { catalog: src.catalog } : {})
   });
 
   emit('parties');
