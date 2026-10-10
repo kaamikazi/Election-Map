@@ -51,6 +51,10 @@ src/flags.js                 which unit gets which flag, loading, the export gua
 src/flag-codes.js            the ISO code table (generated, committed, reviewable)
 src/ui/shell.js              mode, the phone sheet, the tablet fly-out, party colour
 scripts/build-flags.js       bundles only the flags the code table can reach
+src/publication.js           publication metadata and the review rules (pure)
+src/pack.js                  export profiles, caption, methodology, ZIP (pure)
+src/publish.js               renders a publication pack from the live map
+scripts/demonstrate-publication.js  regenerates build/publication-demonstration/
 src/import/partition.js      which matched units a stranded row makes partial
 src/import/renames.js        gazetted renames, for the partition probe only
 ```
@@ -725,9 +729,92 @@ targets are 44px wherever a finger is the pointer (`pointer: coarse`, or under
 hover — a tap shows the tooltip. `prefers-reduced-motion` turns every transition
 off, and the sheet pads for the safe-area inset so it clears the home indicator.
 
+## Publishing
+
+The Export button opens **Review and export**: publication metadata (identity,
+office, round, election date, purpose, status, percentage counted, source update
+time with an explicit UTC offset,
+note) beside the image it produces. Anything that would present partial,
+projected, disputed, historical or mixed data as a clean final result blocks
+publication until it is fixed; unreviewed images say `DRAFT` in their status
+badge. A reviewed map exports a **publication pack** — one PNG per X profile
+(1600 × 900, 1200 × 1200, 1080 × 1350, or a checked custom size), an editable
+the exact caption edited in the review dialog as `caption.txt`, `metadata.json`
+with per-value provenance, and
+`source-and-methodology.txt` when there are caveats.
+
+```bash
+npm run demo:publication     # writes build/publication-demonstration-audit/
+```
+
+See [docs/publication-workstation.md](docs/publication-workstation.md) for the
+rules, the badges, the caption format, and the checks a person must still make
+before posting.
+
+Historical series are drafts until the actual run is reviewed. See the
+`npm run review:series` workflow in that guide; it binds approval to the plan
+and draft PNGs so changed frames require a new review.
+
+## Election ingestion
+
+The local ingestion engine reads `data/source-registry.json`, captures immutable
+raw evidence with SHA-256 and HTTP receipts, validates full election identities
+and exact boundary codes, and commits a database generation atomically. Start
+with ParlGov 2024 and the official Parliament UK 2024 constituency CSV:
+
+```bash
+npm run elections:discover
+npm run elections:download
+npm run elections:validate
+npm run elections:import
+npm run elections:update       # acquire, validate, diff, commit and report
+npm run elections:report
+npm run demo:ingestion -- --offline
+npm run verify:parlgov
+```
+
+Use `--offline` for cached evidence and `--source uk-parliament-2024` to select a
+provider. Verified rows cannot change or disappear without explicit confirmation
+of the reviewed plan hash. Missing winners, source conflicts and unsafe geometry
+remain in the source review queue; no vote/seat maximum invents a winner.
+
+In Import, **Election database** offers registered elections for the selected
+boundary layer and displays quarantined records with reasons and captured raw
+evidence. Each imported map remains a publication draft. Source seat counts are
+preserved in canonical metadata, not substituted for the map's seat-share field.
+See [the ingestion architecture and review guide](docs/election-ingestion-architecture.md).
+
+The [worldwide catalog guide](docs/worldwide-election-catalog.md) documents the
+195-state UN core ledger, national metric views, historical backfill and honest
+coverage gaps. Existing workstation and constituency imports remain available.
+
+```bash
+npm run elections:bootstrap                 # fresh caches/databases; free registered sources
+npm run elections:latest -- --official      # complete jurisdiction pass, including unresolved entries
+npm run elections:backfill -- --offline     # supported history after the ledger pass
+npm run elections:snapshot -- --offline     # regenerate national schematic views
+npm run demo:catalog                        # real-app world drafts and citation appendices
+```
+
+Every world draft states its cutoff and varying country election dates.
+An acquired archive maximum or an empty ledger entry is not verified latest
+coverage. Reports are in `build/catalog/`; generated databases and evidence
+remain Git-ignored.
+
 ## Save format
 
-`btnSave` writes the whole state object with a `version` field (currently 5),
+The current status model (v4) and the 5 and 7 October 2026 snapshots are
+documented in
+[the v4 verification report](docs/status-v4-and-snapshot-2026-10-07-verification.md)
+and the [evidence standard](docs/latest-election-evidence-standard.md). The
+earlier priority pass is in
+[the evidence verification report](docs/latest-election-pass-verification.md).
+Run `npm run elections:evidence` to repeat the full core-country
+discovery/authority pass. Use `-- --offline` to replay the attempts recorded for
+the same cutoff; recorded fetch failures stay failures. Latest confirmation
+and map eligibility are separate.
+
+`btnSave` writes the whole state object with a `version` field (currently 8),
 learned aliases included.
 v1 files have no `version` and store a bare party id per country; `migrate()`
 in `src/state.js` turns those into records with empty values, so they open

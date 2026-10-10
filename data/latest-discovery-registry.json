@@ -1,0 +1,14 @@
+{
+  "version":1,
+  "cutoffPolicy":"Use existing execution cutoff; article revisions and event dates after cutoff are excluded.",
+  "sources":[
+    {"id":"wikipedia-latest","provider":"Wikipedia contributors","indexTitle":"List of next general elections","cacheHours":168,
+     "licence":{"name":"CC BY-SA 4.0","url":"https://creativecommons.org/licenses/by-sa/4.0/"},
+     "role":"Nationwide discovery; Last columns and linked source articles only. N/A is not authority-verified non-applicability.",
+     "scope":"Registered core countries; revision pinned to snapshot cutoff","parser":"wikipedia-election-discovery-v1"},
+    {"id":"wikidata-presidential","provider":"Wikidata contributors","endpoint":"https://query.wikidata.org/sparql","entityApi":"https://www.wikidata.org/w/api.php","cacheHours":168,
+     "licence":{"name":"CC0 structured data","url":"https://www.wikidata.org/wiki/Wikidata:Licensing"},
+     "role":"Country-segmented presidential leads and source-reported statements, not independent confirmation",
+     "scope":"Core ISO jurisdictions; explicit date precision, scope and office checked from statements","parser":"wikidata-presidential-discovery-v1"}
+  ]
+}

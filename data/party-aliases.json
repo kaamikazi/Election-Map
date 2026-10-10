@@ -1,0 +1,8 @@
+{
+  "version": 1,
+  "aliases": [
+    { "source": "uk-parliament-2024", "canonicalId": "uk-parliament:party:29", "canonicalName": "Scottish National Party", "names": ["Scottish National Party", "Scottish National", "SNP"], "evidence": "https://electionresults.parliament.uk/political-parties/11" },
+    { "source": "uk-parliament-2024", "canonicalId": "uk-parliament:party:15", "canonicalName": "Labour", "names": ["Labour", "Labour Party"], "evidence": "https://electionresults.parliament.uk/political-parties/3" },
+    { "source": "uk-parliament-2024", "canonicalId": "uk-parliament:party:17", "canonicalName": "Liberal Democrat", "names": ["Liberal Democrat", "Liberal Democrats"], "evidence": "https://electionresults.parliament.uk/political-parties/4" }
+  ]
+}

@@ -1,0 +1,4224 @@
+{
+  "nonApplicabilityRules": [
+    {
+      "assertion": "The Crown is the constitutional head of state; this category is not a national presidential contest.",
+      "authority": "UK Parliament",
+      "category": "presidential",
+      "country": "GBR",
+      "requiredText": [
+        "head of state",
+        "monarch"
+      ],
+      "url": "https://www.parliament.uk/about/how/role/relations-with-other-institutions/parliament-crown/",
+      "lineage": "primary:uk-parliament",
+      "institution": "monarchy",
+      "locator": "Parliament and the Crown: role of the Crown as constitutional head of state"
+    },
+    {
+      "category": "presidential",
+      "assertion": "The Crown is the constitutional head of state; this category is not a national presidential contest.",
+      "country": "GBR",
+      "authority": "The Royal Household (royal.uk)",
+      "url": "https://www.royal.uk/the-role-of-the-monarchy",
+      "requiredText": [
+        "The British Monarchy is known as a constitutional monarchy",
+        "The Sovereign is Head of State"
+      ],
+      "institution": "monarchy",
+      "lineage": "primary:royal-household",
+      "locator": "The role of the Monarchy: \"The Sovereign is Head of State\""
+    },
+    {
+      "category": "presidential",
+      "assertion": "The head of state is a hereditary monarch (represented by a governor-general in a Commonwealth realm); this category is not a national presidential contest.",
+      "country": "NLD",
+      "authority": "Government of the Netherlands",
+      "url": "https://www.government.nl/themes/government-and-democracy/constitution",
+      "requiredText": [
+        "The monarch is the head of state",
+        "constitutional monarchy"
+      ],
+      "institution": "monarchy",
+      "lineage": "primary:government-nl",
+      "locator": "Constitution page: \"The monarch is the head of state\""
+    },
+    {
+      "category": "presidential",
+      "assertion": "The head of state is a hereditary monarch (represented by a governor-general in a Commonwealth realm); this category is not a national presidential contest.",
+      "country": "SWE",
+      "authority": "Sveriges riksdag",
+      "url": "https://www.riksdagen.se/en/how-the-riksdag-works/democracy/the-constitution/",
+      "requiredText": [
+        "the King or Queen shall be head of state",
+        "Instrument of Government"
+      ],
+      "institution": "monarchy",
+      "lineage": "primary:riksdagen",
+      "locator": "The Constitution: Instrument of Government opening chapter, King or Queen as head of state"
+    },
+    {
+      "category": "presidential",
+      "assertion": "The head of state is a hereditary monarch (represented by a governor-general in a Commonwealth realm); this category is not a national presidential contest.",
+      "country": "NOR",
+      "authority": "Stortinget",
+      "url": "https://www.stortinget.no/en/In-English/About-the-Storting/The-Constitution/",
+      "requiredText": [
+        "Executive Power is vested in the King",
+        "Constitution"
+      ],
+      "institution": "monarchy",
+      "lineage": "primary:stortinget",
+      "locator": "The Constitution: Article 3, executive power vested in the King"
+    },
+    {
+      "category": "presidential",
+      "assertion": "The head of state is a hereditary monarch (represented by a governor-general in a Commonwealth realm); this category is not a national presidential contest.",
+      "country": "LUX",
+      "authority": "Government of Luxembourg",
+      "url": "https://gouvernement.lu/en/systeme-politique.html",
+      "requiredText": [
+        "The Grand Duke is the head of state"
+      ],
+      "institution": "monarchy",
+      "lineage": "primary:gouvernement-lu",
+      "locator": "Political system: Executive power, \"The Grand Duke is the head of state\""
+    },
+    {
+      "category": "presidential",
+      "assertion": "The head of state is a hereditary monarch (represented by a governor-general in a Commonwealth realm); this category is not a national presidential contest.",
+      "country": "ESP",
+      "authority": "Casa de S.M. el Rey (Royal Household)",
+      "url": "https://www.casareal.es/EN/Paginas/home.aspx",
+      "requiredText": [
+        "Parliamentary Monarchy",
+        "The King, as Head of State"
+      ],
+      "institution": "monarchy",
+      "lineage": "primary:casareal",
+      "locator": "Home: duties of the head of state, \"The King, as Head of State\""
+    },
+    {
+      "category": "presidential",
+      "assertion": "The head of state is a hereditary monarch (represented by a governor-general in a Commonwealth realm); this category is not a national presidential contest.",
+      "country": "CAN",
+      "authority": "Department of Justice Canada (Constitution Act, 1867)",
+      "url": "https://laws-lois.justice.gc.ca/eng/const/page-1.html",
+      "requiredText": [
+        "Executive Government and Authority of and over Canada is hereby declared to continue and be vested in the Queen"
+      ],
+      "institution": "monarchy (Commonwealth realm)",
+      "lineage": "primary:justice-canada",
+      "locator": "Constitution Act, 1867, s. 9"
+    },
+    {
+      "category": "presidential",
+      "assertion": "The head of state is a hereditary monarch (represented by a governor-general in a Commonwealth realm); this category is not a national presidential contest.",
+      "country": "CAN",
+      "authority": "Canadian Heritage",
+      "url": "https://www.canada.ca/en/canadian-heritage/services/crown-canada.html",
+      "requiredText": [
+        "Canada is a constitutional monarchy",
+        "Head of State"
+      ],
+      "institution": "monarchy (Commonwealth realm)",
+      "lineage": "primary:canadian-heritage",
+      "locator": "The Crown in Canada: \"Canada is a constitutional monarchy\""
+    },
+    {
+      "category": "presidential",
+      "assertion": "The head of state is a hereditary monarch (represented by a governor-general in a Commonwealth realm); this category is not a national presidential contest.",
+      "country": "AUS",
+      "authority": "Office of the Official Secretary to the Governor-General",
+      "url": "https://www.gg.gov.au/about-governor-general/civics-and-democracy",
+      "requiredText": [
+        "His Majesty The King",
+        "representative"
+      ],
+      "institution": "monarchy (Commonwealth realm)",
+      "lineage": "primary:gg-australia",
+      "locator": "Civics and democracy: role of the Governor-General as the King's representative"
+    },
+    {
+      "category": "presidential",
+      "assertion": "The head of state is a hereditary monarch (represented by a governor-general in a Commonwealth realm); this category is not a national presidential contest.",
+      "country": "LSO",
+      "authority": "Parliament of Lesotho",
+      "url": "https://parliament.ls/",
+      "requiredText": [
+        "sovereign democratic kingdom with the King as a constitutional monarch and Head of State"
+      ],
+      "institution": "monarchy",
+      "lineage": "primary:parliament-ls",
+      "locator": "Home: The King"
+    },
+    {
+      "category": "presidential",
+      "assertion": "The head of state is a hereditary monarch (represented by a governor-general in a Commonwealth realm); this category is not a national presidential contest.",
+      "country": "DNK",
+      "authority": "denmark.dk (Ministry of Foreign Affairs of Denmark)",
+      "url": "https://denmark.dk/society-and-business/government-and-politics",
+      "requiredText": [
+        "constitutional monarchy",
+        "the monarch is still the head of state"
+      ],
+      "institution": "monarchy",
+      "lineage": "primary:denmark-dk",
+      "locator": "Government and politics: \"the monarch is still the head of state\""
+    },
+    {
+      "category": "presidential",
+      "assertion": "The head of state is a hereditary monarch (represented by a governor-general in a Commonwealth realm); this category is not a national presidential contest.",
+      "country": "GRD",
+      "authority": "Government of Grenada",
+      "url": "https://www.gov.gd/",
+      "requiredText": [
+        "Parliament consists of the King, represented by the Governor-General"
+      ],
+      "institution": "monarchy (Commonwealth realm)",
+      "lineage": "primary:gov-gd",
+      "locator": "Parliament of Grenada: \"Parliament consists of the King, represented by the Governor-General\""
+    },
+    {
+      "category": "presidential",
+      "assertion": "The head of state is a hereditary monarch (represented by a governor-general in a Commonwealth realm); this category is not a national presidential contest.",
+      "country": "JPN",
+      "authority": "Cabinet Public Relations Office (kantei)",
+      "url": "https://japan.kantei.go.jp/constitution_and_government_of_japan/constitution_e.html",
+      "requiredText": [
+        "The Emperor shall be the symbol of the State"
+      ],
+      "institution": "monarchy",
+      "lineage": "primary:Cabinet Public Relations Office (kantei)",
+      "locator": "Registered head-of-state statement (not yet matched)"
+    },
+    {
+      "category": "presidential",
+      "assertion": "The head of state is a hereditary monarch (represented by a governor-general in a Commonwealth realm); this category is not a national presidential contest.",
+      "country": "JPN",
+      "authority": "Imperial Household Agency",
+      "url": "https://www.kunaicho.go.jp/e-about/activity/activity01.html",
+      "requiredText": [
+        "symbol of the State"
+      ],
+      "institution": "monarchy",
+      "lineage": "primary:Imperial Household Agency",
+      "locator": "Registered head-of-state statement (not yet matched)"
+    },
+    {
+      "category": "presidential",
+      "assertion": "The head of state is a hereditary monarch (represented by a governor-general in a Commonwealth realm); this category is not a national presidential contest.",
+      "country": "BEL",
+      "authority": "belgium.be",
+      "url": "https://www.belgium.be/en/about_belgium/government/federale_staat/monarchy",
+      "requiredText": [
+        "King",
+        "head of state"
+      ],
+      "institution": "monarchy",
+      "lineage": "primary:belgium.be",
+      "locator": "Registered head-of-state statement (not yet matched)"
+    },
+    {
+      "category": "presidential",
+      "assertion": "The head of state is a hereditary monarch (represented by a governor-general in a Commonwealth realm); this category is not a national presidential contest.",
+      "country": "NZL",
+      "authority": "Department of the Prime Minister and Cabinet",
+      "url": "https://www.dpmc.govt.nz/our-business-units/cabinet-office/supporting-constitutional-and-statutory-roles/constitutional",
+      "requiredText": [
+        "head of state",
+        "King"
+      ],
+      "institution": "monarchy (Commonwealth realm)",
+      "lineage": "primary:Department of the Prime Minister and Cabinet",
+      "locator": "Registered head-of-state statement (not yet matched)"
+    },
+    {
+      "category": "presidential",
+      "assertion": "The head of state is a hereditary monarch (represented by a governor-general in a Commonwealth realm); this category is not a national presidential contest.",
+      "country": "NZL",
+      "authority": "Parliamentary Counsel Office (Constitution Act 1986)",
+      "url": "https://www.legislation.govt.nz/act/public/1986/0114/latest/whole.html",
+      "requiredText": [
+        "Sovereign in right of New Zealand is the head of State"
+      ],
+      "institution": "monarchy (Commonwealth realm)",
+      "lineage": "primary:Parliamentary Counsel Office (Constitution Act 1986)",
+      "locator": "Registered head-of-state statement (not yet matched)"
+    },
+    {
+      "category": "presidential",
+      "assertion": "The head of state is a hereditary monarch (represented by a governor-general in a Commonwealth realm); this category is not a national presidential contest.",
+      "country": "JAM",
+      "authority": "King's House",
+      "url": "https://kingshouse.gov.jm/the-governor-general/",
+      "requiredText": [
+        "Governor-General",
+        "King"
+      ],
+      "institution": "monarchy (Commonwealth realm)",
+      "lineage": "primary:King's House",
+      "locator": "Registered head-of-state statement (not yet matched)"
+    },
+    {
+      "category": "presidential",
+      "assertion": "The head of state is a hereditary monarch (represented by a governor-general in a Commonwealth realm); this category is not a national presidential contest.",
+      "country": "BHS",
+      "authority": "Government of The Bahamas",
+      "url": "https://www.bahamas.gov.bs/",
+      "requiredText": [
+        "Governor-General",
+        "King"
+      ],
+      "institution": "monarchy (Commonwealth realm)",
+      "lineage": "primary:Government of The Bahamas",
+      "locator": "Registered head-of-state statement (not yet matched)"
+    },
+    {
+      "category": "presidential",
+      "assertion": "The head of state is a hereditary monarch (represented by a governor-general in a Commonwealth realm); this category is not a national presidential contest.",
+      "country": "PNG",
+      "authority": "Office of the Governor-General",
+      "url": "https://www.gg.gov.pg/",
+      "requiredText": [
+        "Governor-General",
+        "King"
+      ],
+      "institution": "monarchy (Commonwealth realm)",
+      "lineage": "primary:Office of the Governor-General",
+      "locator": "Registered head-of-state statement (not yet matched)"
+    },
+    {
+      "category": "presidential",
+      "assertion": "The head of state is a hereditary monarch (represented by a governor-general in a Commonwealth realm); this category is not a national presidential contest.",
+      "country": "TUV",
+      "authority": "Government of Tuvalu",
+      "url": "https://www.gov.tv/",
+      "requiredText": [
+        "Governor-General",
+        "King"
+      ],
+      "institution": "monarchy (Commonwealth realm)",
+      "lineage": "primary:Government of Tuvalu",
+      "locator": "Registered head-of-state statement (not yet matched)"
+    },
+    {
+      "category": "presidential",
+      "assertion": "The head of state is a hereditary monarch (represented by a governor-general in a Commonwealth realm); this category is not a national presidential contest.",
+      "country": "BLZ",
+      "authority": "Office of the Governor-General",
+      "url": "https://www.governorgeneral.gov.bz/",
+      "requiredText": [
+        "Governor-General",
+        "King"
+      ],
+      "institution": "monarchy (Commonwealth realm)",
+      "lineage": "primary:Office of the Governor-General",
+      "locator": "Registered head-of-state statement (not yet matched)"
+    },
+    {
+      "category": "presidential",
+      "assertion": "The head of state is a hereditary monarch (represented by a governor-general in a Commonwealth realm); this category is not a national presidential contest.",
+      "country": "THA",
+      "authority": "Royal Thai Government",
+      "url": "https://www.thaigov.go.th/",
+      "requiredText": [
+        "King",
+        "head of state"
+      ],
+      "institution": "monarchy",
+      "lineage": "primary:Royal Thai Government",
+      "locator": "Registered head-of-state statement (not yet matched)"
+    },
+    {
+      "category": "presidential",
+      "assertion": "The Yang di-Pertuan Agong is chosen by the Conference of Rulers from the hereditary rulers; this is not a national presidential contest.",
+      "country": "MYS",
+      "authority": "Istana Negara",
+      "url": "https://www.istananegara.gov.my/",
+      "requiredText": [
+        "Yang di-Pertuan Agong",
+        "head of state"
+      ],
+      "institution": "monarchy (elective among rulers)",
+      "lineage": "primary:Istana Negara",
+      "locator": "Registered head-of-state statement (not yet matched)"
+    },
+    {
+      "category": "presidential",
+      "assertion": "The head of state is a hereditary monarch (represented by a governor-general in a Commonwealth realm); this category is not a national presidential contest.",
+      "country": "KHM",
+      "authority": "National Assembly of Cambodia",
+      "url": "https://www.nac.org.kh/en/",
+      "requiredText": [
+        "King",
+        "head of state"
+      ],
+      "institution": "monarchy",
+      "lineage": "primary:National Assembly of Cambodia",
+      "locator": "Registered head-of-state statement (not yet matched)"
+    },
+    {
+      "category": "presidential",
+      "assertion": "The head of state is a hereditary monarch (represented by a governor-general in a Commonwealth realm); this category is not a national presidential contest.",
+      "country": "MCO",
+      "authority": "Government of Monaco",
+      "url": "https://www.gouv.mc/Gouvernement-et-Institutions/Les-Institutions/Le-Prince",
+      "requiredText": [
+        "Prince",
+        "head of state"
+      ],
+      "institution": "monarchy",
+      "lineage": "primary:Government of Monaco",
+      "locator": "Registered head-of-state statement (not yet matched)"
+    },
+    {
+      "category": "presidential",
+      "assertion": "The head of state is a hereditary monarch (represented by a governor-general in a Commonwealth realm); this category is not a national presidential contest.",
+      "country": "LIE",
+      "authority": "Government of Liechtenstein",
+      "url": "https://www.regierung.li/en",
+      "requiredText": [
+        "reigning prince",
+        "head of state"
+      ],
+      "institution": "monarchy",
+      "lineage": "primary:Government of Liechtenstein",
+      "locator": "Registered head-of-state statement (not yet matched)"
+    },
+    {
+      "category": "presidential",
+      "assertion": "The co-princes (the Bishop of Urgell and the President of the French Republic) are jointly head of state; there is no Andorran presidential contest.",
+      "country": "AND",
+      "authority": "Consell General",
+      "url": "https://www.consellgeneral.ad/en/the-consell-general/what-is-the-consell-general",
+      "requiredText": [
+        "Co-Princes",
+        "head of state"
+      ],
+      "institution": "co-principality",
+      "lineage": "primary:Consell General",
+      "locator": "Registered head-of-state statement (not yet matched)"
+    },
+    {
+      "category": "presidential",
+      "assertion": "The head of state is a hereditary monarch (represented by a governor-general in a Commonwealth realm); this category is not a national presidential contest.",
+      "country": "JOR",
+      "authority": "Office of King Abdullah II",
+      "url": "https://kingabdullah.jo/en/page/the-hashemites/the-constitution",
+      "requiredText": [
+        "King",
+        "head of the state"
+      ],
+      "institution": "monarchy",
+      "lineage": "primary:Office of King Abdullah II",
+      "locator": "Registered head-of-state statement (not yet matched)"
+    },
+    {
+      "category": "presidential",
+      "assertion": "The head of state is a hereditary monarch (represented by a governor-general in a Commonwealth realm); this category is not a national presidential contest.",
+      "country": "SAU",
+      "authority": "Unified National Platform",
+      "url": "https://www.my.gov.sa/en/content/governance",
+      "requiredText": [
+        "King"
+      ],
+      "institution": "monarchy",
+      "lineage": "primary:Unified National Platform",
+      "locator": "Registered head-of-state statement (not yet matched)"
+    },
+    {
+      "category": "presidential",
+      "assertion": "The head of state is a hereditary monarch (represented by a governor-general in a Commonwealth realm); this category is not a national presidential contest.",
+      "country": "BHR",
+      "authority": "Bahrain National Portal",
+      "url": "https://www.bahrain.bh/",
+      "requiredText": [
+        "King"
+      ],
+      "institution": "monarchy",
+      "lineage": "primary:Bahrain National Portal",
+      "locator": "Registered head-of-state statement (not yet matched)"
+    },
+    {
+      "category": "presidential",
+      "assertion": "The head of state is a hereditary monarch (represented by a governor-general in a Commonwealth realm); this category is not a national presidential contest.",
+      "country": "QAT",
+      "authority": "Amiri Diwan",
+      "url": "https://www.diwan.gov.qa/en/about-qatar/the-constitution",
+      "requiredText": [
+        "Emir",
+        "head of state"
+      ],
+      "institution": "monarchy",
+      "lineage": "primary:Amiri Diwan",
+      "locator": "Registered head-of-state statement (not yet matched)"
+    },
+    {
+      "category": "presidential",
+      "assertion": "The head of state is a hereditary monarch (represented by a governor-general in a Commonwealth realm); this category is not a national presidential contest.",
+      "country": "OMN",
+      "authority": "Oman Government Portal",
+      "url": "https://omanportal.gov.om/",
+      "requiredText": [
+        "Sultan",
+        "head of state"
+      ],
+      "institution": "monarchy",
+      "lineage": "primary:Oman Government Portal",
+      "locator": "Registered head-of-state statement (not yet matched)"
+    },
+    {
+      "category": "presidential",
+      "assertion": "The head of state is a hereditary monarch (represented by a governor-general in a Commonwealth realm); this category is not a national presidential contest.",
+      "country": "MAR",
+      "authority": "Portail National du Maroc",
+      "url": "https://www.maroc.ma/en/content/constitution",
+      "requiredText": [
+        "King",
+        "head of state"
+      ],
+      "institution": "monarchy",
+      "lineage": "primary:Portail National du Maroc",
+      "locator": "Registered head-of-state statement (not yet matched)"
+    },
+    {
+      "category": "presidential",
+      "assertion": "The head of state is a hereditary monarch (represented by a governor-general in a Commonwealth realm); this category is not a national presidential contest.",
+      "country": "BTN",
+      "authority": "National Assembly of Bhutan",
+      "url": "https://www.nab.gov.bt/en/",
+      "requiredText": [
+        "Druk Gyalpo",
+        "head of state"
+      ],
+      "institution": "monarchy",
+      "lineage": "primary:National Assembly of Bhutan",
+      "locator": "Registered head-of-state statement (not yet matched)"
+    },
+    {
+      "category": "presidential",
+      "assertion": "The head of state is a hereditary monarch (represented by a governor-general in a Commonwealth realm); this category is not a national presidential contest.",
+      "country": "SWZ",
+      "authority": "Government of Eswatini",
+      "url": "https://www.gov.sz/",
+      "requiredText": [
+        "King",
+        "head of state"
+      ],
+      "institution": "monarchy",
+      "lineage": "primary:Government of Eswatini",
+      "locator": "Registered head-of-state statement (not yet matched)"
+    },
+    {
+      "category": "presidential",
+      "assertion": "The head of state is a hereditary monarch (represented by a governor-general in a Commonwealth realm); this category is not a national presidential contest.",
+      "country": "KWT",
+      "authority": "Kuwait National Assembly",
+      "url": "http://www.kna.kw/",
+      "requiredText": [
+        "Amir",
+        "head of state"
+      ],
+      "institution": "monarchy",
+      "lineage": "primary:Kuwait National Assembly",
+      "locator": "Registered head-of-state statement (not yet matched)"
+    },
+    {
+      "category": "presidential",
+      "assertion": "The head of state is a hereditary monarch (represented by a governor-general in a Commonwealth realm); this category is not a national presidential contest.",
+      "country": "TON",
+      "authority": "Parliament of Tonga",
+      "url": "https://parliament.gov.to/en",
+      "requiredText": [
+        "King",
+        "head of state"
+      ],
+      "institution": "monarchy",
+      "lineage": "primary:Parliament of Tonga",
+      "locator": "Registered head-of-state statement (not yet matched)"
+    },
+    {
+      "category": "presidential",
+      "assertion": "The head of state is a hereditary monarch (represented by a governor-general in a Commonwealth realm); this category is not a national presidential contest.",
+      "country": "BRN",
+      "authority": "Prime Minister's Office",
+      "url": "https://www.pmo.gov.bn/",
+      "requiredText": [
+        "Sultan",
+        "head of state"
+      ],
+      "institution": "monarchy",
+      "lineage": "primary:Prime Minister's Office",
+      "locator": "Registered head-of-state statement (not yet matched)"
+    }
+  ],
+  "note": "Authority role and registered country/category scope are required; a government suffix alone is insufficient. Links are acquisition targets, not pre-verified election facts.",
+  "profiles": [
+    {
+      "authority": "UK Parliament",
+      "categories": [
+        "legislative"
+      ],
+      "country": "GBR",
+      "domains": [
+        "electionresults.parliament.uk",
+        "parliament.uk"
+      ],
+      "indexUrl": "https://electionresults.parliament.uk/general-elections",
+      "rule": "uk-general-election-index"
+    },
+    {
+      "authority": "Elections Canada",
+      "categories": [
+        "legislative"
+      ],
+      "country": "CAN",
+      "domains": [
+        "elections.ca"
+      ],
+      "indexUrl": "https://www.elections.ca/content.aspx?section=ele&dir=pas&document=index&lang=e",
+      "rule": "canada-past-election-index"
+    },
+    {
+      "authority": "FEC / National Archives / House Clerk",
+      "categories": [
+        "presidential",
+        "legislative"
+      ],
+      "country": "USA",
+      "domains": [
+        "fec.gov",
+        "archives.gov",
+        "clerk.house.gov"
+      ],
+      "indexUrl": "https://www.archives.gov/electoral-college/2024"
+    },
+    {
+      "authority": "Ministry of Interior / Constitutional Council",
+      "categories": [
+        "legislative",
+        "presidential"
+      ],
+      "country": "FRA",
+      "domains": [
+        "interieur.gouv.fr",
+        "conseil-constitutionnel.fr"
+      ],
+      "indexUrl": "https://www.archives-resultats-elections.interieur.gouv.fr/"
+    },
+    {
+      "authority": "National Electoral Chamber / Interior",
+      "categories": [
+        "legislative",
+        "presidential"
+      ],
+      "country": "ARG",
+      "domains": [
+        "electoral.gob.ar",
+        "resultados.gob.ar",
+        "argentina.gob.ar"
+      ]
+    },
+    {
+      "authority": "Australian Electoral Commission",
+      "categories": [
+        "legislative"
+      ],
+      "country": "AUS",
+      "domains": [
+        "aec.gov.au"
+      ],
+      "indexUrl": "https://www.aec.gov.au/Elections/Federal_Elections/",
+      "rule": "aec-federal-elections-index",
+      "lineage": "primary:aec"
+    },
+    {
+      "authority": "Federal electoral authority / Parliament",
+      "categories": [
+        "legislative",
+        "presidential"
+      ],
+      "country": "AUT",
+      "domains": [
+        "bundeswahlen.gv.at",
+        "bmi.gv.at",
+        "parlament.gv.at"
+      ]
+    },
+    {
+      "authority": "Election Commission / Parliament",
+      "categories": [
+        "legislative",
+        "presidential"
+      ],
+      "country": "BGD",
+      "domains": [
+        "ec.org.bd",
+        "parliament.gov.bd"
+      ]
+    },
+    {
+      "authority": "Órgano Electoral Plurinacional",
+      "categories": [
+        "legislative",
+        "presidential"
+      ],
+      "country": "BOL",
+      "domains": [
+        "oep.org.bo"
+      ]
+    },
+    {
+      "authority": "Tribunal Superior Eleitoral",
+      "categories": [
+        "legislative",
+        "presidential"
+      ],
+      "country": "BRA",
+      "domains": [
+        "tse.jus.br"
+      ]
+    },
+    {
+      "authority": "SERVEL / election certification tribunal",
+      "categories": [
+        "legislative",
+        "presidential"
+      ],
+      "country": "CHL",
+      "domains": [
+        "servel.cl",
+        "tribunalcalificador.cl"
+      ]
+    },
+    {
+      "authority": "Registraduría / National Electoral Council",
+      "categories": [
+        "legislative",
+        "presidential"
+      ],
+      "country": "COL",
+      "domains": [
+        "registraduria.gov.co",
+        "cne.gov.co"
+      ]
+    },
+    {
+      "authority": "Tribunal Supremo de Elecciones",
+      "categories": [
+        "legislative",
+        "presidential"
+      ],
+      "country": "CRI",
+      "domains": [
+        "tse.go.cr"
+      ]
+    },
+    {
+      "authority": "Czech statistical/electoral authorities",
+      "categories": [
+        "legislative",
+        "presidential"
+      ],
+      "country": "CZE",
+      "domains": [
+        "volby.cz",
+        "mv.gov.cz"
+      ]
+    },
+    {
+      "authority": "Federal Returning Officer",
+      "categories": [
+        "legislative"
+      ],
+      "country": "DEU",
+      "domains": [
+        "bundeswahlleiterin.de",
+        "bundeswahlleiter.de"
+      ]
+    },
+    {
+      "authority": "Consejo Nacional Electoral",
+      "categories": [
+        "legislative",
+        "presidential"
+      ],
+      "country": "ECU",
+      "domains": [
+        "cne.gob.ec"
+      ]
+    },
+    {
+      "authority": "Ministry of Justice elections service",
+      "categories": [
+        "legislative",
+        "presidential"
+      ],
+      "country": "FIN",
+      "domains": [
+        "vaalit.fi",
+        "tulospalvelu.vaalit.fi"
+      ]
+    },
+    {
+      "authority": "Electoral Commission",
+      "categories": [
+        "legislative",
+        "presidential"
+      ],
+      "country": "GHA",
+      "domains": [
+        "ec.gov.gh"
+      ]
+    },
+    {
+      "authority": "State Electoral Commission",
+      "categories": [
+        "legislative",
+        "presidential"
+      ],
+      "country": "HRV",
+      "domains": [
+        "izbori.hr"
+      ]
+    },
+    {
+      "authority": "KPU / Constitutional Court",
+      "categories": [
+        "legislative",
+        "presidential"
+      ],
+      "country": "IDN",
+      "domains": [
+        "kpu.go.id",
+        "mkri.id"
+      ]
+    },
+    {
+      "authority": "Election Commission / Parliament",
+      "categories": [
+        "legislative",
+        "presidential"
+      ],
+      "country": "IND",
+      "domains": [
+        "eci.gov.in",
+        "results.eci.gov.in",
+        "sansad.in"
+      ]
+    },
+    {
+      "authority": "Electoral Commission (An Coimisiún Toghcháin)",
+      "categories": [
+        "legislative"
+      ],
+      "country": "IRL",
+      "domains": [
+        "electoralcommission.ie",
+        "presidentialelection.ie",
+        "gov.ie"
+      ],
+      "indexUrl": "https://www.electoralcommission.ie/general-elections/",
+      "rule": "most-recent-statement",
+      "subject": "general election",
+      "lineage": "primary:electoral-commission-ie"
+    },
+    {
+      "authority": "Electoral Commission (An Coimisiún Toghcháin)",
+      "categories": [
+        "presidential"
+      ],
+      "country": "IRL",
+      "domains": [
+        "electoralcommission.ie",
+        "presidentialelection.ie",
+        "gov.ie"
+      ],
+      "indexUrl": "https://www.electoralcommission.ie/presidential-elections/",
+      "rule": "most-recent-statement",
+      "subject": "presidential election",
+      "lineage": "primary:electoral-commission-ie"
+    },
+    {
+      "authority": "National electoral/government publications",
+      "categories": [
+        "legislative",
+        "presidential"
+      ],
+      "country": "ISL",
+      "domains": [
+        "kosning.is",
+        "island.is"
+      ]
+    },
+    {
+      "authority": "IEBC / Supreme Court",
+      "categories": [
+        "legislative",
+        "presidential"
+      ],
+      "country": "KEN",
+      "domains": [
+        "iebc.or.ke",
+        "judiciary.go.ke"
+      ]
+    },
+    {
+      "authority": "Election Commission",
+      "categories": [
+        "legislative",
+        "presidential"
+      ],
+      "country": "LKA",
+      "domains": [
+        "elections.gov.lk",
+        "results.elections.gov.lk"
+      ]
+    },
+    {
+      "authority": "INE / Electoral Tribunal",
+      "categories": [
+        "legislative",
+        "presidential"
+      ],
+      "country": "MEX",
+      "domains": [
+        "ine.mx",
+        "te.gob.mx"
+      ]
+    },
+    {
+      "authority": "Independent National Electoral Commission",
+      "categories": [
+        "legislative",
+        "presidential"
+      ],
+      "country": "NGA",
+      "domains": [
+        "inecnigeria.org",
+        "inec.gov.ng"
+      ]
+    },
+    {
+      "authority": "ONPE / National Jury of Elections",
+      "categories": [
+        "legislative",
+        "presidential"
+      ],
+      "country": "PER",
+      "domains": [
+        "onpe.gob.pe",
+        "jne.gob.pe"
+      ]
+    },
+    {
+      "authority": "COMELEC / Congress",
+      "categories": [
+        "legislative",
+        "presidential"
+      ],
+      "country": "PHL",
+      "domains": [
+        "comelec.gov.ph",
+        "senate.gov.ph",
+        "congress.gov.ph"
+      ]
+    },
+    {
+      "authority": "National Electoral Commission",
+      "categories": [
+        "legislative",
+        "presidential"
+      ],
+      "country": "POL",
+      "domains": [
+        "pkw.gov.pl",
+        "wybory.gov.pl"
+      ]
+    },
+    {
+      "authority": "National Electoral Commission / electoral administration",
+      "categories": [
+        "legislative",
+        "presidential"
+      ],
+      "country": "PRT",
+      "domains": [
+        "cne.pt",
+        "sg.mai.gov.pt",
+        "eleicoes.mai.gov.pt"
+      ]
+    },
+    {
+      "authority": "Permanent Electoral Authority / BEC / Constitutional Court",
+      "categories": [
+        "legislative",
+        "presidential"
+      ],
+      "country": "ROU",
+      "domains": [
+        "roaep.ro",
+        "bec.ro",
+        "prezidentiale2025.bec.ro",
+        "ccr.ro"
+      ]
+    },
+    {
+      "authority": "Election monitoring body / Constitutional Council",
+      "categories": [
+        "legislative",
+        "presidential"
+      ],
+      "country": "SEN",
+      "domains": [
+        "cena.sn",
+        "conseilconstitutionnel.sn"
+      ]
+    },
+    {
+      "authority": "Interior / statistical elections authorities",
+      "categories": [
+        "legislative",
+        "presidential"
+      ],
+      "country": "SVK",
+      "domains": [
+        "volbysr.sk",
+        "minv.sk",
+        "statistics.sk"
+      ]
+    },
+    {
+      "authority": "Central Election Commission; supplementary scope",
+      "categories": [
+        "legislative",
+        "presidential"
+      ],
+      "country": "TWN",
+      "domains": [
+        "cec.gov.tw"
+      ]
+    },
+    {
+      "authority": "Corte Electoral",
+      "categories": [
+        "legislative",
+        "presidential"
+      ],
+      "country": "URY",
+      "domains": [
+        "corteelectoral.gub.uy",
+        "gub.uy/corte-electoral"
+      ]
+    },
+    {
+      "authority": "Electoral Commission / Parliament",
+      "categories": [
+        "legislative",
+        "presidential"
+      ],
+      "country": "ZAF",
+      "domains": [
+        "elections.org.za",
+        "parliament.gov.za"
+      ]
+    },
+    {
+      "authority": "National parliamentary website identified by IPU chamber field",
+      "categories": [
+        "legislative"
+      ],
+      "country": "AND",
+      "domains": [
+        "www.consellgeneral.ad"
+      ],
+      "indexUrl": "https://www.consellgeneral.ad/",
+      "note": "Authority-role lead from IPU metadata, not independent election freshness proof",
+      "roleEvidence": {
+        "key": "chambers-1",
+        "locator": "data[id=AD-LC01]",
+        "receiptId": "a17ddaf4813aaa6ed025592c4cbcd0d5aeeee959f34e41c1eb8a4621e3171743",
+        "retrievedAt": "2026-10-01T05:10:33.414Z",
+        "sha256": "591742b2ff21a098035b5741044cc75aa78e0b115045e4ccb8fdf46d5847fced",
+        "sourceId": "ipu-parline",
+        "url": "https://api.data.ipu.org/v1/chambers?page[size]=250&page[number]=1"
+      }
+    },
+    {
+      "authority": "National parliamentary website identified by IPU chamber field",
+      "categories": [
+        "legislative"
+      ],
+      "country": "ARE",
+      "domains": [
+        "www.almajles.gov.ae"
+      ],
+      "indexUrl": "http://www.almajles.gov.ae/",
+      "note": "Authority-role lead from IPU metadata, not independent election freshness proof",
+      "roleEvidence": {
+        "key": "chambers-1",
+        "locator": "data[id=AE-LC01]",
+        "receiptId": "a17ddaf4813aaa6ed025592c4cbcd0d5aeeee959f34e41c1eb8a4621e3171743",
+        "retrievedAt": "2026-10-01T05:10:33.414Z",
+        "sha256": "591742b2ff21a098035b5741044cc75aa78e0b115045e4ccb8fdf46d5847fced",
+        "sourceId": "ipu-parline",
+        "url": "https://api.data.ipu.org/v1/chambers?page[size]=250&page[number]=1"
+      }
+    },
+    {
+      "authority": "National parliamentary website identified by IPU chamber field",
+      "categories": [
+        "legislative"
+      ],
+      "country": "AFG",
+      "domains": [
+        "www.parliament.af"
+      ],
+      "indexUrl": "http://www.parliament.af/",
+      "note": "Authority-role lead from IPU metadata, not independent election freshness proof",
+      "roleEvidence": {
+        "key": "chambers-1",
+        "locator": "data[id=AF-LC01]",
+        "receiptId": "a17ddaf4813aaa6ed025592c4cbcd0d5aeeee959f34e41c1eb8a4621e3171743",
+        "retrievedAt": "2026-10-01T05:10:33.414Z",
+        "sha256": "591742b2ff21a098035b5741044cc75aa78e0b115045e4ccb8fdf46d5847fced",
+        "sourceId": "ipu-parline",
+        "url": "https://api.data.ipu.org/v1/chambers?page[size]=250&page[number]=1"
+      }
+    },
+    {
+      "authority": "National parliamentary website identified by IPU chamber field",
+      "categories": [
+        "legislative"
+      ],
+      "country": "ATG",
+      "domains": [
+        "ab.gov.ag"
+      ],
+      "indexUrl": "https://ab.gov.ag/detail_page.php?page=8",
+      "note": "Authority-role lead from IPU metadata, not independent election freshness proof",
+      "roleEvidence": {
+        "key": "chambers-1",
+        "locator": "data[id=AG-LC01]",
+        "receiptId": "a17ddaf4813aaa6ed025592c4cbcd0d5aeeee959f34e41c1eb8a4621e3171743",
+        "retrievedAt": "2026-10-01T05:10:33.414Z",
+        "sha256": "591742b2ff21a098035b5741044cc75aa78e0b115045e4ccb8fdf46d5847fced",
+        "sourceId": "ipu-parline",
+        "url": "https://api.data.ipu.org/v1/chambers?page[size]=250&page[number]=1"
+      }
+    },
+    {
+      "authority": "National parliamentary website identified by IPU chamber field",
+      "categories": [
+        "legislative"
+      ],
+      "country": "ALB",
+      "domains": [
+        "www.parlament.al"
+      ],
+      "indexUrl": "https://www.parlament.al/",
+      "note": "Authority-role lead from IPU metadata, not independent election freshness proof",
+      "roleEvidence": {
+        "key": "chambers-1",
+        "locator": "data[id=AL-LC01]",
+        "receiptId": "a17ddaf4813aaa6ed025592c4cbcd0d5aeeee959f34e41c1eb8a4621e3171743",
+        "retrievedAt": "2026-10-01T05:10:33.414Z",
+        "sha256": "591742b2ff21a098035b5741044cc75aa78e0b115045e4ccb8fdf46d5847fced",
+        "sourceId": "ipu-parline",
+        "url": "https://api.data.ipu.org/v1/chambers?page[size]=250&page[number]=1"
+      }
+    },
+    {
+      "authority": "National parliamentary website identified by IPU chamber field",
+      "categories": [
+        "legislative"
+      ],
+      "country": "ARM",
+      "domains": [
+        "www.parliament.am"
+      ],
+      "indexUrl": "http://www.parliament.am",
+      "note": "Authority-role lead from IPU metadata, not independent election freshness proof",
+      "roleEvidence": {
+        "key": "chambers-1",
+        "locator": "data[id=AM-LC01]",
+        "receiptId": "a17ddaf4813aaa6ed025592c4cbcd0d5aeeee959f34e41c1eb8a4621e3171743",
+        "retrievedAt": "2026-10-01T05:10:33.414Z",
+        "sha256": "591742b2ff21a098035b5741044cc75aa78e0b115045e4ccb8fdf46d5847fced",
+        "sourceId": "ipu-parline",
+        "url": "https://api.data.ipu.org/v1/chambers?page[size]=250&page[number]=1"
+      }
+    },
+    {
+      "authority": "National parliamentary website identified by IPU chamber field",
+      "categories": [
+        "legislative"
+      ],
+      "country": "AGO",
+      "domains": [
+        "www.parlamento.ao"
+      ],
+      "indexUrl": "https://www.parlamento.ao",
+      "note": "Authority-role lead from IPU metadata, not independent election freshness proof",
+      "roleEvidence": {
+        "key": "chambers-1",
+        "locator": "data[id=AO-LC01]",
+        "receiptId": "a17ddaf4813aaa6ed025592c4cbcd0d5aeeee959f34e41c1eb8a4621e3171743",
+        "retrievedAt": "2026-10-01T05:10:33.414Z",
+        "sha256": "591742b2ff21a098035b5741044cc75aa78e0b115045e4ccb8fdf46d5847fced",
+        "sourceId": "ipu-parline",
+        "url": "https://api.data.ipu.org/v1/chambers?page[size]=250&page[number]=1"
+      }
+    },
+    {
+      "authority": "National parliamentary website identified by IPU chamber field",
+      "categories": [
+        "legislative"
+      ],
+      "country": "AZE",
+      "domains": [
+        "meclis.gov.az"
+      ],
+      "indexUrl": "https://meclis.gov.az/",
+      "note": "Authority-role lead from IPU metadata, not independent election freshness proof",
+      "roleEvidence": {
+        "key": "chambers-1",
+        "locator": "data[id=AZ-LC01]",
+        "receiptId": "a17ddaf4813aaa6ed025592c4cbcd0d5aeeee959f34e41c1eb8a4621e3171743",
+        "retrievedAt": "2026-10-01T05:10:33.414Z",
+        "sha256": "591742b2ff21a098035b5741044cc75aa78e0b115045e4ccb8fdf46d5847fced",
+        "sourceId": "ipu-parline",
+        "url": "https://api.data.ipu.org/v1/chambers?page[size]=250&page[number]=1"
+      },
+      "rule": "registered-statement",
+      "subject": "Milli Majlis (convocation)",
+      "lineage": "primary:milli-majlis",
+      "statement": "\\b\\w+ convocation of the Milli Majlis was formed following the elections held on ([^.]{4,30}?\\d{4})"
+    },
+    {
+      "authority": "National parliamentary website identified by IPU chamber field",
+      "categories": [
+        "legislative"
+      ],
+      "country": "BIH",
+      "domains": [
+        "www.parlament.ba"
+      ],
+      "indexUrl": "https://www.parlament.ba",
+      "note": "Authority-role lead from IPU metadata, not independent election freshness proof",
+      "roleEvidence": {
+        "key": "chambers-1",
+        "locator": "data[id=BA-LC01]",
+        "receiptId": "a17ddaf4813aaa6ed025592c4cbcd0d5aeeee959f34e41c1eb8a4621e3171743",
+        "retrievedAt": "2026-10-01T05:10:33.414Z",
+        "sha256": "591742b2ff21a098035b5741044cc75aa78e0b115045e4ccb8fdf46d5847fced",
+        "sourceId": "ipu-parline",
+        "url": "https://api.data.ipu.org/v1/chambers?page[size]=250&page[number]=1"
+      }
+    },
+    {
+      "authority": "National parliamentary website identified by IPU chamber field",
+      "categories": [
+        "legislative"
+      ],
+      "country": "BRB",
+      "domains": [
+        "www.barbadosparliament.com"
+      ],
+      "indexUrl": "http://www.barbadosparliament.com/",
+      "note": "Authority-role lead from IPU metadata, not independent election freshness proof",
+      "roleEvidence": {
+        "key": "chambers-1",
+        "locator": "data[id=BB-LC01]",
+        "receiptId": "a17ddaf4813aaa6ed025592c4cbcd0d5aeeee959f34e41c1eb8a4621e3171743",
+        "retrievedAt": "2026-10-01T05:10:33.414Z",
+        "sha256": "591742b2ff21a098035b5741044cc75aa78e0b115045e4ccb8fdf46d5847fced",
+        "sourceId": "ipu-parline",
+        "url": "https://api.data.ipu.org/v1/chambers?page[size]=250&page[number]=1"
+      }
+    },
+    {
+      "authority": "National parliamentary website identified by IPU chamber field",
+      "categories": [
+        "legislative"
+      ],
+      "country": "BEL",
+      "domains": [
+        "www.dekamer.be"
+      ],
+      "indexUrl": "https://www.dekamer.be/kvvcr/index.cfm",
+      "note": "Authority-role lead from IPU metadata, not independent election freshness proof",
+      "roleEvidence": {
+        "key": "chambers-1",
+        "locator": "data[id=BE-LC01]",
+        "receiptId": "a17ddaf4813aaa6ed025592c4cbcd0d5aeeee959f34e41c1eb8a4621e3171743",
+        "retrievedAt": "2026-10-01T05:10:33.414Z",
+        "sha256": "591742b2ff21a098035b5741044cc75aa78e0b115045e4ccb8fdf46d5847fced",
+        "sourceId": "ipu-parline",
+        "url": "https://api.data.ipu.org/v1/chambers?page[size]=250&page[number]=1"
+      }
+    },
+    {
+      "authority": "National parliamentary website identified by IPU chamber field",
+      "categories": [
+        "legislative"
+      ],
+      "country": "BFA",
+      "domains": [
+        "www.assembleenationale.bf"
+      ],
+      "indexUrl": "https://www.assembleenationale.bf/",
+      "note": "Authority-role lead from IPU metadata, not independent election freshness proof",
+      "roleEvidence": {
+        "key": "chambers-1",
+        "locator": "data[id=BF-LC01]",
+        "receiptId": "a17ddaf4813aaa6ed025592c4cbcd0d5aeeee959f34e41c1eb8a4621e3171743",
+        "retrievedAt": "2026-10-01T05:10:33.414Z",
+        "sha256": "591742b2ff21a098035b5741044cc75aa78e0b115045e4ccb8fdf46d5847fced",
+        "sourceId": "ipu-parline",
+        "url": "https://api.data.ipu.org/v1/chambers?page[size]=250&page[number]=1"
+      }
+    },
+    {
+      "authority": "National parliamentary website identified by IPU chamber field",
+      "categories": [
+        "legislative"
+      ],
+      "country": "BGR",
+      "domains": [
+        "www.parliament.bg"
+      ],
+      "indexUrl": "http://www.parliament.bg/",
+      "note": "Authority-role lead from IPU metadata, not independent election freshness proof",
+      "roleEvidence": {
+        "key": "chambers-1",
+        "locator": "data[id=BG-LC01]",
+        "receiptId": "a17ddaf4813aaa6ed025592c4cbcd0d5aeeee959f34e41c1eb8a4621e3171743",
+        "retrievedAt": "2026-10-01T05:10:33.414Z",
+        "sha256": "591742b2ff21a098035b5741044cc75aa78e0b115045e4ccb8fdf46d5847fced",
+        "sourceId": "ipu-parline",
+        "url": "https://api.data.ipu.org/v1/chambers?page[size]=250&page[number]=1"
+      }
+    },
+    {
+      "authority": "National parliamentary website identified by IPU chamber field",
+      "categories": [
+        "legislative"
+      ],
+      "country": "BHR",
+      "domains": [
+        "www.nuwab.bh"
+      ],
+      "indexUrl": "https://www.nuwab.bh/",
+      "note": "Authority-role lead from IPU metadata, not independent election freshness proof",
+      "roleEvidence": {
+        "key": "chambers-1",
+        "locator": "data[id=BH-LC01]",
+        "receiptId": "a17ddaf4813aaa6ed025592c4cbcd0d5aeeee959f34e41c1eb8a4621e3171743",
+        "retrievedAt": "2026-10-01T05:10:33.414Z",
+        "sha256": "591742b2ff21a098035b5741044cc75aa78e0b115045e4ccb8fdf46d5847fced",
+        "sourceId": "ipu-parline",
+        "url": "https://api.data.ipu.org/v1/chambers?page[size]=250&page[number]=1"
+      }
+    },
+    {
+      "authority": "National parliamentary website identified by IPU chamber field",
+      "categories": [
+        "legislative"
+      ],
+      "country": "BDI",
+      "domains": [
+        "www.assemblee.bi"
+      ],
+      "indexUrl": "http://www.assemblee.bi/",
+      "note": "Authority-role lead from IPU metadata, not independent election freshness proof",
+      "roleEvidence": {
+        "key": "chambers-1",
+        "locator": "data[id=BI-LC01]",
+        "receiptId": "a17ddaf4813aaa6ed025592c4cbcd0d5aeeee959f34e41c1eb8a4621e3171743",
+        "retrievedAt": "2026-10-01T05:10:33.414Z",
+        "sha256": "591742b2ff21a098035b5741044cc75aa78e0b115045e4ccb8fdf46d5847fced",
+        "sourceId": "ipu-parline",
+        "url": "https://api.data.ipu.org/v1/chambers?page[size]=250&page[number]=1"
+      }
+    },
+    {
+      "authority": "National parliamentary website identified by IPU chamber field",
+      "categories": [
+        "legislative"
+      ],
+      "country": "BEN",
+      "domains": [
+        "assemblee-nationale.bj"
+      ],
+      "indexUrl": "https://assemblee-nationale.bj/",
+      "note": "Authority-role lead from IPU metadata, not independent election freshness proof",
+      "roleEvidence": {
+        "key": "chambers-1",
+        "locator": "data[id=BJ-LC01]",
+        "receiptId": "a17ddaf4813aaa6ed025592c4cbcd0d5aeeee959f34e41c1eb8a4621e3171743",
+        "retrievedAt": "2026-10-01T05:10:33.414Z",
+        "sha256": "591742b2ff21a098035b5741044cc75aa78e0b115045e4ccb8fdf46d5847fced",
+        "sourceId": "ipu-parline",
+        "url": "https://api.data.ipu.org/v1/chambers?page[size]=250&page[number]=1"
+      }
+    },
+    {
+      "authority": "National parliamentary website identified by IPU chamber field",
+      "categories": [
+        "legislative"
+      ],
+      "country": "BRN",
+      "domains": [
+        "www.majlis-mesyuarat.gov.bn"
+      ],
+      "indexUrl": "http://www.majlis-mesyuarat.gov.bn",
+      "note": "Authority-role lead from IPU metadata, not independent election freshness proof",
+      "roleEvidence": {
+        "key": "chambers-1",
+        "locator": "data[id=BN-LC01]",
+        "receiptId": "a17ddaf4813aaa6ed025592c4cbcd0d5aeeee959f34e41c1eb8a4621e3171743",
+        "retrievedAt": "2026-10-01T05:10:33.414Z",
+        "sha256": "591742b2ff21a098035b5741044cc75aa78e0b115045e4ccb8fdf46d5847fced",
+        "sourceId": "ipu-parline",
+        "url": "https://api.data.ipu.org/v1/chambers?page[size]=250&page[number]=1"
+      }
+    },
+    {
+      "authority": "National parliamentary website identified by IPU chamber field",
+      "categories": [
+        "legislative"
+      ],
+      "country": "BHS",
+      "domains": [
+        "bahamasparliament.org"
+      ],
+      "indexUrl": "https://bahamasparliament.org/",
+      "note": "Authority-role lead from IPU metadata, not independent election freshness proof",
+      "roleEvidence": {
+        "key": "chambers-1",
+        "locator": "data[id=BS-LC01]",
+        "receiptId": "a17ddaf4813aaa6ed025592c4cbcd0d5aeeee959f34e41c1eb8a4621e3171743",
+        "retrievedAt": "2026-10-01T05:10:33.414Z",
+        "sha256": "591742b2ff21a098035b5741044cc75aa78e0b115045e4ccb8fdf46d5847fced",
+        "sourceId": "ipu-parline",
+        "url": "https://api.data.ipu.org/v1/chambers?page[size]=250&page[number]=1"
+      }
+    },
+    {
+      "authority": "National parliamentary website identified by IPU chamber field",
+      "categories": [
+        "legislative"
+      ],
+      "country": "BTN",
+      "domains": [
+        "parliament.bt"
+      ],
+      "indexUrl": "https://parliament.bt/",
+      "note": "Authority-role lead from IPU metadata, not independent election freshness proof",
+      "roleEvidence": {
+        "key": "chambers-1",
+        "locator": "data[id=BT-LC01]",
+        "receiptId": "a17ddaf4813aaa6ed025592c4cbcd0d5aeeee959f34e41c1eb8a4621e3171743",
+        "retrievedAt": "2026-10-01T05:10:33.414Z",
+        "sha256": "591742b2ff21a098035b5741044cc75aa78e0b115045e4ccb8fdf46d5847fced",
+        "sourceId": "ipu-parline",
+        "url": "https://api.data.ipu.org/v1/chambers?page[size]=250&page[number]=1"
+      }
+    },
+    {
+      "authority": "National parliamentary website identified by IPU chamber field",
+      "categories": [
+        "legislative"
+      ],
+      "country": "BWA",
+      "domains": [
+        "www.parliament.gov.bw"
+      ],
+      "indexUrl": "https://www.parliament.gov.bw/",
+      "note": "Authority-role lead from IPU metadata, not independent election freshness proof",
+      "roleEvidence": {
+        "key": "chambers-1",
+        "locator": "data[id=BW-LC01]",
+        "receiptId": "a17ddaf4813aaa6ed025592c4cbcd0d5aeeee959f34e41c1eb8a4621e3171743",
+        "retrievedAt": "2026-10-01T05:10:33.414Z",
+        "sha256": "591742b2ff21a098035b5741044cc75aa78e0b115045e4ccb8fdf46d5847fced",
+        "sourceId": "ipu-parline",
+        "url": "https://api.data.ipu.org/v1/chambers?page[size]=250&page[number]=1"
+      }
+    },
+    {
+      "authority": "National parliamentary website identified by IPU chamber field",
+      "categories": [
+        "legislative"
+      ],
+      "country": "BLR",
+      "domains": [
+        "www.house.gov.by"
+      ],
+      "indexUrl": "http://www.house.gov.by/en/",
+      "note": "Authority-role lead from IPU metadata, not independent election freshness proof",
+      "roleEvidence": {
+        "key": "chambers-1",
+        "locator": "data[id=BY-LC01]",
+        "receiptId": "a17ddaf4813aaa6ed025592c4cbcd0d5aeeee959f34e41c1eb8a4621e3171743",
+        "retrievedAt": "2026-10-01T05:10:33.414Z",
+        "sha256": "591742b2ff21a098035b5741044cc75aa78e0b115045e4ccb8fdf46d5847fced",
+        "sourceId": "ipu-parline",
+        "url": "https://api.data.ipu.org/v1/chambers?page[size]=250&page[number]=1"
+      }
+    },
+    {
+      "authority": "National parliamentary website identified by IPU chamber field",
+      "categories": [
+        "legislative"
+      ],
+      "country": "BLZ",
+      "domains": [
+        "www.nationalassembly.gov.bz"
+      ],
+      "indexUrl": "https://www.nationalassembly.gov.bz/",
+      "note": "Authority-role lead from IPU metadata, not independent election freshness proof",
+      "roleEvidence": {
+        "key": "chambers-1",
+        "locator": "data[id=BZ-LC01]",
+        "receiptId": "a17ddaf4813aaa6ed025592c4cbcd0d5aeeee959f34e41c1eb8a4621e3171743",
+        "retrievedAt": "2026-10-01T05:10:33.414Z",
+        "sha256": "591742b2ff21a098035b5741044cc75aa78e0b115045e4ccb8fdf46d5847fced",
+        "sourceId": "ipu-parline",
+        "url": "https://api.data.ipu.org/v1/chambers?page[size]=250&page[number]=1"
+      }
+    },
+    {
+      "authority": "National parliamentary website identified by IPU chamber field",
+      "categories": [
+        "legislative"
+      ],
+      "country": "CAF",
+      "domains": [
+        "www.assembleenationale-rca.cf"
+      ],
+      "indexUrl": "http://www.assembleenationale-rca.cf",
+      "note": "Authority-role lead from IPU metadata, not independent election freshness proof",
+      "roleEvidence": {
+        "key": "chambers-1",
+        "locator": "data[id=CF-LC01]",
+        "receiptId": "a17ddaf4813aaa6ed025592c4cbcd0d5aeeee959f34e41c1eb8a4621e3171743",
+        "retrievedAt": "2026-10-01T05:10:33.414Z",
+        "sha256": "591742b2ff21a098035b5741044cc75aa78e0b115045e4ccb8fdf46d5847fced",
+        "sourceId": "ipu-parline",
+        "url": "https://api.data.ipu.org/v1/chambers?page[size]=250&page[number]=1"
+      }
+    },
+    {
+      "authority": "National parliamentary website identified by IPU chamber field",
+      "categories": [
+        "legislative"
+      ],
+      "country": "COG",
+      "domains": [
+        "www.assemblee-nationale.cg"
+      ],
+      "indexUrl": "http://www.assemblee-nationale.cg",
+      "note": "Authority-role lead from IPU metadata, not independent election freshness proof",
+      "roleEvidence": {
+        "key": "chambers-1",
+        "locator": "data[id=CG-LC01]",
+        "receiptId": "a17ddaf4813aaa6ed025592c4cbcd0d5aeeee959f34e41c1eb8a4621e3171743",
+        "retrievedAt": "2026-10-01T05:10:33.414Z",
+        "sha256": "591742b2ff21a098035b5741044cc75aa78e0b115045e4ccb8fdf46d5847fced",
+        "sourceId": "ipu-parline",
+        "url": "https://api.data.ipu.org/v1/chambers?page[size]=250&page[number]=1"
+      }
+    },
+    {
+      "authority": "National parliamentary website identified by IPU chamber field",
+      "categories": [
+        "legislative"
+      ],
+      "country": "CHE",
+      "domains": [
+        "www.parlament.ch"
+      ],
+      "indexUrl": "https://www.parlament.ch",
+      "note": "Authority-role lead from IPU metadata, not independent election freshness proof",
+      "roleEvidence": {
+        "key": "chambers-1",
+        "locator": "data[id=CH-LC01]",
+        "receiptId": "a17ddaf4813aaa6ed025592c4cbcd0d5aeeee959f34e41c1eb8a4621e3171743",
+        "retrievedAt": "2026-10-01T05:10:33.414Z",
+        "sha256": "591742b2ff21a098035b5741044cc75aa78e0b115045e4ccb8fdf46d5847fced",
+        "sourceId": "ipu-parline",
+        "url": "https://api.data.ipu.org/v1/chambers?page[size]=250&page[number]=1"
+      }
+    },
+    {
+      "authority": "National parliamentary website identified by IPU chamber field",
+      "categories": [
+        "legislative"
+      ],
+      "country": "CIV",
+      "domains": [
+        "www.assnat.ci"
+      ],
+      "indexUrl": "http://www.assnat.ci/",
+      "note": "Authority-role lead from IPU metadata, not independent election freshness proof",
+      "roleEvidence": {
+        "key": "chambers-1",
+        "locator": "data[id=CI-LC01]",
+        "receiptId": "a17ddaf4813aaa6ed025592c4cbcd0d5aeeee959f34e41c1eb8a4621e3171743",
+        "retrievedAt": "2026-10-01T05:10:33.414Z",
+        "sha256": "591742b2ff21a098035b5741044cc75aa78e0b115045e4ccb8fdf46d5847fced",
+        "sourceId": "ipu-parline",
+        "url": "https://api.data.ipu.org/v1/chambers?page[size]=250&page[number]=1"
+      }
+    },
+    {
+      "authority": "National parliamentary website identified by IPU chamber field",
+      "categories": [
+        "legislative"
+      ],
+      "country": "CMR",
+      "domains": [
+        "www.assnat.cm"
+      ],
+      "indexUrl": "https://www.assnat.cm/",
+      "note": "Authority-role lead from IPU metadata, not independent election freshness proof",
+      "roleEvidence": {
+        "key": "chambers-1",
+        "locator": "data[id=CM-LC01]",
+        "receiptId": "a17ddaf4813aaa6ed025592c4cbcd0d5aeeee959f34e41c1eb8a4621e3171743",
+        "retrievedAt": "2026-10-01T05:10:33.414Z",
+        "sha256": "591742b2ff21a098035b5741044cc75aa78e0b115045e4ccb8fdf46d5847fced",
+        "sourceId": "ipu-parline",
+        "url": "https://api.data.ipu.org/v1/chambers?page[size]=250&page[number]=1"
+      }
+    },
+    {
+      "authority": "National parliamentary website identified by IPU chamber field",
+      "categories": [
+        "legislative"
+      ],
+      "country": "CHN",
+      "domains": [
+        "www.npc.gov.cn"
+      ],
+      "indexUrl": "http://www.npc.gov.cn/",
+      "note": "Authority-role lead from IPU metadata, not independent election freshness proof",
+      "roleEvidence": {
+        "key": "chambers-1",
+        "locator": "data[id=CN-LC01]",
+        "receiptId": "a17ddaf4813aaa6ed025592c4cbcd0d5aeeee959f34e41c1eb8a4621e3171743",
+        "retrievedAt": "2026-10-01T05:10:33.414Z",
+        "sha256": "591742b2ff21a098035b5741044cc75aa78e0b115045e4ccb8fdf46d5847fced",
+        "sourceId": "ipu-parline",
+        "url": "https://api.data.ipu.org/v1/chambers?page[size]=250&page[number]=1"
+      }
+    },
+    {
+      "authority": "National parliamentary website identified by IPU chamber field",
+      "categories": [
+        "legislative"
+      ],
+      "country": "CUB",
+      "domains": [
+        "www.parlamentocubano.gob.cu"
+      ],
+      "indexUrl": "http://www.parlamentocubano.gob.cu/",
+      "note": "Authority-role lead from IPU metadata, not independent election freshness proof",
+      "roleEvidence": {
+        "key": "chambers-1",
+        "locator": "data[id=CU-LC01]",
+        "receiptId": "a17ddaf4813aaa6ed025592c4cbcd0d5aeeee959f34e41c1eb8a4621e3171743",
+        "retrievedAt": "2026-10-01T05:10:33.414Z",
+        "sha256": "591742b2ff21a098035b5741044cc75aa78e0b115045e4ccb8fdf46d5847fced",
+        "sourceId": "ipu-parline",
+        "url": "https://api.data.ipu.org/v1/chambers?page[size]=250&page[number]=1"
+      }
+    },
+    {
+      "authority": "National parliamentary website identified by IPU chamber field",
+      "categories": [
+        "legislative"
+      ],
+      "country": "CPV",
+      "domains": [
+        "www.parlamento.cv"
+      ],
+      "indexUrl": "https://www.parlamento.cv/",
+      "note": "Authority-role lead from IPU metadata, not independent election freshness proof",
+      "roleEvidence": {
+        "key": "chambers-1",
+        "locator": "data[id=CV-LC01]",
+        "receiptId": "a17ddaf4813aaa6ed025592c4cbcd0d5aeeee959f34e41c1eb8a4621e3171743",
+        "retrievedAt": "2026-10-01T05:10:33.414Z",
+        "sha256": "591742b2ff21a098035b5741044cc75aa78e0b115045e4ccb8fdf46d5847fced",
+        "sourceId": "ipu-parline",
+        "url": "https://api.data.ipu.org/v1/chambers?page[size]=250&page[number]=1"
+      }
+    },
+    {
+      "authority": "National parliamentary website identified by IPU chamber field",
+      "categories": [
+        "legislative"
+      ],
+      "country": "CYP",
+      "domains": [
+        "www.parliament.cy"
+      ],
+      "indexUrl": "https://www.parliament.cy/",
+      "note": "Authority-role lead from IPU metadata, not independent election freshness proof",
+      "roleEvidence": {
+        "key": "chambers-1",
+        "locator": "data[id=CY-LC01]",
+        "receiptId": "a17ddaf4813aaa6ed025592c4cbcd0d5aeeee959f34e41c1eb8a4621e3171743",
+        "retrievedAt": "2026-10-01T05:10:33.414Z",
+        "sha256": "591742b2ff21a098035b5741044cc75aa78e0b115045e4ccb8fdf46d5847fced",
+        "sourceId": "ipu-parline",
+        "url": "https://api.data.ipu.org/v1/chambers?page[size]=250&page[number]=1"
+      }
+    },
+    {
+      "authority": "National parliamentary website identified by IPU chamber field",
+      "categories": [
+        "legislative"
+      ],
+      "country": "DJI",
+      "domains": [
+        "www.presidence.dj"
+      ],
+      "indexUrl": "https://www.presidence.dj/page/assemblee-nationale",
+      "note": "Authority-role lead from IPU metadata, not independent election freshness proof",
+      "roleEvidence": {
+        "key": "chambers-1",
+        "locator": "data[id=DJ-LC01]",
+        "receiptId": "a17ddaf4813aaa6ed025592c4cbcd0d5aeeee959f34e41c1eb8a4621e3171743",
+        "retrievedAt": "2026-10-01T05:10:33.414Z",
+        "sha256": "591742b2ff21a098035b5741044cc75aa78e0b115045e4ccb8fdf46d5847fced",
+        "sourceId": "ipu-parline",
+        "url": "https://api.data.ipu.org/v1/chambers?page[size]=250&page[number]=1"
+      }
+    },
+    {
+      "authority": "National parliamentary website identified by IPU chamber field",
+      "categories": [
+        "legislative"
+      ],
+      "country": "DNK",
+      "domains": [
+        "www.ft.dk"
+      ],
+      "indexUrl": "https://www.ft.dk/",
+      "note": "Authority-role lead from IPU metadata, not independent election freshness proof",
+      "roleEvidence": {
+        "key": "chambers-1",
+        "locator": "data[id=DK-LC01]",
+        "receiptId": "a17ddaf4813aaa6ed025592c4cbcd0d5aeeee959f34e41c1eb8a4621e3171743",
+        "retrievedAt": "2026-10-01T05:10:33.414Z",
+        "sha256": "591742b2ff21a098035b5741044cc75aa78e0b115045e4ccb8fdf46d5847fced",
+        "sourceId": "ipu-parline",
+        "url": "https://api.data.ipu.org/v1/chambers?page[size]=250&page[number]=1"
+      }
+    },
+    {
+      "authority": "National parliamentary website identified by IPU chamber field",
+      "categories": [
+        "legislative"
+      ],
+      "country": "DMA",
+      "domains": [
+        "houseofassembly.gov.dm"
+      ],
+      "indexUrl": "http://houseofassembly.gov.dm",
+      "note": "Authority-role lead from IPU metadata, not independent election freshness proof",
+      "roleEvidence": {
+        "key": "chambers-1",
+        "locator": "data[id=DM-LC01]",
+        "receiptId": "a17ddaf4813aaa6ed025592c4cbcd0d5aeeee959f34e41c1eb8a4621e3171743",
+        "retrievedAt": "2026-10-01T05:10:33.414Z",
+        "sha256": "591742b2ff21a098035b5741044cc75aa78e0b115045e4ccb8fdf46d5847fced",
+        "sourceId": "ipu-parline",
+        "url": "https://api.data.ipu.org/v1/chambers?page[size]=250&page[number]=1"
+      }
+    },
+    {
+      "authority": "National parliamentary website identified by IPU chamber field",
+      "categories": [
+        "legislative"
+      ],
+      "country": "DOM",
+      "domains": [
+        "www.camaradediputados.gob.do"
+      ],
+      "indexUrl": "http://www.camaradediputados.gob.do/",
+      "note": "Authority-role lead from IPU metadata, not independent election freshness proof",
+      "roleEvidence": {
+        "key": "chambers-1",
+        "locator": "data[id=DO-LC01]",
+        "receiptId": "a17ddaf4813aaa6ed025592c4cbcd0d5aeeee959f34e41c1eb8a4621e3171743",
+        "retrievedAt": "2026-10-01T05:10:33.414Z",
+        "sha256": "591742b2ff21a098035b5741044cc75aa78e0b115045e4ccb8fdf46d5847fced",
+        "sourceId": "ipu-parline",
+        "url": "https://api.data.ipu.org/v1/chambers?page[size]=250&page[number]=1"
+      }
+    },
+    {
+      "authority": "National parliamentary website identified by IPU chamber field",
+      "categories": [
+        "legislative"
+      ],
+      "country": "DZA",
+      "domains": [
+        "www.apn.dz"
+      ],
+      "indexUrl": "https://www.apn.dz/",
+      "note": "Authority-role lead from IPU metadata, not independent election freshness proof",
+      "roleEvidence": {
+        "key": "chambers-1",
+        "locator": "data[id=DZ-LC01]",
+        "receiptId": "a17ddaf4813aaa6ed025592c4cbcd0d5aeeee959f34e41c1eb8a4621e3171743",
+        "retrievedAt": "2026-10-01T05:10:33.414Z",
+        "sha256": "591742b2ff21a098035b5741044cc75aa78e0b115045e4ccb8fdf46d5847fced",
+        "sourceId": "ipu-parline",
+        "url": "https://api.data.ipu.org/v1/chambers?page[size]=250&page[number]=1"
+      }
+    },
+    {
+      "authority": "National parliamentary website identified by IPU chamber field",
+      "categories": [
+        "legislative"
+      ],
+      "country": "EST",
+      "domains": [
+        "www.riigikogu.ee"
+      ],
+      "indexUrl": "https://www.riigikogu.ee/",
+      "note": "Authority-role lead from IPU metadata, not independent election freshness proof",
+      "roleEvidence": {
+        "key": "chambers-1",
+        "locator": "data[id=EE-LC01]",
+        "receiptId": "a17ddaf4813aaa6ed025592c4cbcd0d5aeeee959f34e41c1eb8a4621e3171743",
+        "retrievedAt": "2026-10-01T05:10:33.414Z",
+        "sha256": "591742b2ff21a098035b5741044cc75aa78e0b115045e4ccb8fdf46d5847fced",
+        "sourceId": "ipu-parline",
+        "url": "https://api.data.ipu.org/v1/chambers?page[size]=250&page[number]=1"
+      }
+    },
+    {
+      "authority": "National parliamentary website identified by IPU chamber field",
+      "categories": [
+        "legislative"
+      ],
+      "country": "EGY",
+      "domains": [
+        "www.parliament.gov.eg"
+      ],
+      "indexUrl": "http://www.parliament.gov.eg/",
+      "note": "Authority-role lead from IPU metadata, not independent election freshness proof",
+      "roleEvidence": {
+        "key": "chambers-1",
+        "locator": "data[id=EG-LC01]",
+        "receiptId": "a17ddaf4813aaa6ed025592c4cbcd0d5aeeee959f34e41c1eb8a4621e3171743",
+        "retrievedAt": "2026-10-01T05:10:33.414Z",
+        "sha256": "591742b2ff21a098035b5741044cc75aa78e0b115045e4ccb8fdf46d5847fced",
+        "sourceId": "ipu-parline",
+        "url": "https://api.data.ipu.org/v1/chambers?page[size]=250&page[number]=1"
+      }
+    },
+    {
+      "authority": "National parliamentary website identified by IPU chamber field",
+      "categories": [
+        "legislative"
+      ],
+      "country": "ESP",
+      "domains": [
+        "www.congreso.es"
+      ],
+      "indexUrl": "https://www.congreso.es/",
+      "note": "Authority-role lead from IPU metadata, not independent election freshness proof",
+      "roleEvidence": {
+        "key": "chambers-1",
+        "locator": "data[id=ES-LC01]",
+        "receiptId": "a17ddaf4813aaa6ed025592c4cbcd0d5aeeee959f34e41c1eb8a4621e3171743",
+        "retrievedAt": "2026-10-01T05:10:33.414Z",
+        "sha256": "591742b2ff21a098035b5741044cc75aa78e0b115045e4ccb8fdf46d5847fced",
+        "sourceId": "ipu-parline",
+        "url": "https://api.data.ipu.org/v1/chambers?page[size]=250&page[number]=1"
+      }
+    },
+    {
+      "authority": "National parliamentary website identified by IPU chamber field",
+      "categories": [
+        "legislative"
+      ],
+      "country": "ETH",
+      "domains": [
+        "www.hopr.gov.et"
+      ],
+      "indexUrl": "http://www.hopr.gov.et",
+      "note": "Authority-role lead from IPU metadata, not independent election freshness proof",
+      "roleEvidence": {
+        "key": "chambers-1",
+        "locator": "data[id=ET-LC01]",
+        "receiptId": "a17ddaf4813aaa6ed025592c4cbcd0d5aeeee959f34e41c1eb8a4621e3171743",
+        "retrievedAt": "2026-10-01T05:10:33.414Z",
+        "sha256": "591742b2ff21a098035b5741044cc75aa78e0b115045e4ccb8fdf46d5847fced",
+        "sourceId": "ipu-parline",
+        "url": "https://api.data.ipu.org/v1/chambers?page[size]=250&page[number]=1"
+      }
+    },
+    {
+      "authority": "National parliamentary website identified by IPU chamber field",
+      "categories": [
+        "legislative"
+      ],
+      "country": "FJI",
+      "domains": [
+        "www.parliament.gov.fj"
+      ],
+      "indexUrl": "https://www.parliament.gov.fj/",
+      "note": "Authority-role lead from IPU metadata, not independent election freshness proof",
+      "roleEvidence": {
+        "key": "chambers-1",
+        "locator": "data[id=FJ-LC01]",
+        "receiptId": "a17ddaf4813aaa6ed025592c4cbcd0d5aeeee959f34e41c1eb8a4621e3171743",
+        "retrievedAt": "2026-10-01T05:10:33.414Z",
+        "sha256": "591742b2ff21a098035b5741044cc75aa78e0b115045e4ccb8fdf46d5847fced",
+        "sourceId": "ipu-parline",
+        "url": "https://api.data.ipu.org/v1/chambers?page[size]=250&page[number]=1"
+      }
+    },
+    {
+      "authority": "National parliamentary website identified by IPU chamber field",
+      "categories": [
+        "legislative"
+      ],
+      "country": "FSM",
+      "domains": [
+        "www.cfsm.gov.fm"
+      ],
+      "indexUrl": "https://www.cfsm.gov.fm/",
+      "note": "Authority-role lead from IPU metadata, not independent election freshness proof",
+      "roleEvidence": {
+        "key": "chambers-1",
+        "locator": "data[id=FM-LC01]",
+        "receiptId": "a17ddaf4813aaa6ed025592c4cbcd0d5aeeee959f34e41c1eb8a4621e3171743",
+        "retrievedAt": "2026-10-01T05:10:33.414Z",
+        "sha256": "591742b2ff21a098035b5741044cc75aa78e0b115045e4ccb8fdf46d5847fced",
+        "sourceId": "ipu-parline",
+        "url": "https://api.data.ipu.org/v1/chambers?page[size]=250&page[number]=1"
+      }
+    },
+    {
+      "authority": "National parliamentary website identified by IPU chamber field",
+      "categories": [
+        "legislative"
+      ],
+      "country": "GAB",
+      "domains": [
+        "www.assemblee-nationale.ga"
+      ],
+      "indexUrl": "https://www.assemblee-nationale.ga/",
+      "note": "Authority-role lead from IPU metadata, not independent election freshness proof",
+      "roleEvidence": {
+        "key": "chambers-1",
+        "locator": "data[id=GA-LC01]",
+        "receiptId": "a17ddaf4813aaa6ed025592c4cbcd0d5aeeee959f34e41c1eb8a4621e3171743",
+        "retrievedAt": "2026-10-01T05:10:33.414Z",
+        "sha256": "591742b2ff21a098035b5741044cc75aa78e0b115045e4ccb8fdf46d5847fced",
+        "sourceId": "ipu-parline",
+        "url": "https://api.data.ipu.org/v1/chambers?page[size]=250&page[number]=1"
+      }
+    },
+    {
+      "authority": "National parliamentary website identified by IPU chamber field",
+      "categories": [
+        "legislative"
+      ],
+      "country": "GRD",
+      "domains": [
+        "grenadaparliament.gd"
+      ],
+      "indexUrl": "https://grenadaparliament.gd/",
+      "note": "Authority-role lead from IPU metadata, not independent election freshness proof",
+      "roleEvidence": {
+        "key": "chambers-1",
+        "locator": "data[id=GD-LC01]",
+        "receiptId": "a17ddaf4813aaa6ed025592c4cbcd0d5aeeee959f34e41c1eb8a4621e3171743",
+        "retrievedAt": "2026-10-01T05:10:33.414Z",
+        "sha256": "591742b2ff21a098035b5741044cc75aa78e0b115045e4ccb8fdf46d5847fced",
+        "sourceId": "ipu-parline",
+        "url": "https://api.data.ipu.org/v1/chambers?page[size]=250&page[number]=1"
+      }
+    },
+    {
+      "authority": "National parliamentary website identified by IPU chamber field",
+      "categories": [
+        "legislative"
+      ],
+      "country": "GEO",
+      "domains": [
+        "parliament.ge"
+      ],
+      "indexUrl": "https://parliament.ge/en/",
+      "note": "Authority-role lead from IPU metadata, not independent election freshness proof",
+      "roleEvidence": {
+        "key": "chambers-1",
+        "locator": "data[id=GE-LC01]",
+        "receiptId": "a17ddaf4813aaa6ed025592c4cbcd0d5aeeee959f34e41c1eb8a4621e3171743",
+        "retrievedAt": "2026-10-01T05:10:33.414Z",
+        "sha256": "591742b2ff21a098035b5741044cc75aa78e0b115045e4ccb8fdf46d5847fced",
+        "sourceId": "ipu-parline",
+        "url": "https://api.data.ipu.org/v1/chambers?page[size]=250&page[number]=1"
+      }
+    },
+    {
+      "authority": "National parliamentary website identified by IPU chamber field",
+      "categories": [
+        "legislative"
+      ],
+      "country": "GMB",
+      "domains": [
+        "www.assembly.gm"
+      ],
+      "indexUrl": "https://www.assembly.gm",
+      "note": "Authority-role lead from IPU metadata, not independent election freshness proof",
+      "roleEvidence": {
+        "key": "chambers-1",
+        "locator": "data[id=GM-LC01]",
+        "receiptId": "a17ddaf4813aaa6ed025592c4cbcd0d5aeeee959f34e41c1eb8a4621e3171743",
+        "retrievedAt": "2026-10-01T05:10:33.414Z",
+        "sha256": "591742b2ff21a098035b5741044cc75aa78e0b115045e4ccb8fdf46d5847fced",
+        "sourceId": "ipu-parline",
+        "url": "https://api.data.ipu.org/v1/chambers?page[size]=250&page[number]=1"
+      }
+    },
+    {
+      "authority": "National parliamentary website identified by IPU chamber field",
+      "categories": [
+        "legislative"
+      ],
+      "country": "GIN",
+      "domains": [
+        "cnt.gov.gn"
+      ],
+      "indexUrl": "https://cnt.gov.gn",
+      "note": "Authority-role lead from IPU metadata, not independent election freshness proof",
+      "roleEvidence": {
+        "key": "chambers-1",
+        "locator": "data[id=GN-LC01]",
+        "receiptId": "a17ddaf4813aaa6ed025592c4cbcd0d5aeeee959f34e41c1eb8a4621e3171743",
+        "retrievedAt": "2026-10-01T05:10:33.414Z",
+        "sha256": "591742b2ff21a098035b5741044cc75aa78e0b115045e4ccb8fdf46d5847fced",
+        "sourceId": "ipu-parline",
+        "url": "https://api.data.ipu.org/v1/chambers?page[size]=250&page[number]=1"
+      }
+    },
+    {
+      "authority": "National parliamentary website identified by IPU chamber field",
+      "categories": [
+        "legislative"
+      ],
+      "country": "GRC",
+      "domains": [
+        "www.hellenicparliament.gr"
+      ],
+      "indexUrl": "https://www.hellenicparliament.gr/",
+      "note": "Authority-role lead from IPU metadata, not independent election freshness proof",
+      "roleEvidence": {
+        "key": "chambers-1",
+        "locator": "data[id=GR-LC01]",
+        "receiptId": "a17ddaf4813aaa6ed025592c4cbcd0d5aeeee959f34e41c1eb8a4621e3171743",
+        "retrievedAt": "2026-10-01T05:10:33.414Z",
+        "sha256": "591742b2ff21a098035b5741044cc75aa78e0b115045e4ccb8fdf46d5847fced",
+        "sourceId": "ipu-parline",
+        "url": "https://api.data.ipu.org/v1/chambers?page[size]=250&page[number]=1"
+      }
+    },
+    {
+      "authority": "National parliamentary website identified by IPU chamber field",
+      "categories": [
+        "legislative"
+      ],
+      "country": "GTM",
+      "domains": [
+        "www.congreso.gob.gt"
+      ],
+      "indexUrl": "https://www.congreso.gob.gt/",
+      "note": "Authority-role lead from IPU metadata, not independent election freshness proof",
+      "roleEvidence": {
+        "key": "chambers-1",
+        "locator": "data[id=GT-LC01]",
+        "receiptId": "a17ddaf4813aaa6ed025592c4cbcd0d5aeeee959f34e41c1eb8a4621e3171743",
+        "retrievedAt": "2026-10-01T05:10:33.414Z",
+        "sha256": "591742b2ff21a098035b5741044cc75aa78e0b115045e4ccb8fdf46d5847fced",
+        "sourceId": "ipu-parline",
+        "url": "https://api.data.ipu.org/v1/chambers?page[size]=250&page[number]=1"
+      }
+    },
+    {
+      "authority": "National parliamentary website identified by IPU chamber field",
+      "categories": [
+        "legislative"
+      ],
+      "country": "GNB",
+      "domains": [
+        "www.parlamento.gw"
+      ],
+      "indexUrl": "https://www.parlamento.gw/",
+      "note": "Authority-role lead from IPU metadata, not independent election freshness proof",
+      "roleEvidence": {
+        "key": "chambers-1",
+        "locator": "data[id=GW-LC01]",
+        "receiptId": "a17ddaf4813aaa6ed025592c4cbcd0d5aeeee959f34e41c1eb8a4621e3171743",
+        "retrievedAt": "2026-10-01T05:10:33.414Z",
+        "sha256": "591742b2ff21a098035b5741044cc75aa78e0b115045e4ccb8fdf46d5847fced",
+        "sourceId": "ipu-parline",
+        "url": "https://api.data.ipu.org/v1/chambers?page[size]=250&page[number]=1"
+      }
+    },
+    {
+      "authority": "National parliamentary website identified by IPU chamber field",
+      "categories": [
+        "legislative"
+      ],
+      "country": "GUY",
+      "domains": [
+        "www.parliament.gov.gy"
+      ],
+      "indexUrl": "http://www.parliament.gov.gy/",
+      "note": "Authority-role lead from IPU metadata, not independent election freshness proof",
+      "roleEvidence": {
+        "key": "chambers-1",
+        "locator": "data[id=GY-LC01]",
+        "receiptId": "a17ddaf4813aaa6ed025592c4cbcd0d5aeeee959f34e41c1eb8a4621e3171743",
+        "retrievedAt": "2026-10-01T05:10:33.414Z",
+        "sha256": "591742b2ff21a098035b5741044cc75aa78e0b115045e4ccb8fdf46d5847fced",
+        "sourceId": "ipu-parline",
+        "url": "https://api.data.ipu.org/v1/chambers?page[size]=250&page[number]=1"
+      }
+    },
+    {
+      "authority": "National parliamentary website identified by IPU chamber field",
+      "categories": [
+        "legislative"
+      ],
+      "country": "HND",
+      "domains": [
+        "congresonacional.hn"
+      ],
+      "indexUrl": "https://congresonacional.hn/",
+      "note": "Authority-role lead from IPU metadata, not independent election freshness proof",
+      "roleEvidence": {
+        "key": "chambers-1",
+        "locator": "data[id=HN-LC01]",
+        "receiptId": "a17ddaf4813aaa6ed025592c4cbcd0d5aeeee959f34e41c1eb8a4621e3171743",
+        "retrievedAt": "2026-10-01T05:10:33.414Z",
+        "sha256": "591742b2ff21a098035b5741044cc75aa78e0b115045e4ccb8fdf46d5847fced",
+        "sourceId": "ipu-parline",
+        "url": "https://api.data.ipu.org/v1/chambers?page[size]=250&page[number]=1"
+      }
+    },
+    {
+      "authority": "National parliamentary website identified by IPU chamber field",
+      "categories": [
+        "legislative"
+      ],
+      "country": "HTI",
+      "domains": [
+        "leparlementhaitien.info"
+      ],
+      "indexUrl": "https://leparlementhaitien.info/",
+      "note": "Authority-role lead from IPU metadata, not independent election freshness proof",
+      "roleEvidence": {
+        "key": "chambers-1",
+        "locator": "data[id=HT-LC01]",
+        "receiptId": "a17ddaf4813aaa6ed025592c4cbcd0d5aeeee959f34e41c1eb8a4621e3171743",
+        "retrievedAt": "2026-10-01T05:10:33.414Z",
+        "sha256": "591742b2ff21a098035b5741044cc75aa78e0b115045e4ccb8fdf46d5847fced",
+        "sourceId": "ipu-parline",
+        "url": "https://api.data.ipu.org/v1/chambers?page[size]=250&page[number]=1"
+      }
+    },
+    {
+      "authority": "National parliamentary website identified by IPU chamber field",
+      "categories": [
+        "legislative"
+      ],
+      "country": "HUN",
+      "domains": [
+        "www.parlament.hu"
+      ],
+      "indexUrl": "https://www.parlament.hu:443/",
+      "note": "Authority-role lead from IPU metadata, not independent election freshness proof",
+      "roleEvidence": {
+        "key": "chambers-1",
+        "locator": "data[id=HU-LC01]",
+        "receiptId": "a17ddaf4813aaa6ed025592c4cbcd0d5aeeee959f34e41c1eb8a4621e3171743",
+        "retrievedAt": "2026-10-01T05:10:33.414Z",
+        "sha256": "591742b2ff21a098035b5741044cc75aa78e0b115045e4ccb8fdf46d5847fced",
+        "sourceId": "ipu-parline",
+        "url": "https://api.data.ipu.org/v1/chambers?page[size]=250&page[number]=1"
+      }
+    },
+    {
+      "authority": "National parliamentary website identified by IPU chamber field",
+      "categories": [
+        "legislative"
+      ],
+      "country": "ISR",
+      "domains": [
+        "main.knesset.gov.il"
+      ],
+      "indexUrl": "https://main.knesset.gov.il/EN/Pages/default.aspx",
+      "note": "Authority-role lead from IPU metadata, not independent election freshness proof",
+      "roleEvidence": {
+        "key": "chambers-1",
+        "locator": "data[id=IL-LC01]",
+        "receiptId": "a17ddaf4813aaa6ed025592c4cbcd0d5aeeee959f34e41c1eb8a4621e3171743",
+        "retrievedAt": "2026-10-01T05:10:33.414Z",
+        "sha256": "591742b2ff21a098035b5741044cc75aa78e0b115045e4ccb8fdf46d5847fced",
+        "sourceId": "ipu-parline",
+        "url": "https://api.data.ipu.org/v1/chambers?page[size]=250&page[number]=1"
+      }
+    },
+    {
+      "authority": "National parliamentary website identified by IPU chamber field",
+      "categories": [
+        "legislative"
+      ],
+      "country": "IRQ",
+      "domains": [
+        "iq.parliament.iq"
+      ],
+      "indexUrl": "https://iq.parliament.iq/",
+      "note": "Authority-role lead from IPU metadata, not independent election freshness proof",
+      "roleEvidence": {
+        "key": "chambers-1",
+        "locator": "data[id=IQ-LC01]",
+        "receiptId": "a17ddaf4813aaa6ed025592c4cbcd0d5aeeee959f34e41c1eb8a4621e3171743",
+        "retrievedAt": "2026-10-01T05:10:33.414Z",
+        "sha256": "591742b2ff21a098035b5741044cc75aa78e0b115045e4ccb8fdf46d5847fced",
+        "sourceId": "ipu-parline",
+        "url": "https://api.data.ipu.org/v1/chambers?page[size]=250&page[number]=1"
+      }
+    },
+    {
+      "authority": "National parliamentary website identified by IPU chamber field",
+      "categories": [
+        "legislative"
+      ],
+      "country": "IRN",
+      "domains": [
+        "en.parliran.ir"
+      ],
+      "indexUrl": "https://en.parliran.ir/",
+      "note": "Authority-role lead from IPU metadata, not independent election freshness proof",
+      "roleEvidence": {
+        "key": "chambers-1",
+        "locator": "data[id=IR-LC01]",
+        "receiptId": "a17ddaf4813aaa6ed025592c4cbcd0d5aeeee959f34e41c1eb8a4621e3171743",
+        "retrievedAt": "2026-10-01T05:10:33.414Z",
+        "sha256": "591742b2ff21a098035b5741044cc75aa78e0b115045e4ccb8fdf46d5847fced",
+        "sourceId": "ipu-parline",
+        "url": "https://api.data.ipu.org/v1/chambers?page[size]=250&page[number]=1"
+      }
+    },
+    {
+      "authority": "National parliamentary website identified by IPU chamber field",
+      "categories": [
+        "legislative"
+      ],
+      "country": "ITA",
+      "domains": [
+        "www.parlamento.it"
+      ],
+      "indexUrl": "https://www.parlamento.it/",
+      "note": "Authority-role lead from IPU metadata, not independent election freshness proof",
+      "roleEvidence": {
+        "key": "chambers-1",
+        "locator": "data[id=IT-LC01]",
+        "receiptId": "a17ddaf4813aaa6ed025592c4cbcd0d5aeeee959f34e41c1eb8a4621e3171743",
+        "retrievedAt": "2026-10-01T05:10:33.414Z",
+        "sha256": "591742b2ff21a098035b5741044cc75aa78e0b115045e4ccb8fdf46d5847fced",
+        "sourceId": "ipu-parline",
+        "url": "https://api.data.ipu.org/v1/chambers?page[size]=250&page[number]=1"
+      }
+    },
+    {
+      "authority": "National parliamentary website identified by IPU chamber field",
+      "categories": [
+        "legislative"
+      ],
+      "country": "JAM",
+      "domains": [
+        "www.japarliament.gov.jm"
+      ],
+      "indexUrl": "https://www.japarliament.gov.jm/",
+      "note": "Authority-role lead from IPU metadata, not independent election freshness proof",
+      "roleEvidence": {
+        "key": "chambers-1",
+        "locator": "data[id=JM-LC01]",
+        "receiptId": "a17ddaf4813aaa6ed025592c4cbcd0d5aeeee959f34e41c1eb8a4621e3171743",
+        "retrievedAt": "2026-10-01T05:10:33.414Z",
+        "sha256": "591742b2ff21a098035b5741044cc75aa78e0b115045e4ccb8fdf46d5847fced",
+        "sourceId": "ipu-parline",
+        "url": "https://api.data.ipu.org/v1/chambers?page[size]=250&page[number]=1"
+      }
+    },
+    {
+      "authority": "National parliamentary website identified by IPU chamber field",
+      "categories": [
+        "legislative"
+      ],
+      "country": "JOR",
+      "domains": [
+        "representatives.jo"
+      ],
+      "indexUrl": "https://representatives.jo/",
+      "note": "Authority-role lead from IPU metadata, not independent election freshness proof",
+      "roleEvidence": {
+        "key": "chambers-1",
+        "locator": "data[id=JO-LC01]",
+        "receiptId": "a17ddaf4813aaa6ed025592c4cbcd0d5aeeee959f34e41c1eb8a4621e3171743",
+        "retrievedAt": "2026-10-01T05:10:33.414Z",
+        "sha256": "591742b2ff21a098035b5741044cc75aa78e0b115045e4ccb8fdf46d5847fced",
+        "sourceId": "ipu-parline",
+        "url": "https://api.data.ipu.org/v1/chambers?page[size]=250&page[number]=1"
+      }
+    },
+    {
+      "authority": "National parliamentary website identified by IPU chamber field",
+      "categories": [
+        "legislative"
+      ],
+      "country": "JPN",
+      "domains": [
+        "www.shugiin.go.jp"
+      ],
+      "indexUrl": "https://www.shugiin.go.jp/",
+      "note": "Authority-role lead from IPU metadata, not independent election freshness proof",
+      "roleEvidence": {
+        "key": "chambers-1",
+        "locator": "data[id=JP-LC01]",
+        "receiptId": "a17ddaf4813aaa6ed025592c4cbcd0d5aeeee959f34e41c1eb8a4621e3171743",
+        "retrievedAt": "2026-10-01T05:10:33.414Z",
+        "sha256": "591742b2ff21a098035b5741044cc75aa78e0b115045e4ccb8fdf46d5847fced",
+        "sourceId": "ipu-parline",
+        "url": "https://api.data.ipu.org/v1/chambers?page[size]=250&page[number]=1"
+      }
+    },
+    {
+      "authority": "National parliamentary website identified by IPU chamber field",
+      "categories": [
+        "legislative"
+      ],
+      "country": "KGZ",
+      "domains": [
+        "www.kenesh.kg"
+      ],
+      "indexUrl": "http://www.kenesh.kg/",
+      "note": "Authority-role lead from IPU metadata, not independent election freshness proof",
+      "roleEvidence": {
+        "key": "chambers-1",
+        "locator": "data[id=KG-LC01]",
+        "receiptId": "a17ddaf4813aaa6ed025592c4cbcd0d5aeeee959f34e41c1eb8a4621e3171743",
+        "retrievedAt": "2026-10-01T05:10:33.414Z",
+        "sha256": "591742b2ff21a098035b5741044cc75aa78e0b115045e4ccb8fdf46d5847fced",
+        "sourceId": "ipu-parline",
+        "url": "https://api.data.ipu.org/v1/chambers?page[size]=250&page[number]=1"
+      }
+    },
+    {
+      "authority": "National parliamentary website identified by IPU chamber field",
+      "categories": [
+        "legislative"
+      ],
+      "country": "KHM",
+      "domains": [
+        "en.nac.org.kh"
+      ],
+      "indexUrl": "http://en.nac.org.kh/",
+      "note": "Authority-role lead from IPU metadata, not independent election freshness proof",
+      "roleEvidence": {
+        "key": "chambers-1",
+        "locator": "data[id=KH-LC01]",
+        "receiptId": "a17ddaf4813aaa6ed025592c4cbcd0d5aeeee959f34e41c1eb8a4621e3171743",
+        "retrievedAt": "2026-10-01T05:10:33.414Z",
+        "sha256": "591742b2ff21a098035b5741044cc75aa78e0b115045e4ccb8fdf46d5847fced",
+        "sourceId": "ipu-parline",
+        "url": "https://api.data.ipu.org/v1/chambers?page[size]=250&page[number]=1"
+      }
+    },
+    {
+      "authority": "National parliamentary website identified by IPU chamber field",
+      "categories": [
+        "legislative"
+      ],
+      "country": "KIR",
+      "domains": [
+        "www.parliament.gov.ki"
+      ],
+      "indexUrl": "https://www.parliament.gov.ki/",
+      "note": "Authority-role lead from IPU metadata, not independent election freshness proof",
+      "roleEvidence": {
+        "key": "chambers-1",
+        "locator": "data[id=KI-LC01]",
+        "receiptId": "a17ddaf4813aaa6ed025592c4cbcd0d5aeeee959f34e41c1eb8a4621e3171743",
+        "retrievedAt": "2026-10-01T05:10:33.414Z",
+        "sha256": "591742b2ff21a098035b5741044cc75aa78e0b115045e4ccb8fdf46d5847fced",
+        "sourceId": "ipu-parline",
+        "url": "https://api.data.ipu.org/v1/chambers?page[size]=250&page[number]=1"
+      }
+    },
+    {
+      "authority": "National parliamentary website identified by IPU chamber field",
+      "categories": [
+        "legislative"
+      ],
+      "country": "COM",
+      "domains": [
+        "assemblee-comores.com"
+      ],
+      "indexUrl": "https://assemblee-comores.com/",
+      "note": "Authority-role lead from IPU metadata, not independent election freshness proof",
+      "roleEvidence": {
+        "key": "chambers-1",
+        "locator": "data[id=KM-LC01]",
+        "receiptId": "a17ddaf4813aaa6ed025592c4cbcd0d5aeeee959f34e41c1eb8a4621e3171743",
+        "retrievedAt": "2026-10-01T05:10:33.414Z",
+        "sha256": "591742b2ff21a098035b5741044cc75aa78e0b115045e4ccb8fdf46d5847fced",
+        "sourceId": "ipu-parline",
+        "url": "https://api.data.ipu.org/v1/chambers?page[size]=250&page[number]=1"
+      }
+    },
+    {
+      "authority": "National parliamentary website identified by IPU chamber field",
+      "categories": [
+        "legislative"
+      ],
+      "country": "KNA",
+      "domains": [
+        "www.gov.kn"
+      ],
+      "indexUrl": "https://www.gov.kn/national-assembly/",
+      "note": "Authority-role lead from IPU metadata, not independent election freshness proof",
+      "roleEvidence": {
+        "key": "chambers-1",
+        "locator": "data[id=KN-LC01]",
+        "receiptId": "a17ddaf4813aaa6ed025592c4cbcd0d5aeeee959f34e41c1eb8a4621e3171743",
+        "retrievedAt": "2026-10-01T05:10:33.414Z",
+        "sha256": "591742b2ff21a098035b5741044cc75aa78e0b115045e4ccb8fdf46d5847fced",
+        "sourceId": "ipu-parline",
+        "url": "https://api.data.ipu.org/v1/chambers?page[size]=250&page[number]=1"
+      }
+    },
+    {
+      "authority": "National parliamentary website identified by IPU chamber field",
+      "categories": [
+        "legislative"
+      ],
+      "country": "PRK",
+      "domains": [
+        "www.naenara.com.kp"
+      ],
+      "indexUrl": "http://www.naenara.com.kp/main/index/en/politics?arg_val=leader3",
+      "note": "Authority-role lead from IPU metadata, not independent election freshness proof",
+      "roleEvidence": {
+        "key": "chambers-1",
+        "locator": "data[id=KP-LC01]",
+        "receiptId": "a17ddaf4813aaa6ed025592c4cbcd0d5aeeee959f34e41c1eb8a4621e3171743",
+        "retrievedAt": "2026-10-01T05:10:33.414Z",
+        "sha256": "591742b2ff21a098035b5741044cc75aa78e0b115045e4ccb8fdf46d5847fced",
+        "sourceId": "ipu-parline",
+        "url": "https://api.data.ipu.org/v1/chambers?page[size]=250&page[number]=1"
+      }
+    },
+    {
+      "authority": "National parliamentary website identified by IPU chamber field",
+      "categories": [
+        "legislative"
+      ],
+      "country": "KOR",
+      "domains": [
+        "www.assembly.go.kr"
+      ],
+      "indexUrl": "http://www.assembly.go.kr",
+      "note": "Authority-role lead from IPU metadata, not independent election freshness proof",
+      "roleEvidence": {
+        "key": "chambers-1",
+        "locator": "data[id=KR-LC01]",
+        "receiptId": "a17ddaf4813aaa6ed025592c4cbcd0d5aeeee959f34e41c1eb8a4621e3171743",
+        "retrievedAt": "2026-10-01T05:10:33.414Z",
+        "sha256": "591742b2ff21a098035b5741044cc75aa78e0b115045e4ccb8fdf46d5847fced",
+        "sourceId": "ipu-parline",
+        "url": "https://api.data.ipu.org/v1/chambers?page[size]=250&page[number]=1"
+      }
+    },
+    {
+      "authority": "National parliamentary website identified by IPU chamber field",
+      "categories": [
+        "legislative"
+      ],
+      "country": "KWT",
+      "domains": [
+        "www.kna.kw"
+      ],
+      "indexUrl": "http://www.kna.kw/",
+      "note": "Authority-role lead from IPU metadata, not independent election freshness proof",
+      "roleEvidence": {
+        "key": "chambers-1",
+        "locator": "data[id=KW-LC01]",
+        "receiptId": "a17ddaf4813aaa6ed025592c4cbcd0d5aeeee959f34e41c1eb8a4621e3171743",
+        "retrievedAt": "2026-10-01T05:10:33.414Z",
+        "sha256": "591742b2ff21a098035b5741044cc75aa78e0b115045e4ccb8fdf46d5847fced",
+        "sourceId": "ipu-parline",
+        "url": "https://api.data.ipu.org/v1/chambers?page[size]=250&page[number]=1"
+      }
+    },
+    {
+      "authority": "National parliamentary website identified by IPU chamber field",
+      "categories": [
+        "legislative"
+      ],
+      "country": "KAZ",
+      "domains": [
+        "quryltai.kz"
+      ],
+      "indexUrl": "https://quryltai.kz/kk/home",
+      "note": "Authority-role lead from IPU metadata, not independent election freshness proof",
+      "roleEvidence": {
+        "key": "chambers-1",
+        "locator": "data[id=KZ-LC01]",
+        "receiptId": "a17ddaf4813aaa6ed025592c4cbcd0d5aeeee959f34e41c1eb8a4621e3171743",
+        "retrievedAt": "2026-10-01T05:10:33.414Z",
+        "sha256": "591742b2ff21a098035b5741044cc75aa78e0b115045e4ccb8fdf46d5847fced",
+        "sourceId": "ipu-parline",
+        "url": "https://api.data.ipu.org/v1/chambers?page[size]=250&page[number]=1"
+      }
+    },
+    {
+      "authority": "National parliamentary website identified by IPU chamber field",
+      "categories": [
+        "legislative"
+      ],
+      "country": "LAO",
+      "domains": [
+        "na.gov.la"
+      ],
+      "indexUrl": "https://na.gov.la/",
+      "note": "Authority-role lead from IPU metadata, not independent election freshness proof",
+      "roleEvidence": {
+        "key": "chambers-1",
+        "locator": "data[id=LA-LC01]",
+        "receiptId": "a17ddaf4813aaa6ed025592c4cbcd0d5aeeee959f34e41c1eb8a4621e3171743",
+        "retrievedAt": "2026-10-01T05:10:33.414Z",
+        "sha256": "591742b2ff21a098035b5741044cc75aa78e0b115045e4ccb8fdf46d5847fced",
+        "sourceId": "ipu-parline",
+        "url": "https://api.data.ipu.org/v1/chambers?page[size]=250&page[number]=1"
+      }
+    },
+    {
+      "authority": "National parliamentary website identified by IPU chamber field",
+      "categories": [
+        "legislative"
+      ],
+      "country": "LBN",
+      "domains": [
+        "www.lp.gov.lb"
+      ],
+      "indexUrl": "https://www.lp.gov.lb/",
+      "note": "Authority-role lead from IPU metadata, not independent election freshness proof",
+      "roleEvidence": {
+        "key": "chambers-1",
+        "locator": "data[id=LB-LC01]",
+        "receiptId": "a17ddaf4813aaa6ed025592c4cbcd0d5aeeee959f34e41c1eb8a4621e3171743",
+        "retrievedAt": "2026-10-01T05:10:33.414Z",
+        "sha256": "591742b2ff21a098035b5741044cc75aa78e0b115045e4ccb8fdf46d5847fced",
+        "sourceId": "ipu-parline",
+        "url": "https://api.data.ipu.org/v1/chambers?page[size]=250&page[number]=1"
+      }
+    },
+    {
+      "authority": "National parliamentary website identified by IPU chamber field",
+      "categories": [
+        "legislative"
+      ],
+      "country": "LCA",
+      "domains": [
+        "parliament.govt.lc"
+      ],
+      "indexUrl": "https://parliament.govt.lc/",
+      "note": "Authority-role lead from IPU metadata, not independent election freshness proof",
+      "roleEvidence": {
+        "key": "chambers-1",
+        "locator": "data[id=LC-LC01]",
+        "receiptId": "a17ddaf4813aaa6ed025592c4cbcd0d5aeeee959f34e41c1eb8a4621e3171743",
+        "retrievedAt": "2026-10-01T05:10:33.414Z",
+        "sha256": "591742b2ff21a098035b5741044cc75aa78e0b115045e4ccb8fdf46d5847fced",
+        "sourceId": "ipu-parline",
+        "url": "https://api.data.ipu.org/v1/chambers?page[size]=250&page[number]=1"
+      }
+    },
+    {
+      "authority": "National parliamentary website identified by IPU chamber field",
+      "categories": [
+        "legislative"
+      ],
+      "country": "LIE",
+      "domains": [
+        "www.landtag.li"
+      ],
+      "indexUrl": "https://www.landtag.li/",
+      "note": "Authority-role lead from IPU metadata, not independent election freshness proof",
+      "roleEvidence": {
+        "key": "chambers-1",
+        "locator": "data[id=LI-LC01]",
+        "receiptId": "a17ddaf4813aaa6ed025592c4cbcd0d5aeeee959f34e41c1eb8a4621e3171743",
+        "retrievedAt": "2026-10-01T05:10:33.414Z",
+        "sha256": "591742b2ff21a098035b5741044cc75aa78e0b115045e4ccb8fdf46d5847fced",
+        "sourceId": "ipu-parline",
+        "url": "https://api.data.ipu.org/v1/chambers?page[size]=250&page[number]=1"
+      }
+    },
+    {
+      "authority": "National parliamentary website identified by IPU chamber field",
+      "categories": [
+        "legislative"
+      ],
+      "country": "LBR",
+      "domains": [
+        "archive.is"
+      ],
+      "indexUrl": "https://archive.is/20120710073025/http://legislature.gov.lr/",
+      "note": "Authority-role lead from IPU metadata, not independent election freshness proof",
+      "roleEvidence": {
+        "key": "chambers-1",
+        "locator": "data[id=LR-LC01]",
+        "receiptId": "a17ddaf4813aaa6ed025592c4cbcd0d5aeeee959f34e41c1eb8a4621e3171743",
+        "retrievedAt": "2026-10-01T05:10:33.414Z",
+        "sha256": "591742b2ff21a098035b5741044cc75aa78e0b115045e4ccb8fdf46d5847fced",
+        "sourceId": "ipu-parline",
+        "url": "https://api.data.ipu.org/v1/chambers?page[size]=250&page[number]=1"
+      }
+    },
+    {
+      "authority": "National parliamentary website identified by IPU chamber field",
+      "categories": [
+        "legislative"
+      ],
+      "country": "LSO",
+      "domains": [
+        "www.parliament.ls"
+      ],
+      "indexUrl": "http://www.parliament.ls/",
+      "note": "Authority-role lead from IPU metadata, not independent election freshness proof",
+      "roleEvidence": {
+        "key": "chambers-1",
+        "locator": "data[id=LS-LC01]",
+        "receiptId": "a17ddaf4813aaa6ed025592c4cbcd0d5aeeee959f34e41c1eb8a4621e3171743",
+        "retrievedAt": "2026-10-01T05:10:33.414Z",
+        "sha256": "591742b2ff21a098035b5741044cc75aa78e0b115045e4ccb8fdf46d5847fced",
+        "sourceId": "ipu-parline",
+        "url": "https://api.data.ipu.org/v1/chambers?page[size]=250&page[number]=1"
+      }
+    },
+    {
+      "authority": "National parliamentary website identified by IPU chamber field",
+      "categories": [
+        "legislative"
+      ],
+      "country": "LTU",
+      "domains": [
+        "www.lrs.lt"
+      ],
+      "indexUrl": "https://www.lrs.lt/",
+      "note": "Authority-role lead from IPU metadata, not independent election freshness proof",
+      "roleEvidence": {
+        "key": "chambers-1",
+        "locator": "data[id=LT-LC01]",
+        "receiptId": "a17ddaf4813aaa6ed025592c4cbcd0d5aeeee959f34e41c1eb8a4621e3171743",
+        "retrievedAt": "2026-10-01T05:10:33.414Z",
+        "sha256": "591742b2ff21a098035b5741044cc75aa78e0b115045e4ccb8fdf46d5847fced",
+        "sourceId": "ipu-parline",
+        "url": "https://api.data.ipu.org/v1/chambers?page[size]=250&page[number]=1"
+      }
+    },
+    {
+      "authority": "National parliamentary website identified by IPU chamber field",
+      "categories": [
+        "legislative"
+      ],
+      "country": "LUX",
+      "domains": [
+        "www.chd.lu"
+      ],
+      "indexUrl": "https://www.chd.lu/fr",
+      "note": "Authority-role lead from IPU metadata, not independent election freshness proof",
+      "roleEvidence": {
+        "key": "chambers-1",
+        "locator": "data[id=LU-LC01]",
+        "receiptId": "a17ddaf4813aaa6ed025592c4cbcd0d5aeeee959f34e41c1eb8a4621e3171743",
+        "retrievedAt": "2026-10-01T05:10:33.414Z",
+        "sha256": "591742b2ff21a098035b5741044cc75aa78e0b115045e4ccb8fdf46d5847fced",
+        "sourceId": "ipu-parline",
+        "url": "https://api.data.ipu.org/v1/chambers?page[size]=250&page[number]=1"
+      }
+    },
+    {
+      "authority": "National parliamentary website identified by IPU chamber field",
+      "categories": [
+        "legislative"
+      ],
+      "country": "LVA",
+      "domains": [
+        "www.saeima.lv"
+      ],
+      "indexUrl": "https://www.saeima.lv/",
+      "note": "Authority-role lead from IPU metadata, not independent election freshness proof",
+      "roleEvidence": {
+        "key": "chambers-1",
+        "locator": "data[id=LV-LC01]",
+        "receiptId": "a17ddaf4813aaa6ed025592c4cbcd0d5aeeee959f34e41c1eb8a4621e3171743",
+        "retrievedAt": "2026-10-01T05:10:33.414Z",
+        "sha256": "591742b2ff21a098035b5741044cc75aa78e0b115045e4ccb8fdf46d5847fced",
+        "sourceId": "ipu-parline",
+        "url": "https://api.data.ipu.org/v1/chambers?page[size]=250&page[number]=1"
+      }
+    },
+    {
+      "authority": "National parliamentary website identified by IPU chamber field",
+      "categories": [
+        "legislative"
+      ],
+      "country": "LBY",
+      "domains": [
+        "parliament.ly"
+      ],
+      "indexUrl": "https://parliament.ly/",
+      "note": "Authority-role lead from IPU metadata, not independent election freshness proof",
+      "roleEvidence": {
+        "key": "chambers-1",
+        "locator": "data[id=LY-LC01]",
+        "receiptId": "a17ddaf4813aaa6ed025592c4cbcd0d5aeeee959f34e41c1eb8a4621e3171743",
+        "retrievedAt": "2026-10-01T05:10:33.414Z",
+        "sha256": "591742b2ff21a098035b5741044cc75aa78e0b115045e4ccb8fdf46d5847fced",
+        "sourceId": "ipu-parline",
+        "url": "https://api.data.ipu.org/v1/chambers?page[size]=250&page[number]=1"
+      }
+    },
+    {
+      "authority": "National parliamentary website identified by IPU chamber field",
+      "categories": [
+        "legislative"
+      ],
+      "country": "MAR",
+      "domains": [
+        "www.parlement.ma"
+      ],
+      "indexUrl": "https://www.parlement.ma/",
+      "note": "Authority-role lead from IPU metadata, not independent election freshness proof",
+      "roleEvidence": {
+        "key": "chambers-1",
+        "locator": "data[id=MA-LC01]",
+        "receiptId": "a17ddaf4813aaa6ed025592c4cbcd0d5aeeee959f34e41c1eb8a4621e3171743",
+        "retrievedAt": "2026-10-01T05:10:33.414Z",
+        "sha256": "591742b2ff21a098035b5741044cc75aa78e0b115045e4ccb8fdf46d5847fced",
+        "sourceId": "ipu-parline",
+        "url": "https://api.data.ipu.org/v1/chambers?page[size]=250&page[number]=1"
+      }
+    },
+    {
+      "authority": "National parliamentary website identified by IPU chamber field",
+      "categories": [
+        "legislative"
+      ],
+      "country": "MCO",
+      "domains": [
+        "www.conseil-national.mc"
+      ],
+      "indexUrl": "https://www.conseil-national.mc/",
+      "note": "Authority-role lead from IPU metadata, not independent election freshness proof",
+      "roleEvidence": {
+        "key": "chambers-1",
+        "locator": "data[id=MC-LC01]",
+        "receiptId": "a17ddaf4813aaa6ed025592c4cbcd0d5aeeee959f34e41c1eb8a4621e3171743",
+        "retrievedAt": "2026-10-01T05:10:33.414Z",
+        "sha256": "591742b2ff21a098035b5741044cc75aa78e0b115045e4ccb8fdf46d5847fced",
+        "sourceId": "ipu-parline",
+        "url": "https://api.data.ipu.org/v1/chambers?page[size]=250&page[number]=1"
+      }
+    },
+    {
+      "authority": "National parliamentary website identified by IPU chamber field",
+      "categories": [
+        "legislative"
+      ],
+      "country": "MDA",
+      "domains": [
+        "www.parlament.md"
+      ],
+      "indexUrl": "https://www.parlament.md/",
+      "note": "Authority-role lead from IPU metadata, not independent election freshness proof",
+      "roleEvidence": {
+        "key": "chambers-1",
+        "locator": "data[id=MD-LC01]",
+        "receiptId": "a17ddaf4813aaa6ed025592c4cbcd0d5aeeee959f34e41c1eb8a4621e3171743",
+        "retrievedAt": "2026-10-01T05:10:33.414Z",
+        "sha256": "591742b2ff21a098035b5741044cc75aa78e0b115045e4ccb8fdf46d5847fced",
+        "sourceId": "ipu-parline",
+        "url": "https://api.data.ipu.org/v1/chambers?page[size]=250&page[number]=1"
+      }
+    },
+    {
+      "authority": "National parliamentary website identified by IPU chamber field",
+      "categories": [
+        "legislative"
+      ],
+      "country": "MNE",
+      "domains": [
+        "www.skupstina.me"
+      ],
+      "indexUrl": "https://www.skupstina.me/",
+      "note": "Authority-role lead from IPU metadata, not independent election freshness proof",
+      "roleEvidence": {
+        "key": "chambers-1",
+        "locator": "data[id=ME-LC01]",
+        "receiptId": "a17ddaf4813aaa6ed025592c4cbcd0d5aeeee959f34e41c1eb8a4621e3171743",
+        "retrievedAt": "2026-10-01T05:10:33.414Z",
+        "sha256": "591742b2ff21a098035b5741044cc75aa78e0b115045e4ccb8fdf46d5847fced",
+        "sourceId": "ipu-parline",
+        "url": "https://api.data.ipu.org/v1/chambers?page[size]=250&page[number]=1"
+      }
+    },
+    {
+      "authority": "National parliamentary website identified by IPU chamber field",
+      "categories": [
+        "legislative"
+      ],
+      "country": "MDG",
+      "domains": [
+        "assemblee-nationale.mg"
+      ],
+      "indexUrl": "https://assemblee-nationale.mg/",
+      "note": "Authority-role lead from IPU metadata, not independent election freshness proof",
+      "roleEvidence": {
+        "key": "chambers-1",
+        "locator": "data[id=MG-LC01]",
+        "receiptId": "a17ddaf4813aaa6ed025592c4cbcd0d5aeeee959f34e41c1eb8a4621e3171743",
+        "retrievedAt": "2026-10-01T05:10:33.414Z",
+        "sha256": "591742b2ff21a098035b5741044cc75aa78e0b115045e4ccb8fdf46d5847fced",
+        "sourceId": "ipu-parline",
+        "url": "https://api.data.ipu.org/v1/chambers?page[size]=250&page[number]=1"
+      }
+    },
+    {
+      "authority": "National parliamentary website identified by IPU chamber field",
+      "categories": [
+        "legislative"
+      ],
+      "country": "MHL",
+      "domains": [
+        "www.rmiparliament.org"
+      ],
+      "indexUrl": "http://www.rmiparliament.org/",
+      "note": "Authority-role lead from IPU metadata, not independent election freshness proof",
+      "roleEvidence": {
+        "key": "chambers-1",
+        "locator": "data[id=MH-LC01]",
+        "receiptId": "a17ddaf4813aaa6ed025592c4cbcd0d5aeeee959f34e41c1eb8a4621e3171743",
+        "retrievedAt": "2026-10-01T05:10:33.414Z",
+        "sha256": "591742b2ff21a098035b5741044cc75aa78e0b115045e4ccb8fdf46d5847fced",
+        "sourceId": "ipu-parline",
+        "url": "https://api.data.ipu.org/v1/chambers?page[size]=250&page[number]=1"
+      }
+    },
+    {
+      "authority": "National parliamentary website identified by IPU chamber field",
+      "categories": [
+        "legislative"
+      ],
+      "country": "MKD",
+      "domains": [
+        "www.sobranie.mk"
+      ],
+      "indexUrl": "https://www.sobranie.mk/",
+      "note": "Authority-role lead from IPU metadata, not independent election freshness proof",
+      "roleEvidence": {
+        "key": "chambers-1",
+        "locator": "data[id=MK-LC01]",
+        "receiptId": "a17ddaf4813aaa6ed025592c4cbcd0d5aeeee959f34e41c1eb8a4621e3171743",
+        "retrievedAt": "2026-10-01T05:10:33.414Z",
+        "sha256": "591742b2ff21a098035b5741044cc75aa78e0b115045e4ccb8fdf46d5847fced",
+        "sourceId": "ipu-parline",
+        "url": "https://api.data.ipu.org/v1/chambers?page[size]=250&page[number]=1"
+      }
+    },
+    {
+      "authority": "National parliamentary website identified by IPU chamber field",
+      "categories": [
+        "legislative"
+      ],
+      "country": "MLI",
+      "domains": [
+        "assemblee-nationale.ml"
+      ],
+      "indexUrl": "http://assemblee-nationale.ml/",
+      "note": "Authority-role lead from IPU metadata, not independent election freshness proof",
+      "roleEvidence": {
+        "key": "chambers-1",
+        "locator": "data[id=ML-LC01]",
+        "receiptId": "a17ddaf4813aaa6ed025592c4cbcd0d5aeeee959f34e41c1eb8a4621e3171743",
+        "retrievedAt": "2026-10-01T05:10:33.414Z",
+        "sha256": "591742b2ff21a098035b5741044cc75aa78e0b115045e4ccb8fdf46d5847fced",
+        "sourceId": "ipu-parline",
+        "url": "https://api.data.ipu.org/v1/chambers?page[size]=250&page[number]=1"
+      }
+    },
+    {
+      "authority": "National parliamentary website identified by IPU chamber field",
+      "categories": [
+        "legislative"
+      ],
+      "country": "MMR",
+      "domains": [
+        "www.pyithuhluttaw.gov.mm"
+      ],
+      "indexUrl": "https://www.pyithuhluttaw.gov.mm/",
+      "note": "Authority-role lead from IPU metadata, not independent election freshness proof",
+      "roleEvidence": {
+        "key": "chambers-1",
+        "locator": "data[id=MM-LC01]",
+        "receiptId": "a17ddaf4813aaa6ed025592c4cbcd0d5aeeee959f34e41c1eb8a4621e3171743",
+        "retrievedAt": "2026-10-01T05:10:33.414Z",
+        "sha256": "591742b2ff21a098035b5741044cc75aa78e0b115045e4ccb8fdf46d5847fced",
+        "sourceId": "ipu-parline",
+        "url": "https://api.data.ipu.org/v1/chambers?page[size]=250&page[number]=1"
+      }
+    },
+    {
+      "authority": "National parliamentary website identified by IPU chamber field",
+      "categories": [
+        "legislative"
+      ],
+      "country": "MNG",
+      "domains": [
+        "www.parliament.mn"
+      ],
+      "indexUrl": "http://www.parliament.mn/",
+      "note": "Authority-role lead from IPU metadata, not independent election freshness proof",
+      "roleEvidence": {
+        "key": "chambers-1",
+        "locator": "data[id=MN-LC01]",
+        "receiptId": "a17ddaf4813aaa6ed025592c4cbcd0d5aeeee959f34e41c1eb8a4621e3171743",
+        "retrievedAt": "2026-10-01T05:10:33.414Z",
+        "sha256": "591742b2ff21a098035b5741044cc75aa78e0b115045e4ccb8fdf46d5847fced",
+        "sourceId": "ipu-parline",
+        "url": "https://api.data.ipu.org/v1/chambers?page[size]=250&page[number]=1"
+      }
+    },
+    {
+      "authority": "National parliamentary website identified by IPU chamber field",
+      "categories": [
+        "legislative"
+      ],
+      "country": "MRT",
+      "domains": [
+        "assemblee-nationale.mr"
+      ],
+      "indexUrl": "https://assemblee-nationale.mr/",
+      "note": "Authority-role lead from IPU metadata, not independent election freshness proof",
+      "roleEvidence": {
+        "key": "chambers-1",
+        "locator": "data[id=MR-LC01]",
+        "receiptId": "a17ddaf4813aaa6ed025592c4cbcd0d5aeeee959f34e41c1eb8a4621e3171743",
+        "retrievedAt": "2026-10-01T05:10:33.414Z",
+        "sha256": "591742b2ff21a098035b5741044cc75aa78e0b115045e4ccb8fdf46d5847fced",
+        "sourceId": "ipu-parline",
+        "url": "https://api.data.ipu.org/v1/chambers?page[size]=250&page[number]=1"
+      }
+    },
+    {
+      "authority": "National parliamentary website identified by IPU chamber field",
+      "categories": [
+        "legislative"
+      ],
+      "country": "MLT",
+      "domains": [
+        "www.parlament.mt"
+      ],
+      "indexUrl": "http://www.parlament.mt/",
+      "note": "Authority-role lead from IPU metadata, not independent election freshness proof",
+      "roleEvidence": {
+        "key": "chambers-1",
+        "locator": "data[id=MT-LC01]",
+        "receiptId": "a17ddaf4813aaa6ed025592c4cbcd0d5aeeee959f34e41c1eb8a4621e3171743",
+        "retrievedAt": "2026-10-01T05:10:33.414Z",
+        "sha256": "591742b2ff21a098035b5741044cc75aa78e0b115045e4ccb8fdf46d5847fced",
+        "sourceId": "ipu-parline",
+        "url": "https://api.data.ipu.org/v1/chambers?page[size]=250&page[number]=1"
+      }
+    },
+    {
+      "authority": "National parliamentary website identified by IPU chamber field",
+      "categories": [
+        "legislative"
+      ],
+      "country": "MUS",
+      "domains": [
+        "mauritiusassembly.govmu.org"
+      ],
+      "indexUrl": "http://mauritiusassembly.govmu.org/English/Pages/default.aspx",
+      "note": "Authority-role lead from IPU metadata, not independent election freshness proof",
+      "roleEvidence": {
+        "key": "chambers-1",
+        "locator": "data[id=MU-LC01]",
+        "receiptId": "a17ddaf4813aaa6ed025592c4cbcd0d5aeeee959f34e41c1eb8a4621e3171743",
+        "retrievedAt": "2026-10-01T05:10:33.414Z",
+        "sha256": "591742b2ff21a098035b5741044cc75aa78e0b115045e4ccb8fdf46d5847fced",
+        "sourceId": "ipu-parline",
+        "url": "https://api.data.ipu.org/v1/chambers?page[size]=250&page[number]=1"
+      }
+    },
+    {
+      "authority": "National parliamentary website identified by IPU chamber field",
+      "categories": [
+        "legislative"
+      ],
+      "country": "MDV",
+      "domains": [
+        "majlis.gov.mv"
+      ],
+      "indexUrl": "https://majlis.gov.mv/",
+      "note": "Authority-role lead from IPU metadata, not independent election freshness proof",
+      "roleEvidence": {
+        "key": "chambers-1",
+        "locator": "data[id=MV-LC01]",
+        "receiptId": "a17ddaf4813aaa6ed025592c4cbcd0d5aeeee959f34e41c1eb8a4621e3171743",
+        "retrievedAt": "2026-10-01T05:10:33.414Z",
+        "sha256": "591742b2ff21a098035b5741044cc75aa78e0b115045e4ccb8fdf46d5847fced",
+        "sourceId": "ipu-parline",
+        "url": "https://api.data.ipu.org/v1/chambers?page[size]=250&page[number]=1"
+      }
+    },
+    {
+      "authority": "National parliamentary website identified by IPU chamber field",
+      "categories": [
+        "legislative"
+      ],
+      "country": "MWI",
+      "domains": [
+        "www.parliament.gov.mw"
+      ],
+      "indexUrl": "https://www.parliament.gov.mw",
+      "note": "Authority-role lead from IPU metadata, not independent election freshness proof",
+      "roleEvidence": {
+        "key": "chambers-1",
+        "locator": "data[id=MW-LC01]",
+        "receiptId": "a17ddaf4813aaa6ed025592c4cbcd0d5aeeee959f34e41c1eb8a4621e3171743",
+        "retrievedAt": "2026-10-01T05:10:33.414Z",
+        "sha256": "591742b2ff21a098035b5741044cc75aa78e0b115045e4ccb8fdf46d5847fced",
+        "sourceId": "ipu-parline",
+        "url": "https://api.data.ipu.org/v1/chambers?page[size]=250&page[number]=1"
+      }
+    },
+    {
+      "authority": "National parliamentary website identified by IPU chamber field",
+      "categories": [
+        "legislative"
+      ],
+      "country": "MYS",
+      "domains": [
+        "www.parlimen.gov.my"
+      ],
+      "indexUrl": "http://www.parlimen.gov.my",
+      "note": "Authority-role lead from IPU metadata, not independent election freshness proof",
+      "roleEvidence": {
+        "key": "chambers-1",
+        "locator": "data[id=MY-LC01]",
+        "receiptId": "a17ddaf4813aaa6ed025592c4cbcd0d5aeeee959f34e41c1eb8a4621e3171743",
+        "retrievedAt": "2026-10-01T05:10:33.414Z",
+        "sha256": "591742b2ff21a098035b5741044cc75aa78e0b115045e4ccb8fdf46d5847fced",
+        "sourceId": "ipu-parline",
+        "url": "https://api.data.ipu.org/v1/chambers?page[size]=250&page[number]=1"
+      }
+    },
+    {
+      "authority": "National parliamentary website identified by IPU chamber field",
+      "categories": [
+        "legislative"
+      ],
+      "country": "MOZ",
+      "domains": [
+        "www.parlamento.mz"
+      ],
+      "indexUrl": "https://www.parlamento.mz",
+      "note": "Authority-role lead from IPU metadata, not independent election freshness proof",
+      "roleEvidence": {
+        "key": "chambers-1",
+        "locator": "data[id=MZ-LC01]",
+        "receiptId": "a17ddaf4813aaa6ed025592c4cbcd0d5aeeee959f34e41c1eb8a4621e3171743",
+        "retrievedAt": "2026-10-01T05:10:33.414Z",
+        "sha256": "591742b2ff21a098035b5741044cc75aa78e0b115045e4ccb8fdf46d5847fced",
+        "sourceId": "ipu-parline",
+        "url": "https://api.data.ipu.org/v1/chambers?page[size]=250&page[number]=1"
+      }
+    },
+    {
+      "authority": "National parliamentary website identified by IPU chamber field",
+      "categories": [
+        "legislative"
+      ],
+      "country": "NAM",
+      "domains": [
+        "www.parliament.na"
+      ],
+      "indexUrl": "https://www.parliament.na/",
+      "note": "Authority-role lead from IPU metadata, not independent election freshness proof",
+      "roleEvidence": {
+        "key": "chambers-1",
+        "locator": "data[id=NA-LC01]",
+        "receiptId": "a17ddaf4813aaa6ed025592c4cbcd0d5aeeee959f34e41c1eb8a4621e3171743",
+        "retrievedAt": "2026-10-01T05:10:33.414Z",
+        "sha256": "591742b2ff21a098035b5741044cc75aa78e0b115045e4ccb8fdf46d5847fced",
+        "sourceId": "ipu-parline",
+        "url": "https://api.data.ipu.org/v1/chambers?page[size]=250&page[number]=1"
+      }
+    },
+    {
+      "authority": "National parliamentary website identified by IPU chamber field",
+      "categories": [
+        "legislative"
+      ],
+      "country": "NER",
+      "domains": [
+        "www.assemblee.ne"
+      ],
+      "indexUrl": "https://www.assemblee.ne/",
+      "note": "Authority-role lead from IPU metadata, not independent election freshness proof",
+      "roleEvidence": {
+        "key": "chambers-1",
+        "locator": "data[id=NE-LC01]",
+        "receiptId": "a17ddaf4813aaa6ed025592c4cbcd0d5aeeee959f34e41c1eb8a4621e3171743",
+        "retrievedAt": "2026-10-01T05:10:33.414Z",
+        "sha256": "591742b2ff21a098035b5741044cc75aa78e0b115045e4ccb8fdf46d5847fced",
+        "sourceId": "ipu-parline",
+        "url": "https://api.data.ipu.org/v1/chambers?page[size]=250&page[number]=1"
+      }
+    },
+    {
+      "authority": "National parliamentary website identified by IPU chamber field",
+      "categories": [
+        "legislative"
+      ],
+      "country": "NIC",
+      "domains": [
+        "www.asamblea.gob.ni"
+      ],
+      "indexUrl": "https://www.asamblea.gob.ni/",
+      "note": "Authority-role lead from IPU metadata, not independent election freshness proof",
+      "roleEvidence": {
+        "key": "chambers-1",
+        "locator": "data[id=NI-LC01]",
+        "receiptId": "a17ddaf4813aaa6ed025592c4cbcd0d5aeeee959f34e41c1eb8a4621e3171743",
+        "retrievedAt": "2026-10-01T05:10:33.414Z",
+        "sha256": "591742b2ff21a098035b5741044cc75aa78e0b115045e4ccb8fdf46d5847fced",
+        "sourceId": "ipu-parline",
+        "url": "https://api.data.ipu.org/v1/chambers?page[size]=250&page[number]=1"
+      }
+    },
+    {
+      "authority": "National parliamentary website identified by IPU chamber field",
+      "categories": [
+        "legislative"
+      ],
+      "country": "NLD",
+      "domains": [
+        "www.houseofrepresentatives.nl"
+      ],
+      "indexUrl": "https://www.houseofrepresentatives.nl/",
+      "note": "Authority-role lead from IPU metadata, not independent election freshness proof",
+      "roleEvidence": {
+        "key": "chambers-1",
+        "locator": "data[id=NL-LC01]",
+        "receiptId": "a17ddaf4813aaa6ed025592c4cbcd0d5aeeee959f34e41c1eb8a4621e3171743",
+        "retrievedAt": "2026-10-01T05:10:33.414Z",
+        "sha256": "591742b2ff21a098035b5741044cc75aa78e0b115045e4ccb8fdf46d5847fced",
+        "sourceId": "ipu-parline",
+        "url": "https://api.data.ipu.org/v1/chambers?page[size]=250&page[number]=1"
+      }
+    },
+    {
+      "authority": "National parliamentary website identified by IPU chamber field",
+      "categories": [
+        "legislative"
+      ],
+      "country": "NOR",
+      "domains": [
+        "www.stortinget.no"
+      ],
+      "indexUrl": "http://www.stortinget.no",
+      "note": "Authority-role lead from IPU metadata, not independent election freshness proof",
+      "roleEvidence": {
+        "key": "chambers-1",
+        "locator": "data[id=NO-LC01]",
+        "receiptId": "a17ddaf4813aaa6ed025592c4cbcd0d5aeeee959f34e41c1eb8a4621e3171743",
+        "retrievedAt": "2026-10-01T05:10:33.414Z",
+        "sha256": "591742b2ff21a098035b5741044cc75aa78e0b115045e4ccb8fdf46d5847fced",
+        "sourceId": "ipu-parline",
+        "url": "https://api.data.ipu.org/v1/chambers?page[size]=250&page[number]=1"
+      }
+    },
+    {
+      "authority": "National parliamentary website identified by IPU chamber field",
+      "categories": [
+        "legislative"
+      ],
+      "country": "NPL",
+      "domains": [
+        "www.parliament.gov.np"
+      ],
+      "indexUrl": "http://www.parliament.gov.np",
+      "note": "Authority-role lead from IPU metadata, not independent election freshness proof",
+      "roleEvidence": {
+        "key": "chambers-1",
+        "locator": "data[id=NP-LC01]",
+        "receiptId": "a17ddaf4813aaa6ed025592c4cbcd0d5aeeee959f34e41c1eb8a4621e3171743",
+        "retrievedAt": "2026-10-01T05:10:33.414Z",
+        "sha256": "591742b2ff21a098035b5741044cc75aa78e0b115045e4ccb8fdf46d5847fced",
+        "sourceId": "ipu-parline",
+        "url": "https://api.data.ipu.org/v1/chambers?page[size]=250&page[number]=1"
+      }
+    },
+    {
+      "authority": "National parliamentary website identified by IPU chamber field",
+      "categories": [
+        "legislative"
+      ],
+      "country": "NRU",
+      "domains": [
+        "naurugov.nr"
+      ],
+      "indexUrl": "http://naurugov.nr/parliament-of-nauru.aspx",
+      "note": "Authority-role lead from IPU metadata, not independent election freshness proof",
+      "roleEvidence": {
+        "key": "chambers-1",
+        "locator": "data[id=NR-LC01]",
+        "receiptId": "a17ddaf4813aaa6ed025592c4cbcd0d5aeeee959f34e41c1eb8a4621e3171743",
+        "retrievedAt": "2026-10-01T05:10:33.414Z",
+        "sha256": "591742b2ff21a098035b5741044cc75aa78e0b115045e4ccb8fdf46d5847fced",
+        "sourceId": "ipu-parline",
+        "url": "https://api.data.ipu.org/v1/chambers?page[size]=250&page[number]=1"
+      }
+    },
+    {
+      "authority": "National parliamentary website identified by IPU chamber field",
+      "categories": [
+        "legislative"
+      ],
+      "country": "NZL",
+      "domains": [
+        "www.parliament.nz"
+      ],
+      "indexUrl": "https://www.parliament.nz/",
+      "note": "Authority-role lead from IPU metadata, not independent election freshness proof",
+      "roleEvidence": {
+        "key": "chambers-1",
+        "locator": "data[id=NZ-LC01]",
+        "receiptId": "a17ddaf4813aaa6ed025592c4cbcd0d5aeeee959f34e41c1eb8a4621e3171743",
+        "retrievedAt": "2026-10-01T05:10:33.414Z",
+        "sha256": "591742b2ff21a098035b5741044cc75aa78e0b115045e4ccb8fdf46d5847fced",
+        "sourceId": "ipu-parline",
+        "url": "https://api.data.ipu.org/v1/chambers?page[size]=250&page[number]=1"
+      }
+    },
+    {
+      "authority": "National parliamentary website identified by IPU chamber field",
+      "categories": [
+        "legislative"
+      ],
+      "country": "OMN",
+      "domains": [
+        "www.shura.om"
+      ],
+      "indexUrl": "https://www.shura.om",
+      "note": "Authority-role lead from IPU metadata, not independent election freshness proof",
+      "roleEvidence": {
+        "key": "chambers-1",
+        "locator": "data[id=OM-LC01]",
+        "receiptId": "a17ddaf4813aaa6ed025592c4cbcd0d5aeeee959f34e41c1eb8a4621e3171743",
+        "retrievedAt": "2026-10-01T05:10:33.414Z",
+        "sha256": "591742b2ff21a098035b5741044cc75aa78e0b115045e4ccb8fdf46d5847fced",
+        "sourceId": "ipu-parline",
+        "url": "https://api.data.ipu.org/v1/chambers?page[size]=250&page[number]=1"
+      }
+    },
+    {
+      "authority": "National parliamentary website identified by IPU chamber field",
+      "categories": [
+        "legislative"
+      ],
+      "country": "PAN",
+      "domains": [
+        "www.asamblea.gob.pa"
+      ],
+      "indexUrl": "http://www.asamblea.gob.pa",
+      "note": "Authority-role lead from IPU metadata, not independent election freshness proof",
+      "roleEvidence": {
+        "key": "chambers-1",
+        "locator": "data[id=PA-LC01]",
+        "receiptId": "a17ddaf4813aaa6ed025592c4cbcd0d5aeeee959f34e41c1eb8a4621e3171743",
+        "retrievedAt": "2026-10-01T05:10:33.414Z",
+        "sha256": "591742b2ff21a098035b5741044cc75aa78e0b115045e4ccb8fdf46d5847fced",
+        "sourceId": "ipu-parline",
+        "url": "https://api.data.ipu.org/v1/chambers?page[size]=250&page[number]=1"
+      }
+    },
+    {
+      "authority": "National parliamentary website identified by IPU chamber field",
+      "categories": [
+        "legislative"
+      ],
+      "country": "PNG",
+      "domains": [
+        "www.parliament.gov.pg"
+      ],
+      "indexUrl": "https://www.parliament.gov.pg/",
+      "note": "Authority-role lead from IPU metadata, not independent election freshness proof",
+      "roleEvidence": {
+        "key": "chambers-1",
+        "locator": "data[id=PG-LC01]",
+        "receiptId": "a17ddaf4813aaa6ed025592c4cbcd0d5aeeee959f34e41c1eb8a4621e3171743",
+        "retrievedAt": "2026-10-01T05:10:33.414Z",
+        "sha256": "591742b2ff21a098035b5741044cc75aa78e0b115045e4ccb8fdf46d5847fced",
+        "sourceId": "ipu-parline",
+        "url": "https://api.data.ipu.org/v1/chambers?page[size]=250&page[number]=1"
+      }
+    },
+    {
+      "authority": "National parliamentary website identified by IPU chamber field",
+      "categories": [
+        "legislative"
+      ],
+      "country": "PAK",
+      "domains": [
+        "na.gov.pk"
+      ],
+      "indexUrl": "https://na.gov.pk/en/index.php",
+      "note": "Authority-role lead from IPU metadata, not independent election freshness proof",
+      "roleEvidence": {
+        "key": "chambers-1",
+        "locator": "data[id=PK-LC01]",
+        "receiptId": "a17ddaf4813aaa6ed025592c4cbcd0d5aeeee959f34e41c1eb8a4621e3171743",
+        "retrievedAt": "2026-10-01T05:10:33.414Z",
+        "sha256": "591742b2ff21a098035b5741044cc75aa78e0b115045e4ccb8fdf46d5847fced",
+        "sourceId": "ipu-parline",
+        "url": "https://api.data.ipu.org/v1/chambers?page[size]=250&page[number]=1"
+      }
+    },
+    {
+      "authority": "National parliamentary website identified by IPU chamber field",
+      "categories": [
+        "legislative"
+      ],
+      "country": "PRY",
+      "domains": [
+        "www.diputados.gov.py"
+      ],
+      "indexUrl": "http://www.diputados.gov.py/",
+      "note": "Authority-role lead from IPU metadata, not independent election freshness proof",
+      "roleEvidence": {
+        "key": "chambers-1",
+        "locator": "data[id=PY-LC01]",
+        "receiptId": "a17ddaf4813aaa6ed025592c4cbcd0d5aeeee959f34e41c1eb8a4621e3171743",
+        "retrievedAt": "2026-10-01T05:10:33.414Z",
+        "sha256": "591742b2ff21a098035b5741044cc75aa78e0b115045e4ccb8fdf46d5847fced",
+        "sourceId": "ipu-parline",
+        "url": "https://api.data.ipu.org/v1/chambers?page[size]=250&page[number]=1"
+      }
+    },
+    {
+      "authority": "National parliamentary website identified by IPU chamber field",
+      "categories": [
+        "legislative"
+      ],
+      "country": "QAT",
+      "domains": [
+        "www.shura.qa"
+      ],
+      "indexUrl": "https://www.shura.qa/en",
+      "note": "Authority-role lead from IPU metadata, not independent election freshness proof",
+      "roleEvidence": {
+        "key": "chambers-1",
+        "locator": "data[id=QA-LC01]",
+        "receiptId": "a17ddaf4813aaa6ed025592c4cbcd0d5aeeee959f34e41c1eb8a4621e3171743",
+        "retrievedAt": "2026-10-01T05:10:33.414Z",
+        "sha256": "591742b2ff21a098035b5741044cc75aa78e0b115045e4ccb8fdf46d5847fced",
+        "sourceId": "ipu-parline",
+        "url": "https://api.data.ipu.org/v1/chambers?page[size]=250&page[number]=1"
+      }
+    },
+    {
+      "authority": "National parliamentary website identified by IPU chamber field",
+      "categories": [
+        "legislative"
+      ],
+      "country": "SRB",
+      "domains": [
+        "www.parlament.gov.rs"
+      ],
+      "indexUrl": "http://www.parlament.gov.rs",
+      "note": "Authority-role lead from IPU metadata, not independent election freshness proof",
+      "roleEvidence": {
+        "key": "chambers-1",
+        "locator": "data[id=RS-LC01]",
+        "receiptId": "a17ddaf4813aaa6ed025592c4cbcd0d5aeeee959f34e41c1eb8a4621e3171743",
+        "retrievedAt": "2026-10-01T05:10:33.414Z",
+        "sha256": "591742b2ff21a098035b5741044cc75aa78e0b115045e4ccb8fdf46d5847fced",
+        "sourceId": "ipu-parline",
+        "url": "https://api.data.ipu.org/v1/chambers?page[size]=250&page[number]=1"
+      }
+    },
+    {
+      "authority": "National parliamentary website identified by IPU chamber field",
+      "categories": [
+        "legislative"
+      ],
+      "country": "RUS",
+      "domains": [
+        "duma.gov.ru"
+      ],
+      "indexUrl": "http://duma.gov.ru/",
+      "note": "Authority-role lead from IPU metadata, not independent election freshness proof",
+      "roleEvidence": {
+        "key": "chambers-1",
+        "locator": "data[id=RU-LC01]",
+        "receiptId": "a17ddaf4813aaa6ed025592c4cbcd0d5aeeee959f34e41c1eb8a4621e3171743",
+        "retrievedAt": "2026-10-01T05:10:33.414Z",
+        "sha256": "591742b2ff21a098035b5741044cc75aa78e0b115045e4ccb8fdf46d5847fced",
+        "sourceId": "ipu-parline",
+        "url": "https://api.data.ipu.org/v1/chambers?page[size]=250&page[number]=1"
+      }
+    },
+    {
+      "authority": "National parliamentary website identified by IPU chamber field",
+      "categories": [
+        "legislative"
+      ],
+      "country": "RWA",
+      "domains": [
+        "www.parliament.gov.rw"
+      ],
+      "indexUrl": "http://www.parliament.gov.rw/",
+      "note": "Authority-role lead from IPU metadata, not independent election freshness proof",
+      "roleEvidence": {
+        "key": "chambers-1",
+        "locator": "data[id=RW-LC01]",
+        "receiptId": "a17ddaf4813aaa6ed025592c4cbcd0d5aeeee959f34e41c1eb8a4621e3171743",
+        "retrievedAt": "2026-10-01T05:10:33.414Z",
+        "sha256": "591742b2ff21a098035b5741044cc75aa78e0b115045e4ccb8fdf46d5847fced",
+        "sourceId": "ipu-parline",
+        "url": "https://api.data.ipu.org/v1/chambers?page[size]=250&page[number]=1"
+      }
+    },
+    {
+      "authority": "National parliamentary website identified by IPU chamber field",
+      "categories": [
+        "legislative"
+      ],
+      "country": "SAU",
+      "domains": [
+        "www.shura.gov.sa"
+      ],
+      "indexUrl": "https://www.shura.gov.sa:443/",
+      "note": "Authority-role lead from IPU metadata, not independent election freshness proof",
+      "roleEvidence": {
+        "key": "chambers-1",
+        "locator": "data[id=SA-LC01]",
+        "receiptId": "a17ddaf4813aaa6ed025592c4cbcd0d5aeeee959f34e41c1eb8a4621e3171743",
+        "retrievedAt": "2026-10-01T05:10:33.414Z",
+        "sha256": "591742b2ff21a098035b5741044cc75aa78e0b115045e4ccb8fdf46d5847fced",
+        "sourceId": "ipu-parline",
+        "url": "https://api.data.ipu.org/v1/chambers?page[size]=250&page[number]=1"
+      }
+    },
+    {
+      "authority": "National parliamentary website identified by IPU chamber field",
+      "categories": [
+        "legislative"
+      ],
+      "country": "SLB",
+      "domains": [
+        "www.parliament.gov.sb"
+      ],
+      "indexUrl": "https://www.parliament.gov.sb/",
+      "note": "Authority-role lead from IPU metadata, not independent election freshness proof",
+      "roleEvidence": {
+        "key": "chambers-1",
+        "locator": "data[id=SB-LC01]",
+        "receiptId": "a17ddaf4813aaa6ed025592c4cbcd0d5aeeee959f34e41c1eb8a4621e3171743",
+        "retrievedAt": "2026-10-01T05:10:33.414Z",
+        "sha256": "591742b2ff21a098035b5741044cc75aa78e0b115045e4ccb8fdf46d5847fced",
+        "sourceId": "ipu-parline",
+        "url": "https://api.data.ipu.org/v1/chambers?page[size]=250&page[number]=1"
+      }
+    },
+    {
+      "authority": "National parliamentary website identified by IPU chamber field",
+      "categories": [
+        "legislative"
+      ],
+      "country": "SYC",
+      "domains": [
+        "www.nationalassembly.sc"
+      ],
+      "indexUrl": "https://www.nationalassembly.sc/",
+      "note": "Authority-role lead from IPU metadata, not independent election freshness proof",
+      "roleEvidence": {
+        "key": "chambers-1",
+        "locator": "data[id=SC-LC01]",
+        "receiptId": "a17ddaf4813aaa6ed025592c4cbcd0d5aeeee959f34e41c1eb8a4621e3171743",
+        "retrievedAt": "2026-10-01T05:10:33.414Z",
+        "sha256": "591742b2ff21a098035b5741044cc75aa78e0b115045e4ccb8fdf46d5847fced",
+        "sourceId": "ipu-parline",
+        "url": "https://api.data.ipu.org/v1/chambers?page[size]=250&page[number]=1"
+      }
+    },
+    {
+      "authority": "National parliamentary website identified by IPU chamber field",
+      "categories": [
+        "legislative"
+      ],
+      "country": "SDN",
+      "domains": [
+        "www.parliament.gov.sd"
+      ],
+      "indexUrl": "http://www.parliament.gov.sd/",
+      "note": "Authority-role lead from IPU metadata, not independent election freshness proof",
+      "roleEvidence": {
+        "key": "chambers-1",
+        "locator": "data[id=SD-LC01]",
+        "receiptId": "a17ddaf4813aaa6ed025592c4cbcd0d5aeeee959f34e41c1eb8a4621e3171743",
+        "retrievedAt": "2026-10-01T05:10:33.414Z",
+        "sha256": "591742b2ff21a098035b5741044cc75aa78e0b115045e4ccb8fdf46d5847fced",
+        "sourceId": "ipu-parline",
+        "url": "https://api.data.ipu.org/v1/chambers?page[size]=250&page[number]=1"
+      }
+    },
+    {
+      "authority": "National parliamentary website identified by IPU chamber field",
+      "categories": [
+        "legislative"
+      ],
+      "country": "SWE",
+      "domains": [
+        "www.riksdagen.se"
+      ],
+      "indexUrl": "http://www.riksdagen.se",
+      "note": "Authority-role lead from IPU metadata, not independent election freshness proof",
+      "roleEvidence": {
+        "key": "chambers-1",
+        "locator": "data[id=SE-LC01]",
+        "receiptId": "a17ddaf4813aaa6ed025592c4cbcd0d5aeeee959f34e41c1eb8a4621e3171743",
+        "retrievedAt": "2026-10-01T05:10:33.414Z",
+        "sha256": "591742b2ff21a098035b5741044cc75aa78e0b115045e4ccb8fdf46d5847fced",
+        "sourceId": "ipu-parline",
+        "url": "https://api.data.ipu.org/v1/chambers?page[size]=250&page[number]=1"
+      }
+    },
+    {
+      "authority": "National parliamentary website identified by IPU chamber field",
+      "categories": [
+        "legislative"
+      ],
+      "country": "SGP",
+      "domains": [
+        "www.parliament.gov.sg"
+      ],
+      "indexUrl": "https://www.parliament.gov.sg/",
+      "note": "Authority-role lead from IPU metadata, not independent election freshness proof",
+      "roleEvidence": {
+        "key": "chambers-1",
+        "locator": "data[id=SG-LC01]",
+        "receiptId": "a17ddaf4813aaa6ed025592c4cbcd0d5aeeee959f34e41c1eb8a4621e3171743",
+        "retrievedAt": "2026-10-01T05:10:33.414Z",
+        "sha256": "591742b2ff21a098035b5741044cc75aa78e0b115045e4ccb8fdf46d5847fced",
+        "sourceId": "ipu-parline",
+        "url": "https://api.data.ipu.org/v1/chambers?page[size]=250&page[number]=1"
+      }
+    },
+    {
+      "authority": "National parliamentary website identified by IPU chamber field",
+      "categories": [
+        "legislative"
+      ],
+      "country": "SVN",
+      "domains": [
+        "www.dz-rs.si"
+      ],
+      "indexUrl": "http://www.dz-rs.si/",
+      "note": "Authority-role lead from IPU metadata, not independent election freshness proof",
+      "roleEvidence": {
+        "key": "chambers-1",
+        "locator": "data[id=SI-LC01]",
+        "receiptId": "a17ddaf4813aaa6ed025592c4cbcd0d5aeeee959f34e41c1eb8a4621e3171743",
+        "retrievedAt": "2026-10-01T05:10:33.414Z",
+        "sha256": "591742b2ff21a098035b5741044cc75aa78e0b115045e4ccb8fdf46d5847fced",
+        "sourceId": "ipu-parline",
+        "url": "https://api.data.ipu.org/v1/chambers?page[size]=250&page[number]=1"
+      }
+    },
+    {
+      "authority": "National parliamentary website identified by IPU chamber field",
+      "categories": [
+        "legislative"
+      ],
+      "country": "SLE",
+      "domains": [
+        "www.parliament.gov.sl"
+      ],
+      "indexUrl": "https://www.parliament.gov.sl/",
+      "note": "Authority-role lead from IPU metadata, not independent election freshness proof",
+      "roleEvidence": {
+        "key": "chambers-1",
+        "locator": "data[id=SL-LC01]",
+        "receiptId": "a17ddaf4813aaa6ed025592c4cbcd0d5aeeee959f34e41c1eb8a4621e3171743",
+        "retrievedAt": "2026-10-01T05:10:33.414Z",
+        "sha256": "591742b2ff21a098035b5741044cc75aa78e0b115045e4ccb8fdf46d5847fced",
+        "sourceId": "ipu-parline",
+        "url": "https://api.data.ipu.org/v1/chambers?page[size]=250&page[number]=1"
+      }
+    },
+    {
+      "authority": "National parliamentary website identified by IPU chamber field",
+      "categories": [
+        "legislative"
+      ],
+      "country": "SMR",
+      "domains": [
+        "www.consigliograndeegenerale.sm"
+      ],
+      "indexUrl": "https://www.consigliograndeegenerale.sm/",
+      "note": "Authority-role lead from IPU metadata, not independent election freshness proof",
+      "roleEvidence": {
+        "key": "chambers-1",
+        "locator": "data[id=SM-LC01]",
+        "receiptId": "a17ddaf4813aaa6ed025592c4cbcd0d5aeeee959f34e41c1eb8a4621e3171743",
+        "retrievedAt": "2026-10-01T05:10:33.414Z",
+        "sha256": "591742b2ff21a098035b5741044cc75aa78e0b115045e4ccb8fdf46d5847fced",
+        "sourceId": "ipu-parline",
+        "url": "https://api.data.ipu.org/v1/chambers?page[size]=250&page[number]=1"
+      }
+    },
+    {
+      "authority": "National parliamentary website identified by IPU chamber field",
+      "categories": [
+        "legislative"
+      ],
+      "country": "SOM",
+      "domains": [
+        "parliament.gov.so"
+      ],
+      "indexUrl": "https://parliament.gov.so/",
+      "note": "Authority-role lead from IPU metadata, not independent election freshness proof",
+      "roleEvidence": {
+        "key": "chambers-1",
+        "locator": "data[id=SO-LC01]",
+        "receiptId": "a17ddaf4813aaa6ed025592c4cbcd0d5aeeee959f34e41c1eb8a4621e3171743",
+        "retrievedAt": "2026-10-01T05:10:33.414Z",
+        "sha256": "591742b2ff21a098035b5741044cc75aa78e0b115045e4ccb8fdf46d5847fced",
+        "sourceId": "ipu-parline",
+        "url": "https://api.data.ipu.org/v1/chambers?page[size]=250&page[number]=1"
+      }
+    },
+    {
+      "authority": "National parliamentary website identified by IPU chamber field",
+      "categories": [
+        "legislative"
+      ],
+      "country": "SUR",
+      "domains": [
+        "www.dna.sr"
+      ],
+      "indexUrl": "https://www.dna.sr/",
+      "note": "Authority-role lead from IPU metadata, not independent election freshness proof",
+      "roleEvidence": {
+        "key": "chambers-1",
+        "locator": "data[id=SR-LC01]",
+        "receiptId": "a17ddaf4813aaa6ed025592c4cbcd0d5aeeee959f34e41c1eb8a4621e3171743",
+        "retrievedAt": "2026-10-01T05:10:33.414Z",
+        "sha256": "591742b2ff21a098035b5741044cc75aa78e0b115045e4ccb8fdf46d5847fced",
+        "sourceId": "ipu-parline",
+        "url": "https://api.data.ipu.org/v1/chambers?page[size]=250&page[number]=1"
+      }
+    },
+    {
+      "authority": "National parliamentary website identified by IPU chamber field",
+      "categories": [
+        "legislative"
+      ],
+      "country": "SSD",
+      "domains": [
+        "nla.gov.ss"
+      ],
+      "indexUrl": "https://nla.gov.ss/",
+      "note": "Authority-role lead from IPU metadata, not independent election freshness proof",
+      "roleEvidence": {
+        "key": "chambers-1",
+        "locator": "data[id=SS-LC01]",
+        "receiptId": "a17ddaf4813aaa6ed025592c4cbcd0d5aeeee959f34e41c1eb8a4621e3171743",
+        "retrievedAt": "2026-10-01T05:10:33.414Z",
+        "sha256": "591742b2ff21a098035b5741044cc75aa78e0b115045e4ccb8fdf46d5847fced",
+        "sourceId": "ipu-parline",
+        "url": "https://api.data.ipu.org/v1/chambers?page[size]=250&page[number]=1"
+      }
+    },
+    {
+      "authority": "National parliamentary website identified by IPU chamber field",
+      "categories": [
+        "legislative"
+      ],
+      "country": "STP",
+      "domains": [
+        "www.parlamento.st"
+      ],
+      "indexUrl": "http://www.parlamento.st/",
+      "note": "Authority-role lead from IPU metadata, not independent election freshness proof",
+      "roleEvidence": {
+        "key": "chambers-1",
+        "locator": "data[id=ST-LC01]",
+        "receiptId": "a17ddaf4813aaa6ed025592c4cbcd0d5aeeee959f34e41c1eb8a4621e3171743",
+        "retrievedAt": "2026-10-01T05:10:33.414Z",
+        "sha256": "591742b2ff21a098035b5741044cc75aa78e0b115045e4ccb8fdf46d5847fced",
+        "sourceId": "ipu-parline",
+        "url": "https://api.data.ipu.org/v1/chambers?page[size]=250&page[number]=1"
+      }
+    },
+    {
+      "authority": "National parliamentary website identified by IPU chamber field",
+      "categories": [
+        "legislative"
+      ],
+      "country": "SLV",
+      "domains": [
+        "www.asamblea.gob.sv"
+      ],
+      "indexUrl": "https://www.asamblea.gob.sv/",
+      "note": "Authority-role lead from IPU metadata, not independent election freshness proof",
+      "roleEvidence": {
+        "key": "chambers-1",
+        "locator": "data[id=SV-LC01]",
+        "receiptId": "a17ddaf4813aaa6ed025592c4cbcd0d5aeeee959f34e41c1eb8a4621e3171743",
+        "retrievedAt": "2026-10-01T05:10:33.414Z",
+        "sha256": "591742b2ff21a098035b5741044cc75aa78e0b115045e4ccb8fdf46d5847fced",
+        "sourceId": "ipu-parline",
+        "url": "https://api.data.ipu.org/v1/chambers?page[size]=250&page[number]=1"
+      }
+    },
+    {
+      "authority": "National parliamentary website identified by IPU chamber field",
+      "categories": [
+        "legislative"
+      ],
+      "country": "SYR",
+      "domains": [
+        "www.parliament.gov.sy"
+      ],
+      "indexUrl": "https://www.parliament.gov.sy/",
+      "note": "Authority-role lead from IPU metadata, not independent election freshness proof",
+      "roleEvidence": {
+        "key": "chambers-1",
+        "locator": "data[id=SY-LC01]",
+        "receiptId": "a17ddaf4813aaa6ed025592c4cbcd0d5aeeee959f34e41c1eb8a4621e3171743",
+        "retrievedAt": "2026-10-01T05:10:33.414Z",
+        "sha256": "591742b2ff21a098035b5741044cc75aa78e0b115045e4ccb8fdf46d5847fced",
+        "sourceId": "ipu-parline",
+        "url": "https://api.data.ipu.org/v1/chambers?page[size]=250&page[number]=1"
+      }
+    },
+    {
+      "authority": "National parliamentary website identified by IPU chamber field",
+      "categories": [
+        "legislative"
+      ],
+      "country": "SWZ",
+      "domains": [
+        "www.parliament.gov.sz"
+      ],
+      "indexUrl": "https://www.parliament.gov.sz/",
+      "note": "Authority-role lead from IPU metadata, not independent election freshness proof",
+      "roleEvidence": {
+        "key": "chambers-1",
+        "locator": "data[id=SZ-LC01]",
+        "receiptId": "a17ddaf4813aaa6ed025592c4cbcd0d5aeeee959f34e41c1eb8a4621e3171743",
+        "retrievedAt": "2026-10-01T05:10:33.414Z",
+        "sha256": "591742b2ff21a098035b5741044cc75aa78e0b115045e4ccb8fdf46d5847fced",
+        "sourceId": "ipu-parline",
+        "url": "https://api.data.ipu.org/v1/chambers?page[size]=250&page[number]=1"
+      }
+    },
+    {
+      "authority": "National parliamentary website identified by IPU chamber field",
+      "categories": [
+        "legislative"
+      ],
+      "country": "TCD",
+      "domains": [
+        "www.cnt.td"
+      ],
+      "indexUrl": "http://www.cnt.td/",
+      "note": "Authority-role lead from IPU metadata, not independent election freshness proof",
+      "roleEvidence": {
+        "key": "chambers-1",
+        "locator": "data[id=TD-LC01]",
+        "receiptId": "a17ddaf4813aaa6ed025592c4cbcd0d5aeeee959f34e41c1eb8a4621e3171743",
+        "retrievedAt": "2026-10-01T05:10:33.414Z",
+        "sha256": "591742b2ff21a098035b5741044cc75aa78e0b115045e4ccb8fdf46d5847fced",
+        "sourceId": "ipu-parline",
+        "url": "https://api.data.ipu.org/v1/chambers?page[size]=250&page[number]=1"
+      }
+    },
+    {
+      "authority": "National parliamentary website identified by IPU chamber field",
+      "categories": [
+        "legislative"
+      ],
+      "country": "TGO",
+      "domains": [
+        "assemblee-nationale.tg"
+      ],
+      "indexUrl": "https://assemblee-nationale.tg/",
+      "note": "Authority-role lead from IPU metadata, not independent election freshness proof",
+      "roleEvidence": {
+        "key": "chambers-1",
+        "locator": "data[id=TG-LC01]",
+        "receiptId": "a17ddaf4813aaa6ed025592c4cbcd0d5aeeee959f34e41c1eb8a4621e3171743",
+        "retrievedAt": "2026-10-01T05:10:33.414Z",
+        "sha256": "591742b2ff21a098035b5741044cc75aa78e0b115045e4ccb8fdf46d5847fced",
+        "sourceId": "ipu-parline",
+        "url": "https://api.data.ipu.org/v1/chambers?page[size]=250&page[number]=1"
+      }
+    },
+    {
+      "authority": "National parliamentary website identified by IPU chamber field",
+      "categories": [
+        "legislative"
+      ],
+      "country": "THA",
+      "domains": [
+        "www.parliament.go.th"
+      ],
+      "indexUrl": "https://www.parliament.go.th/",
+      "note": "Authority-role lead from IPU metadata, not independent election freshness proof",
+      "roleEvidence": {
+        "key": "chambers-1",
+        "locator": "data[id=TH-LC01]",
+        "receiptId": "a17ddaf4813aaa6ed025592c4cbcd0d5aeeee959f34e41c1eb8a4621e3171743",
+        "retrievedAt": "2026-10-01T05:10:33.414Z",
+        "sha256": "591742b2ff21a098035b5741044cc75aa78e0b115045e4ccb8fdf46d5847fced",
+        "sourceId": "ipu-parline",
+        "url": "https://api.data.ipu.org/v1/chambers?page[size]=250&page[number]=1"
+      }
+    },
+    {
+      "authority": "National parliamentary website identified by IPU chamber field",
+      "categories": [
+        "legislative"
+      ],
+      "country": "TJK",
+      "domains": [
+        "parlament.tj"
+      ],
+      "indexUrl": "https://parlament.tj:443/",
+      "note": "Authority-role lead from IPU metadata, not independent election freshness proof",
+      "roleEvidence": {
+        "key": "chambers-1",
+        "locator": "data[id=TJ-LC01]",
+        "receiptId": "a17ddaf4813aaa6ed025592c4cbcd0d5aeeee959f34e41c1eb8a4621e3171743",
+        "retrievedAt": "2026-10-01T05:10:33.414Z",
+        "sha256": "591742b2ff21a098035b5741044cc75aa78e0b115045e4ccb8fdf46d5847fced",
+        "sourceId": "ipu-parline",
+        "url": "https://api.data.ipu.org/v1/chambers?page[size]=250&page[number]=1"
+      }
+    },
+    {
+      "authority": "National parliamentary website identified by IPU chamber field",
+      "categories": [
+        "legislative"
+      ],
+      "country": "TLS",
+      "domains": [
+        "www.parlamento.tl"
+      ],
+      "indexUrl": "https://www.parlamento.tl/",
+      "note": "Authority-role lead from IPU metadata, not independent election freshness proof",
+      "roleEvidence": {
+        "key": "chambers-2",
+        "locator": "data[id=TL-LC01]",
+        "receiptId": "671535986a12b5ac3d0a67262f51f7478c4c5645ab97c57147323287b9e18794",
+        "retrievedAt": "2026-10-01T05:10:36.133Z",
+        "sha256": "f3b138bf1c7ae6fc37818d7308f106340d51d4c5c830af0c9b3617d63b7c33b2",
+        "sourceId": "ipu-parline",
+        "url": "https://api.data.ipu.org/v1/chambers?page[size]=250&page[number]=2"
+      }
+    },
+    {
+      "authority": "National parliamentary website identified by IPU chamber field",
+      "categories": [
+        "legislative"
+      ],
+      "country": "TKM",
+      "domains": [
+        "mejlis.gov.tm"
+      ],
+      "indexUrl": "https://mejlis.gov.tm/",
+      "note": "Authority-role lead from IPU metadata, not independent election freshness proof",
+      "roleEvidence": {
+        "key": "chambers-2",
+        "locator": "data[id=TM-LC01]",
+        "receiptId": "671535986a12b5ac3d0a67262f51f7478c4c5645ab97c57147323287b9e18794",
+        "retrievedAt": "2026-10-01T05:10:36.133Z",
+        "sha256": "f3b138bf1c7ae6fc37818d7308f106340d51d4c5c830af0c9b3617d63b7c33b2",
+        "sourceId": "ipu-parline",
+        "url": "https://api.data.ipu.org/v1/chambers?page[size]=250&page[number]=2"
+      }
+    },
+    {
+      "authority": "National parliamentary website identified by IPU chamber field",
+      "categories": [
+        "legislative"
+      ],
+      "country": "TUN",
+      "domains": [
+        "www.arp.tn"
+      ],
+      "indexUrl": "http://www.arp.tn/",
+      "note": "Authority-role lead from IPU metadata, not independent election freshness proof",
+      "roleEvidence": {
+        "key": "chambers-2",
+        "locator": "data[id=TN-LC01]",
+        "receiptId": "671535986a12b5ac3d0a67262f51f7478c4c5645ab97c57147323287b9e18794",
+        "retrievedAt": "2026-10-01T05:10:36.133Z",
+        "sha256": "f3b138bf1c7ae6fc37818d7308f106340d51d4c5c830af0c9b3617d63b7c33b2",
+        "sourceId": "ipu-parline",
+        "url": "https://api.data.ipu.org/v1/chambers?page[size]=250&page[number]=2"
+      }
+    },
+    {
+      "authority": "National parliamentary website identified by IPU chamber field",
+      "categories": [
+        "legislative"
+      ],
+      "country": "TON",
+      "domains": [
+        "www.parliament.gov.to"
+      ],
+      "indexUrl": "https://www.parliament.gov.to/",
+      "note": "Authority-role lead from IPU metadata, not independent election freshness proof",
+      "roleEvidence": {
+        "key": "chambers-2",
+        "locator": "data[id=TO-LC01]",
+        "receiptId": "671535986a12b5ac3d0a67262f51f7478c4c5645ab97c57147323287b9e18794",
+        "retrievedAt": "2026-10-01T05:10:36.133Z",
+        "sha256": "f3b138bf1c7ae6fc37818d7308f106340d51d4c5c830af0c9b3617d63b7c33b2",
+        "sourceId": "ipu-parline",
+        "url": "https://api.data.ipu.org/v1/chambers?page[size]=250&page[number]=2"
+      }
+    },
+    {
+      "authority": "National parliamentary website identified by IPU chamber field",
+      "categories": [
+        "legislative"
+      ],
+      "country": "TUR",
+      "domains": [
+        "www.tbmm.gov.tr"
+      ],
+      "indexUrl": "http://www.tbmm.gov.tr",
+      "note": "Authority-role lead from IPU metadata, not independent election freshness proof",
+      "roleEvidence": {
+        "key": "chambers-2",
+        "locator": "data[id=TR-LC01]",
+        "receiptId": "671535986a12b5ac3d0a67262f51f7478c4c5645ab97c57147323287b9e18794",
+        "retrievedAt": "2026-10-01T05:10:36.133Z",
+        "sha256": "f3b138bf1c7ae6fc37818d7308f106340d51d4c5c830af0c9b3617d63b7c33b2",
+        "sourceId": "ipu-parline",
+        "url": "https://api.data.ipu.org/v1/chambers?page[size]=250&page[number]=2"
+      }
+    },
+    {
+      "authority": "National parliamentary website identified by IPU chamber field",
+      "categories": [
+        "legislative"
+      ],
+      "country": "TTO",
+      "domains": [
+        "www.ttparliament.org"
+      ],
+      "indexUrl": "https://www.ttparliament.org/",
+      "note": "Authority-role lead from IPU metadata, not independent election freshness proof",
+      "roleEvidence": {
+        "key": "chambers-2",
+        "locator": "data[id=TT-LC01]",
+        "receiptId": "671535986a12b5ac3d0a67262f51f7478c4c5645ab97c57147323287b9e18794",
+        "retrievedAt": "2026-10-01T05:10:36.133Z",
+        "sha256": "f3b138bf1c7ae6fc37818d7308f106340d51d4c5c830af0c9b3617d63b7c33b2",
+        "sourceId": "ipu-parline",
+        "url": "https://api.data.ipu.org/v1/chambers?page[size]=250&page[number]=2"
+      }
+    },
+    {
+      "authority": "National parliamentary website identified by IPU chamber field",
+      "categories": [
+        "legislative"
+      ],
+      "country": "TZA",
+      "domains": [
+        "www.parliament.go.tz"
+      ],
+      "indexUrl": "https://www.parliament.go.tz/",
+      "note": "Authority-role lead from IPU metadata, not independent election freshness proof",
+      "roleEvidence": {
+        "key": "chambers-2",
+        "locator": "data[id=TZ-LC01]",
+        "receiptId": "671535986a12b5ac3d0a67262f51f7478c4c5645ab97c57147323287b9e18794",
+        "retrievedAt": "2026-10-01T05:10:36.133Z",
+        "sha256": "f3b138bf1c7ae6fc37818d7308f106340d51d4c5c830af0c9b3617d63b7c33b2",
+        "sourceId": "ipu-parline",
+        "url": "https://api.data.ipu.org/v1/chambers?page[size]=250&page[number]=2"
+      }
+    },
+    {
+      "authority": "National parliamentary website identified by IPU chamber field",
+      "categories": [
+        "legislative"
+      ],
+      "country": "UKR",
+      "domains": [
+        "www.rada.gov.ua"
+      ],
+      "indexUrl": "https://www.rada.gov.ua/",
+      "note": "Authority-role lead from IPU metadata, not independent election freshness proof",
+      "roleEvidence": {
+        "key": "chambers-2",
+        "locator": "data[id=UA-LC01]",
+        "receiptId": "671535986a12b5ac3d0a67262f51f7478c4c5645ab97c57147323287b9e18794",
+        "retrievedAt": "2026-10-01T05:10:36.133Z",
+        "sha256": "f3b138bf1c7ae6fc37818d7308f106340d51d4c5c830af0c9b3617d63b7c33b2",
+        "sourceId": "ipu-parline",
+        "url": "https://api.data.ipu.org/v1/chambers?page[size]=250&page[number]=2"
+      }
+    },
+    {
+      "authority": "National parliamentary website identified by IPU chamber field",
+      "categories": [
+        "legislative"
+      ],
+      "country": "UGA",
+      "domains": [
+        "www.parliament.go.ug"
+      ],
+      "indexUrl": "https://www.parliament.go.ug/",
+      "note": "Authority-role lead from IPU metadata, not independent election freshness proof",
+      "roleEvidence": {
+        "key": "chambers-2",
+        "locator": "data[id=UG-LC01]",
+        "receiptId": "671535986a12b5ac3d0a67262f51f7478c4c5645ab97c57147323287b9e18794",
+        "retrievedAt": "2026-10-01T05:10:36.133Z",
+        "sha256": "f3b138bf1c7ae6fc37818d7308f106340d51d4c5c830af0c9b3617d63b7c33b2",
+        "sourceId": "ipu-parline",
+        "url": "https://api.data.ipu.org/v1/chambers?page[size]=250&page[number]=2"
+      }
+    },
+    {
+      "authority": "National parliamentary website identified by IPU chamber field",
+      "categories": [
+        "legislative"
+      ],
+      "country": "UZB",
+      "domains": [
+        "parliament.gov.uz"
+      ],
+      "indexUrl": "https://parliament.gov.uz/",
+      "note": "Authority-role lead from IPU metadata, not independent election freshness proof",
+      "roleEvidence": {
+        "key": "chambers-2",
+        "locator": "data[id=UZ-LC01]",
+        "receiptId": "671535986a12b5ac3d0a67262f51f7478c4c5645ab97c57147323287b9e18794",
+        "retrievedAt": "2026-10-01T05:10:36.133Z",
+        "sha256": "f3b138bf1c7ae6fc37818d7308f106340d51d4c5c830af0c9b3617d63b7c33b2",
+        "sourceId": "ipu-parline",
+        "url": "https://api.data.ipu.org/v1/chambers?page[size]=250&page[number]=2"
+      }
+    },
+    {
+      "authority": "National parliamentary website identified by IPU chamber field",
+      "categories": [
+        "legislative"
+      ],
+      "country": "VCT",
+      "domains": [
+        "www.assembly.gov.vc"
+      ],
+      "indexUrl": "http://www.assembly.gov.vc",
+      "note": "Authority-role lead from IPU metadata, not independent election freshness proof",
+      "roleEvidence": {
+        "key": "chambers-2",
+        "locator": "data[id=VC-LC01]",
+        "receiptId": "671535986a12b5ac3d0a67262f51f7478c4c5645ab97c57147323287b9e18794",
+        "retrievedAt": "2026-10-01T05:10:36.133Z",
+        "sha256": "f3b138bf1c7ae6fc37818d7308f106340d51d4c5c830af0c9b3617d63b7c33b2",
+        "sourceId": "ipu-parline",
+        "url": "https://api.data.ipu.org/v1/chambers?page[size]=250&page[number]=2"
+      }
+    },
+    {
+      "authority": "National parliamentary website identified by IPU chamber field",
+      "categories": [
+        "legislative"
+      ],
+      "country": "VEN",
+      "domains": [
+        "www.asambleanacional.gob.ve"
+      ],
+      "indexUrl": "https://www.asambleanacional.gob.ve",
+      "note": "Authority-role lead from IPU metadata, not independent election freshness proof",
+      "roleEvidence": {
+        "key": "chambers-2",
+        "locator": "data[id=VE-LC01]",
+        "receiptId": "671535986a12b5ac3d0a67262f51f7478c4c5645ab97c57147323287b9e18794",
+        "retrievedAt": "2026-10-01T05:10:36.133Z",
+        "sha256": "f3b138bf1c7ae6fc37818d7308f106340d51d4c5c830af0c9b3617d63b7c33b2",
+        "sourceId": "ipu-parline",
+        "url": "https://api.data.ipu.org/v1/chambers?page[size]=250&page[number]=2"
+      }
+    },
+    {
+      "authority": "National parliamentary website identified by IPU chamber field",
+      "categories": [
+        "legislative"
+      ],
+      "country": "VNM",
+      "domains": [
+        "quochoi.vn"
+      ],
+      "indexUrl": "https://quochoi.vn/",
+      "note": "Authority-role lead from IPU metadata, not independent election freshness proof",
+      "roleEvidence": {
+        "key": "chambers-2",
+        "locator": "data[id=VN-LC01]",
+        "receiptId": "671535986a12b5ac3d0a67262f51f7478c4c5645ab97c57147323287b9e18794",
+        "retrievedAt": "2026-10-01T05:10:36.133Z",
+        "sha256": "f3b138bf1c7ae6fc37818d7308f106340d51d4c5c830af0c9b3617d63b7c33b2",
+        "sourceId": "ipu-parline",
+        "url": "https://api.data.ipu.org/v1/chambers?page[size]=250&page[number]=2"
+      }
+    },
+    {
+      "authority": "National parliamentary website identified by IPU chamber field",
+      "categories": [
+        "legislative"
+      ],
+      "country": "VUT",
+      "domains": [
+        "parliament.gov.vu"
+      ],
+      "indexUrl": "https://parliament.gov.vu/",
+      "note": "Authority-role lead from IPU metadata, not independent election freshness proof",
+      "roleEvidence": {
+        "key": "chambers-2",
+        "locator": "data[id=VU-LC01]",
+        "receiptId": "671535986a12b5ac3d0a67262f51f7478c4c5645ab97c57147323287b9e18794",
+        "retrievedAt": "2026-10-01T05:10:36.133Z",
+        "sha256": "f3b138bf1c7ae6fc37818d7308f106340d51d4c5c830af0c9b3617d63b7c33b2",
+        "sourceId": "ipu-parline",
+        "url": "https://api.data.ipu.org/v1/chambers?page[size]=250&page[number]=2"
+      }
+    },
+    {
+      "authority": "National parliamentary website identified by IPU chamber field",
+      "categories": [
+        "legislative"
+      ],
+      "country": "WSM",
+      "domains": [
+        "www.palemene.ws"
+      ],
+      "indexUrl": "https://www.palemene.ws/",
+      "note": "Authority-role lead from IPU metadata, not independent election freshness proof",
+      "roleEvidence": {
+        "key": "chambers-2",
+        "locator": "data[id=WS-LC01]",
+        "receiptId": "671535986a12b5ac3d0a67262f51f7478c4c5645ab97c57147323287b9e18794",
+        "retrievedAt": "2026-10-01T05:10:36.133Z",
+        "sha256": "f3b138bf1c7ae6fc37818d7308f106340d51d4c5c830af0c9b3617d63b7c33b2",
+        "sourceId": "ipu-parline",
+        "url": "https://api.data.ipu.org/v1/chambers?page[size]=250&page[number]=2"
+      }
+    },
+    {
+      "authority": "National parliamentary website identified by IPU chamber field",
+      "categories": [
+        "legislative"
+      ],
+      "country": "YEM",
+      "domains": [
+        "parliament-ye.com"
+      ],
+      "indexUrl": "http://parliament-ye.com/",
+      "note": "Authority-role lead from IPU metadata, not independent election freshness proof",
+      "roleEvidence": {
+        "key": "chambers-2",
+        "locator": "data[id=YE-LC01]",
+        "receiptId": "671535986a12b5ac3d0a67262f51f7478c4c5645ab97c57147323287b9e18794",
+        "retrievedAt": "2026-10-01T05:10:36.133Z",
+        "sha256": "f3b138bf1c7ae6fc37818d7308f106340d51d4c5c830af0c9b3617d63b7c33b2",
+        "sourceId": "ipu-parline",
+        "url": "https://api.data.ipu.org/v1/chambers?page[size]=250&page[number]=2"
+      }
+    },
+    {
+      "authority": "National parliamentary website identified by IPU chamber field",
+      "categories": [
+        "legislative"
+      ],
+      "country": "ZMB",
+      "domains": [
+        "www.parliament.gov.zm"
+      ],
+      "indexUrl": "https://www.parliament.gov.zm",
+      "note": "Authority-role lead from IPU metadata, not independent election freshness proof",
+      "roleEvidence": {
+        "key": "chambers-2",
+        "locator": "data[id=ZM-LC01]",
+        "receiptId": "671535986a12b5ac3d0a67262f51f7478c4c5645ab97c57147323287b9e18794",
+        "retrievedAt": "2026-10-01T05:10:36.133Z",
+        "sha256": "f3b138bf1c7ae6fc37818d7308f106340d51d4c5c830af0c9b3617d63b7c33b2",
+        "sourceId": "ipu-parline",
+        "url": "https://api.data.ipu.org/v1/chambers?page[size]=250&page[number]=2"
+      }
+    },
+    {
+      "authority": "National parliamentary website identified by IPU chamber field",
+      "categories": [
+        "legislative"
+      ],
+      "country": "ZWE",
+      "domains": [
+        "parlzim.gov.zw"
+      ],
+      "indexUrl": "https://parlzim.gov.zw/",
+      "note": "Authority-role lead from IPU metadata, not independent election freshness proof",
+      "roleEvidence": {
+        "key": "chambers-2",
+        "locator": "data[id=ZW-LC01]",
+        "receiptId": "671535986a12b5ac3d0a67262f51f7478c4c5645ab97c57147323287b9e18794",
+        "retrievedAt": "2026-10-01T05:10:36.133Z",
+        "sha256": "f3b138bf1c7ae6fc37818d7308f106340d51d4c5c830af0c9b3617d63b7c33b2",
+        "sourceId": "ipu-parline",
+        "url": "https://api.data.ipu.org/v1/chambers?page[size]=250&page[number]=2"
+      }
+    }
+  ],
+  "version": 1
+}

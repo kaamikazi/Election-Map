@@ -24,10 +24,16 @@ import { fileURLToPath } from 'node:url';
 
 const __dirname = path.dirname(fileURLToPath(import.meta.url));
 const ROOT = path.resolve(__dirname, '..');
-const RAW = path.join(ROOT, 'data', 'raw', 'parlgov');
-const OUT = path.join(ROOT, 'public', 'data');
+const option = (name, fallback) => {
+  const i = process.argv.indexOf(name);
+  return i >= 0 ? process.argv[i + 1] : fallback;
+};
+const RAW = path.resolve(option('--raw-dir', path.join(ROOT, 'data', 'raw', 'parlgov')));
+const OUT = path.resolve(option('--out-dir', path.join(ROOT, 'public', 'data')));
+const GENERATED = option('--generated-at', null) || new Date().toISOString();
+if (!Number.isFinite(Date.parse(GENERATED))) throw new Error('Invalid --generated-at timestamp');
 const ELECTIONS = path.join(OUT, 'elections');
-const WORLD = path.join(OUT, 'world-50m.topo.json');
+const WORLD = path.join(ROOT, 'public', 'data', 'world-50m.topo.json');
 const COVERAGE = JSON.parse(fs.readFileSync(path.join(ROOT, 'data', 'parlgov-coverage.json'), 'utf8'));
 
 /**
@@ -288,7 +294,7 @@ async function main() {
   const index = {
     version: 1,
     source: SOURCE,
-    generated: new Date().toISOString(),
+    generated: GENERATED,
     families: Object.fromEntries(familyCount),
     countries: {}
   };
@@ -314,7 +320,7 @@ async function main() {
     coverageReview: COVERAGE.release,
     // Conservative last dated observation, not a claimed cabinet end date.
     coverageThrough: [...governing.values()].flatMap((c) => c.intervals).map((c) => c.from).sort().at(-1),
-    generated: new Date().toISOString(),
+    generated: GENERATED,
     countries: {}
   };
   for (const [iso3, c] of [...governing].sort()) {

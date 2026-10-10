@@ -6,3 +6,5 @@ playwright-report/
 tests/.tmp/
 tests/shots/
 build/
+public/data/ingestion/
+public/data/catalog/

@@ -4,6 +4,7 @@ import { NEUTRAL, metricDef, rampSwatches, ticksFor } from '../metrics.js';
 import { hatchCss } from '../render.js';
 import { BY_KEY } from '../geo.js';
 import { flagOfKey, flagImg, FLAG_SET } from '../flags.js';
+import { legendTitleFor } from '../publication.js';
 
 /**
  * A flags map needs no key to decode it — every flag names its own country —
@@ -46,7 +47,11 @@ export function syncLegend() {
   $('#legendHead').textContent = 'Legend';
   const def = metricDef(state.metric);
   const parties = activeParties();
-  $('#legendTitle').textContent = def.id === 'flat' ? 'Winning party' : def.label;
+  // A partial, projected or contested map has leaders, not winners.
+  const status = state.publication && state.publication.status;
+  $('#legendTitle').textContent = state.provenance?.catalog ? state.provenance.what : def.id === 'flat' ? legendTitleFor(status)
+    : (status && status !== 'official-final' && status !== 'historical'
+      ? def.label.replace("Winner's", "Leader's") : def.label);
 
   const box = $('#legendBody');
   if (!parties.length) {

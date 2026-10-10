@@ -1,0 +1,11 @@
+{
+  "version": 1,
+  "note": "Registered collections that must be captured fresh and complete for a catalog download to count as complete. Kept outside catalog-sources.json so that changing policy does not invalidate preserved evidence batches.",
+  "requiredSources": [
+    "ipu-parline",
+    "un-scope"
+  ],
+  "pageRetryRounds": 2,
+  "timeoutMs": 60000,
+  "retries": 2
+}

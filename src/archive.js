@@ -15,9 +15,24 @@ let electionIndex = null;
 
 export async function loadGoverning() {
   if (governing) return governing;
-  const res = await fetch(GOVERNING_URL);
+  let url = GOVERNING_URL, expectedHash = null;
+  const pointerRes = await fetch('data/ingestion/current.json');
+  if (pointerRes.ok) {
+    const pointer = await pointerRes.json();
+    if (pointer.governing) {
+      if (!/^data\/ingestion\/generations\/[a-f0-9]{64}\/governing\.json$/.test(pointer.governing) ||
+          !/^[a-f0-9]{64}$/.test(pointer.governingSha256 || '')) throw new Error('Invalid validated archive pointer');
+      url = pointer.governing; expectedHash = pointer.governingSha256;
+    }
+  } else if (pointerRes.status !== 404) throw new Error('Could not read the ingestion archive transaction pointer; retry before using the archive');
+  const res = await fetch(url);
   if (!res.ok) throw new Error('Could not load ' + GOVERNING_URL + ' (' + res.status + ')');
-  governing = await res.json();
+  const bytes = await res.arrayBuffer();
+  if (expectedHash) {
+    const actual = [...new Uint8Array(await crypto.subtle.digest('SHA-256', bytes))].map((v) => v.toString(16).padStart(2, '0')).join('');
+    if (actual !== expectedHash) throw new Error('Validated governing evidence hash mismatch; revalidate the ingestion generation');
+  }
+  governing = JSON.parse(new TextDecoder().decode(bytes));
   return governing;
 }
 

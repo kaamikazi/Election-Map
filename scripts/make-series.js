@@ -22,6 +22,7 @@ import { spawn } from 'node:child_process';
 import { chromium } from '@playwright/test';
 
 import { ROOT } from './lib/registry.js';
+import { sha256, seriesPlanSha256, seriesSourceSha256 } from './lib/series-review.js';
 
 const PORT = 5199;
 const BASE = `http://127.0.0.1:${PORT}`;
@@ -50,7 +51,8 @@ function args() {
     width: Number(get('width', 1200)),
     height: Number(get('height', 1200)),
     handle: get('handle', '@electionmaps'),
-    out: get('out', path.join('build', 'series'))
+    out: get('out', path.join('build', 'series')),
+    approval: get('approval', null)
   };
 }
 
@@ -75,7 +77,8 @@ async function startServer() {
 async function main() {
   const opt = args();
   const outDir = path.isAbsolute(opt.out) ? opt.out : path.join(ROOT, opt.out);
-  await fsp.mkdir(outDir, { recursive: true });
+  const targetDir = opt.approval ? outDir + '-reviewed' : outDir;
+  if (!opt.approval) await fsp.mkdir(outDir, { recursive: true });
 
   console.log(`series ${opt.from}–${opt.to} step ${opt.step} · ${opt.scope} · by ${opt.grouping}`);
 
@@ -100,14 +103,46 @@ async function main() {
       ` · ${plan.rows} legend row(s) reserved`);
     for (const s of plan.skipped) console.log(`  skipped ${s.year}: ${s.why}`);
 
+    const draftManifest = await page.evaluate(async () => {
+      const { manifest } = await import('/src/series.js');
+      return manifest();
+    });
+    const implementationSha256 = await seriesSourceSha256(ROOT);
+    let receipt = null;
+    if (opt.approval) {
+      const file = path.isAbsolute(opt.approval) ? opt.approval : path.join(ROOT, opt.approval);
+      receipt = JSON.parse(await fsp.readFile(file, 'utf8'));
+      if (receipt.kind !== 'election-map-studio/series-review' || receipt.version !== 1 ||
+          receipt.acknowledgement !== `REVIEW ${opt.from}-${opt.to}/${draftManifest.frames}` ||
+          receipt.planSha256 !== seriesPlanSha256(draftManifest) ||
+          receipt.implementationSha256 !== implementationSha256 ||
+          !Array.isArray(receipt.images) || receipt.images.length !== draftManifest.frames) {
+        throw new Error('The reviewed series receipt does not match this run or its application data. Generate and review a new draft.');
+      }
+      for (let i = 0; i < receipt.images.length; i++) {
+        const expected = draftManifest.items[i].file;
+        const image = receipt.images[i];
+        if (image.file !== expected || sha256(await fsp.readFile(path.join(outDir, expected))) !== image.sha256) {
+          throw new Error(`Reviewed draft frame ${expected} changed. Regenerate and review the run again.`);
+        }
+      }
+      await page.evaluate(async (digest) => {
+        const { approveSeriesPlan } = await import('/src/series.js');
+        await approveSeriesPlan(digest);
+      }, receipt.planSha256);
+      console.log('  approval matches the plan, source files and every reviewed draft PNG');
+    }
+
+    const rendered = [];
     for (let i = 0; i < plan.frames; i++) {
       const { frame, dataUrl } = await page.evaluate(async ({ n, handle }) => {
         const { renderFrame } = await import('/src/series.js');
         return renderFrame(n, { handle });
       }, { n: i, handle: opt.handle });
 
-      await fsp.writeFile(path.join(outDir, frame.file),
-        Buffer.from(dataUrl.split(',')[1], 'base64'));
+      const bytes = Buffer.from(dataUrl.split(',')[1], 'base64');
+      if (opt.approval) rendered.push({ file: frame.file, bytes });
+      else await fsp.writeFile(path.join(outDir, frame.file), bytes);
       process.stdout.write(`\r  ${i + 1}/${plan.frames}  ${frame.year} — ` +
         `${frame.coverage.covered} covered   `);
     }
@@ -117,14 +152,22 @@ async function main() {
       const { manifest } = await import('/src/series.js');
       return manifest();
     });
-    await fsp.writeFile(path.join(outDir, 'manifest.json'), JSON.stringify(man, null, 2));
+    man.implementationSha256 = implementationSha256;
+    if (receipt) {
+      man.review.reviewedAt = receipt.reviewedAt;
+      man.review.draftImages = receipt.images;
+      man.review.outputImages = rendered.map((image) => ({ file: image.file, sha256: sha256(image.bytes) }));
+      await fsp.mkdir(targetDir, { recursive: true });
+      for (const image of rendered) await fsp.writeFile(path.join(targetDir, image.file), image.bytes);
+    }
+    await fsp.writeFile(path.join(targetDir, 'manifest.json'), JSON.stringify(man, null, 2));
 
     if (errors.length) {
       console.log(`\npage errors (${errors.length}):`);
       for (const e of errors.slice(0, 5)) console.log('  ' + e);
     }
 
-    console.log(`\nwrote ${man.frames} frames + manifest.json to ${path.relative(ROOT, outDir)}`);
+    console.log(`\nwrote ${man.frames} ${receipt ? 'reviewed' : 'draft'} frames + manifest.json to ${path.relative(ROOT, targetDir)}`);
     console.log(`licences in play: ${man.licences.join(' · ')}`);
     if (man.boundariesWithNoStatedVintage.length) {
       console.log(`${man.boundariesWithNoStatedVintage.length} frame(s) rest on boundaries ` +

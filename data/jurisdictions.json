@@ -1,0 +1,2736 @@
+{
+  "coreBasis": "193 UN members and two non-member observer states",
+  "jurisdictions": [
+    {
+      "iso3": "ABW",
+      "name": "Aruba",
+      "note": "ISO jurisdiction or user-assigned code; no UN statehood assertion.",
+      "scope": "supplementary",
+      "unStatus": "not-core"
+    },
+    {
+      "evidence": {
+        "key": "next-6",
+        "receiptId": "b1d5be9f6f2a781e089f2687bc472491465d36563850e25016619d2bffac6b45",
+        "sha256": "2480eb875fc1a5d2902cf2de4540eb0fa1e333d7221176ea9e1ec1f256218bd0",
+        "sourceId": "catalog-research"
+      },
+      "iso3": "AFG",
+      "name": "Afghanistan",
+      "scope": "core",
+      "unStatus": "member"
+    },
+    {
+      "evidence": {
+        "key": "next-6",
+        "receiptId": "b1d5be9f6f2a781e089f2687bc472491465d36563850e25016619d2bffac6b45",
+        "sha256": "2480eb875fc1a5d2902cf2de4540eb0fa1e333d7221176ea9e1ec1f256218bd0",
+        "sourceId": "catalog-research"
+      },
+      "iso3": "AGO",
+      "name": "Angola",
+      "scope": "core",
+      "unStatus": "member"
+    },
+    {
+      "iso3": "AIA",
+      "name": "Anguilla",
+      "note": "ISO jurisdiction or user-assigned code; no UN statehood assertion.",
+      "scope": "supplementary",
+      "unStatus": "not-core"
+    },
+    {
+      "iso3": "ALA",
+      "name": "Åland Islands",
+      "note": "ISO jurisdiction or user-assigned code; no UN statehood assertion.",
+      "scope": "supplementary",
+      "unStatus": "not-core"
+    },
+    {
+      "evidence": {
+        "key": "next-6",
+        "receiptId": "b1d5be9f6f2a781e089f2687bc472491465d36563850e25016619d2bffac6b45",
+        "sha256": "2480eb875fc1a5d2902cf2de4540eb0fa1e333d7221176ea9e1ec1f256218bd0",
+        "sourceId": "catalog-research"
+      },
+      "iso3": "ALB",
+      "name": "Albania",
+      "scope": "core",
+      "unStatus": "member"
+    },
+    {
+      "evidence": {
+        "key": "next-6",
+        "receiptId": "b1d5be9f6f2a781e089f2687bc472491465d36563850e25016619d2bffac6b45",
+        "sha256": "2480eb875fc1a5d2902cf2de4540eb0fa1e333d7221176ea9e1ec1f256218bd0",
+        "sourceId": "catalog-research"
+      },
+      "iso3": "AND",
+      "name": "Andorra",
+      "scope": "core",
+      "unStatus": "member"
+    },
+    {
+      "evidence": {
+        "key": "next-6",
+        "receiptId": "b1d5be9f6f2a781e089f2687bc472491465d36563850e25016619d2bffac6b45",
+        "sha256": "2480eb875fc1a5d2902cf2de4540eb0fa1e333d7221176ea9e1ec1f256218bd0",
+        "sourceId": "catalog-research"
+      },
+      "iso3": "ARE",
+      "name": "United Arab Emirates",
+      "scope": "core",
+      "unStatus": "member"
+    },
+    {
+      "evidence": {
+        "key": "next-6",
+        "receiptId": "b1d5be9f6f2a781e089f2687bc472491465d36563850e25016619d2bffac6b45",
+        "sha256": "2480eb875fc1a5d2902cf2de4540eb0fa1e333d7221176ea9e1ec1f256218bd0",
+        "sourceId": "catalog-research"
+      },
+      "iso3": "ARG",
+      "name": "Argentina",
+      "scope": "core",
+      "unStatus": "member"
+    },
+    {
+      "evidence": {
+        "key": "next-6",
+        "receiptId": "b1d5be9f6f2a781e089f2687bc472491465d36563850e25016619d2bffac6b45",
+        "sha256": "2480eb875fc1a5d2902cf2de4540eb0fa1e333d7221176ea9e1ec1f256218bd0",
+        "sourceId": "catalog-research"
+      },
+      "iso3": "ARM",
+      "name": "Armenia",
+      "scope": "core",
+      "unStatus": "member"
+    },
+    {
+      "iso3": "ASM",
+      "name": "American Samoa",
+      "note": "ISO jurisdiction or user-assigned code; no UN statehood assertion.",
+      "scope": "supplementary",
+      "unStatus": "not-core"
+    },
+    {
+      "iso3": "ATA",
+      "name": "Antarctica",
+      "note": "ISO jurisdiction or user-assigned code; no UN statehood assertion.",
+      "scope": "supplementary",
+      "unStatus": "not-core"
+    },
+    {
+      "iso3": "ATF",
+      "name": "French Southern Territories",
+      "note": "ISO jurisdiction or user-assigned code; no UN statehood assertion.",
+      "scope": "supplementary",
+      "unStatus": "not-core"
+    },
+    {
+      "evidence": {
+        "key": "next-6",
+        "receiptId": "b1d5be9f6f2a781e089f2687bc472491465d36563850e25016619d2bffac6b45",
+        "sha256": "2480eb875fc1a5d2902cf2de4540eb0fa1e333d7221176ea9e1ec1f256218bd0",
+        "sourceId": "catalog-research"
+      },
+      "iso3": "ATG",
+      "name": "Antigua and Barbuda",
+      "scope": "core",
+      "unStatus": "member"
+    },
+    {
+      "evidence": {
+        "key": "next-6",
+        "receiptId": "b1d5be9f6f2a781e089f2687bc472491465d36563850e25016619d2bffac6b45",
+        "sha256": "2480eb875fc1a5d2902cf2de4540eb0fa1e333d7221176ea9e1ec1f256218bd0",
+        "sourceId": "catalog-research"
+      },
+      "iso3": "AUS",
+      "name": "Australia",
+      "scope": "core",
+      "unStatus": "member"
+    },
+    {
+      "evidence": {
+        "key": "next-6",
+        "receiptId": "b1d5be9f6f2a781e089f2687bc472491465d36563850e25016619d2bffac6b45",
+        "sha256": "2480eb875fc1a5d2902cf2de4540eb0fa1e333d7221176ea9e1ec1f256218bd0",
+        "sourceId": "catalog-research"
+      },
+      "iso3": "AUT",
+      "name": "Austria",
+      "scope": "core",
+      "unStatus": "member"
+    },
+    {
+      "evidence": {
+        "key": "next-6",
+        "receiptId": "b1d5be9f6f2a781e089f2687bc472491465d36563850e25016619d2bffac6b45",
+        "sha256": "2480eb875fc1a5d2902cf2de4540eb0fa1e333d7221176ea9e1ec1f256218bd0",
+        "sourceId": "catalog-research"
+      },
+      "iso3": "AZE",
+      "name": "Azerbaijan",
+      "scope": "core",
+      "unStatus": "member"
+    },
+    {
+      "evidence": {
+        "key": "next-6",
+        "receiptId": "b1d5be9f6f2a781e089f2687bc472491465d36563850e25016619d2bffac6b45",
+        "sha256": "2480eb875fc1a5d2902cf2de4540eb0fa1e333d7221176ea9e1ec1f256218bd0",
+        "sourceId": "catalog-research"
+      },
+      "iso3": "BDI",
+      "name": "Burundi",
+      "scope": "core",
+      "unStatus": "member"
+    },
+    {
+      "evidence": {
+        "key": "next-6",
+        "receiptId": "b1d5be9f6f2a781e089f2687bc472491465d36563850e25016619d2bffac6b45",
+        "sha256": "2480eb875fc1a5d2902cf2de4540eb0fa1e333d7221176ea9e1ec1f256218bd0",
+        "sourceId": "catalog-research"
+      },
+      "iso3": "BEL",
+      "name": "Belgium",
+      "scope": "core",
+      "unStatus": "member"
+    },
+    {
+      "evidence": {
+        "key": "next-6",
+        "receiptId": "b1d5be9f6f2a781e089f2687bc472491465d36563850e25016619d2bffac6b45",
+        "sha256": "2480eb875fc1a5d2902cf2de4540eb0fa1e333d7221176ea9e1ec1f256218bd0",
+        "sourceId": "catalog-research"
+      },
+      "iso3": "BEN",
+      "name": "Benin",
+      "scope": "core",
+      "unStatus": "member"
+    },
+    {
+      "iso3": "BES",
+      "name": "Bonaire, Sint Eustatius and Saba",
+      "note": "ISO jurisdiction or user-assigned code; no UN statehood assertion.",
+      "scope": "supplementary",
+      "unStatus": "not-core"
+    },
+    {
+      "evidence": {
+        "key": "next-6",
+        "receiptId": "b1d5be9f6f2a781e089f2687bc472491465d36563850e25016619d2bffac6b45",
+        "sha256": "2480eb875fc1a5d2902cf2de4540eb0fa1e333d7221176ea9e1ec1f256218bd0",
+        "sourceId": "catalog-research"
+      },
+      "iso3": "BFA",
+      "name": "Burkina Faso",
+      "scope": "core",
+      "unStatus": "member"
+    },
+    {
+      "evidence": {
+        "key": "next-6",
+        "receiptId": "b1d5be9f6f2a781e089f2687bc472491465d36563850e25016619d2bffac6b45",
+        "sha256": "2480eb875fc1a5d2902cf2de4540eb0fa1e333d7221176ea9e1ec1f256218bd0",
+        "sourceId": "catalog-research"
+      },
+      "iso3": "BGD",
+      "name": "Bangladesh",
+      "scope": "core",
+      "unStatus": "member"
+    },
+    {
+      "evidence": {
+        "key": "next-6",
+        "receiptId": "b1d5be9f6f2a781e089f2687bc472491465d36563850e25016619d2bffac6b45",
+        "sha256": "2480eb875fc1a5d2902cf2de4540eb0fa1e333d7221176ea9e1ec1f256218bd0",
+        "sourceId": "catalog-research"
+      },
+      "iso3": "BGR",
+      "name": "Bulgaria",
+      "scope": "core",
+      "unStatus": "member"
+    },
+    {
+      "evidence": {
+        "key": "next-6",
+        "receiptId": "b1d5be9f6f2a781e089f2687bc472491465d36563850e25016619d2bffac6b45",
+        "sha256": "2480eb875fc1a5d2902cf2de4540eb0fa1e333d7221176ea9e1ec1f256218bd0",
+        "sourceId": "catalog-research"
+      },
+      "iso3": "BHR",
+      "name": "Bahrain",
+      "scope": "core",
+      "unStatus": "member"
+    },
+    {
+      "evidence": {
+        "key": "next-6",
+        "receiptId": "b1d5be9f6f2a781e089f2687bc472491465d36563850e25016619d2bffac6b45",
+        "sha256": "2480eb875fc1a5d2902cf2de4540eb0fa1e333d7221176ea9e1ec1f256218bd0",
+        "sourceId": "catalog-research"
+      },
+      "iso3": "BHS",
+      "name": "The Bahamas",
+      "scope": "core",
+      "unStatus": "member"
+    },
+    {
+      "evidence": {
+        "key": "next-6",
+        "receiptId": "b1d5be9f6f2a781e089f2687bc472491465d36563850e25016619d2bffac6b45",
+        "sha256": "2480eb875fc1a5d2902cf2de4540eb0fa1e333d7221176ea9e1ec1f256218bd0",
+        "sourceId": "catalog-research"
+      },
+      "iso3": "BIH",
+      "name": "Bosnia and Herzegovina",
+      "scope": "core",
+      "unStatus": "member"
+    },
+    {
+      "iso3": "BLM",
+      "name": "Saint Barthélemy",
+      "note": "ISO jurisdiction or user-assigned code; no UN statehood assertion.",
+      "scope": "supplementary",
+      "unStatus": "not-core"
+    },
+    {
+      "evidence": {
+        "key": "next-6",
+        "receiptId": "b1d5be9f6f2a781e089f2687bc472491465d36563850e25016619d2bffac6b45",
+        "sha256": "2480eb875fc1a5d2902cf2de4540eb0fa1e333d7221176ea9e1ec1f256218bd0",
+        "sourceId": "catalog-research"
+      },
+      "iso3": "BLR",
+      "name": "Belarus",
+      "scope": "core",
+      "unStatus": "member"
+    },
+    {
+      "evidence": {
+        "key": "next-6",
+        "receiptId": "b1d5be9f6f2a781e089f2687bc472491465d36563850e25016619d2bffac6b45",
+        "sha256": "2480eb875fc1a5d2902cf2de4540eb0fa1e333d7221176ea9e1ec1f256218bd0",
+        "sourceId": "catalog-research"
+      },
+      "iso3": "BLZ",
+      "name": "Belize",
+      "scope": "core",
+      "unStatus": "member"
+    },
+    {
+      "iso3": "BMU",
+      "name": "Bermuda",
+      "note": "ISO jurisdiction or user-assigned code; no UN statehood assertion.",
+      "scope": "supplementary",
+      "unStatus": "not-core"
+    },
+    {
+      "evidence": {
+        "key": "next-6",
+        "receiptId": "b1d5be9f6f2a781e089f2687bc472491465d36563850e25016619d2bffac6b45",
+        "sha256": "2480eb875fc1a5d2902cf2de4540eb0fa1e333d7221176ea9e1ec1f256218bd0",
+        "sourceId": "catalog-research"
+      },
+      "iso3": "BOL",
+      "name": "Bolivia (Plurinational State of)",
+      "scope": "core",
+      "unStatus": "member"
+    },
+    {
+      "evidence": {
+        "key": "next-6",
+        "receiptId": "b1d5be9f6f2a781e089f2687bc472491465d36563850e25016619d2bffac6b45",
+        "sha256": "2480eb875fc1a5d2902cf2de4540eb0fa1e333d7221176ea9e1ec1f256218bd0",
+        "sourceId": "catalog-research"
+      },
+      "iso3": "BRA",
+      "name": "Brazil",
+      "scope": "core",
+      "unStatus": "member"
+    },
+    {
+      "evidence": {
+        "key": "next-6",
+        "receiptId": "b1d5be9f6f2a781e089f2687bc472491465d36563850e25016619d2bffac6b45",
+        "sha256": "2480eb875fc1a5d2902cf2de4540eb0fa1e333d7221176ea9e1ec1f256218bd0",
+        "sourceId": "catalog-research"
+      },
+      "iso3": "BRB",
+      "name": "Barbados",
+      "scope": "core",
+      "unStatus": "member"
+    },
+    {
+      "evidence": {
+        "key": "next-6",
+        "receiptId": "b1d5be9f6f2a781e089f2687bc472491465d36563850e25016619d2bffac6b45",
+        "sha256": "2480eb875fc1a5d2902cf2de4540eb0fa1e333d7221176ea9e1ec1f256218bd0",
+        "sourceId": "catalog-research"
+      },
+      "iso3": "BRN",
+      "name": "Brunei Darussalam",
+      "scope": "core",
+      "unStatus": "member"
+    },
+    {
+      "evidence": {
+        "key": "next-6",
+        "receiptId": "b1d5be9f6f2a781e089f2687bc472491465d36563850e25016619d2bffac6b45",
+        "sha256": "2480eb875fc1a5d2902cf2de4540eb0fa1e333d7221176ea9e1ec1f256218bd0",
+        "sourceId": "catalog-research"
+      },
+      "iso3": "BTN",
+      "name": "Bhutan",
+      "scope": "core",
+      "unStatus": "member"
+    },
+    {
+      "iso3": "BVT",
+      "name": "Bouvet Island",
+      "note": "ISO jurisdiction or user-assigned code; no UN statehood assertion.",
+      "scope": "supplementary",
+      "unStatus": "not-core"
+    },
+    {
+      "evidence": {
+        "key": "next-6",
+        "receiptId": "b1d5be9f6f2a781e089f2687bc472491465d36563850e25016619d2bffac6b45",
+        "sha256": "2480eb875fc1a5d2902cf2de4540eb0fa1e333d7221176ea9e1ec1f256218bd0",
+        "sourceId": "catalog-research"
+      },
+      "iso3": "BWA",
+      "name": "Botswana",
+      "scope": "core",
+      "unStatus": "member"
+    },
+    {
+      "evidence": {
+        "key": "next-6",
+        "receiptId": "b1d5be9f6f2a781e089f2687bc472491465d36563850e25016619d2bffac6b45",
+        "sha256": "2480eb875fc1a5d2902cf2de4540eb0fa1e333d7221176ea9e1ec1f256218bd0",
+        "sourceId": "catalog-research"
+      },
+      "iso3": "CAF",
+      "name": "Central African Republic",
+      "scope": "core",
+      "unStatus": "member"
+    },
+    {
+      "evidence": {
+        "key": "next-6",
+        "receiptId": "b1d5be9f6f2a781e089f2687bc472491465d36563850e25016619d2bffac6b45",
+        "sha256": "2480eb875fc1a5d2902cf2de4540eb0fa1e333d7221176ea9e1ec1f256218bd0",
+        "sourceId": "catalog-research"
+      },
+      "iso3": "CAN",
+      "name": "Canada",
+      "scope": "core",
+      "unStatus": "member"
+    },
+    {
+      "iso3": "CCK",
+      "name": "Cocos (Keeling) Islands",
+      "note": "ISO jurisdiction or user-assigned code; no UN statehood assertion.",
+      "scope": "supplementary",
+      "unStatus": "not-core"
+    },
+    {
+      "evidence": {
+        "key": "next-6",
+        "receiptId": "b1d5be9f6f2a781e089f2687bc472491465d36563850e25016619d2bffac6b45",
+        "sha256": "2480eb875fc1a5d2902cf2de4540eb0fa1e333d7221176ea9e1ec1f256218bd0",
+        "sourceId": "catalog-research"
+      },
+      "iso3": "CHE",
+      "name": "Switzerland",
+      "scope": "core",
+      "unStatus": "member"
+    },
+    {
+      "evidence": {
+        "key": "next-6",
+        "receiptId": "b1d5be9f6f2a781e089f2687bc472491465d36563850e25016619d2bffac6b45",
+        "sha256": "2480eb875fc1a5d2902cf2de4540eb0fa1e333d7221176ea9e1ec1f256218bd0",
+        "sourceId": "catalog-research"
+      },
+      "iso3": "CHL",
+      "name": "Chile",
+      "scope": "core",
+      "unStatus": "member"
+    },
+    {
+      "evidence": {
+        "key": "next-6",
+        "receiptId": "b1d5be9f6f2a781e089f2687bc472491465d36563850e25016619d2bffac6b45",
+        "sha256": "2480eb875fc1a5d2902cf2de4540eb0fa1e333d7221176ea9e1ec1f256218bd0",
+        "sourceId": "catalog-research"
+      },
+      "iso3": "CHN",
+      "name": "China",
+      "scope": "core",
+      "unStatus": "member"
+    },
+    {
+      "evidence": {
+        "key": "next-6",
+        "receiptId": "b1d5be9f6f2a781e089f2687bc472491465d36563850e25016619d2bffac6b45",
+        "sha256": "2480eb875fc1a5d2902cf2de4540eb0fa1e333d7221176ea9e1ec1f256218bd0",
+        "sourceId": "catalog-research"
+      },
+      "iso3": "CIV",
+      "name": "Côte d'Ivoire",
+      "scope": "core",
+      "unStatus": "member"
+    },
+    {
+      "evidence": {
+        "key": "next-6",
+        "receiptId": "b1d5be9f6f2a781e089f2687bc472491465d36563850e25016619d2bffac6b45",
+        "sha256": "2480eb875fc1a5d2902cf2de4540eb0fa1e333d7221176ea9e1ec1f256218bd0",
+        "sourceId": "catalog-research"
+      },
+      "iso3": "CMR",
+      "name": "Cameroon",
+      "scope": "core",
+      "unStatus": "member"
+    },
+    {
+      "evidence": {
+        "key": "next-6",
+        "receiptId": "b1d5be9f6f2a781e089f2687bc472491465d36563850e25016619d2bffac6b45",
+        "sha256": "2480eb875fc1a5d2902cf2de4540eb0fa1e333d7221176ea9e1ec1f256218bd0",
+        "sourceId": "catalog-research"
+      },
+      "iso3": "COD",
+      "name": "Democratic Republic of the Congo",
+      "scope": "core",
+      "unStatus": "member"
+    },
+    {
+      "evidence": {
+        "key": "next-6",
+        "receiptId": "b1d5be9f6f2a781e089f2687bc472491465d36563850e25016619d2bffac6b45",
+        "sha256": "2480eb875fc1a5d2902cf2de4540eb0fa1e333d7221176ea9e1ec1f256218bd0",
+        "sourceId": "catalog-research"
+      },
+      "iso3": "COG",
+      "name": "Congo",
+      "scope": "core",
+      "unStatus": "member"
+    },
+    {
+      "iso3": "COK",
+      "name": "Cook Islands",
+      "note": "ISO jurisdiction or user-assigned code; no UN statehood assertion.",
+      "scope": "supplementary",
+      "unStatus": "not-core"
+    },
+    {
+      "evidence": {
+        "key": "next-6",
+        "receiptId": "b1d5be9f6f2a781e089f2687bc472491465d36563850e25016619d2bffac6b45",
+        "sha256": "2480eb875fc1a5d2902cf2de4540eb0fa1e333d7221176ea9e1ec1f256218bd0",
+        "sourceId": "catalog-research"
+      },
+      "iso3": "COL",
+      "name": "Colombia",
+      "scope": "core",
+      "unStatus": "member"
+    },
+    {
+      "evidence": {
+        "key": "next-6",
+        "receiptId": "b1d5be9f6f2a781e089f2687bc472491465d36563850e25016619d2bffac6b45",
+        "sha256": "2480eb875fc1a5d2902cf2de4540eb0fa1e333d7221176ea9e1ec1f256218bd0",
+        "sourceId": "catalog-research"
+      },
+      "iso3": "COM",
+      "name": "Comoros",
+      "scope": "core",
+      "unStatus": "member"
+    },
+    {
+      "evidence": {
+        "key": "next-6",
+        "receiptId": "b1d5be9f6f2a781e089f2687bc472491465d36563850e25016619d2bffac6b45",
+        "sha256": "2480eb875fc1a5d2902cf2de4540eb0fa1e333d7221176ea9e1ec1f256218bd0",
+        "sourceId": "catalog-research"
+      },
+      "iso3": "CPV",
+      "name": "Cabo Verde",
+      "scope": "core",
+      "unStatus": "member"
+    },
+    {
+      "evidence": {
+        "key": "next-6",
+        "receiptId": "b1d5be9f6f2a781e089f2687bc472491465d36563850e25016619d2bffac6b45",
+        "sha256": "2480eb875fc1a5d2902cf2de4540eb0fa1e333d7221176ea9e1ec1f256218bd0",
+        "sourceId": "catalog-research"
+      },
+      "iso3": "CRI",
+      "name": "Costa Rica",
+      "scope": "core",
+      "unStatus": "member"
+    },
+    {
+      "evidence": {
+        "key": "next-6",
+        "receiptId": "b1d5be9f6f2a781e089f2687bc472491465d36563850e25016619d2bffac6b45",
+        "sha256": "2480eb875fc1a5d2902cf2de4540eb0fa1e333d7221176ea9e1ec1f256218bd0",
+        "sourceId": "catalog-research"
+      },
+      "iso3": "CUB",
+      "name": "Cuba",
+      "scope": "core",
+      "unStatus": "member"
+    },
+    {
+      "iso3": "CUW",
+      "name": "Curaçao",
+      "note": "ISO jurisdiction or user-assigned code; no UN statehood assertion.",
+      "scope": "supplementary",
+      "unStatus": "not-core"
+    },
+    {
+      "iso3": "CXR",
+      "name": "Christmas Island",
+      "note": "ISO jurisdiction or user-assigned code; no UN statehood assertion.",
+      "scope": "supplementary",
+      "unStatus": "not-core"
+    },
+    {
+      "iso3": "CYM",
+      "name": "Cayman Islands",
+      "note": "ISO jurisdiction or user-assigned code; no UN statehood assertion.",
+      "scope": "supplementary",
+      "unStatus": "not-core"
+    },
+    {
+      "evidence": {
+        "key": "next-6",
+        "receiptId": "b1d5be9f6f2a781e089f2687bc472491465d36563850e25016619d2bffac6b45",
+        "sha256": "2480eb875fc1a5d2902cf2de4540eb0fa1e333d7221176ea9e1ec1f256218bd0",
+        "sourceId": "catalog-research"
+      },
+      "iso3": "CYP",
+      "name": "Cyprus",
+      "scope": "core",
+      "unStatus": "member"
+    },
+    {
+      "evidence": {
+        "key": "next-6",
+        "receiptId": "b1d5be9f6f2a781e089f2687bc472491465d36563850e25016619d2bffac6b45",
+        "sha256": "2480eb875fc1a5d2902cf2de4540eb0fa1e333d7221176ea9e1ec1f256218bd0",
+        "sourceId": "catalog-research"
+      },
+      "iso3": "CZE",
+      "name": "Czechia",
+      "scope": "core",
+      "unStatus": "member"
+    },
+    {
+      "evidence": {
+        "key": "next-6",
+        "receiptId": "b1d5be9f6f2a781e089f2687bc472491465d36563850e25016619d2bffac6b45",
+        "sha256": "2480eb875fc1a5d2902cf2de4540eb0fa1e333d7221176ea9e1ec1f256218bd0",
+        "sourceId": "catalog-research"
+      },
+      "iso3": "DEU",
+      "name": "Germany",
+      "scope": "core",
+      "unStatus": "member"
+    },
+    {
+      "evidence": {
+        "key": "next-6",
+        "receiptId": "b1d5be9f6f2a781e089f2687bc472491465d36563850e25016619d2bffac6b45",
+        "sha256": "2480eb875fc1a5d2902cf2de4540eb0fa1e333d7221176ea9e1ec1f256218bd0",
+        "sourceId": "catalog-research"
+      },
+      "iso3": "DJI",
+      "name": "Djibouti",
+      "scope": "core",
+      "unStatus": "member"
+    },
+    {
+      "evidence": {
+        "key": "next-6",
+        "receiptId": "b1d5be9f6f2a781e089f2687bc472491465d36563850e25016619d2bffac6b45",
+        "sha256": "2480eb875fc1a5d2902cf2de4540eb0fa1e333d7221176ea9e1ec1f256218bd0",
+        "sourceId": "catalog-research"
+      },
+      "iso3": "DMA",
+      "name": "Dominica",
+      "scope": "core",
+      "unStatus": "member"
+    },
+    {
+      "evidence": {
+        "key": "next-6",
+        "receiptId": "b1d5be9f6f2a781e089f2687bc472491465d36563850e25016619d2bffac6b45",
+        "sha256": "2480eb875fc1a5d2902cf2de4540eb0fa1e333d7221176ea9e1ec1f256218bd0",
+        "sourceId": "catalog-research"
+      },
+      "iso3": "DNK",
+      "name": "Denmark",
+      "scope": "core",
+      "unStatus": "member"
+    },
+    {
+      "evidence": {
+        "key": "next-6",
+        "receiptId": "b1d5be9f6f2a781e089f2687bc472491465d36563850e25016619d2bffac6b45",
+        "sha256": "2480eb875fc1a5d2902cf2de4540eb0fa1e333d7221176ea9e1ec1f256218bd0",
+        "sourceId": "catalog-research"
+      },
+      "iso3": "DOM",
+      "name": "Dominican Republic",
+      "scope": "core",
+      "unStatus": "member"
+    },
+    {
+      "evidence": {
+        "key": "next-6",
+        "receiptId": "b1d5be9f6f2a781e089f2687bc472491465d36563850e25016619d2bffac6b45",
+        "sha256": "2480eb875fc1a5d2902cf2de4540eb0fa1e333d7221176ea9e1ec1f256218bd0",
+        "sourceId": "catalog-research"
+      },
+      "iso3": "DZA",
+      "name": "Algeria",
+      "scope": "core",
+      "unStatus": "member"
+    },
+    {
+      "evidence": {
+        "key": "next-6",
+        "receiptId": "b1d5be9f6f2a781e089f2687bc472491465d36563850e25016619d2bffac6b45",
+        "sha256": "2480eb875fc1a5d2902cf2de4540eb0fa1e333d7221176ea9e1ec1f256218bd0",
+        "sourceId": "catalog-research"
+      },
+      "iso3": "ECU",
+      "name": "Ecuador",
+      "scope": "core",
+      "unStatus": "member"
+    },
+    {
+      "evidence": {
+        "key": "next-6",
+        "receiptId": "b1d5be9f6f2a781e089f2687bc472491465d36563850e25016619d2bffac6b45",
+        "sha256": "2480eb875fc1a5d2902cf2de4540eb0fa1e333d7221176ea9e1ec1f256218bd0",
+        "sourceId": "catalog-research"
+      },
+      "iso3": "EGY",
+      "name": "Egypt",
+      "scope": "core",
+      "unStatus": "member"
+    },
+    {
+      "evidence": {
+        "key": "next-6",
+        "receiptId": "b1d5be9f6f2a781e089f2687bc472491465d36563850e25016619d2bffac6b45",
+        "sha256": "2480eb875fc1a5d2902cf2de4540eb0fa1e333d7221176ea9e1ec1f256218bd0",
+        "sourceId": "catalog-research"
+      },
+      "iso3": "ERI",
+      "name": "Eritrea",
+      "scope": "core",
+      "unStatus": "member"
+    },
+    {
+      "iso3": "ESH",
+      "name": "Western Sahara",
+      "note": "ISO jurisdiction or user-assigned code; no UN statehood assertion.",
+      "scope": "supplementary",
+      "unStatus": "not-core"
+    },
+    {
+      "evidence": {
+        "key": "next-6",
+        "receiptId": "b1d5be9f6f2a781e089f2687bc472491465d36563850e25016619d2bffac6b45",
+        "sha256": "2480eb875fc1a5d2902cf2de4540eb0fa1e333d7221176ea9e1ec1f256218bd0",
+        "sourceId": "catalog-research"
+      },
+      "iso3": "ESP",
+      "name": "Spain",
+      "scope": "core",
+      "unStatus": "member"
+    },
+    {
+      "evidence": {
+        "key": "next-6",
+        "receiptId": "b1d5be9f6f2a781e089f2687bc472491465d36563850e25016619d2bffac6b45",
+        "sha256": "2480eb875fc1a5d2902cf2de4540eb0fa1e333d7221176ea9e1ec1f256218bd0",
+        "sourceId": "catalog-research"
+      },
+      "iso3": "EST",
+      "name": "Estonia",
+      "scope": "core",
+      "unStatus": "member"
+    },
+    {
+      "evidence": {
+        "key": "next-6",
+        "receiptId": "b1d5be9f6f2a781e089f2687bc472491465d36563850e25016619d2bffac6b45",
+        "sha256": "2480eb875fc1a5d2902cf2de4540eb0fa1e333d7221176ea9e1ec1f256218bd0",
+        "sourceId": "catalog-research"
+      },
+      "iso3": "ETH",
+      "name": "Ethiopia",
+      "scope": "core",
+      "unStatus": "member"
+    },
+    {
+      "evidence": {
+        "key": "next-6",
+        "receiptId": "b1d5be9f6f2a781e089f2687bc472491465d36563850e25016619d2bffac6b45",
+        "sha256": "2480eb875fc1a5d2902cf2de4540eb0fa1e333d7221176ea9e1ec1f256218bd0",
+        "sourceId": "catalog-research"
+      },
+      "iso3": "FIN",
+      "name": "Finland",
+      "scope": "core",
+      "unStatus": "member"
+    },
+    {
+      "evidence": {
+        "key": "next-6",
+        "receiptId": "b1d5be9f6f2a781e089f2687bc472491465d36563850e25016619d2bffac6b45",
+        "sha256": "2480eb875fc1a5d2902cf2de4540eb0fa1e333d7221176ea9e1ec1f256218bd0",
+        "sourceId": "catalog-research"
+      },
+      "iso3": "FJI",
+      "name": "Fiji",
+      "scope": "core",
+      "unStatus": "member"
+    },
+    {
+      "iso3": "FLK",
+      "name": "Falkland Islands (Malvinas)",
+      "note": "ISO jurisdiction or user-assigned code; no UN statehood assertion.",
+      "scope": "supplementary",
+      "unStatus": "not-core"
+    },
+    {
+      "evidence": {
+        "key": "next-6",
+        "receiptId": "b1d5be9f6f2a781e089f2687bc472491465d36563850e25016619d2bffac6b45",
+        "sha256": "2480eb875fc1a5d2902cf2de4540eb0fa1e333d7221176ea9e1ec1f256218bd0",
+        "sourceId": "catalog-research"
+      },
+      "iso3": "FRA",
+      "name": "France",
+      "scope": "core",
+      "unStatus": "member"
+    },
+    {
+      "iso3": "FRO",
+      "name": "Faroe Islands",
+      "note": "ISO jurisdiction or user-assigned code; no UN statehood assertion.",
+      "scope": "supplementary",
+      "unStatus": "not-core"
+    },
+    {
+      "evidence": {
+        "key": "next-6",
+        "receiptId": "b1d5be9f6f2a781e089f2687bc472491465d36563850e25016619d2bffac6b45",
+        "sha256": "2480eb875fc1a5d2902cf2de4540eb0fa1e333d7221176ea9e1ec1f256218bd0",
+        "sourceId": "catalog-research"
+      },
+      "iso3": "FSM",
+      "name": "Micronesia (Federated States of)",
+      "scope": "core",
+      "unStatus": "member"
+    },
+    {
+      "evidence": {
+        "key": "next-6",
+        "receiptId": "b1d5be9f6f2a781e089f2687bc472491465d36563850e25016619d2bffac6b45",
+        "sha256": "2480eb875fc1a5d2902cf2de4540eb0fa1e333d7221176ea9e1ec1f256218bd0",
+        "sourceId": "catalog-research"
+      },
+      "iso3": "GAB",
+      "name": "Gabon",
+      "scope": "core",
+      "unStatus": "member"
+    },
+    {
+      "evidence": {
+        "key": "next-6",
+        "receiptId": "b1d5be9f6f2a781e089f2687bc472491465d36563850e25016619d2bffac6b45",
+        "sha256": "2480eb875fc1a5d2902cf2de4540eb0fa1e333d7221176ea9e1ec1f256218bd0",
+        "sourceId": "catalog-research"
+      },
+      "iso3": "GBR",
+      "name": "United Kingdom",
+      "scope": "core",
+      "unStatus": "member"
+    },
+    {
+      "evidence": {
+        "key": "next-6",
+        "receiptId": "b1d5be9f6f2a781e089f2687bc472491465d36563850e25016619d2bffac6b45",
+        "sha256": "2480eb875fc1a5d2902cf2de4540eb0fa1e333d7221176ea9e1ec1f256218bd0",
+        "sourceId": "catalog-research"
+      },
+      "iso3": "GEO",
+      "name": "Georgia",
+      "scope": "core",
+      "unStatus": "member"
+    },
+    {
+      "iso3": "GGY",
+      "name": "Guernsey",
+      "note": "ISO jurisdiction or user-assigned code; no UN statehood assertion.",
+      "scope": "supplementary",
+      "unStatus": "not-core"
+    },
+    {
+      "evidence": {
+        "key": "next-6",
+        "receiptId": "b1d5be9f6f2a781e089f2687bc472491465d36563850e25016619d2bffac6b45",
+        "sha256": "2480eb875fc1a5d2902cf2de4540eb0fa1e333d7221176ea9e1ec1f256218bd0",
+        "sourceId": "catalog-research"
+      },
+      "iso3": "GHA",
+      "name": "Ghana",
+      "scope": "core",
+      "unStatus": "member"
+    },
+    {
+      "iso3": "GIB",
+      "name": "Gibraltar",
+      "note": "ISO jurisdiction or user-assigned code; no UN statehood assertion.",
+      "scope": "supplementary",
+      "unStatus": "not-core"
+    },
+    {
+      "evidence": {
+        "key": "next-6",
+        "receiptId": "b1d5be9f6f2a781e089f2687bc472491465d36563850e25016619d2bffac6b45",
+        "sha256": "2480eb875fc1a5d2902cf2de4540eb0fa1e333d7221176ea9e1ec1f256218bd0",
+        "sourceId": "catalog-research"
+      },
+      "iso3": "GIN",
+      "name": "Guinea",
+      "scope": "core",
+      "unStatus": "member"
+    },
+    {
+      "iso3": "GLP",
+      "name": "Guadeloupe",
+      "note": "ISO jurisdiction or user-assigned code; no UN statehood assertion.",
+      "scope": "supplementary",
+      "unStatus": "not-core"
+    },
+    {
+      "evidence": {
+        "key": "next-6",
+        "receiptId": "b1d5be9f6f2a781e089f2687bc472491465d36563850e25016619d2bffac6b45",
+        "sha256": "2480eb875fc1a5d2902cf2de4540eb0fa1e333d7221176ea9e1ec1f256218bd0",
+        "sourceId": "catalog-research"
+      },
+      "iso3": "GMB",
+      "name": "Gambia",
+      "scope": "core",
+      "unStatus": "member"
+    },
+    {
+      "evidence": {
+        "key": "next-6",
+        "receiptId": "b1d5be9f6f2a781e089f2687bc472491465d36563850e25016619d2bffac6b45",
+        "sha256": "2480eb875fc1a5d2902cf2de4540eb0fa1e333d7221176ea9e1ec1f256218bd0",
+        "sourceId": "catalog-research"
+      },
+      "iso3": "GNB",
+      "name": "Guinea-Bissau",
+      "scope": "core",
+      "unStatus": "member"
+    },
+    {
+      "evidence": {
+        "key": "next-6",
+        "receiptId": "b1d5be9f6f2a781e089f2687bc472491465d36563850e25016619d2bffac6b45",
+        "sha256": "2480eb875fc1a5d2902cf2de4540eb0fa1e333d7221176ea9e1ec1f256218bd0",
+        "sourceId": "catalog-research"
+      },
+      "iso3": "GNQ",
+      "name": "Equatorial Guinea",
+      "scope": "core",
+      "unStatus": "member"
+    },
+    {
+      "evidence": {
+        "key": "next-6",
+        "receiptId": "b1d5be9f6f2a781e089f2687bc472491465d36563850e25016619d2bffac6b45",
+        "sha256": "2480eb875fc1a5d2902cf2de4540eb0fa1e333d7221176ea9e1ec1f256218bd0",
+        "sourceId": "catalog-research"
+      },
+      "iso3": "GRC",
+      "name": "Greece",
+      "scope": "core",
+      "unStatus": "member"
+    },
+    {
+      "evidence": {
+        "key": "next-6",
+        "receiptId": "b1d5be9f6f2a781e089f2687bc472491465d36563850e25016619d2bffac6b45",
+        "sha256": "2480eb875fc1a5d2902cf2de4540eb0fa1e333d7221176ea9e1ec1f256218bd0",
+        "sourceId": "catalog-research"
+      },
+      "iso3": "GRD",
+      "name": "Grenada",
+      "scope": "core",
+      "unStatus": "member"
+    },
+    {
+      "iso3": "GRL",
+      "name": "Greenland",
+      "note": "ISO jurisdiction or user-assigned code; no UN statehood assertion.",
+      "scope": "supplementary",
+      "unStatus": "not-core"
+    },
+    {
+      "evidence": {
+        "key": "next-6",
+        "receiptId": "b1d5be9f6f2a781e089f2687bc472491465d36563850e25016619d2bffac6b45",
+        "sha256": "2480eb875fc1a5d2902cf2de4540eb0fa1e333d7221176ea9e1ec1f256218bd0",
+        "sourceId": "catalog-research"
+      },
+      "iso3": "GTM",
+      "name": "Guatemala",
+      "scope": "core",
+      "unStatus": "member"
+    },
+    {
+      "iso3": "GUF",
+      "name": "French Guiana",
+      "note": "ISO jurisdiction or user-assigned code; no UN statehood assertion.",
+      "scope": "supplementary",
+      "unStatus": "not-core"
+    },
+    {
+      "iso3": "GUM",
+      "name": "Guam",
+      "note": "ISO jurisdiction or user-assigned code; no UN statehood assertion.",
+      "scope": "supplementary",
+      "unStatus": "not-core"
+    },
+    {
+      "evidence": {
+        "key": "next-6",
+        "receiptId": "b1d5be9f6f2a781e089f2687bc472491465d36563850e25016619d2bffac6b45",
+        "sha256": "2480eb875fc1a5d2902cf2de4540eb0fa1e333d7221176ea9e1ec1f256218bd0",
+        "sourceId": "catalog-research"
+      },
+      "iso3": "GUY",
+      "name": "Guyana",
+      "scope": "core",
+      "unStatus": "member"
+    },
+    {
+      "iso3": "HKG",
+      "name": "Hong Kong",
+      "note": "ISO jurisdiction or user-assigned code; no UN statehood assertion.",
+      "scope": "supplementary",
+      "unStatus": "not-core"
+    },
+    {
+      "iso3": "HMD",
+      "name": "Heard Island and McDonald Islands",
+      "note": "ISO jurisdiction or user-assigned code; no UN statehood assertion.",
+      "scope": "supplementary",
+      "unStatus": "not-core"
+    },
+    {
+      "evidence": {
+        "key": "next-6",
+        "receiptId": "b1d5be9f6f2a781e089f2687bc472491465d36563850e25016619d2bffac6b45",
+        "sha256": "2480eb875fc1a5d2902cf2de4540eb0fa1e333d7221176ea9e1ec1f256218bd0",
+        "sourceId": "catalog-research"
+      },
+      "iso3": "HND",
+      "name": "Honduras",
+      "scope": "core",
+      "unStatus": "member"
+    },
+    {
+      "evidence": {
+        "key": "next-6",
+        "receiptId": "b1d5be9f6f2a781e089f2687bc472491465d36563850e25016619d2bffac6b45",
+        "sha256": "2480eb875fc1a5d2902cf2de4540eb0fa1e333d7221176ea9e1ec1f256218bd0",
+        "sourceId": "catalog-research"
+      },
+      "iso3": "HRV",
+      "name": "Croatia",
+      "scope": "core",
+      "unStatus": "member"
+    },
+    {
+      "evidence": {
+        "key": "next-6",
+        "receiptId": "b1d5be9f6f2a781e089f2687bc472491465d36563850e25016619d2bffac6b45",
+        "sha256": "2480eb875fc1a5d2902cf2de4540eb0fa1e333d7221176ea9e1ec1f256218bd0",
+        "sourceId": "catalog-research"
+      },
+      "iso3": "HTI",
+      "name": "Haiti",
+      "scope": "core",
+      "unStatus": "member"
+    },
+    {
+      "evidence": {
+        "key": "next-6",
+        "receiptId": "b1d5be9f6f2a781e089f2687bc472491465d36563850e25016619d2bffac6b45",
+        "sha256": "2480eb875fc1a5d2902cf2de4540eb0fa1e333d7221176ea9e1ec1f256218bd0",
+        "sourceId": "catalog-research"
+      },
+      "iso3": "HUN",
+      "name": "Hungary",
+      "scope": "core",
+      "unStatus": "member"
+    },
+    {
+      "evidence": {
+        "key": "next-6",
+        "receiptId": "b1d5be9f6f2a781e089f2687bc472491465d36563850e25016619d2bffac6b45",
+        "sha256": "2480eb875fc1a5d2902cf2de4540eb0fa1e333d7221176ea9e1ec1f256218bd0",
+        "sourceId": "catalog-research"
+      },
+      "iso3": "IDN",
+      "name": "Indonesia",
+      "scope": "core",
+      "unStatus": "member"
+    },
+    {
+      "iso3": "IMN",
+      "name": "Isle of Man",
+      "note": "ISO jurisdiction or user-assigned code; no UN statehood assertion.",
+      "scope": "supplementary",
+      "unStatus": "not-core"
+    },
+    {
+      "evidence": {
+        "key": "next-6",
+        "receiptId": "b1d5be9f6f2a781e089f2687bc472491465d36563850e25016619d2bffac6b45",
+        "sha256": "2480eb875fc1a5d2902cf2de4540eb0fa1e333d7221176ea9e1ec1f256218bd0",
+        "sourceId": "catalog-research"
+      },
+      "iso3": "IND",
+      "name": "India",
+      "scope": "core",
+      "unStatus": "member"
+    },
+    {
+      "iso3": "IOT",
+      "name": "British Indian Ocean Territory",
+      "note": "ISO jurisdiction or user-assigned code; no UN statehood assertion.",
+      "scope": "supplementary",
+      "unStatus": "not-core"
+    },
+    {
+      "evidence": {
+        "key": "next-6",
+        "receiptId": "b1d5be9f6f2a781e089f2687bc472491465d36563850e25016619d2bffac6b45",
+        "sha256": "2480eb875fc1a5d2902cf2de4540eb0fa1e333d7221176ea9e1ec1f256218bd0",
+        "sourceId": "catalog-research"
+      },
+      "iso3": "IRL",
+      "name": "Ireland",
+      "scope": "core",
+      "unStatus": "member"
+    },
+    {
+      "evidence": {
+        "key": "next-6",
+        "receiptId": "b1d5be9f6f2a781e089f2687bc472491465d36563850e25016619d2bffac6b45",
+        "sha256": "2480eb875fc1a5d2902cf2de4540eb0fa1e333d7221176ea9e1ec1f256218bd0",
+        "sourceId": "catalog-research"
+      },
+      "iso3": "IRN",
+      "name": "Iran (Islamic Republic of)",
+      "scope": "core",
+      "unStatus": "member"
+    },
+    {
+      "evidence": {
+        "key": "next-6",
+        "receiptId": "b1d5be9f6f2a781e089f2687bc472491465d36563850e25016619d2bffac6b45",
+        "sha256": "2480eb875fc1a5d2902cf2de4540eb0fa1e333d7221176ea9e1ec1f256218bd0",
+        "sourceId": "catalog-research"
+      },
+      "iso3": "IRQ",
+      "name": "Iraq",
+      "scope": "core",
+      "unStatus": "member"
+    },
+    {
+      "evidence": {
+        "key": "next-6",
+        "receiptId": "b1d5be9f6f2a781e089f2687bc472491465d36563850e25016619d2bffac6b45",
+        "sha256": "2480eb875fc1a5d2902cf2de4540eb0fa1e333d7221176ea9e1ec1f256218bd0",
+        "sourceId": "catalog-research"
+      },
+      "iso3": "ISL",
+      "name": "Iceland",
+      "scope": "core",
+      "unStatus": "member"
+    },
+    {
+      "evidence": {
+        "key": "next-6",
+        "receiptId": "b1d5be9f6f2a781e089f2687bc472491465d36563850e25016619d2bffac6b45",
+        "sha256": "2480eb875fc1a5d2902cf2de4540eb0fa1e333d7221176ea9e1ec1f256218bd0",
+        "sourceId": "catalog-research"
+      },
+      "iso3": "ISR",
+      "name": "Israel",
+      "scope": "core",
+      "unStatus": "member"
+    },
+    {
+      "evidence": {
+        "key": "next-6",
+        "receiptId": "b1d5be9f6f2a781e089f2687bc472491465d36563850e25016619d2bffac6b45",
+        "sha256": "2480eb875fc1a5d2902cf2de4540eb0fa1e333d7221176ea9e1ec1f256218bd0",
+        "sourceId": "catalog-research"
+      },
+      "iso3": "ITA",
+      "name": "Italy",
+      "scope": "core",
+      "unStatus": "member"
+    },
+    {
+      "evidence": {
+        "key": "next-6",
+        "receiptId": "b1d5be9f6f2a781e089f2687bc472491465d36563850e25016619d2bffac6b45",
+        "sha256": "2480eb875fc1a5d2902cf2de4540eb0fa1e333d7221176ea9e1ec1f256218bd0",
+        "sourceId": "catalog-research"
+      },
+      "iso3": "JAM",
+      "name": "Jamaica",
+      "scope": "core",
+      "unStatus": "member"
+    },
+    {
+      "iso3": "JEY",
+      "name": "Jersey",
+      "note": "ISO jurisdiction or user-assigned code; no UN statehood assertion.",
+      "scope": "supplementary",
+      "unStatus": "not-core"
+    },
+    {
+      "evidence": {
+        "key": "next-6",
+        "receiptId": "b1d5be9f6f2a781e089f2687bc472491465d36563850e25016619d2bffac6b45",
+        "sha256": "2480eb875fc1a5d2902cf2de4540eb0fa1e333d7221176ea9e1ec1f256218bd0",
+        "sourceId": "catalog-research"
+      },
+      "iso3": "JOR",
+      "name": "Jordan",
+      "scope": "core",
+      "unStatus": "member"
+    },
+    {
+      "evidence": {
+        "key": "next-6",
+        "receiptId": "b1d5be9f6f2a781e089f2687bc472491465d36563850e25016619d2bffac6b45",
+        "sha256": "2480eb875fc1a5d2902cf2de4540eb0fa1e333d7221176ea9e1ec1f256218bd0",
+        "sourceId": "catalog-research"
+      },
+      "iso3": "JPN",
+      "name": "Japan",
+      "scope": "core",
+      "unStatus": "member"
+    },
+    {
+      "evidence": {
+        "key": "next-6",
+        "receiptId": "b1d5be9f6f2a781e089f2687bc472491465d36563850e25016619d2bffac6b45",
+        "sha256": "2480eb875fc1a5d2902cf2de4540eb0fa1e333d7221176ea9e1ec1f256218bd0",
+        "sourceId": "catalog-research"
+      },
+      "iso3": "KAZ",
+      "name": "Kazakhstan",
+      "scope": "core",
+      "unStatus": "member"
+    },
+    {
+      "evidence": {
+        "key": "next-6",
+        "receiptId": "b1d5be9f6f2a781e089f2687bc472491465d36563850e25016619d2bffac6b45",
+        "sha256": "2480eb875fc1a5d2902cf2de4540eb0fa1e333d7221176ea9e1ec1f256218bd0",
+        "sourceId": "catalog-research"
+      },
+      "iso3": "KEN",
+      "name": "Kenya",
+      "scope": "core",
+      "unStatus": "member"
+    },
+    {
+      "evidence": {
+        "key": "next-6",
+        "receiptId": "b1d5be9f6f2a781e089f2687bc472491465d36563850e25016619d2bffac6b45",
+        "sha256": "2480eb875fc1a5d2902cf2de4540eb0fa1e333d7221176ea9e1ec1f256218bd0",
+        "sourceId": "catalog-research"
+      },
+      "iso3": "KGZ",
+      "name": "Kyrgyzstan",
+      "scope": "core",
+      "unStatus": "member"
+    },
+    {
+      "evidence": {
+        "key": "next-6",
+        "receiptId": "b1d5be9f6f2a781e089f2687bc472491465d36563850e25016619d2bffac6b45",
+        "sha256": "2480eb875fc1a5d2902cf2de4540eb0fa1e333d7221176ea9e1ec1f256218bd0",
+        "sourceId": "catalog-research"
+      },
+      "iso3": "KHM",
+      "name": "Cambodia",
+      "scope": "core",
+      "unStatus": "member"
+    },
+    {
+      "evidence": {
+        "key": "next-6",
+        "receiptId": "b1d5be9f6f2a781e089f2687bc472491465d36563850e25016619d2bffac6b45",
+        "sha256": "2480eb875fc1a5d2902cf2de4540eb0fa1e333d7221176ea9e1ec1f256218bd0",
+        "sourceId": "catalog-research"
+      },
+      "iso3": "KIR",
+      "name": "Kiribati",
+      "scope": "core",
+      "unStatus": "member"
+    },
+    {
+      "evidence": {
+        "key": "next-6",
+        "receiptId": "b1d5be9f6f2a781e089f2687bc472491465d36563850e25016619d2bffac6b45",
+        "sha256": "2480eb875fc1a5d2902cf2de4540eb0fa1e333d7221176ea9e1ec1f256218bd0",
+        "sourceId": "catalog-research"
+      },
+      "iso3": "KNA",
+      "name": "Saint Kitts and Nevis",
+      "scope": "core",
+      "unStatus": "member"
+    },
+    {
+      "evidence": {
+        "key": "next-6",
+        "receiptId": "b1d5be9f6f2a781e089f2687bc472491465d36563850e25016619d2bffac6b45",
+        "sha256": "2480eb875fc1a5d2902cf2de4540eb0fa1e333d7221176ea9e1ec1f256218bd0",
+        "sourceId": "catalog-research"
+      },
+      "iso3": "KOR",
+      "name": "Republic of Korea",
+      "scope": "core",
+      "unStatus": "member"
+    },
+    {
+      "evidence": {
+        "key": "next-6",
+        "receiptId": "b1d5be9f6f2a781e089f2687bc472491465d36563850e25016619d2bffac6b45",
+        "sha256": "2480eb875fc1a5d2902cf2de4540eb0fa1e333d7221176ea9e1ec1f256218bd0",
+        "sourceId": "catalog-research"
+      },
+      "iso3": "KWT",
+      "name": "Kuwait",
+      "scope": "core",
+      "unStatus": "member"
+    },
+    {
+      "evidence": {
+        "key": "next-6",
+        "receiptId": "b1d5be9f6f2a781e089f2687bc472491465d36563850e25016619d2bffac6b45",
+        "sha256": "2480eb875fc1a5d2902cf2de4540eb0fa1e333d7221176ea9e1ec1f256218bd0",
+        "sourceId": "catalog-research"
+      },
+      "iso3": "LAO",
+      "name": "Lao People's Democratic Republic",
+      "scope": "core",
+      "unStatus": "member"
+    },
+    {
+      "evidence": {
+        "key": "next-6",
+        "receiptId": "b1d5be9f6f2a781e089f2687bc472491465d36563850e25016619d2bffac6b45",
+        "sha256": "2480eb875fc1a5d2902cf2de4540eb0fa1e333d7221176ea9e1ec1f256218bd0",
+        "sourceId": "catalog-research"
+      },
+      "iso3": "LBN",
+      "name": "Lebanon",
+      "scope": "core",
+      "unStatus": "member"
+    },
+    {
+      "evidence": {
+        "key": "next-6",
+        "receiptId": "b1d5be9f6f2a781e089f2687bc472491465d36563850e25016619d2bffac6b45",
+        "sha256": "2480eb875fc1a5d2902cf2de4540eb0fa1e333d7221176ea9e1ec1f256218bd0",
+        "sourceId": "catalog-research"
+      },
+      "iso3": "LBR",
+      "name": "Liberia",
+      "scope": "core",
+      "unStatus": "member"
+    },
+    {
+      "evidence": {
+        "key": "next-6",
+        "receiptId": "b1d5be9f6f2a781e089f2687bc472491465d36563850e25016619d2bffac6b45",
+        "sha256": "2480eb875fc1a5d2902cf2de4540eb0fa1e333d7221176ea9e1ec1f256218bd0",
+        "sourceId": "catalog-research"
+      },
+      "iso3": "LBY",
+      "name": "Libya",
+      "scope": "core",
+      "unStatus": "member"
+    },
+    {
+      "evidence": {
+        "key": "next-6",
+        "receiptId": "b1d5be9f6f2a781e089f2687bc472491465d36563850e25016619d2bffac6b45",
+        "sha256": "2480eb875fc1a5d2902cf2de4540eb0fa1e333d7221176ea9e1ec1f256218bd0",
+        "sourceId": "catalog-research"
+      },
+      "iso3": "LCA",
+      "name": "Saint Lucia",
+      "scope": "core",
+      "unStatus": "member"
+    },
+    {
+      "evidence": {
+        "key": "next-6",
+        "receiptId": "b1d5be9f6f2a781e089f2687bc472491465d36563850e25016619d2bffac6b45",
+        "sha256": "2480eb875fc1a5d2902cf2de4540eb0fa1e333d7221176ea9e1ec1f256218bd0",
+        "sourceId": "catalog-research"
+      },
+      "iso3": "LIE",
+      "name": "Liechtenstein",
+      "scope": "core",
+      "unStatus": "member"
+    },
+    {
+      "evidence": {
+        "key": "next-6",
+        "receiptId": "b1d5be9f6f2a781e089f2687bc472491465d36563850e25016619d2bffac6b45",
+        "sha256": "2480eb875fc1a5d2902cf2de4540eb0fa1e333d7221176ea9e1ec1f256218bd0",
+        "sourceId": "catalog-research"
+      },
+      "iso3": "LKA",
+      "name": "Sri Lanka",
+      "scope": "core",
+      "unStatus": "member"
+    },
+    {
+      "evidence": {
+        "key": "next-6",
+        "receiptId": "b1d5be9f6f2a781e089f2687bc472491465d36563850e25016619d2bffac6b45",
+        "sha256": "2480eb875fc1a5d2902cf2de4540eb0fa1e333d7221176ea9e1ec1f256218bd0",
+        "sourceId": "catalog-research"
+      },
+      "iso3": "LSO",
+      "name": "Lesotho",
+      "scope": "core",
+      "unStatus": "member"
+    },
+    {
+      "evidence": {
+        "key": "next-6",
+        "receiptId": "b1d5be9f6f2a781e089f2687bc472491465d36563850e25016619d2bffac6b45",
+        "sha256": "2480eb875fc1a5d2902cf2de4540eb0fa1e333d7221176ea9e1ec1f256218bd0",
+        "sourceId": "catalog-research"
+      },
+      "iso3": "LTU",
+      "name": "Lithuania",
+      "scope": "core",
+      "unStatus": "member"
+    },
+    {
+      "evidence": {
+        "key": "next-6",
+        "receiptId": "b1d5be9f6f2a781e089f2687bc472491465d36563850e25016619d2bffac6b45",
+        "sha256": "2480eb875fc1a5d2902cf2de4540eb0fa1e333d7221176ea9e1ec1f256218bd0",
+        "sourceId": "catalog-research"
+      },
+      "iso3": "LUX",
+      "name": "Luxembourg",
+      "scope": "core",
+      "unStatus": "member"
+    },
+    {
+      "evidence": {
+        "key": "next-6",
+        "receiptId": "b1d5be9f6f2a781e089f2687bc472491465d36563850e25016619d2bffac6b45",
+        "sha256": "2480eb875fc1a5d2902cf2de4540eb0fa1e333d7221176ea9e1ec1f256218bd0",
+        "sourceId": "catalog-research"
+      },
+      "iso3": "LVA",
+      "name": "Latvia",
+      "scope": "core",
+      "unStatus": "member"
+    },
+    {
+      "iso3": "MAC",
+      "name": "Macao",
+      "note": "ISO jurisdiction or user-assigned code; no UN statehood assertion.",
+      "scope": "supplementary",
+      "unStatus": "not-core"
+    },
+    {
+      "iso3": "MAF",
+      "name": "Saint Martin (French part)",
+      "note": "ISO jurisdiction or user-assigned code; no UN statehood assertion.",
+      "scope": "supplementary",
+      "unStatus": "not-core"
+    },
+    {
+      "evidence": {
+        "key": "next-6",
+        "receiptId": "b1d5be9f6f2a781e089f2687bc472491465d36563850e25016619d2bffac6b45",
+        "sha256": "2480eb875fc1a5d2902cf2de4540eb0fa1e333d7221176ea9e1ec1f256218bd0",
+        "sourceId": "catalog-research"
+      },
+      "iso3": "MAR",
+      "name": "Morocco",
+      "scope": "core",
+      "unStatus": "member"
+    },
+    {
+      "evidence": {
+        "key": "next-6",
+        "receiptId": "b1d5be9f6f2a781e089f2687bc472491465d36563850e25016619d2bffac6b45",
+        "sha256": "2480eb875fc1a5d2902cf2de4540eb0fa1e333d7221176ea9e1ec1f256218bd0",
+        "sourceId": "catalog-research"
+      },
+      "iso3": "MCO",
+      "name": "Monaco",
+      "scope": "core",
+      "unStatus": "member"
+    },
+    {
+      "evidence": {
+        "key": "next-6",
+        "receiptId": "b1d5be9f6f2a781e089f2687bc472491465d36563850e25016619d2bffac6b45",
+        "sha256": "2480eb875fc1a5d2902cf2de4540eb0fa1e333d7221176ea9e1ec1f256218bd0",
+        "sourceId": "catalog-research"
+      },
+      "iso3": "MDA",
+      "name": "Republic of Moldova",
+      "scope": "core",
+      "unStatus": "member"
+    },
+    {
+      "evidence": {
+        "key": "next-6",
+        "receiptId": "b1d5be9f6f2a781e089f2687bc472491465d36563850e25016619d2bffac6b45",
+        "sha256": "2480eb875fc1a5d2902cf2de4540eb0fa1e333d7221176ea9e1ec1f256218bd0",
+        "sourceId": "catalog-research"
+      },
+      "iso3": "MDG",
+      "name": "Madagascar",
+      "scope": "core",
+      "unStatus": "member"
+    },
+    {
+      "evidence": {
+        "key": "next-6",
+        "receiptId": "b1d5be9f6f2a781e089f2687bc472491465d36563850e25016619d2bffac6b45",
+        "sha256": "2480eb875fc1a5d2902cf2de4540eb0fa1e333d7221176ea9e1ec1f256218bd0",
+        "sourceId": "catalog-research"
+      },
+      "iso3": "MDV",
+      "name": "Maldives",
+      "scope": "core",
+      "unStatus": "member"
+    },
+    {
+      "evidence": {
+        "key": "next-6",
+        "receiptId": "b1d5be9f6f2a781e089f2687bc472491465d36563850e25016619d2bffac6b45",
+        "sha256": "2480eb875fc1a5d2902cf2de4540eb0fa1e333d7221176ea9e1ec1f256218bd0",
+        "sourceId": "catalog-research"
+      },
+      "iso3": "MEX",
+      "name": "Mexico",
+      "scope": "core",
+      "unStatus": "member"
+    },
+    {
+      "evidence": {
+        "key": "next-6",
+        "receiptId": "b1d5be9f6f2a781e089f2687bc472491465d36563850e25016619d2bffac6b45",
+        "sha256": "2480eb875fc1a5d2902cf2de4540eb0fa1e333d7221176ea9e1ec1f256218bd0",
+        "sourceId": "catalog-research"
+      },
+      "iso3": "MHL",
+      "name": "Marshall Islands",
+      "scope": "core",
+      "unStatus": "member"
+    },
+    {
+      "evidence": {
+        "key": "next-6",
+        "receiptId": "b1d5be9f6f2a781e089f2687bc472491465d36563850e25016619d2bffac6b45",
+        "sha256": "2480eb875fc1a5d2902cf2de4540eb0fa1e333d7221176ea9e1ec1f256218bd0",
+        "sourceId": "catalog-research"
+      },
+      "iso3": "MKD",
+      "name": "North Macedonia",
+      "scope": "core",
+      "unStatus": "member"
+    },
+    {
+      "evidence": {
+        "key": "next-6",
+        "receiptId": "b1d5be9f6f2a781e089f2687bc472491465d36563850e25016619d2bffac6b45",
+        "sha256": "2480eb875fc1a5d2902cf2de4540eb0fa1e333d7221176ea9e1ec1f256218bd0",
+        "sourceId": "catalog-research"
+      },
+      "iso3": "MLI",
+      "name": "Mali",
+      "scope": "core",
+      "unStatus": "member"
+    },
+    {
+      "evidence": {
+        "key": "next-6",
+        "receiptId": "b1d5be9f6f2a781e089f2687bc472491465d36563850e25016619d2bffac6b45",
+        "sha256": "2480eb875fc1a5d2902cf2de4540eb0fa1e333d7221176ea9e1ec1f256218bd0",
+        "sourceId": "catalog-research"
+      },
+      "iso3": "MLT",
+      "name": "Malta",
+      "scope": "core",
+      "unStatus": "member"
+    },
+    {
+      "evidence": {
+        "key": "next-6",
+        "receiptId": "b1d5be9f6f2a781e089f2687bc472491465d36563850e25016619d2bffac6b45",
+        "sha256": "2480eb875fc1a5d2902cf2de4540eb0fa1e333d7221176ea9e1ec1f256218bd0",
+        "sourceId": "catalog-research"
+      },
+      "iso3": "MMR",
+      "name": "Myanmar",
+      "scope": "core",
+      "unStatus": "member"
+    },
+    {
+      "evidence": {
+        "key": "next-6",
+        "receiptId": "b1d5be9f6f2a781e089f2687bc472491465d36563850e25016619d2bffac6b45",
+        "sha256": "2480eb875fc1a5d2902cf2de4540eb0fa1e333d7221176ea9e1ec1f256218bd0",
+        "sourceId": "catalog-research"
+      },
+      "iso3": "MNE",
+      "name": "Montenegro",
+      "scope": "core",
+      "unStatus": "member"
+    },
+    {
+      "evidence": {
+        "key": "next-6",
+        "receiptId": "b1d5be9f6f2a781e089f2687bc472491465d36563850e25016619d2bffac6b45",
+        "sha256": "2480eb875fc1a5d2902cf2de4540eb0fa1e333d7221176ea9e1ec1f256218bd0",
+        "sourceId": "catalog-research"
+      },
+      "iso3": "MNG",
+      "name": "Mongolia",
+      "scope": "core",
+      "unStatus": "member"
+    },
+    {
+      "iso3": "MNP",
+      "name": "Northern Mariana Islands",
+      "note": "ISO jurisdiction or user-assigned code; no UN statehood assertion.",
+      "scope": "supplementary",
+      "unStatus": "not-core"
+    },
+    {
+      "evidence": {
+        "key": "next-6",
+        "receiptId": "b1d5be9f6f2a781e089f2687bc472491465d36563850e25016619d2bffac6b45",
+        "sha256": "2480eb875fc1a5d2902cf2de4540eb0fa1e333d7221176ea9e1ec1f256218bd0",
+        "sourceId": "catalog-research"
+      },
+      "iso3": "MOZ",
+      "name": "Mozambique",
+      "scope": "core",
+      "unStatus": "member"
+    },
+    {
+      "evidence": {
+        "key": "next-6",
+        "receiptId": "b1d5be9f6f2a781e089f2687bc472491465d36563850e25016619d2bffac6b45",
+        "sha256": "2480eb875fc1a5d2902cf2de4540eb0fa1e333d7221176ea9e1ec1f256218bd0",
+        "sourceId": "catalog-research"
+      },
+      "iso3": "MRT",
+      "name": "Mauritania",
+      "scope": "core",
+      "unStatus": "member"
+    },
+    {
+      "iso3": "MSR",
+      "name": "Montserrat",
+      "note": "ISO jurisdiction or user-assigned code; no UN statehood assertion.",
+      "scope": "supplementary",
+      "unStatus": "not-core"
+    },
+    {
+      "iso3": "MTQ",
+      "name": "Martinique",
+      "note": "ISO jurisdiction or user-assigned code; no UN statehood assertion.",
+      "scope": "supplementary",
+      "unStatus": "not-core"
+    },
+    {
+      "evidence": {
+        "key": "next-6",
+        "receiptId": "b1d5be9f6f2a781e089f2687bc472491465d36563850e25016619d2bffac6b45",
+        "sha256": "2480eb875fc1a5d2902cf2de4540eb0fa1e333d7221176ea9e1ec1f256218bd0",
+        "sourceId": "catalog-research"
+      },
+      "iso3": "MUS",
+      "name": "Mauritius",
+      "scope": "core",
+      "unStatus": "member"
+    },
+    {
+      "evidence": {
+        "key": "next-6",
+        "receiptId": "b1d5be9f6f2a781e089f2687bc472491465d36563850e25016619d2bffac6b45",
+        "sha256": "2480eb875fc1a5d2902cf2de4540eb0fa1e333d7221176ea9e1ec1f256218bd0",
+        "sourceId": "catalog-research"
+      },
+      "iso3": "MWI",
+      "name": "Malawi",
+      "scope": "core",
+      "unStatus": "member"
+    },
+    {
+      "evidence": {
+        "key": "next-6",
+        "receiptId": "b1d5be9f6f2a781e089f2687bc472491465d36563850e25016619d2bffac6b45",
+        "sha256": "2480eb875fc1a5d2902cf2de4540eb0fa1e333d7221176ea9e1ec1f256218bd0",
+        "sourceId": "catalog-research"
+      },
+      "iso3": "MYS",
+      "name": "Malaysia",
+      "scope": "core",
+      "unStatus": "member"
+    },
+    {
+      "iso3": "MYT",
+      "name": "Mayotte",
+      "note": "ISO jurisdiction or user-assigned code; no UN statehood assertion.",
+      "scope": "supplementary",
+      "unStatus": "not-core"
+    },
+    {
+      "evidence": {
+        "key": "next-6",
+        "receiptId": "b1d5be9f6f2a781e089f2687bc472491465d36563850e25016619d2bffac6b45",
+        "sha256": "2480eb875fc1a5d2902cf2de4540eb0fa1e333d7221176ea9e1ec1f256218bd0",
+        "sourceId": "catalog-research"
+      },
+      "iso3": "NAM",
+      "name": "Namibia",
+      "scope": "core",
+      "unStatus": "member"
+    },
+    {
+      "iso3": "NCL",
+      "name": "New Caledonia",
+      "note": "ISO jurisdiction or user-assigned code; no UN statehood assertion.",
+      "scope": "supplementary",
+      "unStatus": "not-core"
+    },
+    {
+      "evidence": {
+        "key": "next-6",
+        "receiptId": "b1d5be9f6f2a781e089f2687bc472491465d36563850e25016619d2bffac6b45",
+        "sha256": "2480eb875fc1a5d2902cf2de4540eb0fa1e333d7221176ea9e1ec1f256218bd0",
+        "sourceId": "catalog-research"
+      },
+      "iso3": "NER",
+      "name": "Niger",
+      "scope": "core",
+      "unStatus": "member"
+    },
+    {
+      "iso3": "NFK",
+      "name": "Norfolk Island",
+      "note": "ISO jurisdiction or user-assigned code; no UN statehood assertion.",
+      "scope": "supplementary",
+      "unStatus": "not-core"
+    },
+    {
+      "evidence": {
+        "key": "next-6",
+        "receiptId": "b1d5be9f6f2a781e089f2687bc472491465d36563850e25016619d2bffac6b45",
+        "sha256": "2480eb875fc1a5d2902cf2de4540eb0fa1e333d7221176ea9e1ec1f256218bd0",
+        "sourceId": "catalog-research"
+      },
+      "iso3": "NGA",
+      "name": "Nigeria",
+      "scope": "core",
+      "unStatus": "member"
+    },
+    {
+      "evidence": {
+        "key": "next-6",
+        "receiptId": "b1d5be9f6f2a781e089f2687bc472491465d36563850e25016619d2bffac6b45",
+        "sha256": "2480eb875fc1a5d2902cf2de4540eb0fa1e333d7221176ea9e1ec1f256218bd0",
+        "sourceId": "catalog-research"
+      },
+      "iso3": "NIC",
+      "name": "Nicaragua",
+      "scope": "core",
+      "unStatus": "member"
+    },
+    {
+      "iso3": "NIU",
+      "name": "Niue",
+      "note": "ISO jurisdiction or user-assigned code; no UN statehood assertion.",
+      "scope": "supplementary",
+      "unStatus": "not-core"
+    },
+    {
+      "evidence": {
+        "key": "next-6",
+        "receiptId": "b1d5be9f6f2a781e089f2687bc472491465d36563850e25016619d2bffac6b45",
+        "sha256": "2480eb875fc1a5d2902cf2de4540eb0fa1e333d7221176ea9e1ec1f256218bd0",
+        "sourceId": "catalog-research"
+      },
+      "iso3": "NLD",
+      "name": "Netherlands (Kingdom of the)",
+      "scope": "core",
+      "unStatus": "member"
+    },
+    {
+      "evidence": {
+        "key": "next-6",
+        "receiptId": "b1d5be9f6f2a781e089f2687bc472491465d36563850e25016619d2bffac6b45",
+        "sha256": "2480eb875fc1a5d2902cf2de4540eb0fa1e333d7221176ea9e1ec1f256218bd0",
+        "sourceId": "catalog-research"
+      },
+      "iso3": "NOR",
+      "name": "Norway",
+      "scope": "core",
+      "unStatus": "member"
+    },
+    {
+      "evidence": {
+        "key": "next-6",
+        "receiptId": "b1d5be9f6f2a781e089f2687bc472491465d36563850e25016619d2bffac6b45",
+        "sha256": "2480eb875fc1a5d2902cf2de4540eb0fa1e333d7221176ea9e1ec1f256218bd0",
+        "sourceId": "catalog-research"
+      },
+      "iso3": "NPL",
+      "name": "Nepal",
+      "scope": "core",
+      "unStatus": "member"
+    },
+    {
+      "evidence": {
+        "key": "next-6",
+        "receiptId": "b1d5be9f6f2a781e089f2687bc472491465d36563850e25016619d2bffac6b45",
+        "sha256": "2480eb875fc1a5d2902cf2de4540eb0fa1e333d7221176ea9e1ec1f256218bd0",
+        "sourceId": "catalog-research"
+      },
+      "iso3": "NRU",
+      "name": "Naoero",
+      "scope": "core",
+      "unStatus": "member"
+    },
+    {
+      "evidence": {
+        "key": "next-6",
+        "receiptId": "b1d5be9f6f2a781e089f2687bc472491465d36563850e25016619d2bffac6b45",
+        "sha256": "2480eb875fc1a5d2902cf2de4540eb0fa1e333d7221176ea9e1ec1f256218bd0",
+        "sourceId": "catalog-research"
+      },
+      "iso3": "NZL",
+      "name": "New Zealand",
+      "scope": "core",
+      "unStatus": "member"
+    },
+    {
+      "evidence": {
+        "key": "next-6",
+        "receiptId": "b1d5be9f6f2a781e089f2687bc472491465d36563850e25016619d2bffac6b45",
+        "sha256": "2480eb875fc1a5d2902cf2de4540eb0fa1e333d7221176ea9e1ec1f256218bd0",
+        "sourceId": "catalog-research"
+      },
+      "iso3": "OMN",
+      "name": "Oman",
+      "scope": "core",
+      "unStatus": "member"
+    },
+    {
+      "evidence": {
+        "key": "next-6",
+        "receiptId": "b1d5be9f6f2a781e089f2687bc472491465d36563850e25016619d2bffac6b45",
+        "sha256": "2480eb875fc1a5d2902cf2de4540eb0fa1e333d7221176ea9e1ec1f256218bd0",
+        "sourceId": "catalog-research"
+      },
+      "iso3": "PAK",
+      "name": "Pakistan",
+      "scope": "core",
+      "unStatus": "member"
+    },
+    {
+      "evidence": {
+        "key": "next-6",
+        "receiptId": "b1d5be9f6f2a781e089f2687bc472491465d36563850e25016619d2bffac6b45",
+        "sha256": "2480eb875fc1a5d2902cf2de4540eb0fa1e333d7221176ea9e1ec1f256218bd0",
+        "sourceId": "catalog-research"
+      },
+      "iso3": "PAN",
+      "name": "Panama",
+      "scope": "core",
+      "unStatus": "member"
+    },
+    {
+      "iso3": "PCN",
+      "name": "Pitcairn",
+      "note": "ISO jurisdiction or user-assigned code; no UN statehood assertion.",
+      "scope": "supplementary",
+      "unStatus": "not-core"
+    },
+    {
+      "evidence": {
+        "key": "next-6",
+        "receiptId": "b1d5be9f6f2a781e089f2687bc472491465d36563850e25016619d2bffac6b45",
+        "sha256": "2480eb875fc1a5d2902cf2de4540eb0fa1e333d7221176ea9e1ec1f256218bd0",
+        "sourceId": "catalog-research"
+      },
+      "iso3": "PER",
+      "name": "Peru",
+      "scope": "core",
+      "unStatus": "member"
+    },
+    {
+      "evidence": {
+        "key": "next-6",
+        "receiptId": "b1d5be9f6f2a781e089f2687bc472491465d36563850e25016619d2bffac6b45",
+        "sha256": "2480eb875fc1a5d2902cf2de4540eb0fa1e333d7221176ea9e1ec1f256218bd0",
+        "sourceId": "catalog-research"
+      },
+      "iso3": "PHL",
+      "name": "Philippines",
+      "scope": "core",
+      "unStatus": "member"
+    },
+    {
+      "evidence": {
+        "key": "next-6",
+        "receiptId": "b1d5be9f6f2a781e089f2687bc472491465d36563850e25016619d2bffac6b45",
+        "sha256": "2480eb875fc1a5d2902cf2de4540eb0fa1e333d7221176ea9e1ec1f256218bd0",
+        "sourceId": "catalog-research"
+      },
+      "iso3": "PLW",
+      "name": "Palau",
+      "scope": "core",
+      "unStatus": "member"
+    },
+    {
+      "evidence": {
+        "key": "next-6",
+        "receiptId": "b1d5be9f6f2a781e089f2687bc472491465d36563850e25016619d2bffac6b45",
+        "sha256": "2480eb875fc1a5d2902cf2de4540eb0fa1e333d7221176ea9e1ec1f256218bd0",
+        "sourceId": "catalog-research"
+      },
+      "iso3": "PNG",
+      "name": "Papua New Guinea",
+      "scope": "core",
+      "unStatus": "member"
+    },
+    {
+      "evidence": {
+        "key": "next-6",
+        "receiptId": "b1d5be9f6f2a781e089f2687bc472491465d36563850e25016619d2bffac6b45",
+        "sha256": "2480eb875fc1a5d2902cf2de4540eb0fa1e333d7221176ea9e1ec1f256218bd0",
+        "sourceId": "catalog-research"
+      },
+      "iso3": "POL",
+      "name": "Poland",
+      "scope": "core",
+      "unStatus": "member"
+    },
+    {
+      "iso3": "PRI",
+      "name": "Puerto Rico",
+      "note": "ISO jurisdiction or user-assigned code; no UN statehood assertion.",
+      "scope": "supplementary",
+      "unStatus": "not-core"
+    },
+    {
+      "evidence": {
+        "key": "next-6",
+        "receiptId": "b1d5be9f6f2a781e089f2687bc472491465d36563850e25016619d2bffac6b45",
+        "sha256": "2480eb875fc1a5d2902cf2de4540eb0fa1e333d7221176ea9e1ec1f256218bd0",
+        "sourceId": "catalog-research"
+      },
+      "iso3": "PRK",
+      "name": "Democratic People's Republic of Korea",
+      "scope": "core",
+      "unStatus": "member"
+    },
+    {
+      "evidence": {
+        "key": "next-6",
+        "receiptId": "b1d5be9f6f2a781e089f2687bc472491465d36563850e25016619d2bffac6b45",
+        "sha256": "2480eb875fc1a5d2902cf2de4540eb0fa1e333d7221176ea9e1ec1f256218bd0",
+        "sourceId": "catalog-research"
+      },
+      "iso3": "PRT",
+      "name": "Portugal",
+      "scope": "core",
+      "unStatus": "member"
+    },
+    {
+      "evidence": {
+        "key": "next-6",
+        "receiptId": "b1d5be9f6f2a781e089f2687bc472491465d36563850e25016619d2bffac6b45",
+        "sha256": "2480eb875fc1a5d2902cf2de4540eb0fa1e333d7221176ea9e1ec1f256218bd0",
+        "sourceId": "catalog-research"
+      },
+      "iso3": "PRY",
+      "name": "Paraguay",
+      "scope": "core",
+      "unStatus": "member"
+    },
+    {
+      "evidence": {
+        "key": "next-7",
+        "receiptId": "cedd44a07e6927e3955c9d956892ed13c3c8918607b630e5a21992cd34f76fe6",
+        "sha256": "33221e98ca0deb8a7d39019816850ef808d58ba313b9c2c99fcb0bd326178f43",
+        "sourceId": "catalog-research"
+      },
+      "iso3": "PSE",
+      "name": "State of Palestine",
+      "scope": "core",
+      "unStatus": "observer"
+    },
+    {
+      "iso3": "PYF",
+      "name": "French Polynesia",
+      "note": "ISO jurisdiction or user-assigned code; no UN statehood assertion.",
+      "scope": "supplementary",
+      "unStatus": "not-core"
+    },
+    {
+      "evidence": {
+        "key": "next-6",
+        "receiptId": "b1d5be9f6f2a781e089f2687bc472491465d36563850e25016619d2bffac6b45",
+        "sha256": "2480eb875fc1a5d2902cf2de4540eb0fa1e333d7221176ea9e1ec1f256218bd0",
+        "sourceId": "catalog-research"
+      },
+      "iso3": "QAT",
+      "name": "Qatar",
+      "scope": "core",
+      "unStatus": "member"
+    },
+    {
+      "iso3": "REU",
+      "name": "Reunion",
+      "note": "ISO jurisdiction or user-assigned code; no UN statehood assertion.",
+      "scope": "supplementary",
+      "unStatus": "not-core"
+    },
+    {
+      "evidence": {
+        "key": "next-6",
+        "receiptId": "b1d5be9f6f2a781e089f2687bc472491465d36563850e25016619d2bffac6b45",
+        "sha256": "2480eb875fc1a5d2902cf2de4540eb0fa1e333d7221176ea9e1ec1f256218bd0",
+        "sourceId": "catalog-research"
+      },
+      "iso3": "ROU",
+      "name": "Romania",
+      "scope": "core",
+      "unStatus": "member"
+    },
+    {
+      "evidence": {
+        "key": "next-6",
+        "receiptId": "b1d5be9f6f2a781e089f2687bc472491465d36563850e25016619d2bffac6b45",
+        "sha256": "2480eb875fc1a5d2902cf2de4540eb0fa1e333d7221176ea9e1ec1f256218bd0",
+        "sourceId": "catalog-research"
+      },
+      "iso3": "RUS",
+      "name": "Russian Federation",
+      "scope": "core",
+      "unStatus": "member"
+    },
+    {
+      "evidence": {
+        "key": "next-6",
+        "receiptId": "b1d5be9f6f2a781e089f2687bc472491465d36563850e25016619d2bffac6b45",
+        "sha256": "2480eb875fc1a5d2902cf2de4540eb0fa1e333d7221176ea9e1ec1f256218bd0",
+        "sourceId": "catalog-research"
+      },
+      "iso3": "RWA",
+      "name": "Rwanda",
+      "scope": "core",
+      "unStatus": "member"
+    },
+    {
+      "evidence": {
+        "key": "next-6",
+        "receiptId": "b1d5be9f6f2a781e089f2687bc472491465d36563850e25016619d2bffac6b45",
+        "sha256": "2480eb875fc1a5d2902cf2de4540eb0fa1e333d7221176ea9e1ec1f256218bd0",
+        "sourceId": "catalog-research"
+      },
+      "iso3": "SAU",
+      "name": "Saudi Arabia",
+      "scope": "core",
+      "unStatus": "member"
+    },
+    {
+      "evidence": {
+        "key": "next-6",
+        "receiptId": "b1d5be9f6f2a781e089f2687bc472491465d36563850e25016619d2bffac6b45",
+        "sha256": "2480eb875fc1a5d2902cf2de4540eb0fa1e333d7221176ea9e1ec1f256218bd0",
+        "sourceId": "catalog-research"
+      },
+      "iso3": "SDN",
+      "name": "Sudan",
+      "scope": "core",
+      "unStatus": "member"
+    },
+    {
+      "evidence": {
+        "key": "next-6",
+        "receiptId": "b1d5be9f6f2a781e089f2687bc472491465d36563850e25016619d2bffac6b45",
+        "sha256": "2480eb875fc1a5d2902cf2de4540eb0fa1e333d7221176ea9e1ec1f256218bd0",
+        "sourceId": "catalog-research"
+      },
+      "iso3": "SEN",
+      "name": "Senegal",
+      "scope": "core",
+      "unStatus": "member"
+    },
+    {
+      "evidence": {
+        "key": "next-6",
+        "receiptId": "b1d5be9f6f2a781e089f2687bc472491465d36563850e25016619d2bffac6b45",
+        "sha256": "2480eb875fc1a5d2902cf2de4540eb0fa1e333d7221176ea9e1ec1f256218bd0",
+        "sourceId": "catalog-research"
+      },
+      "iso3": "SGP",
+      "name": "Singapore",
+      "scope": "core",
+      "unStatus": "member"
+    },
+    {
+      "iso3": "SGS",
+      "name": "South Georgia and the South Sandwich Islands",
+      "note": "ISO jurisdiction or user-assigned code; no UN statehood assertion.",
+      "scope": "supplementary",
+      "unStatus": "not-core"
+    },
+    {
+      "iso3": "SHN",
+      "name": "Saint Helena",
+      "note": "ISO jurisdiction or user-assigned code; no UN statehood assertion.",
+      "scope": "supplementary",
+      "unStatus": "not-core"
+    },
+    {
+      "iso3": "SJM",
+      "name": "Svalbard and Jan Mayen",
+      "note": "ISO jurisdiction or user-assigned code; no UN statehood assertion.",
+      "scope": "supplementary",
+      "unStatus": "not-core"
+    },
+    {
+      "evidence": {
+        "key": "next-6",
+        "receiptId": "b1d5be9f6f2a781e089f2687bc472491465d36563850e25016619d2bffac6b45",
+        "sha256": "2480eb875fc1a5d2902cf2de4540eb0fa1e333d7221176ea9e1ec1f256218bd0",
+        "sourceId": "catalog-research"
+      },
+      "iso3": "SLB",
+      "name": "Solomon Islands",
+      "scope": "core",
+      "unStatus": "member"
+    },
+    {
+      "evidence": {
+        "key": "next-6",
+        "receiptId": "b1d5be9f6f2a781e089f2687bc472491465d36563850e25016619d2bffac6b45",
+        "sha256": "2480eb875fc1a5d2902cf2de4540eb0fa1e333d7221176ea9e1ec1f256218bd0",
+        "sourceId": "catalog-research"
+      },
+      "iso3": "SLE",
+      "name": "Sierra Leone",
+      "scope": "core",
+      "unStatus": "member"
+    },
+    {
+      "evidence": {
+        "key": "next-6",
+        "receiptId": "b1d5be9f6f2a781e089f2687bc472491465d36563850e25016619d2bffac6b45",
+        "sha256": "2480eb875fc1a5d2902cf2de4540eb0fa1e333d7221176ea9e1ec1f256218bd0",
+        "sourceId": "catalog-research"
+      },
+      "iso3": "SLV",
+      "name": "El Salvador",
+      "scope": "core",
+      "unStatus": "member"
+    },
+    {
+      "evidence": {
+        "key": "next-6",
+        "receiptId": "b1d5be9f6f2a781e089f2687bc472491465d36563850e25016619d2bffac6b45",
+        "sha256": "2480eb875fc1a5d2902cf2de4540eb0fa1e333d7221176ea9e1ec1f256218bd0",
+        "sourceId": "catalog-research"
+      },
+      "iso3": "SMR",
+      "name": "San Marino",
+      "scope": "core",
+      "unStatus": "member"
+    },
+    {
+      "evidence": {
+        "key": "next-6",
+        "receiptId": "b1d5be9f6f2a781e089f2687bc472491465d36563850e25016619d2bffac6b45",
+        "sha256": "2480eb875fc1a5d2902cf2de4540eb0fa1e333d7221176ea9e1ec1f256218bd0",
+        "sourceId": "catalog-research"
+      },
+      "iso3": "SOM",
+      "name": "Somalia",
+      "scope": "core",
+      "unStatus": "member"
+    },
+    {
+      "iso3": "SPM",
+      "name": "Saint Pierre and Miquelon",
+      "note": "ISO jurisdiction or user-assigned code; no UN statehood assertion.",
+      "scope": "supplementary",
+      "unStatus": "not-core"
+    },
+    {
+      "evidence": {
+        "key": "next-6",
+        "receiptId": "b1d5be9f6f2a781e089f2687bc472491465d36563850e25016619d2bffac6b45",
+        "sha256": "2480eb875fc1a5d2902cf2de4540eb0fa1e333d7221176ea9e1ec1f256218bd0",
+        "sourceId": "catalog-research"
+      },
+      "iso3": "SRB",
+      "name": "Serbia",
+      "scope": "core",
+      "unStatus": "member"
+    },
+    {
+      "evidence": {
+        "key": "next-6",
+        "receiptId": "b1d5be9f6f2a781e089f2687bc472491465d36563850e25016619d2bffac6b45",
+        "sha256": "2480eb875fc1a5d2902cf2de4540eb0fa1e333d7221176ea9e1ec1f256218bd0",
+        "sourceId": "catalog-research"
+      },
+      "iso3": "SSD",
+      "name": "South Sudan",
+      "scope": "core",
+      "unStatus": "member"
+    },
+    {
+      "evidence": {
+        "key": "next-6",
+        "receiptId": "b1d5be9f6f2a781e089f2687bc472491465d36563850e25016619d2bffac6b45",
+        "sha256": "2480eb875fc1a5d2902cf2de4540eb0fa1e333d7221176ea9e1ec1f256218bd0",
+        "sourceId": "catalog-research"
+      },
+      "iso3": "STP",
+      "name": "Sao Tome and Principe",
+      "scope": "core",
+      "unStatus": "member"
+    },
+    {
+      "evidence": {
+        "key": "next-6",
+        "receiptId": "b1d5be9f6f2a781e089f2687bc472491465d36563850e25016619d2bffac6b45",
+        "sha256": "2480eb875fc1a5d2902cf2de4540eb0fa1e333d7221176ea9e1ec1f256218bd0",
+        "sourceId": "catalog-research"
+      },
+      "iso3": "SUR",
+      "name": "Suriname",
+      "scope": "core",
+      "unStatus": "member"
+    },
+    {
+      "evidence": {
+        "key": "next-6",
+        "receiptId": "b1d5be9f6f2a781e089f2687bc472491465d36563850e25016619d2bffac6b45",
+        "sha256": "2480eb875fc1a5d2902cf2de4540eb0fa1e333d7221176ea9e1ec1f256218bd0",
+        "sourceId": "catalog-research"
+      },
+      "iso3": "SVK",
+      "name": "Slovakia",
+      "scope": "core",
+      "unStatus": "member"
+    },
+    {
+      "evidence": {
+        "key": "next-6",
+        "receiptId": "b1d5be9f6f2a781e089f2687bc472491465d36563850e25016619d2bffac6b45",
+        "sha256": "2480eb875fc1a5d2902cf2de4540eb0fa1e333d7221176ea9e1ec1f256218bd0",
+        "sourceId": "catalog-research"
+      },
+      "iso3": "SVN",
+      "name": "Slovenia",
+      "scope": "core",
+      "unStatus": "member"
+    },
+    {
+      "evidence": {
+        "key": "next-6",
+        "receiptId": "b1d5be9f6f2a781e089f2687bc472491465d36563850e25016619d2bffac6b45",
+        "sha256": "2480eb875fc1a5d2902cf2de4540eb0fa1e333d7221176ea9e1ec1f256218bd0",
+        "sourceId": "catalog-research"
+      },
+      "iso3": "SWE",
+      "name": "Sweden",
+      "scope": "core",
+      "unStatus": "member"
+    },
+    {
+      "evidence": {
+        "key": "next-6",
+        "receiptId": "b1d5be9f6f2a781e089f2687bc472491465d36563850e25016619d2bffac6b45",
+        "sha256": "2480eb875fc1a5d2902cf2de4540eb0fa1e333d7221176ea9e1ec1f256218bd0",
+        "sourceId": "catalog-research"
+      },
+      "iso3": "SWZ",
+      "name": "Eswatini",
+      "scope": "core",
+      "unStatus": "member"
+    },
+    {
+      "iso3": "SXM",
+      "name": "Sint Maarten (Dutch part)",
+      "note": "ISO jurisdiction or user-assigned code; no UN statehood assertion.",
+      "scope": "supplementary",
+      "unStatus": "not-core"
+    },
+    {
+      "evidence": {
+        "key": "next-6",
+        "receiptId": "b1d5be9f6f2a781e089f2687bc472491465d36563850e25016619d2bffac6b45",
+        "sha256": "2480eb875fc1a5d2902cf2de4540eb0fa1e333d7221176ea9e1ec1f256218bd0",
+        "sourceId": "catalog-research"
+      },
+      "iso3": "SYC",
+      "name": "Seychelles",
+      "scope": "core",
+      "unStatus": "member"
+    },
+    {
+      "evidence": {
+        "key": "next-6",
+        "receiptId": "b1d5be9f6f2a781e089f2687bc472491465d36563850e25016619d2bffac6b45",
+        "sha256": "2480eb875fc1a5d2902cf2de4540eb0fa1e333d7221176ea9e1ec1f256218bd0",
+        "sourceId": "catalog-research"
+      },
+      "iso3": "SYR",
+      "name": "Syrian Arab Republic",
+      "scope": "core",
+      "unStatus": "member"
+    },
+    {
+      "iso3": "TCA",
+      "name": "Turks and Caicos Islands",
+      "note": "ISO jurisdiction or user-assigned code; no UN statehood assertion.",
+      "scope": "supplementary",
+      "unStatus": "not-core"
+    },
+    {
+      "evidence": {
+        "key": "next-6",
+        "receiptId": "b1d5be9f6f2a781e089f2687bc472491465d36563850e25016619d2bffac6b45",
+        "sha256": "2480eb875fc1a5d2902cf2de4540eb0fa1e333d7221176ea9e1ec1f256218bd0",
+        "sourceId": "catalog-research"
+      },
+      "iso3": "TCD",
+      "name": "Chad",
+      "scope": "core",
+      "unStatus": "member"
+    },
+    {
+      "evidence": {
+        "key": "next-6",
+        "receiptId": "b1d5be9f6f2a781e089f2687bc472491465d36563850e25016619d2bffac6b45",
+        "sha256": "2480eb875fc1a5d2902cf2de4540eb0fa1e333d7221176ea9e1ec1f256218bd0",
+        "sourceId": "catalog-research"
+      },
+      "iso3": "TGO",
+      "name": "Togo",
+      "scope": "core",
+      "unStatus": "member"
+    },
+    {
+      "evidence": {
+        "key": "next-6",
+        "receiptId": "b1d5be9f6f2a781e089f2687bc472491465d36563850e25016619d2bffac6b45",
+        "sha256": "2480eb875fc1a5d2902cf2de4540eb0fa1e333d7221176ea9e1ec1f256218bd0",
+        "sourceId": "catalog-research"
+      },
+      "iso3": "THA",
+      "name": "Thailand",
+      "scope": "core",
+      "unStatus": "member"
+    },
+    {
+      "evidence": {
+        "key": "next-6",
+        "receiptId": "b1d5be9f6f2a781e089f2687bc472491465d36563850e25016619d2bffac6b45",
+        "sha256": "2480eb875fc1a5d2902cf2de4540eb0fa1e333d7221176ea9e1ec1f256218bd0",
+        "sourceId": "catalog-research"
+      },
+      "iso3": "TJK",
+      "name": "Tajikistan",
+      "scope": "core",
+      "unStatus": "member"
+    },
+    {
+      "iso3": "TKL",
+      "name": "Tokelau",
+      "note": "ISO jurisdiction or user-assigned code; no UN statehood assertion.",
+      "scope": "supplementary",
+      "unStatus": "not-core"
+    },
+    {
+      "evidence": {
+        "key": "next-6",
+        "receiptId": "b1d5be9f6f2a781e089f2687bc472491465d36563850e25016619d2bffac6b45",
+        "sha256": "2480eb875fc1a5d2902cf2de4540eb0fa1e333d7221176ea9e1ec1f256218bd0",
+        "sourceId": "catalog-research"
+      },
+      "iso3": "TKM",
+      "name": "Turkmenistan",
+      "scope": "core",
+      "unStatus": "member"
+    },
+    {
+      "evidence": {
+        "key": "next-6",
+        "receiptId": "b1d5be9f6f2a781e089f2687bc472491465d36563850e25016619d2bffac6b45",
+        "sha256": "2480eb875fc1a5d2902cf2de4540eb0fa1e333d7221176ea9e1ec1f256218bd0",
+        "sourceId": "catalog-research"
+      },
+      "iso3": "TLS",
+      "name": "Timor-Leste",
+      "scope": "core",
+      "unStatus": "member"
+    },
+    {
+      "evidence": {
+        "key": "next-6",
+        "receiptId": "b1d5be9f6f2a781e089f2687bc472491465d36563850e25016619d2bffac6b45",
+        "sha256": "2480eb875fc1a5d2902cf2de4540eb0fa1e333d7221176ea9e1ec1f256218bd0",
+        "sourceId": "catalog-research"
+      },
+      "iso3": "TON",
+      "name": "Tonga",
+      "scope": "core",
+      "unStatus": "member"
+    },
+    {
+      "evidence": {
+        "key": "next-6",
+        "receiptId": "b1d5be9f6f2a781e089f2687bc472491465d36563850e25016619d2bffac6b45",
+        "sha256": "2480eb875fc1a5d2902cf2de4540eb0fa1e333d7221176ea9e1ec1f256218bd0",
+        "sourceId": "catalog-research"
+      },
+      "iso3": "TTO",
+      "name": "Trinidad and Tobago",
+      "scope": "core",
+      "unStatus": "member"
+    },
+    {
+      "evidence": {
+        "key": "next-6",
+        "receiptId": "b1d5be9f6f2a781e089f2687bc472491465d36563850e25016619d2bffac6b45",
+        "sha256": "2480eb875fc1a5d2902cf2de4540eb0fa1e333d7221176ea9e1ec1f256218bd0",
+        "sourceId": "catalog-research"
+      },
+      "iso3": "TUN",
+      "name": "Tunisia",
+      "scope": "core",
+      "unStatus": "member"
+    },
+    {
+      "evidence": {
+        "key": "next-6",
+        "receiptId": "b1d5be9f6f2a781e089f2687bc472491465d36563850e25016619d2bffac6b45",
+        "sha256": "2480eb875fc1a5d2902cf2de4540eb0fa1e333d7221176ea9e1ec1f256218bd0",
+        "sourceId": "catalog-research"
+      },
+      "iso3": "TUR",
+      "name": "Türkiye",
+      "scope": "core",
+      "unStatus": "member"
+    },
+    {
+      "evidence": {
+        "key": "next-6",
+        "receiptId": "b1d5be9f6f2a781e089f2687bc472491465d36563850e25016619d2bffac6b45",
+        "sha256": "2480eb875fc1a5d2902cf2de4540eb0fa1e333d7221176ea9e1ec1f256218bd0",
+        "sourceId": "catalog-research"
+      },
+      "iso3": "TUV",
+      "name": "Tuvalu",
+      "scope": "core",
+      "unStatus": "member"
+    },
+    {
+      "iso3": "TWN",
+      "name": "Taiwan, Province of China",
+      "note": "ISO jurisdiction or user-assigned code; no UN statehood assertion.",
+      "scope": "supplementary",
+      "unStatus": "not-core"
+    },
+    {
+      "evidence": {
+        "key": "next-6",
+        "receiptId": "b1d5be9f6f2a781e089f2687bc472491465d36563850e25016619d2bffac6b45",
+        "sha256": "2480eb875fc1a5d2902cf2de4540eb0fa1e333d7221176ea9e1ec1f256218bd0",
+        "sourceId": "catalog-research"
+      },
+      "iso3": "TZA",
+      "name": "United Republic of Tanzania",
+      "scope": "core",
+      "unStatus": "member"
+    },
+    {
+      "evidence": {
+        "key": "next-6",
+        "receiptId": "b1d5be9f6f2a781e089f2687bc472491465d36563850e25016619d2bffac6b45",
+        "sha256": "2480eb875fc1a5d2902cf2de4540eb0fa1e333d7221176ea9e1ec1f256218bd0",
+        "sourceId": "catalog-research"
+      },
+      "iso3": "UGA",
+      "name": "Uganda",
+      "scope": "core",
+      "unStatus": "member"
+    },
+    {
+      "evidence": {
+        "key": "next-6",
+        "receiptId": "b1d5be9f6f2a781e089f2687bc472491465d36563850e25016619d2bffac6b45",
+        "sha256": "2480eb875fc1a5d2902cf2de4540eb0fa1e333d7221176ea9e1ec1f256218bd0",
+        "sourceId": "catalog-research"
+      },
+      "iso3": "UKR",
+      "name": "Ukraine",
+      "scope": "core",
+      "unStatus": "member"
+    },
+    {
+      "iso3": "UMI",
+      "name": "United States Minor Outlying Islands",
+      "note": "ISO jurisdiction or user-assigned code; no UN statehood assertion.",
+      "scope": "supplementary",
+      "unStatus": "not-core"
+    },
+    {
+      "evidence": {
+        "key": "next-6",
+        "receiptId": "b1d5be9f6f2a781e089f2687bc472491465d36563850e25016619d2bffac6b45",
+        "sha256": "2480eb875fc1a5d2902cf2de4540eb0fa1e333d7221176ea9e1ec1f256218bd0",
+        "sourceId": "catalog-research"
+      },
+      "iso3": "URY",
+      "name": "Uruguay",
+      "scope": "core",
+      "unStatus": "member"
+    },
+    {
+      "evidence": {
+        "key": "next-6",
+        "receiptId": "b1d5be9f6f2a781e089f2687bc472491465d36563850e25016619d2bffac6b45",
+        "sha256": "2480eb875fc1a5d2902cf2de4540eb0fa1e333d7221176ea9e1ec1f256218bd0",
+        "sourceId": "catalog-research"
+      },
+      "iso3": "USA",
+      "name": "United States",
+      "scope": "core",
+      "unStatus": "member"
+    },
+    {
+      "evidence": {
+        "key": "next-6",
+        "receiptId": "b1d5be9f6f2a781e089f2687bc472491465d36563850e25016619d2bffac6b45",
+        "sha256": "2480eb875fc1a5d2902cf2de4540eb0fa1e333d7221176ea9e1ec1f256218bd0",
+        "sourceId": "catalog-research"
+      },
+      "iso3": "UZB",
+      "name": "Uzbekistan",
+      "scope": "core",
+      "unStatus": "member"
+    },
+    {
+      "evidence": {
+        "key": "next-7",
+        "receiptId": "cedd44a07e6927e3955c9d956892ed13c3c8918607b630e5a21992cd34f76fe6",
+        "sha256": "33221e98ca0deb8a7d39019816850ef808d58ba313b9c2c99fcb0bd326178f43",
+        "sourceId": "catalog-research"
+      },
+      "iso3": "VAT",
+      "name": "Holy See",
+      "scope": "core",
+      "unStatus": "observer"
+    },
+    {
+      "evidence": {
+        "key": "next-6",
+        "receiptId": "b1d5be9f6f2a781e089f2687bc472491465d36563850e25016619d2bffac6b45",
+        "sha256": "2480eb875fc1a5d2902cf2de4540eb0fa1e333d7221176ea9e1ec1f256218bd0",
+        "sourceId": "catalog-research"
+      },
+      "iso3": "VCT",
+      "name": "Saint Vincent and the Grenadines",
+      "scope": "core",
+      "unStatus": "member"
+    },
+    {
+      "evidence": {
+        "key": "next-6",
+        "receiptId": "b1d5be9f6f2a781e089f2687bc472491465d36563850e25016619d2bffac6b45",
+        "sha256": "2480eb875fc1a5d2902cf2de4540eb0fa1e333d7221176ea9e1ec1f256218bd0",
+        "sourceId": "catalog-research"
+      },
+      "iso3": "VEN",
+      "name": "Venezuela (Bolivarian Republic of)",
+      "scope": "core",
+      "unStatus": "member"
+    },
+    {
+      "iso3": "VGB",
+      "name": "Virgin Islands, British",
+      "note": "ISO jurisdiction or user-assigned code; no UN statehood assertion.",
+      "scope": "supplementary",
+      "unStatus": "not-core"
+    },
+    {
+      "iso3": "VIR",
+      "name": "Virgin Islands, U.S.",
+      "note": "ISO jurisdiction or user-assigned code; no UN statehood assertion.",
+      "scope": "supplementary",
+      "unStatus": "not-core"
+    },
+    {
+      "evidence": {
+        "key": "next-6",
+        "receiptId": "b1d5be9f6f2a781e089f2687bc472491465d36563850e25016619d2bffac6b45",
+        "sha256": "2480eb875fc1a5d2902cf2de4540eb0fa1e333d7221176ea9e1ec1f256218bd0",
+        "sourceId": "catalog-research"
+      },
+      "iso3": "VNM",
+      "name": "Viet Nam",
+      "scope": "core",
+      "unStatus": "member"
+    },
+    {
+      "evidence": {
+        "key": "next-6",
+        "receiptId": "b1d5be9f6f2a781e089f2687bc472491465d36563850e25016619d2bffac6b45",
+        "sha256": "2480eb875fc1a5d2902cf2de4540eb0fa1e333d7221176ea9e1ec1f256218bd0",
+        "sourceId": "catalog-research"
+      },
+      "iso3": "VUT",
+      "name": "Vanuatu",
+      "scope": "core",
+      "unStatus": "member"
+    },
+    {
+      "iso3": "WLF",
+      "name": "Wallis and Futuna",
+      "note": "ISO jurisdiction or user-assigned code; no UN statehood assertion.",
+      "scope": "supplementary",
+      "unStatus": "not-core"
+    },
+    {
+      "evidence": {
+        "key": "next-6",
+        "receiptId": "b1d5be9f6f2a781e089f2687bc472491465d36563850e25016619d2bffac6b45",
+        "sha256": "2480eb875fc1a5d2902cf2de4540eb0fa1e333d7221176ea9e1ec1f256218bd0",
+        "sourceId": "catalog-research"
+      },
+      "iso3": "WSM",
+      "name": "Samoa",
+      "scope": "core",
+      "unStatus": "member"
+    },
+    {
+      "iso3": "XKK",
+      "name": "Kosovo",
+      "note": "ISO jurisdiction or user-assigned code; no UN statehood assertion.",
+      "scope": "supplementary",
+      "unStatus": "not-core"
+    },
+    {
+      "evidence": {
+        "key": "next-6",
+        "receiptId": "b1d5be9f6f2a781e089f2687bc472491465d36563850e25016619d2bffac6b45",
+        "sha256": "2480eb875fc1a5d2902cf2de4540eb0fa1e333d7221176ea9e1ec1f256218bd0",
+        "sourceId": "catalog-research"
+      },
+      "iso3": "YEM",
+      "name": "Yemen",
+      "scope": "core",
+      "unStatus": "member"
+    },
+    {
+      "evidence": {
+        "key": "next-6",
+        "receiptId": "b1d5be9f6f2a781e089f2687bc472491465d36563850e25016619d2bffac6b45",
+        "sha256": "2480eb875fc1a5d2902cf2de4540eb0fa1e333d7221176ea9e1ec1f256218bd0",
+        "sourceId": "catalog-research"
+      },
+      "iso3": "ZAF",
+      "name": "South Africa",
+      "scope": "core",
+      "unStatus": "member"
+    },
+    {
+      "evidence": {
+        "key": "next-6",
+        "receiptId": "b1d5be9f6f2a781e089f2687bc472491465d36563850e25016619d2bffac6b45",
+        "sha256": "2480eb875fc1a5d2902cf2de4540eb0fa1e333d7221176ea9e1ec1f256218bd0",
+        "sourceId": "catalog-research"
+      },
+      "iso3": "ZMB",
+      "name": "Zambia",
+      "scope": "core",
+      "unStatus": "member"
+    },
+    {
+      "evidence": {
+        "key": "next-6",
+        "receiptId": "b1d5be9f6f2a781e089f2687bc472491465d36563850e25016619d2bffac6b45",
+        "sha256": "2480eb875fc1a5d2902cf2de4540eb0fa1e333d7221176ea9e1ec1f256218bd0",
+        "sourceId": "catalog-research"
+      },
+      "iso3": "ZWE",
+      "name": "Zimbabwe",
+      "scope": "core",
+      "unStatus": "member"
+    }
+  ],
+  "scopeVersion": "UN-2026-10-01",
+  "sources": [
+    "https://research.un.org/en/unmembers/currentmembers",
+    "https://research.un.org/en/unmembers/observers"
+  ],
+  "version": 1
+}

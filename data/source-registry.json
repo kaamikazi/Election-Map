@@ -1,0 +1,231 @@
+{
+  "version": 1,
+  "sources": [
+    {
+      "id": "parlgov-2024",
+      "provider": "ParlGov / Harvard Dataverse",
+      "url": "https://dataverse.harvard.edu/dataset.xhtml?persistentId=doi:10.7910/DVN/2VZ5ZC",
+      "discovery": {
+        "kind": "pinned-resources",
+        "release": "2024 V1",
+        "doi": "10.7910/DVN/2VZ5ZC"
+      },
+      "countries": [
+        "AUS",
+        "AUT",
+        "BEL",
+        "BGR",
+        "CAN",
+        "CHE",
+        "CYP",
+        "CZE",
+        "DEU",
+        "DNK",
+        "ESP",
+        "EST",
+        "FIN",
+        "FRA",
+        "GBR",
+        "GRC",
+        "HRV",
+        "HUN",
+        "IRL",
+        "ISL",
+        "ISR",
+        "ITA",
+        "JPN",
+        "LTU",
+        "LUX",
+        "LVA",
+        "MLT",
+        "NLD",
+        "NOR",
+        "NZL",
+        "POL",
+        "PRT",
+        "ROU",
+        "SVK",
+        "SVN",
+        "SWE",
+        "TUR"
+      ],
+      "electionLevels": [
+        "national-lower-house",
+        "european-parliament"
+      ],
+      "dateRange": {
+        "from": "1900-01-01",
+        "to": "2023-12-31",
+        "meaning": "release scope; actual per-country dates may be narrower"
+      },
+      "schema": {
+        "name": "parlgov-view-tables",
+        "version": 1,
+        "format": "tsv",
+        "electionRequired": [
+          "country_name_short",
+          "election_type",
+          "election_date",
+          "election_id",
+          "party_id",
+          "vote_share",
+          "seats",
+          "seats_total"
+        ],
+        "partyRequired": [
+          "party_id",
+          "party_name_english",
+          "family_name_short"
+        ],
+        "cabinetRequired": [
+          "country_name_short",
+          "cabinet_id",
+          "start_date",
+          "cabinet_party",
+          "prime_minister",
+          "party_id"
+        ]
+      },
+      "updateCadence": "Pinned academic release; manually register a new release after evidence review",
+      "licence": {
+        "name": "CC0 1.0",
+        "url": "https://creativecommons.org/publicdomain/zero/1.0/",
+        "attribution": "Döring, Holger, and Philip Manow. 2024. Parliaments and Governments Database (ParlGov): Release 2024. Harvard Dataverse, V1."
+      },
+      "reliabilityNotes": [
+        "Pre-1945 records are experimental.",
+        "No votes, turnout or winner field in the election view. Seat counts are not seat shares.",
+        "Cabinet gaps use the repository's sourced coverage table; do not infer continuity from an election winner.",
+        "Dataverse metadata MD5 identifies the original CSV upload, not the transformed TSV. Served TSV SHA-256 pins were verified against fresh provider downloads on 2026-09-30."
+      ],
+      "boundaryCompatibility": {
+        "layer": "world",
+        "mode": "schematic-review-required",
+        "vintage": null,
+        "notes": "Present-day outlines cannot automatically certify historical geography."
+      },
+      "parser": "parlgov-v1",
+      "resources": [
+        {
+          "key": "elections",
+          "url": "https://dataverse.harvard.edu/api/access/datafile/10437092",
+          "localPath": "data/raw/parlgov/view_election.tab",
+          "originalUploadMd5": "ee737ba6b7e0afa3d16c872f4d7253db",
+          "expectedSha256": "ef76ade6728414efa4b4af579a2f6cff2336d8d55e80784cdcfcc492a7948986"
+        },
+        {
+          "key": "parties",
+          "url": "https://dataverse.harvard.edu/api/access/datafile/10437089",
+          "localPath": "data/raw/parlgov/view_party.tab",
+          "originalUploadMd5": "8468f01a495a1cfe3d944b5f689ed6d3",
+          "expectedSha256": "bf5f01f4ba7e55dcb6afa05159c79a05959911c8950d61ba1699cb01c20f5e04"
+        },
+        {
+          "key": "cabinets",
+          "url": "https://dataverse.harvard.edu/api/access/datafile/10437088",
+          "localPath": "data/raw/parlgov/view_cabinet.tab",
+          "originalUploadMd5": "bdd8227f2220bdcdf80b8c1e3d9a0bfc",
+          "expectedSha256": "c9955dea79c746bcafc680ce5ef706a75921607188de3d0e0b3cd8c8c3ea5c0b"
+        }
+      ]
+    },
+    {
+      "id": "uk-parliament-2024",
+      "provider": "UK Parliament / House of Commons Library",
+      "url": "https://electionresults.parliament.uk/general-elections/6",
+      "discovery": {
+        "kind": "linked-csv",
+        "page": "https://electionresults.parliament.uk/general-elections/6",
+        "allowedHosts": [
+          "electionresults.parliament.uk"
+        ],
+        "pathname": "/general-elections/6/candidacies.csv"
+      },
+      "countries": [
+        "GBR"
+      ],
+      "electionLevels": [
+        "constituency"
+      ],
+      "dateRange": {
+        "from": "2024-07-04",
+        "to": "2024-07-04",
+        "meaning": "this one general election, not later by-elections"
+      },
+      "schema": {
+        "name": "parliament-candidacies",
+        "version": 1,
+        "format": "csv",
+        "expectedRegions": 650,
+        "required": [
+          "General election polling date",
+          "General election is notional",
+          "General election URL",
+          "Constituency name",
+          "Constituency geographic code",
+          "Boundary set start date",
+          "Electorate",
+          "Election polling date",
+          "Election is by-election",
+          "Election valid vote count",
+          "Election URL",
+          "Candidate family name",
+          "Candidate given name",
+          "Main party name",
+          "Main party MNIS ID",
+          "Main party URL",
+          "Adjunct party name",
+          "Candidate is standing as Commons Speaker",
+          "Candidate is standing as independent",
+          "Candidate vote count",
+          "Candidate vote share",
+          "Candidate result position",
+          "Country name"
+        ]
+      },
+      "updateCadence": "Check the registered CSV for provider corrections; no live-results claim",
+      "licence": {
+        "name": "Open Parliament Licence v3.0",
+        "url": "https://www.parliament.uk/site-information/copyright/open-parliament-licence/",
+        "attribution": "Contains Parliamentary information licensed under the Open Parliament Licence v3.0."
+      },
+      "reliabilityNotes": [
+        "The Commons Library describes its dataset as based on verified official local-authority declarations: https://commonslibrary.parliament.uk/research-briefings/cbp-10009/",
+        "HTTP Last-Modified is transport metadata, not a certified source update time.",
+        "Candidate result position identifies the declared winner; do not infer a missing winner from the largest vote count.",
+        "Turnout is explicitly derived from valid votes/electorate, as documented by the provider; spoiled ballots are excluded."
+      ],
+      "boundaryCompatibility": {
+        "layer": "cons:GBR:CONSTITUENCY",
+        "mode": "exact-vintage",
+        "vintage": 2024,
+        "boundaryStart": "2024-05-31"
+      },
+      "parser": "uk-parliament-v1",
+      "identity": {
+        "country": "GBR",
+        "date": "2024-07-04",
+        "office": "House of Commons",
+        "round": 1,
+        "tier": "national",
+        "jurisdiction": "constituency",
+        "sourceElectionId": "https://electionresults.parliament.uk/general-elections/6",
+        "roundBasis": "single-ballot FPTP parliamentary election; source election URL",
+        "roundEvidence": "https://www.parliament.uk/about/how/elections-and-voting/voting-systems/"
+      },
+      "resultStatus": "official-final",
+      "resources": [
+        {
+          "key": "candidacies",
+          "url": "https://electionresults.parliament.uk/general-elections/6/candidacies.csv"
+        }
+      ],
+      "subcountries": [
+        "England",
+        "Scotland",
+        "Wales",
+        "Northern Ireland"
+      ]
+    }
+  ]
+}

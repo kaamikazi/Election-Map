@@ -6,8 +6,9 @@
 import { state, THEMES, FONT, standings, activeParties } from './state.js';
 import { drawMap } from './render.js';
 import { BINS, NEUTRAL, metricDef, binColor, ticksFor } from './metrics.js';
-import { BOUNDARY, LAYER, WORLD } from './geo.js';
-import { vintageLine } from './vintage.js';
+import { BOUNDARY, LAYER, WORLD, layerHash } from './geo.js';
+import { vintageLine, resultsVintageWarning } from './vintage.js';
+import { reviewPublication, approvePublication, formatUpdated } from './publication.js';
 import { documentPartials } from './import/partition.js';
 import { assertFlagsReady, badgeFlag, raster, flagOfKey, FLAG_SET } from './flags.js';
 import { documentSources } from './provenance.js';
@@ -36,6 +37,9 @@ export function composite(W, H, opts) {
      */
     lockLegendRows = null,
     lockFooterRows = null,
+    // The clock the review checks "stale live count" against. Injectable so a
+    // publication pack renders the same bytes twice.
+    now = Date.now(),
     // An object drawMap fills in with what it did — the projection in
     // particular. Optional, and read by anything that has to compare two draws.
     report: outReport = null
@@ -55,8 +59,15 @@ export function composite(W, H, opts) {
 
   if (!trans) { c.fillStyle = T.bg; c.fillRect(0, 0, W, H); }
 
-  // ---- header text
+  // ---- status badge
+  // Sourced exports, and anything with a status, say what kind of result they
+  // show before they say anything else. Unreviewed maps say DRAFT first. An
+  // unsourced map with no status gets nothing, so old flat maps are unchanged.
+  const review = currentReview(now);
   let top = pad;
+  if (review.badge) top = drawStatusBadge(c, review.badge, pad, top, W, k, T, review);
+
+  // ---- header text
   const title = state.title.trim();
   const sub = state.sub.trim();
   // A single-country layer carries its country's flag beside the headline. Not
@@ -95,11 +106,7 @@ export function composite(W, H, opts) {
     : flat ? legRows * 32 * k
       : rampLegendHeight(c, k, W - pad * 2);
   const prov = flagMode ? flagsLine() : provenanceLine();
-  c.font = `400 ${Math.round(17 * k)}px ${FONT}`;
-  const provRows = Math.max(prov ? lines(c, coverageLine(999) + prov, W - pad * 2) : 0, lockFooterRows?.source || 0);
-  const extraProvH = Math.max(0, provRows - 1) * 22 * k;
   const limitations = flagMode ? '' : coverageLimitations();
-  const limitRows = Math.max(limitations ? lines(c, limitations, W - pad * 2) : 0, lockFooterRows?.limitations || 0);
   // What the map is drawn on, whenever that is a claim rather than a schematic.
   const vint = vintageLine(BOUNDARY);
   // Units the data only partly covers, named rather than patterned: hatching
@@ -109,15 +116,60 @@ export function composite(W, H, opts) {
   // A deliberate choice to draw results over boundaries that postdate them.
   // The viewer did not make that choice and cannot see it in the picture.
   const gap = flagMode ? '' : overrideLine();
-  const footH = (showLegend ? 18 * k + legendH : 0) + (prov ? 30 * k : 0)
-    + (vint ? 24 * k : 0) + (partial.length ? 24 * k : 0) + (gap ? 24 * k : 0)
-    + extraProvH + limitRows * 22 * k
-    + (state.handle.trim() ? 40 * k : 0) + pad * 0.5;
+  // When a moving count was last updated, and the reviewer's editorial note.
+  const pubNote = publicationLine(review);
+
+  /*
+   * The footer's words, as one measured stack. Every block wraps and every row
+   * is counted, so a long licence line on a narrow profile takes another row
+   * instead of running off the edge; and the height is computed from the same
+   * measurements the drawing uses. The text never shrinks below a readable
+   * size (see footScale) — if it cannot fit, the export stops below.
+   */
+  const kf = footScale(k);
+  const LINE = 22 * kf;
+  const blocks = [
+    // where the numbers came from, and how much of the map they cover
+    { text: prov ? (flagMode ? '' : coverageLine(999)) + prov : '', size: 17, color: T.muted, min: lockFooterRows?.source || 0, prov: true },
+    { text: limitations, size: 17, color: T.text, min: lockFooterRows?.limitations || 0 },
+    { text: vint, size: 16, color: T.muted },
+    { text: partial.join('  ·  '), size: 16, color: T.muted },
+    // brighter than the citations around it: this is the line that says the map
+    // may be describing the wrong ground
+    { text: gap, size: 16, color: T.text },
+    // as-of time and editorial note, in the text colour: they qualify the map
+    { text: pubNote, size: 16, color: T.text, before: 4 }
+  ].filter((b) => b.text || b.min);
+  for (const b of blocks) {
+    c.font = `400 ${Math.round(b.size * kf)}px ${FONT}`;
+    b.rows = Math.max(b.text ? lines(c, b.text, W - pad * 2) : 0, b.min || 0);
+  }
+  const textH = blocks.length
+    ? blocks.reduce((h, b) => h + b.rows * LINE + (b.before || 0) * kf, 0) + 8 * kf : 0;
+  const footH = (showLegend ? 18 * k + legendH : 0) + textH
+    + (state.handle.trim() ? 40 * kf : 0) + pad * 0.5;
+
+  // What this export says in words, for anyone who has to check it: the tests,
+  // and the review panel, which shows the same text the image carries.
+  if (outReport) {
+    outReport.badge = review.badge;
+    outReport.badgeStyle = review.badge ? (review.draft || !SETTLED.has(review.publication.status) ? 'solid' : 'outline') : null;
+    outReport.source = prov;
+    outReport.limitations = limitations;
+    outReport.boundaryLine = vint;
+    outReport.override = gap;
+    outReport.publicationLine = pubNote;
+  }
 
   // ---- map
   const mapTop = top;
   const mapBot = H - footH - pad * 0.4;
-  if (mapBot - mapTop < 80 * k) throw new Error('Attribution and caveats leave too little map space. Use a taller export or fewer sources.');
+  // The map has to stay the main thing in the image. Attribution that only fits
+  // by squeezing it into a strip is a profile that does not fit.
+  if (mapBot - mapTop < Math.max(80 * k, H * MIN_MAP_SHARE)) {
+    throw new Error(`Attribution and caveats leave too little map space at ${W} × ${H}. ` +
+      'Use a taller export profile, or fewer sources. Source text is not shrunk to make it fit.');
+  }
   const report = outReport || {};
   drawMap(c, W, H, {
     inset: [mapTop, pad * 0.5, H - mapBot, pad * 0.5],
@@ -146,53 +198,22 @@ export function composite(W, H, opts) {
     y += legendH;
   }
 
-  // ---- where the numbers came from, and how much of the map they cover
-  if (prov) {
-    c.font = `400 ${Math.round(17 * k)}px ${FONT}`;
-    c.textBaseline = 'alphabetic'; c.textAlign = 'left';
-    c.fillStyle = T.muted;
-    wrap(c, (flagMode ? '' : coverageLine(report.inView)) + prov, pad, y + 20 * k, W - pad * 2, 22 * k);
-    y += extraProvH;
-  }
-  if (limitations) {
-    c.font = `400 ${Math.round(17 * k)}px ${FONT}`;
-    c.fillStyle = T.text;
-    c.textAlign = 'left'; c.textBaseline = 'alphabetic';
-    wrap(c, limitations, pad, y + (prov ? 42 : 20) * k, W - pad * 2, 22 * k);
-    y += limitRows * 22 * k;
-  }
-
-  // ---- what the boundaries are, when they are current-day and the map is not
-  if (vint) {
-    c.font = `400 ${Math.round(16 * k)}px ${FONT}`;
-    c.textBaseline = 'alphabetic'; c.textAlign = 'left';
-    c.fillStyle = T.muted;
-    c.fillText(vint, pad, y + (prov ? 44 : 20) * k);
-  }
-
-  // ---- units the table only partly describes
-  if (partial.length) {
-    c.font = `400 ${Math.round(16 * k)}px ${FONT}`;
-    c.textBaseline = 'alphabetic'; c.textAlign = 'left';
-    c.fillStyle = T.muted;
-    c.fillText(partial.join('  ·  '), pad, y + ((prov ? 44 : 20) + (vint ? 22 : 0)) * k);
-  }
-
-  // ---- results drawn over boundaries that postdate them, by choice
-  if (gap) {
-    c.font = `400 ${Math.round(16 * k)}px ${FONT}`;
-    c.textBaseline = 'alphabetic'; c.textAlign = 'left';
-    // Brighter than the citations around it: this is the line that says the
-    // map may be describing the wrong ground, and it should not read as a
-    // footnote among footnotes.
-    c.fillStyle = T.text;
-    c.fillText(gap, pad,
-      y + ((prov ? 44 : 20) + (vint ? 22 : 0) + (partial.length ? 22 : 0)) * k);
+  // ---- the footer's words, in the order measured above
+  let by = y + 20 * kf;
+  c.textBaseline = 'alphabetic'; c.textAlign = 'left';
+  for (const b of blocks) {
+    by += (b.before || 0) * kf;
+    c.font = `400 ${Math.round(b.size * kf)}px ${FONT}`;
+    c.fillStyle = b.color;
+    // The coverage count is only known once the map is drawn.
+    const text = b.prov ? (flagMode ? '' : coverageLine(report.inView)) + prov : b.text;
+    if (text) wrap(c, text, pad, by, W - pad * 2, LINE);
+    by += b.rows * LINE;
   }
 
   // ---- handle + stamp
   if (state.handle.trim()) {
-    c.font = `600 ${Math.round(19 * k)}px ${FONT}`;
+    c.font = `600 ${Math.round(19 * kf)}px ${FONT}`;
     c.textBaseline = 'alphabetic';
     c.textAlign = 'left'; c.fillStyle = T.text;
     c.fillText(state.handle.trim(), pad, H - pad * 0.62);
@@ -200,12 +221,96 @@ export function composite(W, H, opts) {
     // "September 2026" under a map titled 1977 reads as the wrong year twice.
     if (!state.provenance) {
       c.textAlign = 'right'; c.fillStyle = T.muted;
-      c.font = `400 ${Math.round(17 * k)}px ${FONT}`;
+      c.font = `400 ${Math.round(17 * kf)}px ${FONT}`;
       c.fillText(new Date().toLocaleDateString(undefined, { day: 'numeric', month: 'long', year: 'numeric' }),
         W - pad, H - pad * 0.62);
     }
   }
   return cv;
+}
+
+/* ---------------- publication ---------------- */
+
+/**
+ * The publication review for the map as it is now: the same rules the review
+ * panel and the content pack apply, fed with this document and this layer.
+ */
+export function currentReview(now = Date.now()) {
+  const pub = state.publication || {};
+  const asOf = pub.electionDate || state.provenance?.asOf || null;
+  return reviewPublication(state, {
+    boundary: BOUNDARY,
+    activeLayerHash: layerHash(),
+    boundaryLine: vintageLine(BOUNDARY) || null,
+    vintageGap: asOf ? resultsVintageWarning(String(asOf).slice(0, 10), BOUNDARY) : null,
+    now
+  });
+}
+
+export function approveCurrentMap(now = Date.now()) {
+  const pub = state.publication || {};
+  const asOf = pub.electionDate || state.provenance?.asOf || null;
+  const review = approvePublication(state, {
+    boundary: BOUNDARY,
+    activeLayerHash: layerHash(),
+    boundaryLine: vintageLine(BOUNDARY) || null,
+    vintageGap: asOf ? resultsVintageWarning(String(asOf).slice(0, 10), BOUNDARY) : null,
+    now
+  });
+  if (!review.publishable) throw new Error('The reviewed map changed before approval completed.');
+  return review;
+}
+
+/** Statuses the badge should shout rather than state. */
+const SETTLED = new Set(['official-final', 'historical']);
+
+/**
+ * The status badge: a pill above the headline, in neutral colours only. A party
+ * colour here would read as the party's badge, and a warning colour would
+ * collide with some party's colour on some map. The settled statuses get an
+ * outline; anything unsettled, and every draft, gets a solid pill, which is
+ * the one that is impossible to miss.
+ *
+ * Throws rather than shrinking the text: a status that has to be squeezed to
+ * fit is a status nobody reads.
+ */
+function drawStatusBadge(c, text, x, top, W, k, T, review) {
+  // About 34px at 1600: the badge stays legible when a landscape image is
+  // displayed roughly 390px wide in an X timeline.
+  const size = Math.max(18, Math.round(34 * k));
+  const h = Math.round(size * 1.9);
+  const padX = Math.round(size * 0.8);
+  c.save();
+  c.font = `700 ${size}px ${FONT}`;
+  c.textAlign = 'left'; c.textBaseline = 'middle';
+  const w = Math.ceil(c.measureText(text).width) + padX * 2;
+  if (w > W - x * 2) {
+    c.restore();
+    throw new Error(`The status "${text}" does not fit a ${W}px-wide export. Use a wider export profile.`);
+  }
+  const loud = review.draft || !SETTLED.has(review.publication.status);
+  roundRect(c, x, top, w, h, h / 2);
+  if (loud) {
+    c.fillStyle = T.text; c.fill();
+    c.fillStyle = T.bg;
+  } else {
+    c.lineWidth = Math.max(1.5, 1.8 * k); c.strokeStyle = T.text; c.stroke();
+    c.fillStyle = T.text;
+  }
+  c.fillText(text, x + padX, top + h / 2 + 1 * k);
+  c.restore();
+  return top + h + Math.round(16 * k);
+}
+
+/** "As of …" for a count still moving, then the editorial note. */
+function publicationLine(review) {
+  const pub = review.publication;
+  const bits = [];
+  const live = ['polls-open', 'projected', 'official-partial', 'disputed', 'recount'];
+  if (pub.updatedAt && live.includes(pub.status)) bits.push(`Results as of ${formatUpdated(pub.updatedAt)}.`);
+  if (pub.updatedAt && !live.includes(pub.status)) bits.push(`Source last updated ${formatUpdated(pub.updatedAt)}.`);
+  if ((pub.note || '').trim()) bits.push(`Note: ${pub.note.trim()}`);
+  return bits.join(' ');
 }
 
 /* ---------------- provenance ----------------
@@ -221,6 +326,10 @@ export function provenanceLine() {
   // maps cannot prove record-level provenance and must say so.
   const sources = documentSources(state.assign);
   if (sources.length) {
+    if (sources.every(s => s.catalog)) {
+      const providers = [...new Map(sources.map(s => [s.catalog.provider, s])).values()];
+      return 'Sources: ' + providers.map(s => `${s.catalog.provider} · ${s.catalog.providerUrl}${s.cite?.license ? ' · '+s.cite.license : ''}`).join(' | ') + '. Per-country identities, dates, raw hashes and citations are retained in the saved map and publication pack.';
+    }
     const label = (s, i) => {
       const date = s.asOf ? ` (${s.asOfPrecision === 'year' ? s.asOf.slice(0, 4) : s.asOf})` : '';
       const url = s.cite?.permalink || s.url;
@@ -244,13 +353,27 @@ export function coverageLimitations() {
   const sources = documentSources(state.assign);
   const gaps = [...new Set(sources.flatMap((s) => (s.gaps || []).map((g) => g.unit)))];
   const notes = [...new Set(sources.flatMap((s) => s.notes || []))];
-  return [gaps.length ? `Uncertain / missing archive coverage: ${gaps.join(', ')}.` : '', ...notes].filter(Boolean).join(' ');
+  return [gaps.length ? `Uncertain / missing archive coverage: ${gaps.join(', ')}.` : '',
+    ...notes, state.publication?.status === 'historical' && LAYER === WORLD
+      ? 'Present-day borders, not historical borders.' : ''].filter(Boolean).join(' ');
 }
+
+/**
+ * Footer text never gets smaller than 11px (17px at 1600 wide). Every X profile
+ * is already above that, so this changes nothing there; it is what stops a
+ * small custom size from drawing attribution nobody can read — such a size
+ * either fits readable text or stops with an error.
+ */
+export const MIN_FOOTER_PX = 11;
+/** The least share of the image height the map itself may keep. */
+export const MIN_MAP_SHARE = 0.35;
+export const footScale = (k) => Math.max(k, MIN_FOOTER_PX / 17);
 
 export function footerRowsAt(width) {
   const c = document.createElement('canvas').getContext('2d');
+  // Text at the footer's own scale, across the page width composite() uses.
   const k = width / 1600;
-  c.font = `400 ${Math.round(17 * k)}px ${FONT}`;
+  c.font = `400 ${Math.round(17 * footScale(k))}px ${FONT}`;
   const source = provenanceLine(), limitations = coverageLimitations();
   return {
     source: source ? lines(c, coverageLine(999) + source, width - 108 * k) : 0,
@@ -348,7 +471,7 @@ export function legendRowsAt(W) {
  * the whole reason apply refuses this by default is that the picture gives the
  * viewer no way to tell which units are describing ground that voted.
  */
-function overrideLine() {
+export function overrideLine() {
   const overrides = documentSources(state.assign).map((s) => s.vintageOverride).filter(Boolean);
   if (!overrides.length && state.provenance?.vintageOverride) overrides.push(state.provenance.vintageOverride);
   if (!overrides.length) return '';

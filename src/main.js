@@ -13,7 +13,7 @@ import { syncSelection } from './ui/selection.js';
 import { syncLegend } from './ui/legend.js';
 import { initInteraction } from './ui/interaction.js';
 import { initControls, syncUndo, syncFormFromState } from './ui/controls.js';
-import { initExportDialog } from './ui/export-dialog.js';
+import { initExportDialog, syncPublicationChip } from './ui/export-dialog.js';
 import { initReview } from './ui/review.js';
 import { initLayers, syncLayers } from './ui/layers.js';
 import { initShell, syncMode, syncActive, syncFlagPanel } from './ui/shell.js';
@@ -55,6 +55,8 @@ onChange((kind) => {
     syncActive();
   }
   syncUndo();
+  // Draft or ready: any change can withdraw a reviewer's sign-off.
+  syncPublicationChip();
   schedule();
 });
 
@@ -86,6 +88,7 @@ async function boot() {
   syncLegend();
   syncSelection();
   syncUndo();
+  syncPublicationChip();
   render();
 
   // Adapters need the unit index, so the review screen boots after the world.

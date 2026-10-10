@@ -5,7 +5,7 @@ import { toast } from './toast.js';
 import { state, REGIONS, clearAssignments, emit, pushHistory,
          toDocument, undo, canUndo } from '../state.js';
 import { clamp } from '../geo.js';
-import { dl, slug } from '../export.js';
+import { dl, slug, currentReview } from '../export.js';
 import { restoreDocument } from '../restore.js';
 
 const undoMap = () => Promise.resolve().then(() => undo()).catch((err) => toast(`Undo failed: ${err.message}`));
@@ -88,7 +88,10 @@ export function initControls() {
 
   $('#btnSave').addEventListener('click', () => {
     const blob = new Blob([JSON.stringify(toDocument(), null, 2)], { type: 'application/json' });
-    dl(blob, slug('election-map') + '.json');
+    const published = currentReview().publishable;
+    dl(blob, slug('election-map') + (published ? '' : '-draft') + '.json');
+    // Saving never needs complete metadata; it says plainly when it is a draft.
+    toast(published ? 'Map saved' : 'Saved as a draft — publication review not complete');
   });
 
   $('#btnLoad').addEventListener('click', () => $('#fileIn').click());
