@@ -116,6 +116,8 @@
               <select id="fIdentity"><option value="classic">Election Map Studio</option><option value="history">History Through Maps</option></select>
             </label>
             <p class="muted identity-note">History identity: Paper on light, Lamplight on dark. Party colours stay yours.</p>
+            <button class="chip" id="startAthens">Start Athens democracy explainer</button>
+            <p class="muted identity-note" id="explainerNote" hidden>Historical locator, c. 508–507 BCE. Sources and caveats travel with every export. To map election results, import a result dataset or open a results file.</p>
             <div class="toggles">
               <label class="tog"><input type="checkbox" id="tTheme"> Light background</label>
               <label class="tog"><input type="checkbox" id="tGrat"> Latitude and longitude lines</label>
@@ -174,6 +176,7 @@
   </div>
   <div class="dlg-f">
     <button class="btn" id="btnCopy">Copy to clipboard</button>
+    <button class="btn" id="btnThemes">Download Paper + Lamplight</button>
     <button class="btn primary" id="btnPng">Download PNG</button>
   </div>
 </dialog>

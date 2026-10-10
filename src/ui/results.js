@@ -14,6 +14,15 @@ import { flagOfKey, flagImg } from '../flags.js';
 export function syncResults() {
   const bar = $('#bar'), leg = $('#legend');
   bar.innerHTML = ''; leg.innerHTML = '';
+  if (state.explainer) {
+    bar.style.display = 'none';
+    $('#stripEmpty').style.display = 'none';
+    const d = document.createElement('div');
+    d.className = 'leg';
+    d.textContent = 'Historical locator · institutional overview · no election results asserted';
+    leg.appendChild(d);
+    return;
+  }
 
   if (state.mode === 'flags') {
     const keys = Object.keys(state.flagged);

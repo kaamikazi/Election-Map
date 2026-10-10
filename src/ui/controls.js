@@ -8,10 +8,19 @@ import { clamp } from '../geo.js';
 import { dl, slug } from '../export.js';
 import { prepareIdentity } from '../identity.js';
 import { restoreDocument } from '../restore.js';
+import { athensDocument } from '../explainer.js';
 
 const undoMap = () => Promise.resolve().then(() => undo()).catch((err) => toast(`Undo failed: ${err.message}`));
 
 export function initControls() {
+  $('#startAthens').addEventListener('click', async (e) => {
+    e.target.disabled = true;
+    try {
+      await restoreDocument(await athensDocument());
+      toast('Athens explainer loaded. Undo restores your previous document.');
+    } catch (err) { toast(`Explainer not loaded: ${err.message}`); }
+    finally { e.target.disabled = false; }
+  });
   /* ---- projection: the header control, and the phone's copy in Map style ---- */
   document.querySelectorAll('.projSeg').forEach((seg) => seg.addEventListener('click', (e) => {
     const b = e.target.closest('button[data-p]'); if (!b) return;
@@ -131,6 +140,7 @@ function syncProjection() {
 
 /** Push loaded state back into the inputs that hold it. */
 export function syncFormFromState() {
+  $('#explainerNote').hidden = !state.explainer;
   $('#fTitle').value = state.title || '';
   $('#fSub').value = state.sub || '';
   $('#fHandle').value = state.handle || '';

@@ -4,7 +4,7 @@
  * If a second drawing path ever appears here, the two will drift apart.
  */
 
-import { presentation, capsFont, historyIdentity } from './identity.js';
+import { presentation, capsFont, bodyFont, historyIdentity } from './identity.js';
 import { state, partyFor, recordFor } from './state.js';
 import { fillFor } from './metrics.js';
 import {
@@ -36,6 +36,7 @@ export function drawMap(c, W, H, opt) {
     opt || {}
   );
   const T = presentation();
+  const historical = state.explainer;
 
   /* The active metric decides the fill; on "flat" this is the party colour. */
   const fill = (key) => {
@@ -109,6 +110,7 @@ export function drawMap(c, W, H, opt) {
     // group by fill so we issue few fills
     const groups = new Map();
     for (const f of FEATS) {
+      if (historical && f.key !== historical.countryKey) continue;
       if (!state.antarctica && f.name === 'Antarctica') continue;
       const party = partyFor(f.key);
       const col = fill(f.key) || T.land;
@@ -126,8 +128,11 @@ export function drawMap(c, W, H, opt) {
   }
 
   // internal borders
-  c.beginPath(); path(BORDERS);
-  c.strokeStyle = T.border; c.lineWidth = 0.55 * o.k; c.lineJoin = 'round'; c.stroke();
+  c.beginPath();
+  if (historical) path(BY_KEY.get(historical.countryKey));
+  else path(BORDERS);
+  c.strokeStyle = historical ? T.edge : T.border;
+  c.lineWidth = (historical ? 1.2 : 0.55) * o.k; c.lineJoin = 'round'; c.stroke();
 
   if (flagMode) drawFlagCasing(c, path, T, o.k, flagged);
 
@@ -185,15 +190,41 @@ export function drawMap(c, W, H, opt) {
   }
 
   // selection, then hover on top of it
-  if (o.selected) {
+  if (o.selected && !historical) {
     c.beginPath(); path(o.selected);
     c.strokeStyle = '#E8B33A'; c.lineWidth = 2.2 * o.k; c.stroke();
   }
 
   // hover outline
-  if (o.hover) {
+  if (o.hover && !historical) {
     c.beginPath(); path(o.hover);
     c.strokeStyle = T.hover; c.lineWidth = 1.6 * o.k; c.stroke();
+  }
+
+  if (historical) {
+    const point = p(historical.point.coordinates);
+    const [x, y] = point || [NaN, NaN];
+    c.font = `600 ${24 * o.k}px ${capsFont()}`;
+    const labelWidth = c.measureText(historical.point.label).width;
+    const lx = x + 14 * o.k, ly = y - 6 * o.k;
+    const fits = Number.isFinite(x) && Number.isFinite(y) && x > 7 * o.k && y > 28 * o.k &&
+      lx + labelWidth + 8 * o.k < w && y + 8 * o.k < h;
+    if (!fits && o.report) throw new Error('The Athens locator or label is outside the map frame. Reset the view or choose a different layout.');
+    if (fits) {
+      c.fillStyle = T.bg;
+      c.fillRect(lx - 4 * o.k, ly - 22 * o.k, labelWidth + 8 * o.k, 30 * o.k);
+      c.fillStyle = T.text; c.textAlign = 'left'; c.textBaseline = 'alphabetic';
+      c.fillText(historical.point.label, lx, ly);
+      c.beginPath(); c.arc(x, y, 5 * o.k, 0, Math.PI * 2);
+      c.fillStyle = T.text; c.fill();
+      c.strokeStyle = T.bg; c.lineWidth = 2 * o.k; c.stroke();
+    }
+    c.font = `400 ${16 * o.k}px ${bodyFont()}`;
+    c.textAlign = 'left'; c.textBaseline = 'bottom'; c.fillStyle = T.text;
+    const key = `${historical.point.label} · modern geographic locator`;
+    c.fillStyle = T.bg; c.fillRect(10 * o.k, h - 35 * o.k, c.measureText(key).width + 14 * o.k, 25 * o.k);
+    c.fillStyle = T.text; c.fillText(key, 16 * o.k, h - 13 * o.k);
+    if (o.report) o.report.locator = { country: historical.countryKey, coordinates: historical.point.coordinates, point: [x + il, y + it] };
   }
 
   // how many of the units we were asked about actually landed in frame

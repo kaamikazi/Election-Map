@@ -39,6 +39,9 @@ export function syncMode() {
   $('#map').setAttribute('aria-label', state.mode === 'flags'
     ? 'Map. Tap a country to add or remove its flag.'
     : 'Map. Tap a country to paint it with the active party.');
+  if (state.explainer) {
+    $('#map').setAttribute('aria-label', 'Historical locator of Athens. Drag to pan; election-result painting is disabled.');
+  }
 }
 
 /* ------------------------------------------------ colour from the data */

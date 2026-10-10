@@ -43,6 +43,15 @@ const swatchStyle = (p) =>
  * entry is a colour the reader cannot decode.
  */
 export function syncLegend() {
+  if (state.explainer) {
+    const e = state.explainer;
+    $('#legendHead').textContent = 'Historical overview';
+    $('#legendTitle').textContent = e.period;
+    $('#legendBody').innerHTML = e.facts.map(f => `<p class="note"><b>${esc(f.label)}</b><br>${esc(f.detail)}</p>`).join('') +
+      `<p class="note">${esc(e.legend)}</p><p class="note">${esc(e.caveat)}</p><p class="note">${esc(e.geography)}</p>` +
+      e.sources.map(s => `<p class="note"><a href="${esc(s.url)}" target="_blank" rel="noopener noreferrer">${esc(s.label)}</a></p>`).join('');
+    return;
+  }
   if (state.mode === 'flags') return flagLegend();
   $('#legendHead').textContent = 'Legend';
   const def = metricDef(state.metric);

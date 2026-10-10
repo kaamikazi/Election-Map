@@ -13,6 +13,7 @@ import { vintageLine } from './vintage.js';
 import { documentPartials } from './import/partition.js';
 import { assertFlagsReady, badgeFlag, raster, flagOfKey, FLAG_SET } from './flags.js';
 import { documentSources } from './provenance.js';
+import { assertExplainerCompatible, drawExplainerFacts, explainerFooter } from './explainer.js';
 
 /**
  * @param {number} W
@@ -47,6 +48,7 @@ export function composite(W, H, opts) {
   // Callers await prepareExport() in flags.js first.
   assertFlagsReady();
   assertIdentityReady();
+  assertExplainerCompatible();
 
   const cv = document.createElement('canvas');
   cv.width = W; cv.height = H;
@@ -84,6 +86,31 @@ export function composite(W, H, opts) {
     top += lines(c, sub, W - pad * 2 - indent) * 30 * k;
   }
   if (title || sub) top += 16 * k;
+  top = drawExplainerFacts(c, W, top, k, pad, { lines, wrap });
+
+  // Historical locators have a mandatory key, caveats and full citations.
+  // They never enter the unit-count results bar below.
+  if (state.explainer) {
+    if (state.proj === 'globe') throw new Error('Historical locator exports require Flat or Mercator so the city cannot be hidden behind the globe.');
+    const footer = explainerFooter();
+    c.font = `400 ${Math.round(19 * k)}px ${bodyFont()}`;
+    const rowHeights = footer.map(text => lines(c, text, W - pad * 2) * 25 * k + 6 * k);
+    const mapBot = H - pad - rowHeights.reduce((sum, n) => sum + n, 0) - 18 * k;
+    if (mapBot - top < 160 * k) throw new Error('Historical facts, sources and caveats leave too little map space. Use a taller export or shorten the text.');
+    const report = outReport || {};
+    drawMap(c, W, H, { inset: [top, pad * 0.5, H - mapBot, pad * 0.5],
+      k: k * 1.15, pad: 4 * k, transparent: trans, bg: false, report });
+    if (historyIdentity()) drawIdentityFrame(c, W, H, k, top, mapBot, pad);
+    let y = mapBot + 18 * k;
+    c.textAlign = 'left'; c.textBaseline = 'top';
+    c.font = `400 ${Math.round(19 * k)}px ${bodyFont()}`;
+    footer.forEach((text, i) => {
+      c.fillStyle = i < 3 ? T.text : T.muted;
+      wrap(c, text, pad, y, W - pad * 2, 25 * k);
+      y += rowHeights[i];
+    });
+    return cv;
+  }
 
   // ---- footer block height
   // A flags map has no results, so it has no results bar and no party legend.
@@ -213,6 +240,24 @@ export function composite(W, H, opts) {
     }
   }
   return cv;
+}
+
+/** Same synchronous snapshot, typography and framing for the two themes. */
+export function compositePair(W, H, options = {}) {
+  if (!historyIdentity()) throw new Error('Select History Through Maps before exporting both themes.');
+  assertIdentityReady();
+  const original = state.theme, pair = {};
+  try {
+    for (const theme of ['light', 'dark']) {
+      state.theme = theme;
+      const report = {};
+      pair[theme] = { canvas: composite(W, H, { ...options, report }), report };
+    }
+    if (JSON.stringify(pair.light.report.projection) !== JSON.stringify(pair.dark.report.projection)) {
+      throw new Error('The two themes produced different framing. Export stopped.');
+    }
+    return pair;
+  } finally { state.theme = original; }
 }
 
 /* ---------------- provenance ----------------

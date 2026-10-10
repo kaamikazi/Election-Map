@@ -74,7 +74,7 @@ export const ALIAS = {
   'the gambia': 'Gambia', 'the bahamas': 'Bahamas'
 };
 
-export const SCHEMA_VERSION = 6;
+export const SCHEMA_VERSION = 7;
 
 /**
  * Milestone 3 keyed layers as `admin1:<ISO3>` when Natural Earth was the only
@@ -138,6 +138,7 @@ export const state = {
   fit: null,           // [[lon,lat],[lon,lat]] or null
   theme: 'dark',
   identity: 'classic', // 'history' applies the channel identity; classic files stay unchanged
+  explainer: null,     // optional historical locator; never election assignments
   grat: false, antarctica: false, dots: true, labels: false,
   /*
    * 'results' or 'flags'. Results is the default and the only mode in which a
@@ -209,16 +210,16 @@ const SCOPES = {
   // painting, clearing, typing a value, clearing the map
   assign: { hard: ['assign', 'selected', 'provenance'] },
   flags: { hard: ['flagged'] },
-  mode: { hard: ['mode'] },
+  mode: { hard: ['mode', 'explainer'] },
   // an import or an archive document: results, parties and where they came from
   import: {
-    hard: ['parties', 'assign', 'provenance', 'active', 'selected'],
+    hard: ['parties', 'assign', 'provenance', 'active', 'selected', 'explainer'],
     soft: ['metric', 'title', 'sub', 'fit', 'zoom', 'pan']
   },
   party: { hard: ['parties', 'assign', 'provenance', 'active', 'selected'] },
   // a layer switch brings its geometry, assignments and framing back together
   layer: {
-    hard: ['layer', 'assign', 'provenance', 'layerAssign', 'selected'],
+    hard: ['layer', 'assign', 'provenance', 'layerAssign', 'selected', 'explainer'],
     soft: ['fit', 'zoom', 'pan', 'rotate']
   },
   // opening a file replaces the whole document, so undoing it restores the whole
@@ -330,6 +331,7 @@ const blank = (party) => ({ party, vote: null, seats: null, turnout: null, margi
  * they describe the contest, not the winner.
  */
 export function toggleCountry(name) {
+  if (state.explainer) return false;
   pushHistory('assign');
   const rec = state.assign[name];
   if (rec && rec.party === state.active) {
@@ -359,6 +361,7 @@ export function setMode(mode) {
   if (mode !== 'results' && mode !== 'flags') return;
   if (state.mode === mode) return;
   pushHistory('mode');
+  state.explainer = null;
   state.mode = mode;
   emit('parties');
 }
@@ -391,6 +394,7 @@ export function select(name) {
 }
 
 export function setMetric(id) {
+  if (state.explainer && id !== 'flat') return;
   state.metric = id;
   emit('metric');
 }
@@ -405,6 +409,7 @@ export function setMetric(id) {
 export function switchLayer(id) {
   if (id === state.layer) return false;
   pushHistory('layer');
+  state.explainer = null;
 
   // Provenance describes a set of assignments, so it is parked with them.
   state.layerAssign[state.layer] = { assign: state.assign, provenance: state.provenance };
@@ -435,6 +440,7 @@ export function layerCounts() {
  */
 export function applyDocument({ parties, assign, provenance }) {
   pushHistory('import');
+  state.explainer = null;
   state.parties = parties;
   state.assign = assign;
   state.active = parties.length ? parties[0].id : null;

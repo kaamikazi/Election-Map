@@ -1,5 +1,6 @@
 /** A file open and a cross-layer undo share the same atomic restoration path. */
-import { state, migrate, reserveIds, pushHistory, emit, DOCUMENT_DEFAULTS } from './state.js';
+import { state, migrate, reserveIds, pushHistory, emit, DOCUMENT_DEFAULTS, SCHEMA_VERSION } from './state.js';
+import { validateExplainer } from './explainer.js';
 import { prepareIdentity } from './identity.js';
 import { prepareLayer, loadLayerData, activate } from './geo.js';
 
@@ -17,7 +18,7 @@ export function validateDocument(input) {
   };
   safeKeys(input);
   if (!object(input) || !Array.isArray(input.parties) || !object(input.assign)) fail('missing parties or assignments');
-  if (input.version != null && (!Number.isInteger(input.version) || input.version > 6)) fail('unsupported document version');
+  if (input.version != null && (!Number.isInteger(input.version) || input.version > SCHEMA_VERSION)) fail('unsupported document version');
   const doc = { ...structuredClone(DOCUMENT_DEFAULTS), ...migrate(input) };
   // Ignore unrecognised fields; they must never become application state.
   for (const key of Object.keys(doc)) if (!Object.hasOwn(DOCUMENT_DEFAULTS, key)) delete doc[key];
@@ -74,6 +75,7 @@ export function validateDocument(input) {
   }
   if (!ids.has(doc.active)) doc.active = doc.parties[0].id;
   if (doc.selected && !doc.assign[doc.selected]) doc.selected = null;
+  validateExplainer(doc);
   return doc;
 }
 
@@ -86,6 +88,7 @@ export async function restoreDocument(input, { remember = true } = {}) {
     const doc = validateDocument(structuredClone(input));
     await prepareIdentity(doc.identity);
     const active = await prepareLayer(doc.layer);
+    if (doc.explainer && !active.byKey.has(doc.explainer.countryKey)) throw new Error('Historical locator country is absent from the reference geography.');
     const checkKeys = (assign, layer, id) => {
       const missing = Object.keys(assign).filter((key) => !layer.byKey.has(key));
       if (missing.length) throw new Error(`${missing.length} saved regions are absent from ${id}, including ${missing[0]}. Restore the matching boundary files.`);

@@ -3,7 +3,7 @@ import { state } from '../state.js';
 import { BY_KEY, LAYER, WORLD, BOUNDARY, layerCatalogue } from '../geo.js';
 import { boundaryWarnings, resultsVintageWarning } from '../vintage.js';
 import { toast } from './toast.js';
-import { composite, dl, slug } from '../export.js';
+import { composite, compositePair, dl, slug } from '../export.js';
 import { prepareExport } from '../flags.js';
 
 // The downloaded PNG is rendered at 1.5x the nominal size; the preview is not.
@@ -64,7 +64,7 @@ async function ready() {
     return true;
   } catch (err) {
     $('#exportWarn').innerHTML = `<ul class="warns"><li>${esc(err.message)}</li></ul>`;
-    toast('Some flags did not load, so nothing was exported');
+    toast(`Export stopped: ${err.message}`);
     return false;
   }
 }
@@ -87,6 +87,8 @@ export function initExportDialog() {
   const dlg = $('#exportDlg');
 
   $('#openExport').addEventListener('click', () => {
+    $('#btnThemes').disabled = state.identity !== 'history';
+    $('#xLegend').closest('label').hidden = !!state.explainer;
     dlg.showModal();
     drawPreview();
     showBoundaryWarnings();
@@ -111,6 +113,23 @@ export function initExportDialog() {
         toast('PNG downloaded');
       }, 'image/png');
     } catch (err) { exportError(err); }
+  });
+
+  $('#btnThemes').addEventListener('click', async (e) => {
+    const before = JSON.stringify(state);
+    e.target.disabled = true;
+    try {
+      if (!(await ready())) return;
+      if (JSON.stringify(state) !== before) throw new Error('The map changed while assets loaded. Try exporting again.');
+      const pair = compositePair(outW * PNG_SCALE, outH * PNG_SCALE, options());
+      const filename = slug('election-map');
+      const blobs = await Promise.all(['light', 'dark'].map(theme => new Promise((resolve, reject) => {
+        pair[theme].canvas.toBlob(blob => blob ? resolve(blob) : reject(new Error('PNG encoding failed.')), 'image/png');
+      })));
+      blobs.forEach((blob, i) => dl(blob, `${filename}-${i ? 'lamplight' : 'paper'}.png`));
+      toast('Paper and Lamplight downloaded from the same map.');
+    } catch (err) { exportError(err); }
+    finally { e.target.disabled = state.identity !== 'history'; }
   });
 
   $('#btnCopy').addEventListener('click', async () => {

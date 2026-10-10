@@ -354,6 +354,7 @@ export function applyProposal(proposal, { replace, mode = replace === true ? 're
   if (!usable.length) return { applied: 0, skipped: proposal.rows.length, parties: 0 };
 
   pushHistory('import');
+  state.explainer = null;
 
   const assign = mode === 'replace' ? {} : Object.assign({}, state.assign);
   const src = proposal.source || {};

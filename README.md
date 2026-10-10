@@ -735,6 +735,14 @@ unchanged.
 
 ## History Through Maps post identity
 
+### First post: Athens historical explainer
+
+Under **Map style**, select **Start Athens democracy explainer** for the source-backed overview of Cleisthenes' reforms, c. 508–507 BCE. It uses an explicitly labelled modern locator of Athens and Attica and institutional counts, with no invented party seats or election results. **Export → Download Paper + Lamplight** produces both themes from the same document and framing. Square, portrait and widescreen samples, sources, saved document and reproduction instructions are in [docs/athens](docs/athens/README.md).
+
+This historical scope was selected for the first post. Actual national election maps require a country, a specific election/date and source-backed result data. Both workflows retain the existing renderer, imports and original presentation option.
+
+### Identity controls
+
 In **Map style → Post identity**, choose **History Through Maps**. Dark background gives **Lamplight**; check **Light background** for **Paper**. Both use the channel's original seal, antique display type, small-cap legend, parchment/walnut colours and double-rule frame. The working map and PNG preview share the same map renderer. Square, portrait, widescreen, transparent export, flags and metric legends remain available.
 
 Party colours and result values stay unchanged. Unclassified party-family hatching keeps its meaning. Sources, coverage notes and boundary warnings remain visible; attribution that leaves too little map space stops export instead of being discarded. Identity is saved with the map. Existing files without an identity field open in the original Election Map Studio style.
