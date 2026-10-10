@@ -230,7 +230,11 @@ export let lastBase = { s0: 150, t0: [0, 0] };
 
 export function buildProjection(W, H, pad) {
   let p, target;
-  if (state.proj === 'globe') {
+  if (state.proj === 'albersUsa') {
+    if (layerParts(LAYER).iso3 !== 'USA') throw new Error('USA insets require a United States boundary layer.');
+    p = d3.geoAlbersUsa();
+    target = { type: 'FeatureCollection', features: FEATS };
+  } else if (state.proj === 'globe') {
     p = d3.geoOrthographic().rotate(state.rotate).clipAngle(90);
     target = SPHERE;
   } else if (state.proj === 'mercator') {
@@ -240,7 +244,8 @@ export function buildProjection(W, H, pad) {
     p = d3.geoEqualEarth();
     target = state.fit ? bboxGeo(state.fit) : SPHERE;
   }
-  p.fitExtent([[pad, pad], [W - pad, H - pad]], target);
+  const calloutSpace = state.nationalElection && state.proj === 'albersUsa' ? W * .16 : 0;
+  p.fitExtent([[pad, pad], [W - pad - calloutSpace, H - pad]], target);
   const s = p.scale() * regionZoom(), t = p.translate();
   lastBase = { s0: s, t0: t };
   p.scale(s * state.zoom).translate([t[0] + state.pan[0] * s, t[1] + state.pan[1] * s]);

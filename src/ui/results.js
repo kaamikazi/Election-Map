@@ -2,6 +2,7 @@ import { $, esc } from './dom.js';
 import { state, standings } from '../state.js';
 import { BY_KEY } from '../geo.js';
 import { flagOfKey, flagImg } from '../flags.js';
+import { nationalSummary } from '../national-election.js';
 
 /**
  * The results strip: the bar and its legend. The bar is the colour hero of the
@@ -14,6 +15,16 @@ import { flagOfKey, flagImg } from '../flags.js';
 export function syncResults() {
   const bar = $('#bar'), leg = $('#legend');
   bar.innerHTML = ''; leg.innerHTML = '';
+  if (state.nationalElection) {
+    bar.style.display = 'flex'; $('#stripEmpty').style.display = 'none';
+    nationalSummary().forEach(s => {
+      const p = state.parties.find(p => p.name === s.party), i = document.createElement('i');
+      i.style.width = (s.electoralVotes / 538 * 100) + '%'; i.style.background = p.color; bar.appendChild(i);
+      const d = document.createElement('div'); d.className = 'leg';
+      d.textContent = `${s.name} · ${s.electoralVotes} electoral votes`; leg.appendChild(d);
+    });
+    return;
+  }
   if (state.explainer) {
     bar.style.display = 'none';
     $('#stripEmpty').style.display = 'none';

@@ -42,6 +42,7 @@ export function syncMode() {
   if (state.explainer) {
     $('#map').setAttribute('aria-label', 'Historical locator of Athens. Drag to pan; election-result painting is disabled.');
   }
+  if (state.nationalElection) $('#map').setAttribute('aria-label', '2024 United States presidential election. Statewide popular-vote leaders, with Alaska and Hawaii insets. Tap states to inspect official results.');
 }
 
 /* ------------------------------------------------ colour from the data */

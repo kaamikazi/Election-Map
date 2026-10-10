@@ -355,6 +355,8 @@ export function applyProposal(proposal, { replace, mode = replace === true ? 're
 
   pushHistory('import');
   state.explainer = null;
+  state.nationalElection = null;
+  if (state.proj === 'albersUsa') state.proj = 'equalEarth';
 
   const assign = mode === 'replace' ? {} : Object.assign({}, state.assign);
   const src = proposal.source || {};

@@ -9,10 +9,17 @@ import { dl, slug } from '../export.js';
 import { prepareIdentity } from '../identity.js';
 import { restoreDocument } from '../restore.js';
 import { athensDocument } from '../explainer.js';
+import { us2024Document } from '../national-election.js';
 
 const undoMap = () => Promise.resolve().then(() => undo()).catch((err) => toast(`Undo failed: ${err.message}`));
 
 export function initControls() {
+  $('#startUS2024').addEventListener('click', async (e) => {
+    e.target.disabled = true;
+    try { await restoreDocument(await us2024Document()); toast('U.S. 2024 certified results loaded. Undo restores your previous document.'); }
+    catch (err) { toast(`Election not loaded: ${err.message}`); }
+    finally { e.target.disabled = false; }
+  });
   $('#startAthens').addEventListener('click', async (e) => {
     e.target.disabled = true;
     try {
@@ -141,6 +148,8 @@ function syncProjection() {
 /** Push loaded state back into the inputs that hold it. */
 export function syncFormFromState() {
   $('#explainerNote').hidden = !state.explainer;
+  $('#nationalNote').hidden = !state.nationalElection;
+  document.querySelectorAll('[data-p="albersUsa"]').forEach(b => { b.hidden = !state.layer.includes(':USA:'); });
   $('#fTitle').value = state.title || '';
   $('#fSub').value = state.sub || '';
   $('#fHandle').value = state.handle || '';

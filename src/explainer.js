@@ -1,14 +1,14 @@
 /** Historical locator documents use the existing map and composite renderers.
  * Institution sizes are prose facts, never assignment records or seat metrics.
  */
-import { state, DOCUMENT_DEFAULTS } from './state.js';
+import { state, DOCUMENT_DEFAULTS, SCHEMA_VERSION } from './state.js';
 import { presentation, bodyFont, capsFont } from './identity.js';
 
 export async function athensDocument(theme = 'light') {
   const response = await fetch('/data/athens-democracy.json');
   if (!response.ok) throw new Error('The Athens source pack could not load.');
   const pack = await response.json();
-  return { version: 7, ...structuredClone(DOCUMENT_DEFAULTS),
+  return { version: SCHEMA_VERSION, ...structuredClone(DOCUMENT_DEFAULTS),
     identity: 'history', theme, proj: 'mercator',
     title: pack.title, sub: pack.subtitle, fit: pack.fit,
     explainer: pack.explainer };

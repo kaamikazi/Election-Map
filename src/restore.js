@@ -1,6 +1,7 @@
 /** A file open and a cross-layer undo share the same atomic restoration path. */
 import { state, migrate, reserveIds, pushHistory, emit, DOCUMENT_DEFAULTS, SCHEMA_VERSION } from './state.js';
 import { validateExplainer } from './explainer.js';
+import { validateNationalDocument } from './national-election.js';
 import { prepareIdentity } from './identity.js';
 import { prepareLayer, loadLayerData, activate } from './geo.js';
 
@@ -32,8 +33,9 @@ export function validateDocument(input) {
   if (!doc.parties.length) fail('empty party list');
   for (const key of ['title', 'sub', 'handle', 'layer']) if (typeof doc[key] !== 'string') fail(key);
   if (!['world'].includes(doc.layer) && !/^[a-z0-9-]+:[A-Z]{3}:[A-Za-z0-9_-]+$/.test(doc.layer)) fail('boundary layer');
-  if (!['equalEarth', 'mercator', 'globe'].includes(doc.proj) || !['light', 'dark'].includes(doc.theme) ||
+  if (!['equalEarth', 'mercator', 'globe', 'albersUsa'].includes(doc.proj) || !['light', 'dark'].includes(doc.theme) ||
       !['flat', 'vote', 'seats', 'turnout', 'margin'].includes(doc.metric)) fail('map style or metric');
+  if (doc.proj === 'albersUsa' && !/^[^:]+:USA:/.test(doc.layer)) fail('USA insets require United States boundaries');
   if (!Number.isFinite(doc.zoom) || doc.zoom <= 0 || !pair(doc.pan) || !pair(doc.rotate) ||
       (doc.fit !== null && (!Array.isArray(doc.fit) || doc.fit.length !== 2 || !doc.fit.every(pair)))) fail('map framing');
   for (const key of ['grat', 'antarctica', 'dots', 'labels']) if (typeof doc[key] !== 'boolean') fail(key);
@@ -76,6 +78,7 @@ export function validateDocument(input) {
   if (!ids.has(doc.active)) doc.active = doc.parties[0].id;
   if (doc.selected && !doc.assign[doc.selected]) doc.selected = null;
   validateExplainer(doc);
+  validateNationalDocument(doc);
   return doc;
 }
 

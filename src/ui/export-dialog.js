@@ -88,7 +88,7 @@ export function initExportDialog() {
 
   $('#openExport').addEventListener('click', () => {
     $('#btnThemes').disabled = state.identity !== 'history';
-    $('#xLegend').closest('label').hidden = !!state.explainer;
+    $('#xLegend').closest('label').hidden = !!(state.explainer || state.nationalElection);
     dlg.showModal();
     drawPreview();
     showBoundaryWarnings();

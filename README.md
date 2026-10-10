@@ -735,11 +735,15 @@ unchanged.
 
 ## History Through Maps post identity
 
+### National post: U.S. presidential election 2024
+
+Under **Map style**, select **Start U.S. presidential election 2024** for official state-certified results from the FEC compilation. The national post distinguishes electoral votes, popular votes and states led, retains all 26 reported candidate/selection categories, and labels Maine/Nebraska's split allocations. The USA inset projection includes Alaska, Hawaii and a D.C. callout. Save/open and undo preserve the full document; **Export → Download Paper + Lamplight** generates both themes from the same data and framing. Six samples, the source PDF, reproducible data extraction and export instructions are in [docs/us2024](docs/us2024/README.md).
+
 ### First post: Athens historical explainer
 
 Under **Map style**, select **Start Athens democracy explainer** for the source-backed overview of Cleisthenes' reforms, c. 508–507 BCE. It uses an explicitly labelled modern locator of Athens and Attica and institutional counts, with no invented party seats or election results. **Export → Download Paper + Lamplight** produces both themes from the same document and framing. Square, portrait and widescreen samples, sources, saved document and reproduction instructions are in [docs/athens](docs/athens/README.md).
 
-This historical scope was selected for the first post. Actual national election maps require a country, a specific election/date and source-backed result data. Both workflows retain the existing renderer, imports and original presentation option.
+The Athens historical scope was selected for the first post; the U.S. 2024 starter above now supplies an actual national election workflow. Additional elections require a country, a specific election/date and source-backed result data. Both workflows retain the existing renderer, imports and original presentation option.
 
 ### Identity controls
 

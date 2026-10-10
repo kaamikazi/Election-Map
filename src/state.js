@@ -74,7 +74,7 @@ export const ALIAS = {
   'the gambia': 'Gambia', 'the bahamas': 'Bahamas'
 };
 
-export const SCHEMA_VERSION = 7;
+export const SCHEMA_VERSION = 8;
 
 /**
  * Milestone 3 keyed layers as `admin1:<ISO3>` when Natural Earth was the only
@@ -139,6 +139,7 @@ export const state = {
   theme: 'dark',
   identity: 'classic', // 'history' applies the channel identity; classic files stay unchanged
   explainer: null,     // optional historical locator; never election assignments
+  nationalElection: null, // source-backed national totals, separate from per-unit metrics
   grat: false, antarctica: false, dots: true, labels: false,
   /*
    * 'results' or 'flags'. Results is the default and the only mode in which a
@@ -208,19 +209,19 @@ export const DOCUMENT_DEFAULTS = JSON.parse(JSON.stringify(state));
  */
 const SCOPES = {
   // painting, clearing, typing a value, clearing the map
-  assign: { hard: ['assign', 'selected', 'provenance'] },
+  assign: { hard: ['assign', 'selected', 'provenance', 'nationalElection'] },
   flags: { hard: ['flagged'] },
-  mode: { hard: ['mode', 'explainer'] },
+  mode: { hard: ['mode', 'explainer', 'nationalElection'] },
   // an import or an archive document: results, parties and where they came from
   import: {
-    hard: ['parties', 'assign', 'provenance', 'active', 'selected', 'explainer'],
-    soft: ['metric', 'title', 'sub', 'fit', 'zoom', 'pan']
+    hard: ['parties', 'assign', 'provenance', 'active', 'selected', 'explainer', 'nationalElection'],
+    soft: ['metric', 'title', 'sub', 'fit', 'zoom', 'pan', 'proj']
   },
-  party: { hard: ['parties', 'assign', 'provenance', 'active', 'selected'] },
+  party: { hard: ['parties', 'assign', 'provenance', 'active', 'selected', 'nationalElection'] },
   // a layer switch brings its geometry, assignments and framing back together
   layer: {
-    hard: ['layer', 'assign', 'provenance', 'layerAssign', 'selected', 'explainer'],
-    soft: ['fit', 'zoom', 'pan', 'rotate']
+    hard: ['layer', 'assign', 'provenance', 'layerAssign', 'selected', 'explainer', 'nationalElection'],
+    soft: ['fit', 'zoom', 'pan', 'rotate', 'proj']
   },
   // opening a file replaces the whole document, so undoing it restores the whole
   // previous one — the only operation that owns every key
@@ -331,6 +332,7 @@ const blank = (party) => ({ party, vote: null, seats: null, turnout: null, margi
  * they describe the contest, not the winner.
  */
 export function toggleCountry(name) {
+  if (state.nationalElection) { state.selected = name; emit('select'); return false; }
   if (state.explainer) return false;
   pushHistory('assign');
   const rec = state.assign[name];
@@ -362,6 +364,7 @@ export function setMode(mode) {
   if (state.mode === mode) return;
   pushHistory('mode');
   state.explainer = null;
+  state.nationalElection = null;
   state.mode = mode;
   emit('parties');
 }
@@ -370,6 +373,7 @@ export function setMode(mode) {
 export const paint = (key) => (state.mode === 'flags' ? toggleFlag(key) : toggleCountry(key));
 
 export function setValue(name, key, value) {
+  if (state.nationalElection) return;
   const rec = state.assign[name];
   if (!rec) return;
   pushHistory('assign');
@@ -381,6 +385,7 @@ export function setValue(name, key, value) {
 }
 
 export function clearCountry(name) {
+  if (state.nationalElection) return;
   if (!state.assign[name]) return;
   pushHistory('assign');
   delete state.assign[name];
@@ -394,7 +399,7 @@ export function select(name) {
 }
 
 export function setMetric(id) {
-  if (state.explainer && id !== 'flat') return;
+  if ((state.explainer || state.nationalElection) && id !== 'flat') return;
   state.metric = id;
   emit('metric');
 }
@@ -410,6 +415,8 @@ export function switchLayer(id) {
   if (id === state.layer) return false;
   pushHistory('layer');
   state.explainer = null;
+  state.nationalElection = null;
+  if (state.proj === 'albersUsa') state.proj = 'equalEarth';
 
   // Provenance describes a set of assignments, so it is parked with them.
   state.layerAssign[state.layer] = { assign: state.assign, provenance: state.provenance };
@@ -441,6 +448,8 @@ export function layerCounts() {
 export function applyDocument({ parties, assign, provenance }) {
   pushHistory('import');
   state.explainer = null;
+  state.nationalElection = null;
+  if (state.proj === 'albersUsa') state.proj = 'equalEarth';
   state.parties = parties;
   state.assign = assign;
   state.active = parties.length ? parties[0].id : null;
@@ -473,6 +482,7 @@ export function addParty() {
 
 /** Returns false when this is the last party — the caller says so. */
 export function removeParty(id) {
+  if (state.nationalElection) return false;
   if (state.parties.length === 1) return false;
   pushHistory('party');
   state.parties = state.parties.filter((q) => q.id !== id);
@@ -483,11 +493,13 @@ export function removeParty(id) {
 }
 
 export function clearAssignments() {
+  const national = !!state.nationalElection;
   pushHistory('assign');
+  state.nationalElection = null;
   state.assign = {};
   state.selected = null;
   state.provenance = null;
-  emit('assign');
+  emit(national ? 'parties' : 'assign');
 }
 
 /* ---------------- save format ---------------- */

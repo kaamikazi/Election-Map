@@ -7,7 +7,7 @@ export function syncMetrics() {
   const box = $('#metricList');
   [...box.children].forEach((b) => {
     b.setAttribute('aria-pressed', b.dataset.m === state.metric);
-    b.disabled = !!state.explainer && b.dataset.m !== 'flat';
+    b.disabled = !!(state.explainer || state.nationalElection) && b.dataset.m !== 'flat';
   });
 }
 

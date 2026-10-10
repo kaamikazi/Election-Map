@@ -5,6 +5,7 @@ import { NEUTRAL, metricDef, rampSwatches, ticksFor } from '../metrics.js';
 import { hatchCss } from '../render.js';
 import { BY_KEY } from '../geo.js';
 import { flagOfKey, flagImg, FLAG_SET } from '../flags.js';
+import { nationalSummary, nationalNotes, number, share } from '../national-election.js';
 
 /**
  * A flags map needs no key to decode it — every flag names its own country —
@@ -43,6 +44,21 @@ const swatchStyle = (p) =>
  * entry is a colour the reader cannot decode.
  */
 export function syncLegend() {
+  if (state.nationalElection) {
+    const e = state.nationalElection;
+    $('#legendHead').textContent = '2024 U.S. presidential election';
+    $('#legendTitle').textContent = 'Statewide popular-vote leader';
+    $('#legendBody').innerHTML = nationalSummary().map(s => {
+      const p = state.parties.find(p => p.name === s.party);
+      return `<div class="sw"><i style="background:${p.color}"></i><b>${esc(s.name)} · ${esc(s.party)}</b></div>` +
+        `<p class="note">${s.electoralVotes} electoral votes · ${number(s.votes)} popular votes (${share(s.votes, e.totalVotes)}) · ${s.statesWon} states${s.dcWon ? ' + D.C.' : ''} led</p>`;
+    }).join('') + `<p class="note">Total popular votes: ${number(e.totalVotes)}. Election date: 5 November 2024.</p>` +
+      nationalNotes().map(t => `<p class="note">${esc(t)}</p>`).join('') +
+      '<p class="note"><b>All national candidate/selection totals</b></p>' +
+      e.candidates.map(c => `<p class="note">${esc(c.name)}: ${number(c.votes)} (${share(c.votes, e.totalVotes)}). Ballot labels: ${esc(c.ballotLabels)}.</p>`).join('') +
+      e.sources.map(s => `<p class="note"><a href="${esc(s.url)}" target="_blank" rel="noopener noreferrer">${esc(s.label)}</a></p>`).join('');
+    return;
+  }
   if (state.explainer) {
     const e = state.explainer;
     $('#legendHead').textContent = 'Historical overview';

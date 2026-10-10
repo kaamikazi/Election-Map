@@ -14,6 +14,7 @@ import { documentPartials } from './import/partition.js';
 import { assertFlagsReady, badgeFlag, raster, flagOfKey, FLAG_SET } from './flags.js';
 import { documentSources } from './provenance.js';
 import { assertExplainerCompatible, drawExplainerFacts, explainerFooter } from './explainer.js';
+import { validateNationalDocument, drawNationalSummary, nationalFooter } from './national-election.js';
 
 /**
  * @param {number} W
@@ -49,6 +50,7 @@ export function composite(W, H, opts) {
   assertFlagsReady();
   assertIdentityReady();
   assertExplainerCompatible();
+  validateNationalDocument();
 
   const cv = document.createElement('canvas');
   cv.width = W; cv.height = H;
@@ -87,6 +89,21 @@ export function composite(W, H, opts) {
   }
   if (title || sub) top += 16 * k;
   top = drawExplainerFacts(c, W, top, k, pad, { lines, wrap });
+  top = drawNationalSummary(c, W, top, k, pad, { lines, wrap });
+
+  if (state.nationalElection) {
+    if (state.proj !== 'albersUsa') throw new Error('Use USA insets for a complete national export including Alaska, Hawaii and D.C.');
+    const sidebarWidth = W / H > 1.3 ? W * .34 - pad : 0;
+    const footer = nationalFooter(c, W, k, pad, { lines, wrap }, sidebarWidth);
+    const mapBot = H - pad - footer.height - 14 * k;
+    if (mapBot - top < Math.max(200 * k, sidebarWidth ? footer.candidateHeight : 0)) throw new Error('National totals, candidates and citations leave too little map space. Choose a taller export or shorten the headline.');
+    drawMap(c, W, H, { inset: [top, sidebarWidth ? W * .36 : pad * .5, H - mapBot, pad * .5],
+      k, pad: 18 * k, transparent: trans, bg: false, report: outReport || {} });
+    if (historyIdentity()) drawIdentityFrame(c, W, H, k, top, mapBot, pad);
+    if (sidebarWidth) footer.drawCandidates(W * .66, top);
+    footer.draw(mapBot + 14 * k);
+    return cv;
+  }
 
   // Historical locators have a mandatory key, caveats and full citations.
   // They never enter the unit-count results bar below.

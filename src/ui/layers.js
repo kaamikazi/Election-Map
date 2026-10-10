@@ -179,6 +179,7 @@ async function go(id) {
 }
 
 function crumbFor() {
+  if (state.nationalElection) return 'United States · 2024 presidential election';
   if (state.explainer) return `${state.explainer.point.label} historical locator`;
   if (!BOUNDARY) return 'World results';
   const name = (countries.find((c) => c.iso === BOUNDARY.iso) || {}).name || BOUNDARY.iso;

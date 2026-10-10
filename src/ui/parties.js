@@ -9,6 +9,7 @@ import { familyLabel } from '../families.js';
  * is typing in out from under them.
  */
 export function syncParties() {
+  $('#addParty').disabled = !!state.nationalElection;
   const box = $('#partyList');
   box.innerHTML = '';
   state.parties.forEach((p) => {
@@ -43,6 +44,8 @@ export function syncParties() {
       p.name = ev.target.value;
       emit('style');
     });
+    el.querySelector('.pname').disabled = !!state.nationalElection;
+    el.querySelector('.kill').disabled = !!state.nationalElection;
 
     el.querySelector('.pname').addEventListener('focus', () => setActive(p.id));
 
