@@ -1,0 +1,25 @@
+{
+  "title": "Athens: the beginnings of democracy",
+  "subtitle": "Cleisthenes’ reforms · c. 508–507 BCE · Athens and Attica",
+  "fit": [[22.6, 37.35], [24.65, 38.65]],
+  "explainer": {
+    "kind": "historical-locator",
+    "countryKey": "Greece",
+    "period": "c. 508–507 BCE",
+    "point": { "label": "Athens", "coordinates": [23.7333, 37.9833] },
+    "facts": [
+      { "label": "10 civic tribes [1, 2]", "detail": "Cleisthenes reorganized the citizen body into ten tribes, mixing city, coastal and inland communities." },
+      { "label": "500 council members [1]", "detail": "The Council expanded to 500 members: 50 from each tribe. These are institutional places, not party seats won." },
+      { "label": "Participation had limits [3]", "detail": "Adult male citizens took part. Women, resident foreigners and enslaved people were excluded from political participation." }
+    ],
+    "legend": "Map key: dot = approximate Athens city location [4]; neutral land = modern geographic reference.",
+    "caveat": "Historical overview, not election results. No vote, turnout or party-seat totals are asserted. Institutions developed over time; the date is a conventional reform period, not a polling date.",
+    "geography": "Natural Earth 1:50m · public domain · geographic vintage not stated. Modern reference outline, not ancient territory, demes or electoral boundaries. No ancient boundary reconstruction is supplied.",
+    "sources": [
+      { "label": "[1] Aristotle, Athenian Constitution 21–22 (Kenyon translation)", "url": "https://classics.mit.edu/Aristotle/athenian_const.1.1.html" },
+      { "label": "[2] Yale Open Courses, Week 6 chronology, p. 8 (PDF)", "url": "https://oyc.yale.edu/sites/default/files/06theriseofathens_1.pdf" },
+      { "label": "[3] British Museum, Athens in the 5th century BC (later democracy)", "url": "https://www.britishmuseum.org/blog/historical-city-travel-guide-athens-5th-century-bc" },
+      { "label": "[4] Getty Thesaurus of Geographic Names, Athens 7001393", "url": "https://vocab.getty.edu/page/tgn/7001393" }
+    ]
+  }
+}

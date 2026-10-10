@@ -4,7 +4,8 @@
  * If a second drawing path ever appears here, the two will drift apart.
  */
 
-import { state, THEMES, FONT, partyFor, recordFor } from './state.js';
+import { presentation, capsFont, bodyFont, historyIdentity } from './identity.js';
+import { state, partyFor, recordFor } from './state.js';
 import { fillFor } from './metrics.js';
 import {
   FEATS, BORDERS, OUTLINE, BY_KEY, backdrop,
@@ -34,7 +35,8 @@ export function drawMap(c, W, H, opt) {
       inViewOf: null, report: null },
     opt || {}
   );
-  const T = THEMES[state.theme];
+  const T = presentation();
+  const historical = state.explainer;
 
   /* The active metric decides the fill; on "flat" this is the party colour. */
   const fill = (key) => {
@@ -77,7 +79,9 @@ export function drawMap(c, W, H, opt) {
   }
 
   // ocean / sphere
-  c.beginPath(); path(SPHERE);
+  c.beginPath();
+  if (state.proj === 'albersUsa') c.rect(0, 0, w, h);
+  else path(SPHERE);
   if (o.transparent) { c.globalAlpha = state.proj === 'globe' ? 1 : 0; }
   c.fillStyle = T.ocean; c.fill(); c.globalAlpha = 1;
 
@@ -88,7 +92,7 @@ export function drawMap(c, W, H, opt) {
 
   // The rest of the world, under a province layer, so the country sits somewhere
   const under = backdrop();
-  if (under) {
+  if (under && state.proj !== 'albersUsa') {
     c.beginPath();
     for (const f of under) path(f);
     c.fillStyle = T.backdrop; c.fill();
@@ -108,6 +112,7 @@ export function drawMap(c, W, H, opt) {
     // group by fill so we issue few fills
     const groups = new Map();
     for (const f of FEATS) {
+      if (historical && f.key !== historical.countryKey) continue;
       if (!state.antarctica && f.name === 'Antarctica') continue;
       const party = partyFor(f.key);
       const col = fill(f.key) || T.land;
@@ -125,8 +130,11 @@ export function drawMap(c, W, H, opt) {
   }
 
   // internal borders
-  c.beginPath(); path(BORDERS);
-  c.strokeStyle = T.border; c.lineWidth = 0.55 * o.k; c.lineJoin = 'round'; c.stroke();
+  c.beginPath();
+  if (historical) path(BY_KEY.get(historical.countryKey));
+  else path(BORDERS);
+  c.strokeStyle = historical || state.nationalElection ? T.edge : T.border;
+  c.lineWidth = (historical || state.nationalElection ? 1.2 : 0.55) * o.k; c.lineJoin = 'round'; c.stroke();
 
   if (flagMode) drawFlagCasing(c, path, T, o.k, flagged);
 
@@ -147,8 +155,10 @@ export function drawMap(c, W, H, opt) {
   }
 
   // coastline / sphere edge
-  c.beginPath(); path(SPHERE);
-  c.strokeStyle = T.edge; c.lineWidth = 0.9 * o.k; c.stroke();
+  if (state.proj !== 'albersUsa') {
+    c.beginPath(); path(SPHERE);
+    c.strokeStyle = T.edge; c.lineWidth = 0.9 * o.k; c.stroke();
+  }
 
   // Dots for assigned units too small to see. Some admin-1 units are genuinely
   // tiny — capital districts, island provinces — and vanish without this.
@@ -169,30 +179,58 @@ export function drawMap(c, W, H, opt) {
   }
 
   // labels
-  if (state.labels) {
-    c.font = `600 ${11 * o.k}px ${FONT}`;
+  if (state.labels && !state.nationalElection) {
+    c.font = `600 ${11 * o.k}px ${capsFont()}`;
     c.textAlign = 'center'; c.textBaseline = 'middle';
     for (const f of FEATS) {
       if (flagMode ? !state.flagged[f.key] : !fill(f.key)) continue;
       if (path.area(f) < 900 * o.k * o.k) continue;
       const cc = path.centroid(f);
       if (!isFinite(cc[0])) continue;
-      c.lineWidth = 3 * o.k; c.strokeStyle = 'rgba(0,0,0,.45)';
+      c.lineWidth = 3 * o.k; c.strokeStyle = historyIdentity() ? '#1d1610' : 'rgba(0,0,0,.45)';
       c.strokeText(f.name, cc[0], cc[1]);
-      c.fillStyle = '#fff'; c.fillText(f.name, cc[0], cc[1]);
+      c.fillStyle = historyIdentity() ? '#efe3c4' : '#fff'; c.fillText(f.name, cc[0], cc[1]);
     }
   }
 
+  if (state.nationalElection && state.proj === 'albersUsa') drawUsLabels(c, path, p, w, h, o, T);
+
   // selection, then hover on top of it
-  if (o.selected) {
+  if (o.selected && !historical) {
     c.beginPath(); path(o.selected);
     c.strokeStyle = '#E8B33A'; c.lineWidth = 2.2 * o.k; c.stroke();
   }
 
   // hover outline
-  if (o.hover) {
+  if (o.hover && !historical) {
     c.beginPath(); path(o.hover);
     c.strokeStyle = T.hover; c.lineWidth = 1.6 * o.k; c.stroke();
+  }
+
+  if (historical) {
+    const point = p(historical.point.coordinates);
+    const [x, y] = point || [NaN, NaN];
+    c.font = `600 ${24 * o.k}px ${capsFont()}`;
+    const labelWidth = c.measureText(historical.point.label).width;
+    const lx = x + 14 * o.k, ly = y - 6 * o.k;
+    const fits = Number.isFinite(x) && Number.isFinite(y) && x > 7 * o.k && y > 28 * o.k &&
+      lx + labelWidth + 8 * o.k < w && y + 8 * o.k < h;
+    if (!fits && o.report) throw new Error('The Athens locator or label is outside the map frame. Reset the view or choose a different layout.');
+    if (fits) {
+      c.fillStyle = T.bg;
+      c.fillRect(lx - 4 * o.k, ly - 22 * o.k, labelWidth + 8 * o.k, 30 * o.k);
+      c.fillStyle = T.text; c.textAlign = 'left'; c.textBaseline = 'alphabetic';
+      c.fillText(historical.point.label, lx, ly);
+      c.beginPath(); c.arc(x, y, 5 * o.k, 0, Math.PI * 2);
+      c.fillStyle = T.text; c.fill();
+      c.strokeStyle = T.bg; c.lineWidth = 2 * o.k; c.stroke();
+    }
+    c.font = `400 ${16 * o.k}px ${bodyFont()}`;
+    c.textAlign = 'left'; c.textBaseline = 'bottom'; c.fillStyle = T.text;
+    const key = `${historical.point.label} · modern geographic locator`;
+    c.fillStyle = T.bg; c.fillRect(10 * o.k, h - 35 * o.k, c.measureText(key).width + 14 * o.k, 25 * o.k);
+    c.fillStyle = T.text; c.fillText(key, 16 * o.k, h - 13 * o.k);
+    if (o.report) o.report.locator = { country: historical.countryKey, coordinates: historical.point.coordinates, point: [x + il, y + it] };
   }
 
   // how many of the units we were asked about actually landed in frame
@@ -396,6 +434,44 @@ export function hatchCss(base, ink) {
 /* ---------------- the screen canvas ---------------- */
 
 let canvas = null, ctx = null, wrap = null;
+function drawUsLabels(c, path, p, w, h, o, T) {
+  const e = state.nationalElection;
+  const small = ['VT', 'NH', 'MA', 'RI', 'CT', 'NJ', 'DE', 'MD', 'DC'];
+  const bounds = [];
+  const labelSize = Math.min(18 * o.k, Math.max(12 * o.k, h * .045));
+  c.font = `600 ${Math.round(labelSize)}px ${capsFont()}`;
+  c.textAlign = 'center'; c.textBaseline = 'middle';
+  for (const s of e.states) {
+    const f = BY_KEY.get(s.key), box = path.bounds(f), xy = path.centroid(f);
+    const visible = path.area(f) > 0 && box.flat().every(Number.isFinite) &&
+      box[0][0] >= 0 && box[0][1] >= 0 && box[1][0] <= w && box[1][1] <= h;
+    if (!visible && o.report) throw new Error(`${s.name} is outside the national map frame. Reset the view before exporting.`);
+    bounds.push({ postal: s.postal, key: s.key, visible, bounds: box });
+    if (!visible || small.includes(s.postal)) continue;
+    const label = s.postal + (['ME', 'NE'].includes(s.postal) ? '*' : '');
+    c.lineWidth = 2.5 * o.k; c.strokeStyle = '#1d1610'; c.strokeText(label, ...xy);
+    c.fillStyle = '#efe3c4'; c.fillText(label, ...xy);
+  }
+  const x = w * .855, rowHeight = Math.min(22 * o.k, (h - 44 * o.k) / small.length);
+  c.textAlign = 'left'; c.fillStyle = T.text;
+  c.font = `400 ${Math.round(15 * o.k)}px ${bodyFont()}`;
+  c.fillText('Small states & D.C.', x, 20 * o.k);
+  small.forEach((postal, i) => {
+    const s = e.states.find(s => s.postal === postal), y = 42 * o.k + i * rowHeight;
+    const f = BY_KEY.get(s.key), xy = path.centroid(f);
+    const label = w * .145 > 150 * o.k ? `${postal} · ${s.name}` : postal;
+    const colour = partyFor(s.key).color;
+    c.fillStyle = colour; c.fillRect(x, y - 5 * o.k, 10 * o.k, 10 * o.k);
+    c.fillStyle = T.text; c.fillText(label, x + 16 * o.k, y);
+    if (postal === 'DC') {
+      c.beginPath(); c.arc(...xy, 4 * o.k, 0, Math.PI * 2); c.fillStyle = colour; c.fill();
+      c.strokeStyle = T.text; c.lineWidth = 1 * o.k; c.stroke();
+      c.beginPath(); c.moveTo(...xy); c.lineTo(x - 6 * o.k, y); c.strokeStyle = T.muted; c.stroke();
+    }
+  });
+  if (o.report) o.report.nationalUnits = bounds;
+}
+
 let hovered = null;
 
 export function mountCanvas(canvasEl, wrapEl) {

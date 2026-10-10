@@ -732,3 +732,38 @@ learned aliases included.
 v1 files have no `version` and store a bare party id per country; `migrate()`
 in `src/state.js` turns those into records with empty values, so they open
 unchanged.
+
+## History Through Maps post identity
+
+### National post: U.S. presidential election 2024
+
+Under **Map style**, select **Start U.S. presidential election 2024** for official state-certified results from the FEC compilation. The national post distinguishes electoral votes, popular votes and states led, retains all 26 reported candidate/selection categories, and labels Maine/Nebraska's split allocations. The USA inset projection includes Alaska, Hawaii and a D.C. callout. Save/open and undo preserve the full document; **Export → Download Paper + Lamplight** generates both themes from the same data and framing. Six samples, the source PDF, reproducible data extraction and export instructions are in [docs/us2024](docs/us2024/README.md).
+
+### First post: Athens historical explainer
+
+Under **Map style**, select **Start Athens democracy explainer** for the source-backed overview of Cleisthenes' reforms, c. 508–507 BCE. It uses an explicitly labelled modern locator of Athens and Attica and institutional counts, with no invented party seats or election results. **Export → Download Paper + Lamplight** produces both themes from the same document and framing. Square, portrait and widescreen samples, sources, saved document and reproduction instructions are in [docs/athens](docs/athens/README.md).
+
+The Athens historical scope was selected for the first post; the U.S. 2024 starter above now supplies an actual national election workflow. Additional elections require a country, a specific election/date and source-backed result data. Both workflows retain the existing renderer, imports and original presentation option.
+
+### Identity controls
+
+In **Map style → Post identity**, choose **History Through Maps**. Dark background gives **Lamplight**; check **Light background** for **Paper**. Both use the channel's original seal, antique display type, small-cap legend, parchment/walnut colours and double-rule frame. The working map and PNG preview share the same map renderer. Square, portrait, widescreen, transparent export, flags and metric legends remain available.
+
+Party colours and result values stay unchanged. Unclassified party-family hatching keeps its meaning. Sources, coverage notes and boundary warnings remain visible; attribution that leaves too little map space stops export instead of being discarded. Identity is saved with the map. Existing files without an identity field open in the original Election Map Studio style.
+
+The original fonts and brand assets are bundled locally; see [brand provenance and font licences](public/brand/README.md). An export waits for those assets rather than silently substituting fonts.
+
+For a branded sequence:
+
+```sh
+npm run series -- --from 2020 --to 2023 --identity history --theme light --out build/paper
+npm run series -- --from 2020 --to 2023 --identity history --theme dark --out build/lamplight
+```
+
+The series manifest records its identity and theme; every frame uses the same planned presentation, legend reservation and geometry. `CHROMIUM_EXECUTABLE_PATH` can point tests and the series CLI at a locally installed Chromium.
+
+These examples use the bundled ParlGov archive, **party family of the head of government on 1 January 2023**. They show governments, not election winners, and are not current results.
+
+| Paper | Lamplight |
+| --- | --- |
+| ![Paper](docs/identity/light.png) | ![Lamplight](docs/identity/dark.png) |

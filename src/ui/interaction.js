@@ -26,6 +26,12 @@ function tipLine(key) {
 
 function showTip(f, x, y) {
   const tip = $('#tip');
+  if (state.explainer) {
+    tip.textContent = 'Modern geographic reference only; no ancient territory or results are asserted.';
+    tip.style.opacity = 1;
+    moveTip(x, y);
+    return;
+  }
   const line = state.mode === 'flags'
     ? (state.flagged[f.key] ? (flagOf(f) ? 'On the map' : 'No ISO code in the boundary data') : '')
     : tipLine(f.key);

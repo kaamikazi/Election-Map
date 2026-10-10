@@ -19,6 +19,7 @@
       <button data-p="equalEarth" aria-pressed="true">Flat</button>
       <button data-p="globe" aria-pressed="false">Globe</button>
       <button data-p="mercator" aria-pressed="false">Mercator</button>
+      <button data-p="albersUsa" aria-pressed="false" hidden>USA insets</button>
     </div>
     <button class="btn wide-only" data-act="import" id="openImport">Import</button>
     <button class="btn wide-only" data-act="undo" id="btnUndo" disabled>Undo</button>
@@ -111,7 +112,16 @@
               <button data-p="equalEarth" aria-pressed="true">Flat</button>
               <button data-p="globe" aria-pressed="false">Globe</button>
               <button data-p="mercator" aria-pressed="false">Mercator</button>
+              <button data-p="albersUsa" aria-pressed="false" hidden>USA insets</button>
             </div>
+            <label class="field">Post identity
+              <select id="fIdentity"><option value="classic">Election Map Studio</option><option value="history">History Through Maps</option></select>
+            </label>
+            <p class="muted identity-note">History identity: Paper on light, Lamplight on dark. Party colours stay yours.</p>
+            <button class="chip" id="startAthens">Start Athens democracy explainer</button>
+            <button class="chip" id="startUS2024">Start U.S. presidential election 2024</button>
+            <p class="muted identity-note" id="nationalNote" hidden>Official state/DC results. Tap a state to inspect its totals. National totals, all candidate categories, split electoral votes and citations travel with every export.</p>
+            <p class="muted identity-note" id="explainerNote" hidden>Historical locator, c. 508–507 BCE. Sources and caveats travel with every export. To map election results, import a result dataset or open a results file.</p>
             <div class="toggles">
               <label class="tog"><input type="checkbox" id="tTheme"> Light background</label>
               <label class="tog"><input type="checkbox" id="tGrat"> Latitude and longitude lines</label>
@@ -170,6 +180,7 @@
   </div>
   <div class="dlg-f">
     <button class="btn" id="btnCopy">Copy to clipboard</button>
+    <button class="btn" id="btnThemes">Download Paper + Lamplight</button>
     <button class="btn primary" id="btnPng">Download PNG</button>
   </div>
 </dialog>

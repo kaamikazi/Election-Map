@@ -1,0 +1,306 @@
+{
+  "kind": "historical-locator",
+  "period": "c. 508–507 BCE",
+  "document": "athens.json",
+  "documentSha256": "be008fadbd8c2510ec339402a6355f8e5a7352af32a3168dd9a05b31049423b7",
+  "framing": [
+    [
+      22.6,
+      37.35
+    ],
+    [
+      24.65,
+      38.65
+    ]
+  ],
+  "sources": [
+    {
+      "label": "[1] Aristotle, Athenian Constitution 21–22 (Kenyon translation)",
+      "url": "https://classics.mit.edu/Aristotle/athenian_const.1.1.html"
+    },
+    {
+      "label": "[2] Yale Open Courses, Week 6 chronology, p. 8 (PDF)",
+      "url": "https://oyc.yale.edu/sites/default/files/06theriseofathens_1.pdf"
+    },
+    {
+      "label": "[3] British Museum, Athens in the 5th century BC (later democracy)",
+      "url": "https://www.britishmuseum.org/blog/historical-city-travel-guide-athens-5th-century-bc"
+    },
+    {
+      "label": "[4] Getty Thesaurus of Geographic Names, Athens 7001393",
+      "url": "https://vocab.getty.edu/page/tgn/7001393"
+    }
+  ],
+  "outputs": [
+    {
+      "filename": "athens-wide-paper.png",
+      "theme": "light",
+      "width": 2400,
+      "height": 1350,
+      "pngSha256": "69a788c43587021895d44c4a18cbf3de01e98f3dff64f494200b444b41832b93",
+      "projection": {
+        "scale": 11616.809206073538,
+        "translate": [
+          -3630.5058228690814,
+          8514.720815783547
+        ],
+        "box": [
+          2319,
+          346.5
+        ],
+        "inset": [
+          523.5,
+          40.5,
+          480,
+          40.5
+        ],
+        "probe": [
+          [
+            -3630.5058228690814,
+            -3226.1929549331326
+          ],
+          [
+            424.52556157035224,
+            -6784.127805223901
+          ]
+        ]
+      },
+      "locator": {
+        "country": "Greece",
+        "coordinates": [
+          23.7333,
+          37.9833
+        ],
+        "point": [
+          1221.9579949467397,
+          701.7875803889874
+        ]
+      }
+    },
+    {
+      "filename": "athens-wide-lamplight.png",
+      "theme": "dark",
+      "width": 2400,
+      "height": 1350,
+      "pngSha256": "e8431132c133d54080b157d79029166c0742d450e08c4cd695856552dec7cfb9",
+      "projection": {
+        "scale": 11616.809206073538,
+        "translate": [
+          -3630.5058228690814,
+          8514.720815783547
+        ],
+        "box": [
+          2319,
+          346.5
+        ],
+        "inset": [
+          523.5,
+          40.5,
+          480,
+          40.5
+        ],
+        "probe": [
+          [
+            -3630.5058228690814,
+            -3226.1929549331326
+          ],
+          [
+            424.52556157035224,
+            -6784.127805223901
+          ]
+        ]
+      },
+      "locator": {
+        "country": "Greece",
+        "coordinates": [
+          23.7333,
+          37.9833
+        ],
+        "point": [
+          1221.9579949467397,
+          701.7875803889874
+        ]
+      }
+    },
+    {
+      "filename": "athens-square-paper.png",
+      "theme": "light",
+      "width": 1800,
+      "height": 1800,
+      "pngSha256": "ce314d0ce847958237b65fd25214c02cd3ab88d621b4890c8be24821f20a2cb4",
+      "projection": {
+        "scale": 36061.597187912135,
+        "translate": [
+          -13999.798905296508,
+          26417.782442718202
+        ],
+        "box": [
+          1739.25,
+          1047.375
+        ],
+        "inset": [
+          392.625,
+          30.375,
+          360,
+          30.375
+        ],
+        "probe": [
+          [
+            -13999.798905296508,
+            -10029.067592163497
+          ],
+          [
+            -1411.926816156607,
+            -21073.82274962442
+          ]
+        ]
+      },
+      "locator": {
+        "country": "Greece",
+        "coordinates": [
+          23.7333,
+          37.9833
+        ],
+        "point": [
+          968.163327362694,
+          931.9504597501145
+        ]
+      }
+    },
+    {
+      "filename": "athens-square-lamplight.png",
+      "theme": "dark",
+      "width": 1800,
+      "height": 1800,
+      "pngSha256": "7e4b80f85b401f9148c9ec142d5f5a5276fdebdb4cd455460a2c750e6de4673f",
+      "projection": {
+        "scale": 36061.597187912135,
+        "translate": [
+          -13999.798905296508,
+          26417.782442718202
+        ],
+        "box": [
+          1739.25,
+          1047.375
+        ],
+        "inset": [
+          392.625,
+          30.375,
+          360,
+          30.375
+        ],
+        "probe": [
+          [
+            -13999.798905296508,
+            -10029.067592163497
+          ],
+          [
+            -1411.926816156607,
+            -21073.82274962442
+          ]
+        ]
+      },
+      "locator": {
+        "country": "Greece",
+        "coordinates": [
+          23.7333,
+          37.9833
+        ],
+        "point": [
+          968.163327362694,
+          931.9504597501145
+        ]
+      }
+    },
+    {
+      "filename": "athens-portrait-paper.png",
+      "theme": "light",
+      "width": 1800,
+      "height": 2250,
+      "pngSha256": "2414c3cf1a7090a24b722e341f4112874ac570d6be3fe82b5ecee5e65cdc61aa",
+      "projection": {
+        "scale": 48359.03536707846,
+        "translate": [
+          -19070.45121951223,
+          35472.98012099183
+        ],
+        "box": [
+          1739.25,
+          1497.375
+        ],
+        "inset": [
+          392.625,
+          30.375,
+          360,
+          30.375
+        ],
+        "probe": [
+          [
+            -19070.45121951223,
+            -13402.683945442026
+          ],
+          [
+            -2189.963414634156,
+            -28213.83339334862
+          ]
+        ]
+      },
+      "locator": {
+        "country": "Greece",
+        "coordinates": [
+          23.7333,
+          37.9833
+        ],
+        "point": [
+          991.4078414634132,
+          1162.2831920268727
+        ]
+      }
+    },
+    {
+      "filename": "athens-portrait-lamplight.png",
+      "theme": "dark",
+      "width": 1800,
+      "height": 2250,
+      "pngSha256": "181f4e50d6c67c9b241233b41cd130acb0df54f5fc8f472909c1308b1589cde8",
+      "projection": {
+        "scale": 48359.03536707846,
+        "translate": [
+          -19070.45121951223,
+          35472.98012099183
+        ],
+        "box": [
+          1739.25,
+          1497.375
+        ],
+        "inset": [
+          392.625,
+          30.375,
+          360,
+          30.375
+        ],
+        "probe": [
+          [
+            -19070.45121951223,
+            -13402.683945442026
+          ],
+          [
+            -2189.963414634156,
+            -28213.83339334862
+          ]
+        ]
+      },
+      "locator": {
+        "country": "Greece",
+        "coordinates": [
+          23.7333,
+          37.9833
+        ],
+        "point": [
+          991.4078414634132,
+          1162.2831920268727
+        ]
+      }
+    }
+  ]
+}

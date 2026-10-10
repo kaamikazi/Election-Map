@@ -49,6 +49,8 @@ function args() {
      */
     width: Number(get('width', 1200)),
     height: Number(get('height', 1200)),
+    identity: get('identity', 'classic'),
+    theme: get('theme', 'dark'),
     handle: get('handle', '@electionmaps'),
     out: get('out', path.join('build', 'series'))
   };
@@ -80,7 +82,8 @@ async function main() {
   console.log(`series ${opt.from}–${opt.to} step ${opt.step} · ${opt.scope} · by ${opt.grouping}`);
 
   const server = await startServer();
-  const browser = await chromium.launch();
+  const browser = await chromium.launch(process.env.CHROMIUM_EXECUTABLE_PATH
+    ? { executablePath: process.env.CHROMIUM_EXECUTABLE_PATH } : {});
   try {
     const page = await browser.newPage({ viewport: { width: 1400, height: 900 } });
     const errors = [];
@@ -90,6 +93,9 @@ async function main() {
 
     console.log('planning…');
     const plan = await page.evaluate(async (o) => {
+      if (!['classic', 'history'].includes(o.identity) || !['dark', 'light'].includes(o.theme))
+        throw new Error('Use --identity classic|history and --theme dark|light');
+      Object.assign(window.__studio.state, { identity: o.identity, theme: o.theme });
       const { planSeries } = await import('/src/series.js');
       const p = await planSeries(o);
       return { frames: p.frames.length, skipped: p.skipped, fit: p.fit, rows: p.legendRows };

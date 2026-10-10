@@ -6,11 +6,28 @@ import { state, REGIONS, clearAssignments, emit, pushHistory,
          toDocument, undo, canUndo } from '../state.js';
 import { clamp } from '../geo.js';
 import { dl, slug } from '../export.js';
+import { prepareIdentity } from '../identity.js';
 import { restoreDocument } from '../restore.js';
+import { athensDocument } from '../explainer.js';
+import { us2024Document } from '../national-election.js';
 
 const undoMap = () => Promise.resolve().then(() => undo()).catch((err) => toast(`Undo failed: ${err.message}`));
 
 export function initControls() {
+  $('#startUS2024').addEventListener('click', async (e) => {
+    e.target.disabled = true;
+    try { await restoreDocument(await us2024Document()); toast('U.S. 2024 certified results loaded. Undo restores your previous document.'); }
+    catch (err) { toast(`Election not loaded: ${err.message}`); }
+    finally { e.target.disabled = false; }
+  });
+  $('#startAthens').addEventListener('click', async (e) => {
+    e.target.disabled = true;
+    try {
+      await restoreDocument(await athensDocument());
+      toast('Athens explainer loaded. Undo restores your previous document.');
+    } catch (err) { toast(`Explainer not loaded: ${err.message}`); }
+    finally { e.target.disabled = false; }
+  });
   /* ---- projection: the header control, and the phone's copy in Map style ---- */
   document.querySelectorAll('.projSeg').forEach((seg) => seg.addEventListener('click', (e) => {
     const b = e.target.closest('button[data-p]'); if (!b) return;
@@ -45,6 +62,17 @@ export function initControls() {
   const fields = { fTitle: 'title', fSub: 'sub', fHandle: 'handle' };
   Object.entries(fields).forEach(([id, key]) => {
     $('#' + id).addEventListener('input', (e) => { state[key] = e.target.value; });
+  });
+
+  $('#fIdentity').addEventListener('change', async (e) => {
+    const identity = e.target.value;
+    e.target.disabled = true;
+    try {
+      await prepareIdentity(identity);
+      state.identity = identity;
+      emit('view');
+    } catch (err) { toast(err.message); }
+    finally { e.target.disabled = false; e.target.value = state.identity; }
   });
 
   /* ---- style toggles ---- */
@@ -119,9 +147,13 @@ function syncProjection() {
 
 /** Push loaded state back into the inputs that hold it. */
 export function syncFormFromState() {
+  $('#explainerNote').hidden = !state.explainer;
+  $('#nationalNote').hidden = !state.nationalElection;
+  document.querySelectorAll('[data-p="albersUsa"]').forEach(b => { b.hidden = !state.layer.includes(':USA:'); });
   $('#fTitle').value = state.title || '';
   $('#fSub').value = state.sub || '';
   $('#fHandle').value = state.handle || '';
+  $('#fIdentity').value = state.identity;
   $('#tTheme').checked = state.theme === 'light';
   $('#tGrat').checked = !!state.grat;
   $('#tAnt').checked = !!state.antarctica;

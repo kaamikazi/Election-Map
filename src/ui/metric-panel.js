@@ -5,7 +5,10 @@ import { METRICS, domainLabel } from '../metrics.js';
 /** "Colour by" — one metric active at a time, each showing its own domain. */
 export function syncMetrics() {
   const box = $('#metricList');
-  [...box.children].forEach((b) => b.setAttribute('aria-pressed', b.dataset.m === state.metric));
+  [...box.children].forEach((b) => {
+    b.setAttribute('aria-pressed', b.dataset.m === state.metric);
+    b.disabled = !!(state.explainer || state.nationalElection) && b.dataset.m !== 'flat';
+  });
 }
 
 export function initMetrics() {

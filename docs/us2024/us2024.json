@@ -1,0 +1,4603 @@
+{
+  "version": 8,
+  "title": "United States · 2024",
+  "sub": "Presidential election · 5 November 2024 · Certified results",
+  "handle": "",
+  "parties": [
+    {
+      "id": 1,
+      "name": "Republican",
+      "color": "#D0453E"
+    },
+    {
+      "id": 2,
+      "name": "Democratic",
+      "color": "#3B7DD8"
+    }
+  ],
+  "active": 1,
+  "assign": {
+    "USA-3541": {
+      "party": 1,
+      "vote": 64.57209205815221,
+      "seats": null,
+      "turnout": null,
+      "margin": 30.47137199846364,
+      "label": "Donald J. Trump",
+      "datasetId": "fec-us-president-2024",
+      "provenance": {
+        "party": {
+          "source": "FEC official state-certified presidential results",
+          "url": "https://www.fec.gov/documents/5644/2024presgeresults.pdf",
+          "asOf": "2024-11-05",
+          "asOfPrecision": "day",
+          "datasetId": "fec-us-president-2024",
+          "fetchedAt": "2026-10-10"
+        },
+        "label": {
+          "source": "FEC official state-certified presidential results",
+          "url": "https://www.fec.gov/documents/5644/2024presgeresults.pdf",
+          "asOf": "2024-11-05",
+          "asOfPrecision": "day",
+          "datasetId": "fec-us-president-2024",
+          "fetchedAt": "2026-10-10"
+        },
+        "vote": {
+          "source": "FEC official state-certified presidential results",
+          "url": "https://www.fec.gov/documents/5644/2024presgeresults.pdf",
+          "asOf": "2024-11-05",
+          "asOfPrecision": "day",
+          "datasetId": "fec-us-president-2024",
+          "fetchedAt": "2026-10-10"
+        },
+        "margin": {
+          "source": "FEC official state-certified presidential results",
+          "url": "https://www.fec.gov/documents/5644/2024presgeresults.pdf",
+          "asOf": "2024-11-05",
+          "asOfPrecision": "day",
+          "datasetId": "fec-us-president-2024",
+          "fetchedAt": "2026-10-10"
+        }
+      }
+    },
+    "USA-3563": {
+      "party": 1,
+      "vote": 54.544809374972274,
+      "seats": null,
+      "turnout": null,
+      "margin": 13.138681814552735,
+      "label": "Donald J. Trump",
+      "datasetId": "fec-us-president-2024",
+      "provenance": {
+        "party": {
+          "source": "FEC official state-certified presidential results",
+          "url": "https://www.fec.gov/documents/5644/2024presgeresults.pdf",
+          "asOf": "2024-11-05",
+          "asOfPrecision": "day",
+          "datasetId": "fec-us-president-2024",
+          "fetchedAt": "2026-10-10"
+        },
+        "label": {
+          "source": "FEC official state-certified presidential results",
+          "url": "https://www.fec.gov/documents/5644/2024presgeresults.pdf",
+          "asOf": "2024-11-05",
+          "asOfPrecision": "day",
+          "datasetId": "fec-us-president-2024",
+          "fetchedAt": "2026-10-10"
+        },
+        "vote": {
+          "source": "FEC official state-certified presidential results",
+          "url": "https://www.fec.gov/documents/5644/2024presgeresults.pdf",
+          "asOf": "2024-11-05",
+          "asOfPrecision": "day",
+          "datasetId": "fec-us-president-2024",
+          "fetchedAt": "2026-10-10"
+        },
+        "margin": {
+          "source": "FEC official state-certified presidential results",
+          "url": "https://www.fec.gov/documents/5644/2024presgeresults.pdf",
+          "asOf": "2024-11-05",
+          "asOfPrecision": "day",
+          "datasetId": "fec-us-president-2024",
+          "fetchedAt": "2026-10-10"
+        }
+      }
+    },
+    "USA-3520": {
+      "party": 1,
+      "vote": 52.217048098895596,
+      "seats": null,
+      "turnout": null,
+      "margin": 5.527230122699187,
+      "label": "Donald J. Trump",
+      "datasetId": "fec-us-president-2024",
+      "provenance": {
+        "party": {
+          "source": "FEC official state-certified presidential results",
+          "url": "https://www.fec.gov/documents/5644/2024presgeresults.pdf",
+          "asOf": "2024-11-05",
+          "asOfPrecision": "day",
+          "datasetId": "fec-us-president-2024",
+          "fetchedAt": "2026-10-10"
+        },
+        "label": {
+          "source": "FEC official state-certified presidential results",
+          "url": "https://www.fec.gov/documents/5644/2024presgeresults.pdf",
+          "asOf": "2024-11-05",
+          "asOfPrecision": "day",
+          "datasetId": "fec-us-president-2024",
+          "fetchedAt": "2026-10-10"
+        },
+        "vote": {
+          "source": "FEC official state-certified presidential results",
+          "url": "https://www.fec.gov/documents/5644/2024presgeresults.pdf",
+          "asOf": "2024-11-05",
+          "asOfPrecision": "day",
+          "datasetId": "fec-us-president-2024",
+          "fetchedAt": "2026-10-10"
+        },
+        "margin": {
+          "source": "FEC official state-certified presidential results",
+          "url": "https://www.fec.gov/documents/5644/2024presgeresults.pdf",
+          "asOf": "2024-11-05",
+          "asOfPrecision": "day",
+          "datasetId": "fec-us-president-2024",
+          "fetchedAt": "2026-10-10"
+        }
+      }
+    },
+    "USA-3528": {
+      "party": 1,
+      "vote": 64.19687217800987,
+      "seats": null,
+      "turnout": null,
+      "margin": 30.63696227876443,
+      "label": "Donald J. Trump",
+      "datasetId": "fec-us-president-2024",
+      "provenance": {
+        "party": {
+          "source": "FEC official state-certified presidential results",
+          "url": "https://www.fec.gov/documents/5644/2024presgeresults.pdf",
+          "asOf": "2024-11-05",
+          "asOfPrecision": "day",
+          "datasetId": "fec-us-president-2024",
+          "fetchedAt": "2026-10-10"
+        },
+        "label": {
+          "source": "FEC official state-certified presidential results",
+          "url": "https://www.fec.gov/documents/5644/2024presgeresults.pdf",
+          "asOf": "2024-11-05",
+          "asOfPrecision": "day",
+          "datasetId": "fec-us-president-2024",
+          "fetchedAt": "2026-10-10"
+        },
+        "vote": {
+          "source": "FEC official state-certified presidential results",
+          "url": "https://www.fec.gov/documents/5644/2024presgeresults.pdf",
+          "asOf": "2024-11-05",
+          "asOfPrecision": "day",
+          "datasetId": "fec-us-president-2024",
+          "fetchedAt": "2026-10-10"
+        },
+        "margin": {
+          "source": "FEC official state-certified presidential results",
+          "url": "https://www.fec.gov/documents/5644/2024presgeresults.pdf",
+          "asOf": "2024-11-05",
+          "asOfPrecision": "day",
+          "datasetId": "fec-us-president-2024",
+          "fetchedAt": "2026-10-10"
+        }
+      }
+    },
+    "USA-3521": {
+      "party": 2,
+      "vote": 58.467704244594,
+      "seats": null,
+      "turnout": null,
+      "margin": 20.134802141127196,
+      "label": "Kamala D. Harris",
+      "datasetId": "fec-us-president-2024",
+      "provenance": {
+        "party": {
+          "source": "FEC official state-certified presidential results",
+          "url": "https://www.fec.gov/documents/5644/2024presgeresults.pdf",
+          "asOf": "2024-11-05",
+          "asOfPrecision": "day",
+          "datasetId": "fec-us-president-2024",
+          "fetchedAt": "2026-10-10"
+        },
+        "label": {
+          "source": "FEC official state-certified presidential results",
+          "url": "https://www.fec.gov/documents/5644/2024presgeresults.pdf",
+          "asOf": "2024-11-05",
+          "asOfPrecision": "day",
+          "datasetId": "fec-us-president-2024",
+          "fetchedAt": "2026-10-10"
+        },
+        "vote": {
+          "source": "FEC official state-certified presidential results",
+          "url": "https://www.fec.gov/documents/5644/2024presgeresults.pdf",
+          "asOf": "2024-11-05",
+          "asOfPrecision": "day",
+          "datasetId": "fec-us-president-2024",
+          "fetchedAt": "2026-10-10"
+        },
+        "margin": {
+          "source": "FEC official state-certified presidential results",
+          "url": "https://www.fec.gov/documents/5644/2024presgeresults.pdf",
+          "asOf": "2024-11-05",
+          "asOfPrecision": "day",
+          "datasetId": "fec-us-president-2024",
+          "fetchedAt": "2026-10-10"
+        }
+      }
+    },
+    "USA-3522": {
+      "party": 2,
+      "vote": 54.12768636392822,
+      "seats": null,
+      "turnout": null,
+      "margin": 10.984842196918326,
+      "label": "Kamala D. Harris",
+      "datasetId": "fec-us-president-2024",
+      "provenance": {
+        "party": {
+          "source": "FEC official state-certified presidential results",
+          "url": "https://www.fec.gov/documents/5644/2024presgeresults.pdf",
+          "asOf": "2024-11-05",
+          "asOfPrecision": "day",
+          "datasetId": "fec-us-president-2024",
+          "fetchedAt": "2026-10-10"
+        },
+        "label": {
+          "source": "FEC official state-certified presidential results",
+          "url": "https://www.fec.gov/documents/5644/2024presgeresults.pdf",
+          "asOf": "2024-11-05",
+          "asOfPrecision": "day",
+          "datasetId": "fec-us-president-2024",
+          "fetchedAt": "2026-10-10"
+        },
+        "vote": {
+          "source": "FEC official state-certified presidential results",
+          "url": "https://www.fec.gov/documents/5644/2024presgeresults.pdf",
+          "asOf": "2024-11-05",
+          "asOfPrecision": "day",
+          "datasetId": "fec-us-president-2024",
+          "fetchedAt": "2026-10-10"
+        },
+        "margin": {
+          "source": "FEC official state-certified presidential results",
+          "url": "https://www.fec.gov/documents/5644/2024presgeresults.pdf",
+          "asOf": "2024-11-05",
+          "asOfPrecision": "day",
+          "datasetId": "fec-us-president-2024",
+          "fetchedAt": "2026-10-10"
+        }
+      }
+    },
+    "USA-3537": {
+      "party": 2,
+      "vote": 56.39837181141665,
+      "seats": null,
+      "turnout": null,
+      "margin": 14.504465580070608,
+      "label": "Kamala D. Harris",
+      "datasetId": "fec-us-president-2024",
+      "provenance": {
+        "party": {
+          "source": "FEC official state-certified presidential results",
+          "url": "https://www.fec.gov/documents/5644/2024presgeresults.pdf",
+          "asOf": "2024-11-05",
+          "asOfPrecision": "day",
+          "datasetId": "fec-us-president-2024",
+          "fetchedAt": "2026-10-10"
+        },
+        "label": {
+          "source": "FEC official state-certified presidential results",
+          "url": "https://www.fec.gov/documents/5644/2024presgeresults.pdf",
+          "asOf": "2024-11-05",
+          "asOfPrecision": "day",
+          "datasetId": "fec-us-president-2024",
+          "fetchedAt": "2026-10-10"
+        },
+        "vote": {
+          "source": "FEC official state-certified presidential results",
+          "url": "https://www.fec.gov/documents/5644/2024presgeresults.pdf",
+          "asOf": "2024-11-05",
+          "asOfPrecision": "day",
+          "datasetId": "fec-us-president-2024",
+          "fetchedAt": "2026-10-10"
+        },
+        "margin": {
+          "source": "FEC official state-certified presidential results",
+          "url": "https://www.fec.gov/documents/5644/2024presgeresults.pdf",
+          "asOf": "2024-11-05",
+          "asOfPrecision": "day",
+          "datasetId": "fec-us-president-2024",
+          "fetchedAt": "2026-10-10"
+        }
+      }
+    },
+    "USA-3555": {
+      "party": 2,
+      "vote": 56.49273169666532,
+      "seats": null,
+      "turnout": null,
+      "margin": 14.70174220918988,
+      "label": "Kamala D. Harris",
+      "datasetId": "fec-us-president-2024",
+      "provenance": {
+        "party": {
+          "source": "FEC official state-certified presidential results",
+          "url": "https://www.fec.gov/documents/5644/2024presgeresults.pdf",
+          "asOf": "2024-11-05",
+          "asOfPrecision": "day",
+          "datasetId": "fec-us-president-2024",
+          "fetchedAt": "2026-10-10"
+        },
+        "label": {
+          "source": "FEC official state-certified presidential results",
+          "url": "https://www.fec.gov/documents/5644/2024presgeresults.pdf",
+          "asOf": "2024-11-05",
+          "asOfPrecision": "day",
+          "datasetId": "fec-us-president-2024",
+          "fetchedAt": "2026-10-10"
+        },
+        "vote": {
+          "source": "FEC official state-certified presidential results",
+          "url": "https://www.fec.gov/documents/5644/2024presgeresults.pdf",
+          "asOf": "2024-11-05",
+          "asOfPrecision": "day",
+          "datasetId": "fec-us-president-2024",
+          "fetchedAt": "2026-10-10"
+        },
+        "margin": {
+          "source": "FEC official state-certified presidential results",
+          "url": "https://www.fec.gov/documents/5644/2024presgeresults.pdf",
+          "asOf": "2024-11-05",
+          "asOfPrecision": "day",
+          "datasetId": "fec-us-president-2024",
+          "fetchedAt": "2026-10-10"
+        }
+      }
+    },
+    "USA-3556": {
+      "party": 2,
+      "vote": 90.27707452994915,
+      "seats": null,
+      "turnout": null,
+      "margin": 83.80944489963758,
+      "label": "Kamala D. Harris",
+      "datasetId": "fec-us-president-2024",
+      "provenance": {
+        "party": {
+          "source": "FEC official state-certified presidential results",
+          "url": "https://www.fec.gov/documents/5644/2024presgeresults.pdf",
+          "asOf": "2024-11-05",
+          "asOfPrecision": "day",
+          "datasetId": "fec-us-president-2024",
+          "fetchedAt": "2026-10-10"
+        },
+        "label": {
+          "source": "FEC official state-certified presidential results",
+          "url": "https://www.fec.gov/documents/5644/2024presgeresults.pdf",
+          "asOf": "2024-11-05",
+          "asOfPrecision": "day",
+          "datasetId": "fec-us-president-2024",
+          "fetchedAt": "2026-10-10"
+        },
+        "vote": {
+          "source": "FEC official state-certified presidential results",
+          "url": "https://www.fec.gov/documents/5644/2024presgeresults.pdf",
+          "asOf": "2024-11-05",
+          "asOfPrecision": "day",
+          "datasetId": "fec-us-president-2024",
+          "fetchedAt": "2026-10-10"
+        },
+        "margin": {
+          "source": "FEC official state-certified presidential results",
+          "url": "https://www.fec.gov/documents/5644/2024presgeresults.pdf",
+          "asOf": "2024-11-05",
+          "asOfPrecision": "day",
+          "datasetId": "fec-us-president-2024",
+          "fetchedAt": "2026-10-10"
+        }
+      }
+    },
+    "USA-3542": {
+      "party": 1,
+      "vote": 56.08834311631107,
+      "seats": null,
+      "turnout": null,
+      "margin": 13.100050377500791,
+      "label": "Donald J. Trump",
+      "datasetId": "fec-us-president-2024",
+      "provenance": {
+        "party": {
+          "source": "FEC official state-certified presidential results",
+          "url": "https://www.fec.gov/documents/5644/2024presgeresults.pdf",
+          "asOf": "2024-11-05",
+          "asOfPrecision": "day",
+          "datasetId": "fec-us-president-2024",
+          "fetchedAt": "2026-10-10"
+        },
+        "label": {
+          "source": "FEC official state-certified presidential results",
+          "url": "https://www.fec.gov/documents/5644/2024presgeresults.pdf",
+          "asOf": "2024-11-05",
+          "asOfPrecision": "day",
+          "datasetId": "fec-us-president-2024",
+          "fetchedAt": "2026-10-10"
+        },
+        "vote": {
+          "source": "FEC official state-certified presidential results",
+          "url": "https://www.fec.gov/documents/5644/2024presgeresults.pdf",
+          "asOf": "2024-11-05",
+          "asOfPrecision": "day",
+          "datasetId": "fec-us-president-2024",
+          "fetchedAt": "2026-10-10"
+        },
+        "margin": {
+          "source": "FEC official state-certified presidential results",
+          "url": "https://www.fec.gov/documents/5644/2024presgeresults.pdf",
+          "asOf": "2024-11-05",
+          "asOfPrecision": "day",
+          "datasetId": "fec-us-president-2024",
+          "fetchedAt": "2026-10-10"
+        }
+      }
+    },
+    "USA-3543": {
+      "party": 1,
+      "vote": 50.717295399554935,
+      "seats": null,
+      "turnout": null,
+      "margin": 2.1920030928001935,
+      "label": "Donald J. Trump",
+      "datasetId": "fec-us-president-2024",
+      "provenance": {
+        "party": {
+          "source": "FEC official state-certified presidential results",
+          "url": "https://www.fec.gov/documents/5644/2024presgeresults.pdf",
+          "asOf": "2024-11-05",
+          "asOfPrecision": "day",
+          "datasetId": "fec-us-president-2024",
+          "fetchedAt": "2026-10-10"
+        },
+        "label": {
+          "source": "FEC official state-certified presidential results",
+          "url": "https://www.fec.gov/documents/5644/2024presgeresults.pdf",
+          "asOf": "2024-11-05",
+          "asOfPrecision": "day",
+          "datasetId": "fec-us-president-2024",
+          "fetchedAt": "2026-10-10"
+        },
+        "vote": {
+          "source": "FEC official state-certified presidential results",
+          "url": "https://www.fec.gov/documents/5644/2024presgeresults.pdf",
+          "asOf": "2024-11-05",
+          "asOfPrecision": "day",
+          "datasetId": "fec-us-president-2024",
+          "fetchedAt": "2026-10-10"
+        },
+        "margin": {
+          "source": "FEC official state-certified presidential results",
+          "url": "https://www.fec.gov/documents/5644/2024presgeresults.pdf",
+          "asOf": "2024-11-05",
+          "asOfPrecision": "day",
+          "datasetId": "fec-us-president-2024",
+          "fetchedAt": "2026-10-10"
+        }
+      }
+    },
+    "USA-3517": {
+      "party": 2,
+      "vote": 60.58513531036325,
+      "seats": null,
+      "turnout": null,
+      "margin": 23.10485174211004,
+      "label": "Kamala D. Harris",
+      "datasetId": "fec-us-president-2024",
+      "provenance": {
+        "party": {
+          "source": "FEC official state-certified presidential results",
+          "url": "https://www.fec.gov/documents/5644/2024presgeresults.pdf",
+          "asOf": "2024-11-05",
+          "asOfPrecision": "day",
+          "datasetId": "fec-us-president-2024",
+          "fetchedAt": "2026-10-10"
+        },
+        "label": {
+          "source": "FEC official state-certified presidential results",
+          "url": "https://www.fec.gov/documents/5644/2024presgeresults.pdf",
+          "asOf": "2024-11-05",
+          "asOfPrecision": "day",
+          "datasetId": "fec-us-president-2024",
+          "fetchedAt": "2026-10-10"
+        },
+        "vote": {
+          "source": "FEC official state-certified presidential results",
+          "url": "https://www.fec.gov/documents/5644/2024presgeresults.pdf",
+          "asOf": "2024-11-05",
+          "asOfPrecision": "day",
+          "datasetId": "fec-us-president-2024",
+          "fetchedAt": "2026-10-10"
+        },
+        "margin": {
+          "source": "FEC official state-certified presidential results",
+          "url": "https://www.fec.gov/documents/5644/2024presgeresults.pdf",
+          "asOf": "2024-11-05",
+          "asOfPrecision": "day",
+          "datasetId": "fec-us-president-2024",
+          "fetchedAt": "2026-10-10"
+        }
+      }
+    },
+    "USA-3518": {
+      "party": 1,
+      "vote": 66.87379910878542,
+      "seats": null,
+      "turnout": null,
+      "margin": 36.492066245551385,
+      "label": "Donald J. Trump",
+      "datasetId": "fec-us-president-2024",
+      "provenance": {
+        "party": {
+          "source": "FEC official state-certified presidential results",
+          "url": "https://www.fec.gov/documents/5644/2024presgeresults.pdf",
+          "asOf": "2024-11-05",
+          "asOfPrecision": "day",
+          "datasetId": "fec-us-president-2024",
+          "fetchedAt": "2026-10-10"
+        },
+        "label": {
+          "source": "FEC official state-certified presidential results",
+          "url": "https://www.fec.gov/documents/5644/2024presgeresults.pdf",
+          "asOf": "2024-11-05",
+          "asOfPrecision": "day",
+          "datasetId": "fec-us-president-2024",
+          "fetchedAt": "2026-10-10"
+        },
+        "vote": {
+          "source": "FEC official state-certified presidential results",
+          "url": "https://www.fec.gov/documents/5644/2024presgeresults.pdf",
+          "asOf": "2024-11-05",
+          "asOfPrecision": "day",
+          "datasetId": "fec-us-president-2024",
+          "fetchedAt": "2026-10-10"
+        },
+        "margin": {
+          "source": "FEC official state-certified presidential results",
+          "url": "https://www.fec.gov/documents/5644/2024presgeresults.pdf",
+          "asOf": "2024-11-05",
+          "asOfPrecision": "day",
+          "datasetId": "fec-us-president-2024",
+          "fetchedAt": "2026-10-10"
+        }
+      }
+    },
+    "USA-3546": {
+      "party": 2,
+      "vote": 54.37057431598829,
+      "seats": null,
+      "turnout": null,
+      "margin": 10.895619094280272,
+      "label": "Kamala D. Harris",
+      "datasetId": "fec-us-president-2024",
+      "provenance": {
+        "party": {
+          "source": "FEC official state-certified presidential results",
+          "url": "https://www.fec.gov/documents/5644/2024presgeresults.pdf",
+          "asOf": "2024-11-05",
+          "asOfPrecision": "day",
+          "datasetId": "fec-us-president-2024",
+          "fetchedAt": "2026-10-10"
+        },
+        "label": {
+          "source": "FEC official state-certified presidential results",
+          "url": "https://www.fec.gov/documents/5644/2024presgeresults.pdf",
+          "asOf": "2024-11-05",
+          "asOfPrecision": "day",
+          "datasetId": "fec-us-president-2024",
+          "fetchedAt": "2026-10-10"
+        },
+        "vote": {
+          "source": "FEC official state-certified presidential results",
+          "url": "https://www.fec.gov/documents/5644/2024presgeresults.pdf",
+          "asOf": "2024-11-05",
+          "asOfPrecision": "day",
+          "datasetId": "fec-us-president-2024",
+          "fetchedAt": "2026-10-10"
+        },
+        "margin": {
+          "source": "FEC official state-certified presidential results",
+          "url": "https://www.fec.gov/documents/5644/2024presgeresults.pdf",
+          "asOf": "2024-11-05",
+          "asOfPrecision": "day",
+          "datasetId": "fec-us-president-2024",
+          "fetchedAt": "2026-10-10"
+        }
+      }
+    },
+    "USA-3547": {
+      "party": 1,
+      "vote": 58.58141702339072,
+      "seats": null,
+      "turnout": null,
+      "margin": 18.95829878464673,
+      "label": "Donald J. Trump",
+      "datasetId": "fec-us-president-2024",
+      "provenance": {
+        "party": {
+          "source": "FEC official state-certified presidential results",
+          "url": "https://www.fec.gov/documents/5644/2024presgeresults.pdf",
+          "asOf": "2024-11-05",
+          "asOfPrecision": "day",
+          "datasetId": "fec-us-president-2024",
+          "fetchedAt": "2026-10-10"
+        },
+        "label": {
+          "source": "FEC official state-certified presidential results",
+          "url": "https://www.fec.gov/documents/5644/2024presgeresults.pdf",
+          "asOf": "2024-11-05",
+          "asOfPrecision": "day",
+          "datasetId": "fec-us-president-2024",
+          "fetchedAt": "2026-10-10"
+        },
+        "vote": {
+          "source": "FEC official state-certified presidential results",
+          "url": "https://www.fec.gov/documents/5644/2024presgeresults.pdf",
+          "asOf": "2024-11-05",
+          "asOfPrecision": "day",
+          "datasetId": "fec-us-president-2024",
+          "fetchedAt": "2026-10-10"
+        },
+        "margin": {
+          "source": "FEC official state-certified presidential results",
+          "url": "https://www.fec.gov/documents/5644/2024presgeresults.pdf",
+          "asOf": "2024-11-05",
+          "asOfPrecision": "day",
+          "datasetId": "fec-us-president-2024",
+          "fetchedAt": "2026-10-10"
+        }
+      }
+    },
+    "USA-3529": {
+      "party": 1,
+      "vote": 55.72682034209675,
+      "seats": null,
+      "turnout": null,
+      "margin": 13.209510515742053,
+      "label": "Donald J. Trump",
+      "datasetId": "fec-us-president-2024",
+      "provenance": {
+        "party": {
+          "source": "FEC official state-certified presidential results",
+          "url": "https://www.fec.gov/documents/5644/2024presgeresults.pdf",
+          "asOf": "2024-11-05",
+          "asOfPrecision": "day",
+          "datasetId": "fec-us-president-2024",
+          "fetchedAt": "2026-10-10"
+        },
+        "label": {
+          "source": "FEC official state-certified presidential results",
+          "url": "https://www.fec.gov/documents/5644/2024presgeresults.pdf",
+          "asOf": "2024-11-05",
+          "asOfPrecision": "day",
+          "datasetId": "fec-us-president-2024",
+          "fetchedAt": "2026-10-10"
+        },
+        "vote": {
+          "source": "FEC official state-certified presidential results",
+          "url": "https://www.fec.gov/documents/5644/2024presgeresults.pdf",
+          "asOf": "2024-11-05",
+          "asOfPrecision": "day",
+          "datasetId": "fec-us-president-2024",
+          "fetchedAt": "2026-10-10"
+        },
+        "margin": {
+          "source": "FEC official state-certified presidential results",
+          "url": "https://www.fec.gov/documents/5644/2024presgeresults.pdf",
+          "asOf": "2024-11-05",
+          "asOfPrecision": "day",
+          "datasetId": "fec-us-president-2024",
+          "fetchedAt": "2026-10-10"
+        }
+      }
+    },
+    "USA-3530": {
+      "party": 1,
+      "vote": 57.15630792917397,
+      "seats": null,
+      "turnout": null,
+      "margin": 16.115580777513557,
+      "label": "Donald J. Trump",
+      "datasetId": "fec-us-president-2024",
+      "provenance": {
+        "party": {
+          "source": "FEC official state-certified presidential results",
+          "url": "https://www.fec.gov/documents/5644/2024presgeresults.pdf",
+          "asOf": "2024-11-05",
+          "asOfPrecision": "day",
+          "datasetId": "fec-us-president-2024",
+          "fetchedAt": "2026-10-10"
+        },
+        "label": {
+          "source": "FEC official state-certified presidential results",
+          "url": "https://www.fec.gov/documents/5644/2024presgeresults.pdf",
+          "asOf": "2024-11-05",
+          "asOfPrecision": "day",
+          "datasetId": "fec-us-president-2024",
+          "fetchedAt": "2026-10-10"
+        },
+        "vote": {
+          "source": "FEC official state-certified presidential results",
+          "url": "https://www.fec.gov/documents/5644/2024presgeresults.pdf",
+          "asOf": "2024-11-05",
+          "asOfPrecision": "day",
+          "datasetId": "fec-us-president-2024",
+          "fetchedAt": "2026-10-10"
+        },
+        "margin": {
+          "source": "FEC official state-certified presidential results",
+          "url": "https://www.fec.gov/documents/5644/2024presgeresults.pdf",
+          "asOf": "2024-11-05",
+          "asOfPrecision": "day",
+          "datasetId": "fec-us-president-2024",
+          "fetchedAt": "2026-10-10"
+        }
+      }
+    },
+    "USA-3548": {
+      "party": 1,
+      "vote": 64.47214549801642,
+      "seats": null,
+      "turnout": null,
+      "margin": 30.534675324049303,
+      "label": "Donald J. Trump",
+      "datasetId": "fec-us-president-2024",
+      "provenance": {
+        "party": {
+          "source": "FEC official state-certified presidential results",
+          "url": "https://www.fec.gov/documents/5644/2024presgeresults.pdf",
+          "asOf": "2024-11-05",
+          "asOfPrecision": "day",
+          "datasetId": "fec-us-president-2024",
+          "fetchedAt": "2026-10-10"
+        },
+        "label": {
+          "source": "FEC official state-certified presidential results",
+          "url": "https://www.fec.gov/documents/5644/2024presgeresults.pdf",
+          "asOf": "2024-11-05",
+          "asOfPrecision": "day",
+          "datasetId": "fec-us-president-2024",
+          "fetchedAt": "2026-10-10"
+        },
+        "vote": {
+          "source": "FEC official state-certified presidential results",
+          "url": "https://www.fec.gov/documents/5644/2024presgeresults.pdf",
+          "asOf": "2024-11-05",
+          "asOfPrecision": "day",
+          "datasetId": "fec-us-president-2024",
+          "fetchedAt": "2026-10-10"
+        },
+        "margin": {
+          "source": "FEC official state-certified presidential results",
+          "url": "https://www.fec.gov/documents/5644/2024presgeresults.pdf",
+          "asOf": "2024-11-05",
+          "asOfPrecision": "day",
+          "datasetId": "fec-us-president-2024",
+          "fetchedAt": "2026-10-10"
+        }
+      }
+    },
+    "USA-3535": {
+      "party": 1,
+      "vote": 60.215249318003465,
+      "seats": null,
+      "turnout": null,
+      "margin": 22.00500753621744,
+      "label": "Donald J. Trump",
+      "datasetId": "fec-us-president-2024",
+      "provenance": {
+        "party": {
+          "source": "FEC official state-certified presidential results",
+          "url": "https://www.fec.gov/documents/5644/2024presgeresults.pdf",
+          "asOf": "2024-11-05",
+          "asOfPrecision": "day",
+          "datasetId": "fec-us-president-2024",
+          "fetchedAt": "2026-10-10"
+        },
+        "label": {
+          "source": "FEC official state-certified presidential results",
+          "url": "https://www.fec.gov/documents/5644/2024presgeresults.pdf",
+          "asOf": "2024-11-05",
+          "asOfPrecision": "day",
+          "datasetId": "fec-us-president-2024",
+          "fetchedAt": "2026-10-10"
+        },
+        "vote": {
+          "source": "FEC official state-certified presidential results",
+          "url": "https://www.fec.gov/documents/5644/2024presgeresults.pdf",
+          "asOf": "2024-11-05",
+          "asOfPrecision": "day",
+          "datasetId": "fec-us-president-2024",
+          "fetchedAt": "2026-10-10"
+        },
+        "margin": {
+          "source": "FEC official state-certified presidential results",
+          "url": "https://www.fec.gov/documents/5644/2024presgeresults.pdf",
+          "asOf": "2024-11-05",
+          "asOfPrecision": "day",
+          "datasetId": "fec-us-president-2024",
+          "fetchedAt": "2026-10-10"
+        }
+      }
+    },
+    "USA-3561": {
+      "party": 2,
+      "vote": 52.401383250639,
+      "seats": null,
+      "turnout": null,
+      "margin": 6.937302661253947,
+      "label": "Kamala D. Harris",
+      "datasetId": "fec-us-president-2024",
+      "provenance": {
+        "party": {
+          "source": "FEC official state-certified presidential results",
+          "url": "https://www.fec.gov/documents/5644/2024presgeresults.pdf",
+          "asOf": "2024-11-05",
+          "asOfPrecision": "day",
+          "datasetId": "fec-us-president-2024",
+          "fetchedAt": "2026-10-10"
+        },
+        "label": {
+          "source": "FEC official state-certified presidential results",
+          "url": "https://www.fec.gov/documents/5644/2024presgeresults.pdf",
+          "asOf": "2024-11-05",
+          "asOfPrecision": "day",
+          "datasetId": "fec-us-president-2024",
+          "fetchedAt": "2026-10-10"
+        },
+        "vote": {
+          "source": "FEC official state-certified presidential results",
+          "url": "https://www.fec.gov/documents/5644/2024presgeresults.pdf",
+          "asOf": "2024-11-05",
+          "asOfPrecision": "day",
+          "datasetId": "fec-us-president-2024",
+          "fetchedAt": "2026-10-10"
+        },
+        "margin": {
+          "source": "FEC official state-certified presidential results",
+          "url": "https://www.fec.gov/documents/5644/2024presgeresults.pdf",
+          "asOf": "2024-11-05",
+          "asOfPrecision": "day",
+          "datasetId": "fec-us-president-2024",
+          "fetchedAt": "2026-10-10"
+        }
+      }
+    },
+    "USA-3557": {
+      "party": 2,
+      "vote": 62.61908664419382,
+      "seats": null,
+      "turnout": null,
+      "margin": 28.53626362341994,
+      "label": "Kamala D. Harris",
+      "datasetId": "fec-us-president-2024",
+      "provenance": {
+        "party": {
+          "source": "FEC official state-certified presidential results",
+          "url": "https://www.fec.gov/documents/5644/2024presgeresults.pdf",
+          "asOf": "2024-11-05",
+          "asOfPrecision": "day",
+          "datasetId": "fec-us-president-2024",
+          "fetchedAt": "2026-10-10"
+        },
+        "label": {
+          "source": "FEC official state-certified presidential results",
+          "url": "https://www.fec.gov/documents/5644/2024presgeresults.pdf",
+          "asOf": "2024-11-05",
+          "asOfPrecision": "day",
+          "datasetId": "fec-us-president-2024",
+          "fetchedAt": "2026-10-10"
+        },
+        "vote": {
+          "source": "FEC official state-certified presidential results",
+          "url": "https://www.fec.gov/documents/5644/2024presgeresults.pdf",
+          "asOf": "2024-11-05",
+          "asOfPrecision": "day",
+          "datasetId": "fec-us-president-2024",
+          "fetchedAt": "2026-10-10"
+        },
+        "margin": {
+          "source": "FEC official state-certified presidential results",
+          "url": "https://www.fec.gov/documents/5644/2024presgeresults.pdf",
+          "asOf": "2024-11-05",
+          "asOfPrecision": "day",
+          "datasetId": "fec-us-president-2024",
+          "fetchedAt": "2026-10-10"
+        }
+      }
+    },
+    "USA-3513": {
+      "party": 2,
+      "vote": 61.218228109306935,
+      "seats": null,
+      "turnout": null,
+      "margin": 25.19570091327093,
+      "label": "Kamala D. Harris",
+      "datasetId": "fec-us-president-2024",
+      "provenance": {
+        "party": {
+          "source": "FEC official state-certified presidential results",
+          "url": "https://www.fec.gov/documents/5644/2024presgeresults.pdf",
+          "asOf": "2024-11-05",
+          "asOfPrecision": "day",
+          "datasetId": "fec-us-president-2024",
+          "fetchedAt": "2026-10-10"
+        },
+        "label": {
+          "source": "FEC official state-certified presidential results",
+          "url": "https://www.fec.gov/documents/5644/2024presgeresults.pdf",
+          "asOf": "2024-11-05",
+          "asOfPrecision": "day",
+          "datasetId": "fec-us-president-2024",
+          "fetchedAt": "2026-10-10"
+        },
+        "vote": {
+          "source": "FEC official state-certified presidential results",
+          "url": "https://www.fec.gov/documents/5644/2024presgeresults.pdf",
+          "asOf": "2024-11-05",
+          "asOfPrecision": "day",
+          "datasetId": "fec-us-president-2024",
+          "fetchedAt": "2026-10-10"
+        },
+        "margin": {
+          "source": "FEC official state-certified presidential results",
+          "url": "https://www.fec.gov/documents/5644/2024presgeresults.pdf",
+          "asOf": "2024-11-05",
+          "asOfPrecision": "day",
+          "datasetId": "fec-us-president-2024",
+          "fetchedAt": "2026-10-10"
+        }
+      }
+    },
+    "USA-3562": {
+      "party": 1,
+      "vote": 49.72710995013229,
+      "seats": null,
+      "turnout": null,
+      "margin": 1.4142014404188,
+      "label": "Donald J. Trump",
+      "datasetId": "fec-us-president-2024",
+      "provenance": {
+        "party": {
+          "source": "FEC official state-certified presidential results",
+          "url": "https://www.fec.gov/documents/5644/2024presgeresults.pdf",
+          "asOf": "2024-11-05",
+          "asOfPrecision": "day",
+          "datasetId": "fec-us-president-2024",
+          "fetchedAt": "2026-10-10"
+        },
+        "label": {
+          "source": "FEC official state-certified presidential results",
+          "url": "https://www.fec.gov/documents/5644/2024presgeresults.pdf",
+          "asOf": "2024-11-05",
+          "asOfPrecision": "day",
+          "datasetId": "fec-us-president-2024",
+          "fetchedAt": "2026-10-10"
+        },
+        "vote": {
+          "source": "FEC official state-certified presidential results",
+          "url": "https://www.fec.gov/documents/5644/2024presgeresults.pdf",
+          "asOf": "2024-11-05",
+          "asOfPrecision": "day",
+          "datasetId": "fec-us-president-2024",
+          "fetchedAt": "2026-10-10"
+        },
+        "margin": {
+          "source": "FEC official state-certified presidential results",
+          "url": "https://www.fec.gov/documents/5644/2024presgeresults.pdf",
+          "asOf": "2024-11-05",
+          "asOfPrecision": "day",
+          "datasetId": "fec-us-president-2024",
+          "fetchedAt": "2026-10-10"
+        }
+      }
+    },
+    "USA-3514": {
+      "party": 2,
+      "vote": 50.922548802674925,
+      "seats": null,
+      "turnout": null,
+      "margin": 4.239409696612086,
+      "label": "Kamala D. Harris",
+      "datasetId": "fec-us-president-2024",
+      "provenance": {
+        "party": {
+          "source": "FEC official state-certified presidential results",
+          "url": "https://www.fec.gov/documents/5644/2024presgeresults.pdf",
+          "asOf": "2024-11-05",
+          "asOfPrecision": "day",
+          "datasetId": "fec-us-president-2024",
+          "fetchedAt": "2026-10-10"
+        },
+        "label": {
+          "source": "FEC official state-certified presidential results",
+          "url": "https://www.fec.gov/documents/5644/2024presgeresults.pdf",
+          "asOf": "2024-11-05",
+          "asOfPrecision": "day",
+          "datasetId": "fec-us-president-2024",
+          "fetchedAt": "2026-10-10"
+        },
+        "vote": {
+          "source": "FEC official state-certified presidential results",
+          "url": "https://www.fec.gov/documents/5644/2024presgeresults.pdf",
+          "asOf": "2024-11-05",
+          "asOfPrecision": "day",
+          "datasetId": "fec-us-president-2024",
+          "fetchedAt": "2026-10-10"
+        },
+        "margin": {
+          "source": "FEC official state-certified presidential results",
+          "url": "https://www.fec.gov/documents/5644/2024presgeresults.pdf",
+          "asOf": "2024-11-05",
+          "asOfPrecision": "day",
+          "datasetId": "fec-us-president-2024",
+          "fetchedAt": "2026-10-10"
+        }
+      }
+    },
+    "USA-3544": {
+      "party": 1,
+      "vote": 60.89080852893466,
+      "seats": null,
+      "turnout": null,
+      "margin": 22.888775968886197,
+      "label": "Donald J. Trump",
+      "datasetId": "fec-us-president-2024",
+      "provenance": {
+        "party": {
+          "source": "FEC official state-certified presidential results",
+          "url": "https://www.fec.gov/documents/5644/2024presgeresults.pdf",
+          "asOf": "2024-11-05",
+          "asOfPrecision": "day",
+          "datasetId": "fec-us-president-2024",
+          "fetchedAt": "2026-10-10"
+        },
+        "label": {
+          "source": "FEC official state-certified presidential results",
+          "url": "https://www.fec.gov/documents/5644/2024presgeresults.pdf",
+          "asOf": "2024-11-05",
+          "asOfPrecision": "day",
+          "datasetId": "fec-us-president-2024",
+          "fetchedAt": "2026-10-10"
+        },
+        "vote": {
+          "source": "FEC official state-certified presidential results",
+          "url": "https://www.fec.gov/documents/5644/2024presgeresults.pdf",
+          "asOf": "2024-11-05",
+          "asOfPrecision": "day",
+          "datasetId": "fec-us-president-2024",
+          "fetchedAt": "2026-10-10"
+        },
+        "margin": {
+          "source": "FEC official state-certified presidential results",
+          "url": "https://www.fec.gov/documents/5644/2024presgeresults.pdf",
+          "asOf": "2024-11-05",
+          "asOfPrecision": "day",
+          "datasetId": "fec-us-president-2024",
+          "fetchedAt": "2026-10-10"
+        }
+      }
+    },
+    "USA-3531": {
+      "party": 1,
+      "vote": 58.49064225708913,
+      "seats": null,
+      "turnout": null,
+      "margin": 18.40824056939359,
+      "label": "Donald J. Trump",
+      "datasetId": "fec-us-president-2024",
+      "provenance": {
+        "party": {
+          "source": "FEC official state-certified presidential results",
+          "url": "https://www.fec.gov/documents/5644/2024presgeresults.pdf",
+          "asOf": "2024-11-05",
+          "asOfPrecision": "day",
+          "datasetId": "fec-us-president-2024",
+          "fetchedAt": "2026-10-10"
+        },
+        "label": {
+          "source": "FEC official state-certified presidential results",
+          "url": "https://www.fec.gov/documents/5644/2024presgeresults.pdf",
+          "asOf": "2024-11-05",
+          "asOfPrecision": "day",
+          "datasetId": "fec-us-president-2024",
+          "fetchedAt": "2026-10-10"
+        },
+        "vote": {
+          "source": "FEC official state-certified presidential results",
+          "url": "https://www.fec.gov/documents/5644/2024presgeresults.pdf",
+          "asOf": "2024-11-05",
+          "asOfPrecision": "day",
+          "datasetId": "fec-us-president-2024",
+          "fetchedAt": "2026-10-10"
+        },
+        "margin": {
+          "source": "FEC official state-certified presidential results",
+          "url": "https://www.fec.gov/documents/5644/2024presgeresults.pdf",
+          "asOf": "2024-11-05",
+          "asOfPrecision": "day",
+          "datasetId": "fec-us-president-2024",
+          "fetchedAt": "2026-10-10"
+        }
+      }
+    },
+    "USA-3515": {
+      "party": 1,
+      "vote": 58.38886217018524,
+      "seats": null,
+      "turnout": null,
+      "margin": 19.929517902452776,
+      "label": "Donald J. Trump",
+      "datasetId": "fec-us-president-2024",
+      "provenance": {
+        "party": {
+          "source": "FEC official state-certified presidential results",
+          "url": "https://www.fec.gov/documents/5644/2024presgeresults.pdf",
+          "asOf": "2024-11-05",
+          "asOfPrecision": "day",
+          "datasetId": "fec-us-president-2024",
+          "fetchedAt": "2026-10-10"
+        },
+        "label": {
+          "source": "FEC official state-certified presidential results",
+          "url": "https://www.fec.gov/documents/5644/2024presgeresults.pdf",
+          "asOf": "2024-11-05",
+          "asOfPrecision": "day",
+          "datasetId": "fec-us-president-2024",
+          "fetchedAt": "2026-10-10"
+        },
+        "vote": {
+          "source": "FEC official state-certified presidential results",
+          "url": "https://www.fec.gov/documents/5644/2024presgeresults.pdf",
+          "asOf": "2024-11-05",
+          "asOfPrecision": "day",
+          "datasetId": "fec-us-president-2024",
+          "fetchedAt": "2026-10-10"
+        },
+        "margin": {
+          "source": "FEC official state-certified presidential results",
+          "url": "https://www.fec.gov/documents/5644/2024presgeresults.pdf",
+          "asOf": "2024-11-05",
+          "asOfPrecision": "day",
+          "datasetId": "fec-us-president-2024",
+          "fetchedAt": "2026-10-10"
+        }
+      }
+    },
+    "USA-3532": {
+      "party": 1,
+      "vote": 59.318071545145784,
+      "seats": null,
+      "turnout": null,
+      "margin": 20.460479194103648,
+      "label": "Donald J. Trump",
+      "datasetId": "fec-us-president-2024",
+      "provenance": {
+        "party": {
+          "source": "FEC official state-certified presidential results",
+          "url": "https://www.fec.gov/documents/5644/2024presgeresults.pdf",
+          "asOf": "2024-11-05",
+          "asOfPrecision": "day",
+          "datasetId": "fec-us-president-2024",
+          "fetchedAt": "2026-10-10"
+        },
+        "label": {
+          "source": "FEC official state-certified presidential results",
+          "url": "https://www.fec.gov/documents/5644/2024presgeresults.pdf",
+          "asOf": "2024-11-05",
+          "asOfPrecision": "day",
+          "datasetId": "fec-us-president-2024",
+          "fetchedAt": "2026-10-10"
+        },
+        "vote": {
+          "source": "FEC official state-certified presidential results",
+          "url": "https://www.fec.gov/documents/5644/2024presgeresults.pdf",
+          "asOf": "2024-11-05",
+          "asOfPrecision": "day",
+          "datasetId": "fec-us-president-2024",
+          "fetchedAt": "2026-10-10"
+        },
+        "margin": {
+          "source": "FEC official state-certified presidential results",
+          "url": "https://www.fec.gov/documents/5644/2024presgeresults.pdf",
+          "asOf": "2024-11-05",
+          "asOfPrecision": "day",
+          "datasetId": "fec-us-president-2024",
+          "fetchedAt": "2026-10-10"
+        }
+      }
+    },
+    "USA-3523": {
+      "party": 1,
+      "vote": 50.5916462379785,
+      "seats": null,
+      "turnout": null,
+      "margin": 3.0985156649874734,
+      "label": "Donald J. Trump",
+      "datasetId": "fec-us-president-2024",
+      "provenance": {
+        "party": {
+          "source": "FEC official state-certified presidential results",
+          "url": "https://www.fec.gov/documents/5644/2024presgeresults.pdf",
+          "asOf": "2024-11-05",
+          "asOfPrecision": "day",
+          "datasetId": "fec-us-president-2024",
+          "fetchedAt": "2026-10-10"
+        },
+        "label": {
+          "source": "FEC official state-certified presidential results",
+          "url": "https://www.fec.gov/documents/5644/2024presgeresults.pdf",
+          "asOf": "2024-11-05",
+          "asOfPrecision": "day",
+          "datasetId": "fec-us-president-2024",
+          "fetchedAt": "2026-10-10"
+        },
+        "vote": {
+          "source": "FEC official state-certified presidential results",
+          "url": "https://www.fec.gov/documents/5644/2024presgeresults.pdf",
+          "asOf": "2024-11-05",
+          "asOfPrecision": "day",
+          "datasetId": "fec-us-president-2024",
+          "fetchedAt": "2026-10-10"
+        },
+        "margin": {
+          "source": "FEC official state-certified presidential results",
+          "url": "https://www.fec.gov/documents/5644/2024presgeresults.pdf",
+          "asOf": "2024-11-05",
+          "asOfPrecision": "day",
+          "datasetId": "fec-us-president-2024",
+          "fetchedAt": "2026-10-10"
+        }
+      }
+    },
+    "USA-3538": {
+      "party": 2,
+      "vote": 50.65281672837571,
+      "seats": null,
+      "turnout": null,
+      "margin": 2.7796303267170104,
+      "label": "Kamala D. Harris",
+      "datasetId": "fec-us-president-2024",
+      "provenance": {
+        "party": {
+          "source": "FEC official state-certified presidential results",
+          "url": "https://www.fec.gov/documents/5644/2024presgeresults.pdf",
+          "asOf": "2024-11-05",
+          "asOfPrecision": "day",
+          "datasetId": "fec-us-president-2024",
+          "fetchedAt": "2026-10-10"
+        },
+        "label": {
+          "source": "FEC official state-certified presidential results",
+          "url": "https://www.fec.gov/documents/5644/2024presgeresults.pdf",
+          "asOf": "2024-11-05",
+          "asOfPrecision": "day",
+          "datasetId": "fec-us-president-2024",
+          "fetchedAt": "2026-10-10"
+        },
+        "vote": {
+          "source": "FEC official state-certified presidential results",
+          "url": "https://www.fec.gov/documents/5644/2024presgeresults.pdf",
+          "asOf": "2024-11-05",
+          "asOfPrecision": "day",
+          "datasetId": "fec-us-president-2024",
+          "fetchedAt": "2026-10-10"
+        },
+        "margin": {
+          "source": "FEC official state-certified presidential results",
+          "url": "https://www.fec.gov/documents/5644/2024presgeresults.pdf",
+          "asOf": "2024-11-05",
+          "asOfPrecision": "day",
+          "datasetId": "fec-us-president-2024",
+          "fetchedAt": "2026-10-10"
+        }
+      }
+    },
+    "USA-3558": {
+      "party": 2,
+      "vote": 51.97416168838388,
+      "seats": null,
+      "turnout": null,
+      "margin": 5.909530802941917,
+      "label": "Kamala D. Harris",
+      "datasetId": "fec-us-president-2024",
+      "provenance": {
+        "party": {
+          "source": "FEC official state-certified presidential results",
+          "url": "https://www.fec.gov/documents/5644/2024presgeresults.pdf",
+          "asOf": "2024-11-05",
+          "asOfPrecision": "day",
+          "datasetId": "fec-us-president-2024",
+          "fetchedAt": "2026-10-10"
+        },
+        "label": {
+          "source": "FEC official state-certified presidential results",
+          "url": "https://www.fec.gov/documents/5644/2024presgeresults.pdf",
+          "asOf": "2024-11-05",
+          "asOfPrecision": "day",
+          "datasetId": "fec-us-president-2024",
+          "fetchedAt": "2026-10-10"
+        },
+        "vote": {
+          "source": "FEC official state-certified presidential results",
+          "url": "https://www.fec.gov/documents/5644/2024presgeresults.pdf",
+          "asOf": "2024-11-05",
+          "asOfPrecision": "day",
+          "datasetId": "fec-us-president-2024",
+          "fetchedAt": "2026-10-10"
+        },
+        "margin": {
+          "source": "FEC official state-certified presidential results",
+          "url": "https://www.fec.gov/documents/5644/2024presgeresults.pdf",
+          "asOf": "2024-11-05",
+          "asOfPrecision": "day",
+          "datasetId": "fec-us-president-2024",
+          "fetchedAt": "2026-10-10"
+        }
+      }
+    },
+    "USA-3524": {
+      "party": 2,
+      "vote": 51.85189998299767,
+      "seats": null,
+      "turnout": null,
+      "margin": 6.000738572432621,
+      "label": "Kamala D. Harris",
+      "datasetId": "fec-us-president-2024",
+      "provenance": {
+        "party": {
+          "source": "FEC official state-certified presidential results",
+          "url": "https://www.fec.gov/documents/5644/2024presgeresults.pdf",
+          "asOf": "2024-11-05",
+          "asOfPrecision": "day",
+          "datasetId": "fec-us-president-2024",
+          "fetchedAt": "2026-10-10"
+        },
+        "label": {
+          "source": "FEC official state-certified presidential results",
+          "url": "https://www.fec.gov/documents/5644/2024presgeresults.pdf",
+          "asOf": "2024-11-05",
+          "asOfPrecision": "day",
+          "datasetId": "fec-us-president-2024",
+          "fetchedAt": "2026-10-10"
+        },
+        "vote": {
+          "source": "FEC official state-certified presidential results",
+          "url": "https://www.fec.gov/documents/5644/2024presgeresults.pdf",
+          "asOf": "2024-11-05",
+          "asOfPrecision": "day",
+          "datasetId": "fec-us-president-2024",
+          "fetchedAt": "2026-10-10"
+        },
+        "margin": {
+          "source": "FEC official state-certified presidential results",
+          "url": "https://www.fec.gov/documents/5644/2024presgeresults.pdf",
+          "asOf": "2024-11-05",
+          "asOfPrecision": "day",
+          "datasetId": "fec-us-president-2024",
+          "fetchedAt": "2026-10-10"
+        }
+      }
+    },
+    "USA-3559": {
+      "party": 2,
+      "vote": 55.905570895958185,
+      "seats": null,
+      "turnout": null,
+      "margin": 12.590579479927069,
+      "label": "Kamala D. Harris",
+      "datasetId": "fec-us-president-2024",
+      "provenance": {
+        "party": {
+          "source": "FEC official state-certified presidential results",
+          "url": "https://www.fec.gov/documents/5644/2024presgeresults.pdf",
+          "asOf": "2024-11-05",
+          "asOfPrecision": "day",
+          "datasetId": "fec-us-president-2024",
+          "fetchedAt": "2026-10-10"
+        },
+        "label": {
+          "source": "FEC official state-certified presidential results",
+          "url": "https://www.fec.gov/documents/5644/2024presgeresults.pdf",
+          "asOf": "2024-11-05",
+          "asOfPrecision": "day",
+          "datasetId": "fec-us-president-2024",
+          "fetchedAt": "2026-10-10"
+        },
+        "vote": {
+          "source": "FEC official state-certified presidential results",
+          "url": "https://www.fec.gov/documents/5644/2024presgeresults.pdf",
+          "asOf": "2024-11-05",
+          "asOfPrecision": "day",
+          "datasetId": "fec-us-president-2024",
+          "fetchedAt": "2026-10-10"
+        },
+        "margin": {
+          "source": "FEC official state-certified presidential results",
+          "url": "https://www.fec.gov/documents/5644/2024presgeresults.pdf",
+          "asOf": "2024-11-05",
+          "asOfPrecision": "day",
+          "datasetId": "fec-us-president-2024",
+          "fetchedAt": "2026-10-10"
+        }
+      }
+    },
+    "USA-3549": {
+      "party": 1,
+      "vote": 50.85719058363357,
+      "seats": null,
+      "turnout": null,
+      "margin": 3.211852452852105,
+      "label": "Donald J. Trump",
+      "datasetId": "fec-us-president-2024",
+      "provenance": {
+        "party": {
+          "source": "FEC official state-certified presidential results",
+          "url": "https://www.fec.gov/documents/5644/2024presgeresults.pdf",
+          "asOf": "2024-11-05",
+          "asOfPrecision": "day",
+          "datasetId": "fec-us-president-2024",
+          "fetchedAt": "2026-10-10"
+        },
+        "label": {
+          "source": "FEC official state-certified presidential results",
+          "url": "https://www.fec.gov/documents/5644/2024presgeresults.pdf",
+          "asOf": "2024-11-05",
+          "asOfPrecision": "day",
+          "datasetId": "fec-us-president-2024",
+          "fetchedAt": "2026-10-10"
+        },
+        "vote": {
+          "source": "FEC official state-certified presidential results",
+          "url": "https://www.fec.gov/documents/5644/2024presgeresults.pdf",
+          "asOf": "2024-11-05",
+          "asOfPrecision": "day",
+          "datasetId": "fec-us-president-2024",
+          "fetchedAt": "2026-10-10"
+        },
+        "margin": {
+          "source": "FEC official state-certified presidential results",
+          "url": "https://www.fec.gov/documents/5644/2024presgeresults.pdf",
+          "asOf": "2024-11-05",
+          "asOfPrecision": "day",
+          "datasetId": "fec-us-president-2024",
+          "fetchedAt": "2026-10-10"
+        }
+      }
+    },
+    "USA-3516": {
+      "party": 1,
+      "vote": 66.95685241270661,
+      "seats": null,
+      "turnout": null,
+      "margin": 36.44606212057421,
+      "label": "Donald J. Trump",
+      "datasetId": "fec-us-president-2024",
+      "provenance": {
+        "party": {
+          "source": "FEC official state-certified presidential results",
+          "url": "https://www.fec.gov/documents/5644/2024presgeresults.pdf",
+          "asOf": "2024-11-05",
+          "asOfPrecision": "day",
+          "datasetId": "fec-us-president-2024",
+          "fetchedAt": "2026-10-10"
+        },
+        "label": {
+          "source": "FEC official state-certified presidential results",
+          "url": "https://www.fec.gov/documents/5644/2024presgeresults.pdf",
+          "asOf": "2024-11-05",
+          "asOfPrecision": "day",
+          "datasetId": "fec-us-president-2024",
+          "fetchedAt": "2026-10-10"
+        },
+        "vote": {
+          "source": "FEC official state-certified presidential results",
+          "url": "https://www.fec.gov/documents/5644/2024presgeresults.pdf",
+          "asOf": "2024-11-05",
+          "asOfPrecision": "day",
+          "datasetId": "fec-us-president-2024",
+          "fetchedAt": "2026-10-10"
+        },
+        "margin": {
+          "source": "FEC official state-certified presidential results",
+          "url": "https://www.fec.gov/documents/5644/2024presgeresults.pdf",
+          "asOf": "2024-11-05",
+          "asOfPrecision": "day",
+          "datasetId": "fec-us-president-2024",
+          "fetchedAt": "2026-10-10"
+        }
+      }
+    },
+    "USA-3550": {
+      "party": 1,
+      "vote": 55.13579902728741,
+      "seats": null,
+      "turnout": null,
+      "margin": 11.207364070940194,
+      "label": "Donald J. Trump",
+      "datasetId": "fec-us-president-2024",
+      "provenance": {
+        "party": {
+          "source": "FEC official state-certified presidential results",
+          "url": "https://www.fec.gov/documents/5644/2024presgeresults.pdf",
+          "asOf": "2024-11-05",
+          "asOfPrecision": "day",
+          "datasetId": "fec-us-president-2024",
+          "fetchedAt": "2026-10-10"
+        },
+        "label": {
+          "source": "FEC official state-certified presidential results",
+          "url": "https://www.fec.gov/documents/5644/2024presgeresults.pdf",
+          "asOf": "2024-11-05",
+          "asOfPrecision": "day",
+          "datasetId": "fec-us-president-2024",
+          "fetchedAt": "2026-10-10"
+        },
+        "vote": {
+          "source": "FEC official state-certified presidential results",
+          "url": "https://www.fec.gov/documents/5644/2024presgeresults.pdf",
+          "asOf": "2024-11-05",
+          "asOfPrecision": "day",
+          "datasetId": "fec-us-president-2024",
+          "fetchedAt": "2026-10-10"
+        },
+        "margin": {
+          "source": "FEC official state-certified presidential results",
+          "url": "https://www.fec.gov/documents/5644/2024presgeresults.pdf",
+          "asOf": "2024-11-05",
+          "asOfPrecision": "day",
+          "datasetId": "fec-us-president-2024",
+          "fetchedAt": "2026-10-10"
+        }
+      }
+    },
+    "USA-3533": {
+      "party": 1,
+      "vote": 66.16210342024796,
+      "seats": null,
+      "turnout": null,
+      "margin": 34.26275385924799,
+      "label": "Donald J. Trump",
+      "datasetId": "fec-us-president-2024",
+      "provenance": {
+        "party": {
+          "source": "FEC official state-certified presidential results",
+          "url": "https://www.fec.gov/documents/5644/2024presgeresults.pdf",
+          "asOf": "2024-11-05",
+          "asOfPrecision": "day",
+          "datasetId": "fec-us-president-2024",
+          "fetchedAt": "2026-10-10"
+        },
+        "label": {
+          "source": "FEC official state-certified presidential results",
+          "url": "https://www.fec.gov/documents/5644/2024presgeresults.pdf",
+          "asOf": "2024-11-05",
+          "asOfPrecision": "day",
+          "datasetId": "fec-us-president-2024",
+          "fetchedAt": "2026-10-10"
+        },
+        "vote": {
+          "source": "FEC official state-certified presidential results",
+          "url": "https://www.fec.gov/documents/5644/2024presgeresults.pdf",
+          "asOf": "2024-11-05",
+          "asOfPrecision": "day",
+          "datasetId": "fec-us-president-2024",
+          "fetchedAt": "2026-10-10"
+        },
+        "margin": {
+          "source": "FEC official state-certified presidential results",
+          "url": "https://www.fec.gov/documents/5644/2024presgeresults.pdf",
+          "asOf": "2024-11-05",
+          "asOfPrecision": "day",
+          "datasetId": "fec-us-president-2024",
+          "fetchedAt": "2026-10-10"
+        }
+      }
+    },
+    "USA-3525": {
+      "party": 2,
+      "vote": 55.273061666933245,
+      "seats": null,
+      "turnout": null,
+      "margin": 14.307017219478965,
+      "label": "Kamala D. Harris",
+      "datasetId": "fec-us-president-2024",
+      "provenance": {
+        "party": {
+          "source": "FEC official state-certified presidential results",
+          "url": "https://www.fec.gov/documents/5644/2024presgeresults.pdf",
+          "asOf": "2024-11-05",
+          "asOfPrecision": "day",
+          "datasetId": "fec-us-president-2024",
+          "fetchedAt": "2026-10-10"
+        },
+        "label": {
+          "source": "FEC official state-certified presidential results",
+          "url": "https://www.fec.gov/documents/5644/2024presgeresults.pdf",
+          "asOf": "2024-11-05",
+          "asOfPrecision": "day",
+          "datasetId": "fec-us-president-2024",
+          "fetchedAt": "2026-10-10"
+        },
+        "vote": {
+          "source": "FEC official state-certified presidential results",
+          "url": "https://www.fec.gov/documents/5644/2024presgeresults.pdf",
+          "asOf": "2024-11-05",
+          "asOfPrecision": "day",
+          "datasetId": "fec-us-president-2024",
+          "fetchedAt": "2026-10-10"
+        },
+        "margin": {
+          "source": "FEC official state-certified presidential results",
+          "url": "https://www.fec.gov/documents/5644/2024presgeresults.pdf",
+          "asOf": "2024-11-05",
+          "asOfPrecision": "day",
+          "datasetId": "fec-us-president-2024",
+          "fetchedAt": "2026-10-10"
+        }
+      }
+    },
+    "USA-3560": {
+      "party": 1,
+      "vote": 50.19751422776782,
+      "seats": null,
+      "turnout": null,
+      "margin": 1.7037904258158547,
+      "label": "Donald J. Trump",
+      "datasetId": "fec-us-president-2024",
+      "provenance": {
+        "party": {
+          "source": "FEC official state-certified presidential results",
+          "url": "https://www.fec.gov/documents/5644/2024presgeresults.pdf",
+          "asOf": "2024-11-05",
+          "asOfPrecision": "day",
+          "datasetId": "fec-us-president-2024",
+          "fetchedAt": "2026-10-10"
+        },
+        "label": {
+          "source": "FEC official state-certified presidential results",
+          "url": "https://www.fec.gov/documents/5644/2024presgeresults.pdf",
+          "asOf": "2024-11-05",
+          "asOfPrecision": "day",
+          "datasetId": "fec-us-president-2024",
+          "fetchedAt": "2026-10-10"
+        },
+        "vote": {
+          "source": "FEC official state-certified presidential results",
+          "url": "https://www.fec.gov/documents/5644/2024presgeresults.pdf",
+          "asOf": "2024-11-05",
+          "asOfPrecision": "day",
+          "datasetId": "fec-us-president-2024",
+          "fetchedAt": "2026-10-10"
+        },
+        "margin": {
+          "source": "FEC official state-certified presidential results",
+          "url": "https://www.fec.gov/documents/5644/2024presgeresults.pdf",
+          "asOf": "2024-11-05",
+          "asOfPrecision": "day",
+          "datasetId": "fec-us-president-2024",
+          "fetchedAt": "2026-10-10"
+        }
+      }
+    },
+    "USA-3539": {
+      "party": 2,
+      "vote": 55.54417144215074,
+      "seats": null,
+      "turnout": null,
+      "margin": 13.781053632159818,
+      "label": "Kamala D. Harris",
+      "datasetId": "fec-us-president-2024",
+      "provenance": {
+        "party": {
+          "source": "FEC official state-certified presidential results",
+          "url": "https://www.fec.gov/documents/5644/2024presgeresults.pdf",
+          "asOf": "2024-11-05",
+          "asOfPrecision": "day",
+          "datasetId": "fec-us-president-2024",
+          "fetchedAt": "2026-10-10"
+        },
+        "label": {
+          "source": "FEC official state-certified presidential results",
+          "url": "https://www.fec.gov/documents/5644/2024presgeresults.pdf",
+          "asOf": "2024-11-05",
+          "asOfPrecision": "day",
+          "datasetId": "fec-us-president-2024",
+          "fetchedAt": "2026-10-10"
+        },
+        "vote": {
+          "source": "FEC official state-certified presidential results",
+          "url": "https://www.fec.gov/documents/5644/2024presgeresults.pdf",
+          "asOf": "2024-11-05",
+          "asOfPrecision": "day",
+          "datasetId": "fec-us-president-2024",
+          "fetchedAt": "2026-10-10"
+        },
+        "margin": {
+          "source": "FEC official state-certified presidential results",
+          "url": "https://www.fec.gov/documents/5644/2024presgeresults.pdf",
+          "asOf": "2024-11-05",
+          "asOfPrecision": "day",
+          "datasetId": "fec-us-president-2024",
+          "fetchedAt": "2026-10-10"
+        }
+      }
+    },
+    "USA-3545": {
+      "party": 1,
+      "vote": 58.2286295101525,
+      "seats": null,
+      "turnout": null,
+      "margin": 17.86773882125786,
+      "label": "Donald J. Trump",
+      "datasetId": "fec-us-president-2024",
+      "provenance": {
+        "party": {
+          "source": "FEC official state-certified presidential results",
+          "url": "https://www.fec.gov/documents/5644/2024presgeresults.pdf",
+          "asOf": "2024-11-05",
+          "asOfPrecision": "day",
+          "datasetId": "fec-us-president-2024",
+          "fetchedAt": "2026-10-10"
+        },
+        "label": {
+          "source": "FEC official state-certified presidential results",
+          "url": "https://www.fec.gov/documents/5644/2024presgeresults.pdf",
+          "asOf": "2024-11-05",
+          "asOfPrecision": "day",
+          "datasetId": "fec-us-president-2024",
+          "fetchedAt": "2026-10-10"
+        },
+        "vote": {
+          "source": "FEC official state-certified presidential results",
+          "url": "https://www.fec.gov/documents/5644/2024presgeresults.pdf",
+          "asOf": "2024-11-05",
+          "asOfPrecision": "day",
+          "datasetId": "fec-us-president-2024",
+          "fetchedAt": "2026-10-10"
+        },
+        "margin": {
+          "source": "FEC official state-certified presidential results",
+          "url": "https://www.fec.gov/documents/5644/2024presgeresults.pdf",
+          "asOf": "2024-11-05",
+          "asOfPrecision": "day",
+          "datasetId": "fec-us-president-2024",
+          "fetchedAt": "2026-10-10"
+        }
+      }
+    },
+    "USA-3534": {
+      "party": 1,
+      "vote": 63.43367791812964,
+      "seats": null,
+      "turnout": null,
+      "margin": 29.194585495731157,
+      "label": "Donald J. Trump",
+      "datasetId": "fec-us-president-2024",
+      "provenance": {
+        "party": {
+          "source": "FEC official state-certified presidential results",
+          "url": "https://www.fec.gov/documents/5644/2024presgeresults.pdf",
+          "asOf": "2024-11-05",
+          "asOfPrecision": "day",
+          "datasetId": "fec-us-president-2024",
+          "fetchedAt": "2026-10-10"
+        },
+        "label": {
+          "source": "FEC official state-certified presidential results",
+          "url": "https://www.fec.gov/documents/5644/2024presgeresults.pdf",
+          "asOf": "2024-11-05",
+          "asOfPrecision": "day",
+          "datasetId": "fec-us-president-2024",
+          "fetchedAt": "2026-10-10"
+        },
+        "vote": {
+          "source": "FEC official state-certified presidential results",
+          "url": "https://www.fec.gov/documents/5644/2024presgeresults.pdf",
+          "asOf": "2024-11-05",
+          "asOfPrecision": "day",
+          "datasetId": "fec-us-president-2024",
+          "fetchedAt": "2026-10-10"
+        },
+        "margin": {
+          "source": "FEC official state-certified presidential results",
+          "url": "https://www.fec.gov/documents/5644/2024presgeresults.pdf",
+          "asOf": "2024-11-05",
+          "asOfPrecision": "day",
+          "datasetId": "fec-us-president-2024",
+          "fetchedAt": "2026-10-10"
+        }
+      }
+    },
+    "USA-3551": {
+      "party": 1,
+      "vote": 64.19393709149847,
+      "seats": null,
+      "turnout": null,
+      "margin": 29.719883731480557,
+      "label": "Donald J. Trump",
+      "datasetId": "fec-us-president-2024",
+      "provenance": {
+        "party": {
+          "source": "FEC official state-certified presidential results",
+          "url": "https://www.fec.gov/documents/5644/2024presgeresults.pdf",
+          "asOf": "2024-11-05",
+          "asOfPrecision": "day",
+          "datasetId": "fec-us-president-2024",
+          "fetchedAt": "2026-10-10"
+        },
+        "label": {
+          "source": "FEC official state-certified presidential results",
+          "url": "https://www.fec.gov/documents/5644/2024presgeresults.pdf",
+          "asOf": "2024-11-05",
+          "asOfPrecision": "day",
+          "datasetId": "fec-us-president-2024",
+          "fetchedAt": "2026-10-10"
+        },
+        "vote": {
+          "source": "FEC official state-certified presidential results",
+          "url": "https://www.fec.gov/documents/5644/2024presgeresults.pdf",
+          "asOf": "2024-11-05",
+          "asOfPrecision": "day",
+          "datasetId": "fec-us-president-2024",
+          "fetchedAt": "2026-10-10"
+        },
+        "margin": {
+          "source": "FEC official state-certified presidential results",
+          "url": "https://www.fec.gov/documents/5644/2024presgeresults.pdf",
+          "asOf": "2024-11-05",
+          "asOfPrecision": "day",
+          "datasetId": "fec-us-president-2024",
+          "fetchedAt": "2026-10-10"
+        }
+      }
+    },
+    "USA-3536": {
+      "party": 1,
+      "vote": 56.1399597529967,
+      "seats": null,
+      "turnout": null,
+      "margin": 13.683305009872088,
+      "label": "Donald J. Trump",
+      "datasetId": "fec-us-president-2024",
+      "provenance": {
+        "party": {
+          "source": "FEC official state-certified presidential results",
+          "url": "https://www.fec.gov/documents/5644/2024presgeresults.pdf",
+          "asOf": "2024-11-05",
+          "asOfPrecision": "day",
+          "datasetId": "fec-us-president-2024",
+          "fetchedAt": "2026-10-10"
+        },
+        "label": {
+          "source": "FEC official state-certified presidential results",
+          "url": "https://www.fec.gov/documents/5644/2024presgeresults.pdf",
+          "asOf": "2024-11-05",
+          "asOfPrecision": "day",
+          "datasetId": "fec-us-president-2024",
+          "fetchedAt": "2026-10-10"
+        },
+        "vote": {
+          "source": "FEC official state-certified presidential results",
+          "url": "https://www.fec.gov/documents/5644/2024presgeresults.pdf",
+          "asOf": "2024-11-05",
+          "asOfPrecision": "day",
+          "datasetId": "fec-us-president-2024",
+          "fetchedAt": "2026-10-10"
+        },
+        "margin": {
+          "source": "FEC official state-certified presidential results",
+          "url": "https://www.fec.gov/documents/5644/2024presgeresults.pdf",
+          "asOf": "2024-11-05",
+          "asOfPrecision": "day",
+          "datasetId": "fec-us-president-2024",
+          "fetchedAt": "2026-10-10"
+        }
+      }
+    },
+    "USA-3526": {
+      "party": 1,
+      "vote": 59.376658555560184,
+      "seats": null,
+      "turnout": null,
+      "margin": 21.58235102056172,
+      "label": "Donald J. Trump",
+      "datasetId": "fec-us-president-2024",
+      "provenance": {
+        "party": {
+          "source": "FEC official state-certified presidential results",
+          "url": "https://www.fec.gov/documents/5644/2024presgeresults.pdf",
+          "asOf": "2024-11-05",
+          "asOfPrecision": "day",
+          "datasetId": "fec-us-president-2024",
+          "fetchedAt": "2026-10-10"
+        },
+        "label": {
+          "source": "FEC official state-certified presidential results",
+          "url": "https://www.fec.gov/documents/5644/2024presgeresults.pdf",
+          "asOf": "2024-11-05",
+          "asOfPrecision": "day",
+          "datasetId": "fec-us-president-2024",
+          "fetchedAt": "2026-10-10"
+        },
+        "vote": {
+          "source": "FEC official state-certified presidential results",
+          "url": "https://www.fec.gov/documents/5644/2024presgeresults.pdf",
+          "asOf": "2024-11-05",
+          "asOfPrecision": "day",
+          "datasetId": "fec-us-president-2024",
+          "fetchedAt": "2026-10-10"
+        },
+        "margin": {
+          "source": "FEC official state-certified presidential results",
+          "url": "https://www.fec.gov/documents/5644/2024presgeresults.pdf",
+          "asOf": "2024-11-05",
+          "asOfPrecision": "day",
+          "datasetId": "fec-us-president-2024",
+          "fetchedAt": "2026-10-10"
+        }
+      }
+    },
+    "USA-3540": {
+      "party": 2,
+      "vote": 63.82700543010432,
+      "seats": null,
+      "turnout": null,
+      "margin": 31.507598356351274,
+      "label": "Kamala D. Harris",
+      "datasetId": "fec-us-president-2024",
+      "provenance": {
+        "party": {
+          "source": "FEC official state-certified presidential results",
+          "url": "https://www.fec.gov/documents/5644/2024presgeresults.pdf",
+          "asOf": "2024-11-05",
+          "asOfPrecision": "day",
+          "datasetId": "fec-us-president-2024",
+          "fetchedAt": "2026-10-10"
+        },
+        "label": {
+          "source": "FEC official state-certified presidential results",
+          "url": "https://www.fec.gov/documents/5644/2024presgeresults.pdf",
+          "asOf": "2024-11-05",
+          "asOfPrecision": "day",
+          "datasetId": "fec-us-president-2024",
+          "fetchedAt": "2026-10-10"
+        },
+        "vote": {
+          "source": "FEC official state-certified presidential results",
+          "url": "https://www.fec.gov/documents/5644/2024presgeresults.pdf",
+          "asOf": "2024-11-05",
+          "asOfPrecision": "day",
+          "datasetId": "fec-us-president-2024",
+          "fetchedAt": "2026-10-10"
+        },
+        "margin": {
+          "source": "FEC official state-certified presidential results",
+          "url": "https://www.fec.gov/documents/5644/2024presgeresults.pdf",
+          "asOf": "2024-11-05",
+          "asOfPrecision": "day",
+          "datasetId": "fec-us-president-2024",
+          "fetchedAt": "2026-10-10"
+        }
+      }
+    },
+    "USA-3552": {
+      "party": 2,
+      "vote": 51.82386736091496,
+      "seats": null,
+      "turnout": null,
+      "margin": 5.766475517444143,
+      "label": "Kamala D. Harris",
+      "datasetId": "fec-us-president-2024",
+      "provenance": {
+        "party": {
+          "source": "FEC official state-certified presidential results",
+          "url": "https://www.fec.gov/documents/5644/2024presgeresults.pdf",
+          "asOf": "2024-11-05",
+          "asOfPrecision": "day",
+          "datasetId": "fec-us-president-2024",
+          "fetchedAt": "2026-10-10"
+        },
+        "label": {
+          "source": "FEC official state-certified presidential results",
+          "url": "https://www.fec.gov/documents/5644/2024presgeresults.pdf",
+          "asOf": "2024-11-05",
+          "asOfPrecision": "day",
+          "datasetId": "fec-us-president-2024",
+          "fetchedAt": "2026-10-10"
+        },
+        "vote": {
+          "source": "FEC official state-certified presidential results",
+          "url": "https://www.fec.gov/documents/5644/2024presgeresults.pdf",
+          "asOf": "2024-11-05",
+          "asOfPrecision": "day",
+          "datasetId": "fec-us-president-2024",
+          "fetchedAt": "2026-10-10"
+        },
+        "margin": {
+          "source": "FEC official state-certified presidential results",
+          "url": "https://www.fec.gov/documents/5644/2024presgeresults.pdf",
+          "asOf": "2024-11-05",
+          "asOfPrecision": "day",
+          "datasetId": "fec-us-president-2024",
+          "fetchedAt": "2026-10-10"
+        }
+      }
+    },
+    "USA-3519": {
+      "party": 2,
+      "vote": 57.23012056083173,
+      "seats": null,
+      "turnout": null,
+      "margin": 18.218188832852604,
+      "label": "Kamala D. Harris",
+      "datasetId": "fec-us-president-2024",
+      "provenance": {
+        "party": {
+          "source": "FEC official state-certified presidential results",
+          "url": "https://www.fec.gov/documents/5644/2024presgeresults.pdf",
+          "asOf": "2024-11-05",
+          "asOfPrecision": "day",
+          "datasetId": "fec-us-president-2024",
+          "fetchedAt": "2026-10-10"
+        },
+        "label": {
+          "source": "FEC official state-certified presidential results",
+          "url": "https://www.fec.gov/documents/5644/2024presgeresults.pdf",
+          "asOf": "2024-11-05",
+          "asOfPrecision": "day",
+          "datasetId": "fec-us-president-2024",
+          "fetchedAt": "2026-10-10"
+        },
+        "vote": {
+          "source": "FEC official state-certified presidential results",
+          "url": "https://www.fec.gov/documents/5644/2024presgeresults.pdf",
+          "asOf": "2024-11-05",
+          "asOfPrecision": "day",
+          "datasetId": "fec-us-president-2024",
+          "fetchedAt": "2026-10-10"
+        },
+        "margin": {
+          "source": "FEC official state-certified presidential results",
+          "url": "https://www.fec.gov/documents/5644/2024presgeresults.pdf",
+          "asOf": "2024-11-05",
+          "asOfPrecision": "day",
+          "datasetId": "fec-us-president-2024",
+          "fetchedAt": "2026-10-10"
+        }
+      }
+    },
+    "USA-3554": {
+      "party": 1,
+      "vote": 69.96703305349457,
+      "seats": null,
+      "turnout": null,
+      "margin": 41.863956925288036,
+      "label": "Donald J. Trump",
+      "datasetId": "fec-us-president-2024",
+      "provenance": {
+        "party": {
+          "source": "FEC official state-certified presidential results",
+          "url": "https://www.fec.gov/documents/5644/2024presgeresults.pdf",
+          "asOf": "2024-11-05",
+          "asOfPrecision": "day",
+          "datasetId": "fec-us-president-2024",
+          "fetchedAt": "2026-10-10"
+        },
+        "label": {
+          "source": "FEC official state-certified presidential results",
+          "url": "https://www.fec.gov/documents/5644/2024presgeresults.pdf",
+          "asOf": "2024-11-05",
+          "asOfPrecision": "day",
+          "datasetId": "fec-us-president-2024",
+          "fetchedAt": "2026-10-10"
+        },
+        "vote": {
+          "source": "FEC official state-certified presidential results",
+          "url": "https://www.fec.gov/documents/5644/2024presgeresults.pdf",
+          "asOf": "2024-11-05",
+          "asOfPrecision": "day",
+          "datasetId": "fec-us-president-2024",
+          "fetchedAt": "2026-10-10"
+        },
+        "margin": {
+          "source": "FEC official state-certified presidential results",
+          "url": "https://www.fec.gov/documents/5644/2024presgeresults.pdf",
+          "asOf": "2024-11-05",
+          "asOfPrecision": "day",
+          "datasetId": "fec-us-president-2024",
+          "fetchedAt": "2026-10-10"
+        }
+      }
+    },
+    "USA-3553": {
+      "party": 1,
+      "vote": 49.5958711251628,
+      "seats": null,
+      "turnout": null,
+      "margin": 0.8588286368531177,
+      "label": "Donald J. Trump",
+      "datasetId": "fec-us-president-2024",
+      "provenance": {
+        "party": {
+          "source": "FEC official state-certified presidential results",
+          "url": "https://www.fec.gov/documents/5644/2024presgeresults.pdf",
+          "asOf": "2024-11-05",
+          "asOfPrecision": "day",
+          "datasetId": "fec-us-president-2024",
+          "fetchedAt": "2026-10-10"
+        },
+        "label": {
+          "source": "FEC official state-certified presidential results",
+          "url": "https://www.fec.gov/documents/5644/2024presgeresults.pdf",
+          "asOf": "2024-11-05",
+          "asOfPrecision": "day",
+          "datasetId": "fec-us-president-2024",
+          "fetchedAt": "2026-10-10"
+        },
+        "vote": {
+          "source": "FEC official state-certified presidential results",
+          "url": "https://www.fec.gov/documents/5644/2024presgeresults.pdf",
+          "asOf": "2024-11-05",
+          "asOfPrecision": "day",
+          "datasetId": "fec-us-president-2024",
+          "fetchedAt": "2026-10-10"
+        },
+        "margin": {
+          "source": "FEC official state-certified presidential results",
+          "url": "https://www.fec.gov/documents/5644/2024presgeresults.pdf",
+          "asOf": "2024-11-05",
+          "asOfPrecision": "day",
+          "datasetId": "fec-us-president-2024",
+          "fetchedAt": "2026-10-10"
+        }
+      }
+    },
+    "USA-3527": {
+      "party": 1,
+      "vote": 71.59800481698433,
+      "seats": null,
+      "turnout": null,
+      "margin": 45.7561476019149,
+      "label": "Donald J. Trump",
+      "datasetId": "fec-us-president-2024",
+      "provenance": {
+        "party": {
+          "source": "FEC official state-certified presidential results",
+          "url": "https://www.fec.gov/documents/5644/2024presgeresults.pdf",
+          "asOf": "2024-11-05",
+          "asOfPrecision": "day",
+          "datasetId": "fec-us-president-2024",
+          "fetchedAt": "2026-10-10"
+        },
+        "label": {
+          "source": "FEC official state-certified presidential results",
+          "url": "https://www.fec.gov/documents/5644/2024presgeresults.pdf",
+          "asOf": "2024-11-05",
+          "asOfPrecision": "day",
+          "datasetId": "fec-us-president-2024",
+          "fetchedAt": "2026-10-10"
+        },
+        "vote": {
+          "source": "FEC official state-certified presidential results",
+          "url": "https://www.fec.gov/documents/5644/2024presgeresults.pdf",
+          "asOf": "2024-11-05",
+          "asOfPrecision": "day",
+          "datasetId": "fec-us-president-2024",
+          "fetchedAt": "2026-10-10"
+        },
+        "margin": {
+          "source": "FEC official state-certified presidential results",
+          "url": "https://www.fec.gov/documents/5644/2024presgeresults.pdf",
+          "asOf": "2024-11-05",
+          "asOfPrecision": "day",
+          "datasetId": "fec-us-president-2024",
+          "fetchedAt": "2026-10-10"
+        }
+      }
+    }
+  },
+  "metric": "flat",
+  "selected": null,
+  "overrides": {},
+  "provenance": {
+    "source": "FEC official state-certified presidential results",
+    "url": "https://www.fec.gov/documents/5644/2024presgeresults.pdf",
+    "asOf": "2024-11-05",
+    "asOfPrecision": "day",
+    "datasetId": "fec-us-president-2024",
+    "fetchedAt": "2026-10-10",
+    "covered": 51,
+    "universe": [
+      "USA-3541",
+      "USA-3563",
+      "USA-3520",
+      "USA-3528",
+      "USA-3521",
+      "USA-3522",
+      "USA-3537",
+      "USA-3555",
+      "USA-3556",
+      "USA-3542",
+      "USA-3543",
+      "USA-3517",
+      "USA-3518",
+      "USA-3546",
+      "USA-3547",
+      "USA-3529",
+      "USA-3530",
+      "USA-3548",
+      "USA-3535",
+      "USA-3561",
+      "USA-3557",
+      "USA-3513",
+      "USA-3562",
+      "USA-3514",
+      "USA-3544",
+      "USA-3531",
+      "USA-3515",
+      "USA-3532",
+      "USA-3523",
+      "USA-3538",
+      "USA-3558",
+      "USA-3524",
+      "USA-3559",
+      "USA-3549",
+      "USA-3516",
+      "USA-3550",
+      "USA-3533",
+      "USA-3525",
+      "USA-3560",
+      "USA-3539",
+      "USA-3545",
+      "USA-3534",
+      "USA-3551",
+      "USA-3536",
+      "USA-3526",
+      "USA-3540",
+      "USA-3552",
+      "USA-3519",
+      "USA-3554",
+      "USA-3553",
+      "USA-3527"
+    ]
+  },
+  "aliases": {},
+  "layer": "ne:USA:ADM1",
+  "layerAssign": {},
+  "proj": "albersUsa",
+  "rotate": [
+    -10,
+    -12
+  ],
+  "zoom": 1,
+  "pan": [
+    0,
+    0
+  ],
+  "fit": null,
+  "theme": "light",
+  "identity": "history",
+  "explainer": null,
+  "nationalElection": {
+    "kind": "us-presidential",
+    "country": "USA",
+    "date": "2024-11-05",
+    "status": "certified",
+    "sourceCompiled": "2025-01-16",
+    "sourcePdfSha256": "c99a431e08cb779002ebecb373cee54745c3b691df2f0b322f36688364f6d823",
+    "totalVotes": 155238302,
+    "major": [
+      "trump",
+      "harris"
+    ],
+    "candidates": [
+      {
+        "id": "ayyadurai",
+        "name": "Shiva Ayyadurai",
+        "ballotLabels": "IND, NPY",
+        "votes": 28437,
+        "electoralVotes": 0,
+        "party": null,
+        "runningMate": null
+      },
+      {
+        "id": "bowman",
+        "name": "Jay J Bowman",
+        "ballotLabels": "IND",
+        "votes": 5975,
+        "electoralVotes": 0,
+        "party": null,
+        "runningMate": null
+      },
+      {
+        "id": "de-la-cruz",
+        "name": "Claudia De La Cruz",
+        "ballotLabels": "IND, PAF, PSL, SLF, SLP, UN, WP",
+        "votes": 166175,
+        "electoralVotes": 0,
+        "party": null,
+        "runningMate": null
+      },
+      {
+        "id": "duncan",
+        "name": "Richard Duncan",
+        "ballotLabels": "NON",
+        "votes": 12805,
+        "electoralVotes": 0,
+        "party": null,
+        "runningMate": null
+      },
+      {
+        "id": "ebke",
+        "name": "Laura Ebke",
+        "ballotLabels": "LPU",
+        "votes": 859,
+        "electoralVotes": 0,
+        "party": null,
+        "runningMate": null
+      },
+      {
+        "id": "everylove",
+        "name": "Lucifer “Justin Case” Everylove",
+        "ballotLabels": "UN",
+        "votes": 2653,
+        "electoralVotes": 0,
+        "party": null,
+        "runningMate": null
+      },
+      {
+        "id": "fruit",
+        "name": "Rachele Fruit",
+        "ballotLabels": "IND, SWP",
+        "votes": 4118,
+        "electoralVotes": 0,
+        "party": null,
+        "runningMate": null
+      },
+      {
+        "id": "garrity",
+        "name": "Chris Garrity",
+        "ballotLabels": "IND",
+        "votes": 5297,
+        "electoralVotes": 0,
+        "party": null,
+        "runningMate": null
+      },
+      {
+        "id": "harris",
+        "name": "Kamala D. Harris",
+        "ballotLabels": "D, DFL, DNL, WF",
+        "votes": 75017613,
+        "electoralVotes": 226,
+        "party": "Democratic",
+        "runningMate": "Tim Walz"
+      },
+      {
+        "id": "huber",
+        "name": "Blake Huber",
+        "ballotLabels": "APV",
+        "votes": 2196,
+        "electoralVotes": 0,
+        "party": null,
+        "runningMate": null
+      },
+      {
+        "id": "kennedy",
+        "name": "Robert F. Kennedy, Jr.",
+        "ballotLabels": "AIP, IDE, IND, NLP, NPA, PC, PET, TK, UN, WTP",
+        "votes": 756393,
+        "electoralVotes": 0,
+        "party": null,
+        "runningMate": null
+      },
+      {
+        "id": "kishore",
+        "name": "Joseph Kishore",
+        "ballotLabels": "NPA, SEP",
+        "votes": 4651,
+        "electoralVotes": 0,
+        "party": null,
+        "runningMate": null
+      },
+      {
+        "id": "oliver",
+        "name": "Chase Oliver",
+        "ballotLabels": "IND, LBF, LIB, LPN",
+        "votes": 650126,
+        "electoralVotes": 0,
+        "party": null,
+        "runningMate": null
+      },
+      {
+        "id": "preston",
+        "name": "Mattie Preston",
+        "ballotLabels": "GTJ",
+        "votes": 2857,
+        "electoralVotes": 0,
+        "party": null,
+        "runningMate": null
+      },
+      {
+        "id": "skousen",
+        "name": "Joel Skousen",
+        "ballotLabels": "CON, IAP",
+        "votes": 12786,
+        "electoralVotes": 0,
+        "party": null,
+        "runningMate": null
+      },
+      {
+        "id": "sonski",
+        "name": "Peter Sonski",
+        "ballotLabels": "ASF, ASP, IND, OTH, SOL",
+        "votes": 44000,
+        "electoralVotes": 0,
+        "party": null,
+        "runningMate": null
+      },
+      {
+        "id": "stein",
+        "name": "Jill Stein",
+        "ballotLabels": "BP, GPF, GR, GRE, IND, KYP, MTP, OTH, PET, PG, WG",
+        "votes": 862049,
+        "electoralVotes": 0,
+        "party": null,
+        "runningMate": null
+      },
+      {
+        "id": "stodden",
+        "name": "William P. Stodden",
+        "ballotLabels": "SOC",
+        "votes": 364,
+        "electoralVotes": 0,
+        "party": null,
+        "runningMate": null
+      },
+      {
+        "id": "supreme",
+        "name": "Vermin Supreme",
+        "ballotLabels": "C",
+        "votes": 921,
+        "electoralVotes": 0,
+        "party": null,
+        "runningMate": null
+      },
+      {
+        "id": "terry",
+        "name": "Randall A. Terry",
+        "ballotLabels": "AMC, CON, CPF, IND, MSC, USC, UST",
+        "votes": 41294,
+        "electoralVotes": 0,
+        "party": null,
+        "runningMate": null
+      },
+      {
+        "id": "trump",
+        "name": "Donald J. Trump",
+        "ballotLabels": "R, C",
+        "votes": 77302580,
+        "electoralVotes": 312,
+        "party": "Republican",
+        "runningMate": "JD Vance"
+      },
+      {
+        "id": "wells",
+        "name": "Robert “Robby” Wells",
+        "ballotLabels": "PTY",
+        "votes": 359,
+        "electoralVotes": 0,
+        "party": null,
+        "runningMate": null
+      },
+      {
+        "id": "west",
+        "name": "Cornel West",
+        "ballotLabels": "AUR, IND, JFA, LMN, NPA, PAJ, PRO, UC, UN, UPC",
+        "votes": 82644,
+        "electoralVotes": 0,
+        "party": null,
+        "runningMate": null
+      },
+      {
+        "id": "wood",
+        "name": "Michael Wood",
+        "ballotLabels": "P",
+        "votes": 1144,
+        "electoralVotes": 0,
+        "party": null,
+        "runningMate": null
+      },
+      {
+        "id": "none",
+        "name": "None of these candidates",
+        "ballotLabels": "Selection, not a candidate",
+        "votes": 19625,
+        "electoralVotes": 0,
+        "party": null,
+        "runningMate": null
+      },
+      {
+        "id": "scattered",
+        "name": "Scattered write-in votes",
+        "ballotLabels": "Unattributed write-ins",
+        "votes": 210381,
+        "electoralVotes": 0,
+        "party": null,
+        "runningMate": null
+      }
+    ],
+    "states": [
+      {
+        "postal": "AL",
+        "name": "Alabama",
+        "votes": {
+          "ayyadurai": null,
+          "bowman": null,
+          "de-la-cruz": null,
+          "duncan": null,
+          "ebke": null,
+          "everylove": null,
+          "fruit": null,
+          "garrity": null,
+          "harris": 772412,
+          "huber": null,
+          "kennedy": 12075,
+          "kishore": null,
+          "oliver": 4930,
+          "preston": null,
+          "skousen": null,
+          "sonski": null,
+          "stein": 4319,
+          "stodden": null,
+          "supreme": null,
+          "terry": null,
+          "trump": 1462616,
+          "wells": null,
+          "west": null,
+          "wood": null,
+          "none": null,
+          "scattered": 8738,
+          "total": 2265090
+        },
+        "electoralVotes": {
+          "electors": 9,
+          "trump": 9,
+          "harris": 0
+        },
+        "winner": "trump",
+        "key": "USA-3541"
+      },
+      {
+        "postal": "AK",
+        "name": "Alaska",
+        "votes": {
+          "ayyadurai": null,
+          "bowman": null,
+          "de-la-cruz": null,
+          "duncan": null,
+          "ebke": null,
+          "everylove": null,
+          "fruit": null,
+          "garrity": null,
+          "harris": 140026,
+          "huber": null,
+          "kennedy": 5670,
+          "kishore": null,
+          "oliver": 3040,
+          "preston": null,
+          "skousen": null,
+          "sonski": 702,
+          "stein": 2342,
+          "stodden": null,
+          "supreme": null,
+          "terry": 812,
+          "trump": 184458,
+          "wells": null,
+          "west": 1127,
+          "wood": null,
+          "none": null,
+          "scattered": null,
+          "total": 338177
+        },
+        "electoralVotes": {
+          "electors": 3,
+          "trump": 3,
+          "harris": 0
+        },
+        "winner": "trump",
+        "key": "USA-3563"
+      },
+      {
+        "postal": "AZ",
+        "name": "Arizona",
+        "votes": {
+          "ayyadurai": 77,
+          "bowman": null,
+          "de-la-cruz": 689,
+          "duncan": null,
+          "ebke": null,
+          "everylove": null,
+          "fruit": null,
+          "garrity": null,
+          "harris": 1582860,
+          "huber": null,
+          "kennedy": null,
+          "kishore": null,
+          "oliver": 17898,
+          "preston": null,
+          "skousen": 53,
+          "sonski": null,
+          "stein": 18319,
+          "stodden": null,
+          "supreme": null,
+          "terry": null,
+          "trump": 1770242,
+          "wells": null,
+          "west": null,
+          "wood": null,
+          "none": null,
+          "scattered": 23,
+          "total": 3390161
+        },
+        "electoralVotes": {
+          "electors": 11,
+          "trump": 11,
+          "harris": 0
+        },
+        "winner": "trump",
+        "key": "USA-3520"
+      },
+      {
+        "postal": "AR",
+        "name": "Arkansas",
+        "votes": {
+          "ayyadurai": null,
+          "bowman": null,
+          "de-la-cruz": null,
+          "duncan": null,
+          "ebke": null,
+          "everylove": null,
+          "fruit": null,
+          "garrity": null,
+          "harris": 396905,
+          "huber": null,
+          "kennedy": 13255,
+          "kishore": null,
+          "oliver": 5715,
+          "preston": null,
+          "skousen": null,
+          "sonski": 2141,
+          "stein": 4275,
+          "stodden": null,
+          "supreme": null,
+          "terry": null,
+          "trump": 759241,
+          "wells": null,
+          "west": null,
+          "wood": 1144,
+          "none": null,
+          "scattered": null,
+          "total": 1182676
+        },
+        "electoralVotes": {
+          "electors": 6,
+          "trump": 6,
+          "harris": 0
+        },
+        "winner": "trump",
+        "key": "USA-3528"
+      },
+      {
+        "postal": "CA",
+        "name": "California",
+        "votes": {
+          "ayyadurai": null,
+          "bowman": null,
+          "de-la-cruz": 72539,
+          "duncan": null,
+          "ebke": null,
+          "everylove": null,
+          "fruit": null,
+          "garrity": null,
+          "harris": 9276179,
+          "huber": null,
+          "kennedy": 197645,
+          "kishore": null,
+          "oliver": 66662,
+          "preston": null,
+          "skousen": null,
+          "sonski": 2939,
+          "stein": 167814,
+          "stodden": null,
+          "supreme": null,
+          "terry": null,
+          "trump": 6081697,
+          "wells": null,
+          "west": null,
+          "wood": null,
+          "none": null,
+          "scattered": null,
+          "total": 15865475
+        },
+        "electoralVotes": {
+          "electors": 54,
+          "trump": 0,
+          "harris": 54
+        },
+        "winner": "harris",
+        "key": "USA-3521"
+      },
+      {
+        "postal": "CO",
+        "name": "Colorado",
+        "votes": {
+          "ayyadurai": 15,
+          "bowman": null,
+          "de-la-cruz": 905,
+          "duncan": null,
+          "ebke": null,
+          "everylove": null,
+          "fruit": null,
+          "garrity": 30,
+          "harris": 1728159,
+          "huber": 2196,
+          "kennedy": 35623,
+          "kishore": null,
+          "oliver": 21439,
+          "preston": null,
+          "skousen": null,
+          "sonski": 910,
+          "stein": 17344,
+          "stodden": null,
+          "supreme": null,
+          "terry": 3522,
+          "trump": 1377441,
+          "wells": null,
+          "west": 5149,
+          "wood": null,
+          "none": null,
+          "scattered": 12,
+          "total": 3192745
+        },
+        "electoralVotes": {
+          "electors": 10,
+          "trump": 0,
+          "harris": 10
+        },
+        "winner": "harris",
+        "key": "USA-3522"
+      },
+      {
+        "postal": "CT",
+        "name": "Connecticut",
+        "votes": {
+          "ayyadurai": 21,
+          "bowman": null,
+          "de-la-cruz": 264,
+          "duncan": null,
+          "ebke": null,
+          "everylove": null,
+          "fruit": null,
+          "garrity": null,
+          "harris": 992053,
+          "huber": null,
+          "kennedy": 8448,
+          "kishore": null,
+          "oliver": 6729,
+          "preston": null,
+          "skousen": null,
+          "sonski": 162,
+          "stein": 14281,
+          "stodden": null,
+          "supreme": null,
+          "terry": null,
+          "trump": 736918,
+          "wells": null,
+          "west": 128,
+          "wood": null,
+          "none": null,
+          "scattered": 6,
+          "total": 1759010
+        },
+        "electoralVotes": {
+          "electors": 7,
+          "trump": 0,
+          "harris": 7
+        },
+        "winner": "harris",
+        "key": "USA-3537"
+      },
+      {
+        "postal": "DE",
+        "name": "Delaware",
+        "votes": {
+          "ayyadurai": 4,
+          "bowman": null,
+          "de-la-cruz": 87,
+          "duncan": null,
+          "ebke": null,
+          "everylove": null,
+          "fruit": null,
+          "garrity": null,
+          "harris": 289758,
+          "huber": null,
+          "kennedy": 4636,
+          "kishore": null,
+          "oliver": 2038,
+          "preston": null,
+          "skousen": null,
+          "sonski": 98,
+          "stein": 914,
+          "stodden": null,
+          "supreme": 914,
+          "terry": null,
+          "trump": 214351,
+          "wells": null,
+          "west": 96,
+          "wood": null,
+          "none": null,
+          "scattered": 16,
+          "total": 512912
+        },
+        "electoralVotes": {
+          "electors": 3,
+          "trump": 0,
+          "harris": 3
+        },
+        "winner": "harris",
+        "key": "USA-3555"
+      },
+      {
+        "postal": "DC",
+        "name": "District of Columbia",
+        "votes": {
+          "ayyadurai": null,
+          "bowman": null,
+          "de-la-cruz": null,
+          "duncan": null,
+          "ebke": null,
+          "everylove": null,
+          "fruit": null,
+          "garrity": null,
+          "harris": 294185,
+          "huber": null,
+          "kennedy": 2778,
+          "kishore": null,
+          "oliver": null,
+          "preston": null,
+          "skousen": null,
+          "sonski": null,
+          "stein": null,
+          "stodden": null,
+          "supreme": null,
+          "terry": null,
+          "trump": 21076,
+          "wells": null,
+          "west": null,
+          "wood": null,
+          "none": null,
+          "scattered": 7830,
+          "total": 325869
+        },
+        "electoralVotes": {
+          "electors": 3,
+          "trump": 0,
+          "harris": 3
+        },
+        "winner": "harris",
+        "key": "USA-3556"
+      },
+      {
+        "postal": "FL",
+        "name": "Florida",
+        "votes": {
+          "ayyadurai": 199,
+          "bowman": null,
+          "de-la-cruz": 11969,
+          "duncan": null,
+          "ebke": null,
+          "everylove": null,
+          "fruit": null,
+          "garrity": null,
+          "harris": 4683038,
+          "huber": null,
+          "kennedy": null,
+          "kishore": null,
+          "oliver": 31972,
+          "preston": null,
+          "skousen": null,
+          "sonski": 7454,
+          "stein": 43155,
+          "stodden": null,
+          "supreme": null,
+          "terry": 5834,
+          "trump": 6110125,
+          "wells": null,
+          "west": null,
+          "wood": null,
+          "none": null,
+          "scattered": 6,
+          "total": 10893752
+        },
+        "electoralVotes": {
+          "electors": 30,
+          "trump": 30,
+          "harris": 0
+        },
+        "winner": "trump",
+        "key": "USA-3542"
+      },
+      {
+        "postal": "GA",
+        "name": "Georgia",
+        "votes": {
+          "ayyadurai": 37,
+          "bowman": 30,
+          "de-la-cruz": null,
+          "duncan": null,
+          "ebke": null,
+          "everylove": null,
+          "fruit": null,
+          "garrity": null,
+          "harris": 2548017,
+          "huber": null,
+          "kennedy": null,
+          "kishore": null,
+          "oliver": 20684,
+          "preston": null,
+          "skousen": null,
+          "sonski": 730,
+          "stein": 18229,
+          "stodden": null,
+          "supreme": null,
+          "terry": null,
+          "trump": 2663117,
+          "wells": null,
+          "west": null,
+          "wood": null,
+          "none": null,
+          "scattered": 61,
+          "total": 5250905
+        },
+        "electoralVotes": {
+          "electors": 16,
+          "trump": 16,
+          "harris": 0
+        },
+        "winner": "trump",
+        "key": "USA-3543"
+      },
+      {
+        "postal": "HI",
+        "name": "Hawaii",
+        "votes": {
+          "ayyadurai": null,
+          "bowman": null,
+          "de-la-cruz": 1940,
+          "duncan": null,
+          "ebke": null,
+          "everylove": null,
+          "fruit": null,
+          "garrity": null,
+          "harris": 313044,
+          "huber": null,
+          "kennedy": null,
+          "kishore": null,
+          "oliver": 2733,
+          "preston": null,
+          "skousen": null,
+          "sonski": 936,
+          "stein": 4387,
+          "stodden": null,
+          "supreme": null,
+          "terry": null,
+          "trump": 193661,
+          "wells": null,
+          "west": null,
+          "wood": null,
+          "none": null,
+          "scattered": null,
+          "total": 516701
+        },
+        "electoralVotes": {
+          "electors": 4,
+          "trump": 0,
+          "harris": 4
+        },
+        "winner": "harris",
+        "key": "USA-3517"
+      },
+      {
+        "postal": "ID",
+        "name": "Idaho",
+        "votes": {
+          "ayyadurai": 514,
+          "bowman": null,
+          "de-la-cruz": 1230,
+          "duncan": null,
+          "ebke": null,
+          "everylove": null,
+          "fruit": null,
+          "garrity": null,
+          "harris": 274972,
+          "huber": null,
+          "kennedy": 12812,
+          "kishore": null,
+          "oliver": 4462,
+          "preston": null,
+          "skousen": 1577,
+          "sonski": 242,
+          "stein": 2973,
+          "stodden": null,
+          "supreme": null,
+          "terry": 1026,
+          "trump": 605246,
+          "wells": null,
+          "west": null,
+          "wood": null,
+          "none": null,
+          "scattered": 3,
+          "total": 905057
+        },
+        "electoralVotes": {
+          "electors": 4,
+          "trump": 4,
+          "harris": 0
+        },
+        "winner": "trump",
+        "key": "USA-3518"
+      },
+      {
+        "postal": "IL",
+        "name": "Illinois",
+        "votes": {
+          "ayyadurai": 42,
+          "bowman": null,
+          "de-la-cruz": 2877,
+          "duncan": null,
+          "ebke": null,
+          "everylove": null,
+          "fruit": null,
+          "garrity": null,
+          "harris": 3062863,
+          "huber": null,
+          "kennedy": 80426,
+          "kishore": 12,
+          "oliver": 3510,
+          "preston": null,
+          "skousen": null,
+          "sonski": 1391,
+          "stein": 31023,
+          "stodden": null,
+          "supreme": null,
+          "terry": null,
+          "trump": 2449079,
+          "wells": null,
+          "west": 1569,
+          "wood": null,
+          "none": null,
+          "scattered": 518,
+          "total": 5633310
+        },
+        "electoralVotes": {
+          "electors": 19,
+          "trump": 0,
+          "harris": 19
+        },
+        "winner": "harris",
+        "key": "USA-3546"
+      },
+      {
+        "postal": "IN",
+        "name": "Indiana",
+        "votes": {
+          "ayyadurai": null,
+          "bowman": null,
+          "de-la-cruz": 832,
+          "duncan": null,
+          "ebke": null,
+          "everylove": null,
+          "fruit": null,
+          "garrity": null,
+          "harris": 1163603,
+          "huber": null,
+          "kennedy": 29325,
+          "kishore": null,
+          "oliver": 20425,
+          "preston": null,
+          "skousen": null,
+          "sonski": 1347,
+          "stein": null,
+          "stodden": null,
+          "supreme": null,
+          "terry": null,
+          "trump": 1720347,
+          "wells": null,
+          "west": 722,
+          "wood": null,
+          "none": null,
+          "scattered": 76,
+          "total": 2936677
+        },
+        "electoralVotes": {
+          "electors": 11,
+          "trump": 11,
+          "harris": 0
+        },
+        "winner": "trump",
+        "key": "USA-3547"
+      },
+      {
+        "postal": "IA",
+        "name": "Iowa",
+        "votes": {
+          "ayyadurai": 424,
+          "bowman": null,
+          "de-la-cruz": 1427,
+          "duncan": null,
+          "ebke": null,
+          "everylove": null,
+          "fruit": null,
+          "garrity": null,
+          "harris": 707278,
+          "huber": null,
+          "kennedy": 13122,
+          "kishore": null,
+          "oliver": 7218,
+          "preston": null,
+          "skousen": null,
+          "sonski": null,
+          "stein": null,
+          "stodden": 361,
+          "supreme": null,
+          "terry": null,
+          "trump": 927019,
+          "wells": null,
+          "west": null,
+          "wood": null,
+          "none": null,
+          "scattered": 6657,
+          "total": 1663506
+        },
+        "electoralVotes": {
+          "electors": 6,
+          "trump": 6,
+          "harris": 0
+        },
+        "winner": "trump",
+        "key": "USA-3529"
+      },
+      {
+        "postal": "KS",
+        "name": "Kansas",
+        "votes": {
+          "ayyadurai": null,
+          "bowman": null,
+          "de-la-cruz": null,
+          "duncan": null,
+          "ebke": null,
+          "everylove": null,
+          "fruit": null,
+          "garrity": null,
+          "harris": 544853,
+          "huber": null,
+          "kennedy": 16322,
+          "kishore": null,
+          "oliver": 7614,
+          "preston": null,
+          "skousen": null,
+          "sonski": null,
+          "stein": null,
+          "stodden": null,
+          "supreme": null,
+          "terry": null,
+          "trump": 758802,
+          "wells": null,
+          "west": null,
+          "wood": null,
+          "none": null,
+          "scattered": null,
+          "total": 1327591
+        },
+        "electoralVotes": {
+          "electors": 6,
+          "trump": 6,
+          "harris": 0
+        },
+        "winner": "trump",
+        "key": "USA-3530"
+      },
+      {
+        "postal": "KY",
+        "name": "Kentucky",
+        "votes": {
+          "ayyadurai": 1015,
+          "bowman": 10,
+          "de-la-cruz": 391,
+          "duncan": null,
+          "ebke": null,
+          "everylove": null,
+          "fruit": null,
+          "garrity": null,
+          "harris": 704043,
+          "huber": null,
+          "kennedy": 16769,
+          "kishore": 8,
+          "oliver": 6422,
+          "preston": null,
+          "skousen": null,
+          "sonski": 611,
+          "stein": 7566,
+          "stodden": null,
+          "supreme": null,
+          "terry": null,
+          "trump": 1337494,
+          "wells": null,
+          "west": 177,
+          "wood": null,
+          "none": null,
+          "scattered": 24,
+          "total": 2074530
+        },
+        "electoralVotes": {
+          "electors": 8,
+          "trump": 8,
+          "harris": 0
+        },
+        "winner": "trump",
+        "key": "USA-3548"
+      },
+      {
+        "postal": "LA",
+        "name": "Louisiana",
+        "votes": {
+          "ayyadurai": null,
+          "bowman": null,
+          "de-la-cruz": 1481,
+          "duncan": null,
+          "ebke": null,
+          "everylove": null,
+          "fruit": 361,
+          "garrity": null,
+          "harris": 766870,
+          "huber": null,
+          "kennedy": 6641,
+          "kishore": null,
+          "oliver": 6835,
+          "preston": 2857,
+          "skousen": null,
+          "sonski": 2240,
+          "stein": 7138,
+          "stodden": null,
+          "supreme": null,
+          "terry": 1424,
+          "trump": 1208505,
+          "wells": null,
+          "west": 2623,
+          "wood": null,
+          "none": null,
+          "scattered": null,
+          "total": 2006975
+        },
+        "electoralVotes": {
+          "electors": 8,
+          "trump": 8,
+          "harris": 0
+        },
+        "winner": "trump",
+        "key": "USA-3535"
+      },
+      {
+        "postal": "ME",
+        "name": "Maine",
+        "votes": {
+          "ayyadurai": null,
+          "bowman": null,
+          "de-la-cruz": null,
+          "duncan": null,
+          "ebke": null,
+          "everylove": null,
+          "fruit": null,
+          "garrity": null,
+          "harris": 435652,
+          "huber": null,
+          "kennedy": null,
+          "kishore": null,
+          "oliver": 5286,
+          "preston": null,
+          "skousen": null,
+          "sonski": null,
+          "stein": 8967,
+          "stodden": null,
+          "supreme": null,
+          "terry": null,
+          "trump": 377977,
+          "wells": null,
+          "west": 2912,
+          "wood": null,
+          "none": null,
+          "scattered": 581,
+          "total": 831375
+        },
+        "electoralVotes": {
+          "electors": 4,
+          "trump": 1,
+          "harris": 3
+        },
+        "winner": "harris",
+        "key": "USA-3561"
+      },
+      {
+        "postal": "MD",
+        "name": "Maryland",
+        "votes": {
+          "ayyadurai": 31,
+          "bowman": null,
+          "de-la-cruz": 1136,
+          "duncan": null,
+          "ebke": null,
+          "everylove": null,
+          "fruit": null,
+          "garrity": null,
+          "harris": 1902577,
+          "huber": null,
+          "kennedy": 28819,
+          "kishore": 12,
+          "oliver": 15570,
+          "preston": null,
+          "skousen": null,
+          "sonski": 1012,
+          "stein": 33134,
+          "stodden": 3,
+          "supreme": null,
+          "terry": null,
+          "trump": 1035550,
+          "wells": null,
+          "west": 918,
+          "wood": null,
+          "none": null,
+          "scattered": 19572,
+          "total": 3038334
+        },
+        "electoralVotes": {
+          "electors": 10,
+          "trump": 0,
+          "harris": 10
+        },
+        "winner": "harris",
+        "key": "USA-3557"
+      },
+      {
+        "postal": "MA",
+        "name": "Massachusetts",
+        "votes": {
+          "ayyadurai": 18418,
+          "bowman": null,
+          "de-la-cruz": 12889,
+          "duncan": null,
+          "ebke": null,
+          "everylove": null,
+          "fruit": null,
+          "garrity": null,
+          "harris": 2126518,
+          "huber": null,
+          "kennedy": null,
+          "kishore": null,
+          "oliver": 17735,
+          "preston": null,
+          "skousen": null,
+          "sonski": 280,
+          "stein": 26545,
+          "stodden": null,
+          "supreme": null,
+          "terry": null,
+          "trump": 1251303,
+          "wells": null,
+          "west": 243,
+          "wood": null,
+          "none": null,
+          "scattered": 19737,
+          "total": 3473668
+        },
+        "electoralVotes": {
+          "electors": 11,
+          "trump": 0,
+          "harris": 11
+        },
+        "winner": "harris",
+        "key": "USA-3513"
+      },
+      {
+        "postal": "MI",
+        "name": "Michigan",
+        "votes": {
+          "ayyadurai": null,
+          "bowman": 4,
+          "de-la-cruz": 458,
+          "duncan": null,
+          "ebke": null,
+          "everylove": null,
+          "fruit": null,
+          "garrity": null,
+          "harris": 2736533,
+          "huber": null,
+          "kennedy": 26785,
+          "kishore": 2330,
+          "oliver": 22440,
+          "preston": null,
+          "skousen": null,
+          "sonski": 1212,
+          "stein": 44607,
+          "stodden": null,
+          "supreme": null,
+          "terry": 6509,
+          "trump": 2816636,
+          "wells": null,
+          "west": 6664,
+          "wood": null,
+          "none": null,
+          "scattered": 8,
+          "total": 5664186
+        },
+        "electoralVotes": {
+          "electors": 15,
+          "trump": 15,
+          "harris": 0
+        },
+        "winner": "trump",
+        "key": "USA-3562"
+      },
+      {
+        "postal": "MN",
+        "name": "Minnesota",
+        "votes": {
+          "ayyadurai": 2885,
+          "bowman": null,
+          "de-la-cruz": 2996,
+          "duncan": null,
+          "ebke": null,
+          "everylove": null,
+          "fruit": 457,
+          "garrity": 3,
+          "harris": 1656979,
+          "huber": null,
+          "kennedy": 24001,
+          "kishore": 1,
+          "oliver": 15155,
+          "preston": null,
+          "skousen": null,
+          "sonski": 882,
+          "stein": 16275,
+          "stodden": null,
+          "supreme": null,
+          "terry": null,
+          "trump": 1519032,
+          "wells": null,
+          "west": 3136,
+          "wood": null,
+          "none": null,
+          "scattered": 12118,
+          "total": 3253920
+        },
+        "electoralVotes": {
+          "electors": 10,
+          "trump": 0,
+          "harris": 10
+        },
+        "winner": "harris",
+        "key": "USA-3514"
+      },
+      {
+        "postal": "MS",
+        "name": "Mississippi",
+        "votes": {
+          "ayyadurai": 688,
+          "bowman": null,
+          "de-la-cruz": 1075,
+          "duncan": null,
+          "ebke": null,
+          "everylove": null,
+          "fruit": null,
+          "garrity": null,
+          "harris": 466668,
+          "huber": null,
+          "kennedy": 5387,
+          "kishore": null,
+          "oliver": 2536,
+          "preston": null,
+          "skousen": null,
+          "sonski": 1007,
+          "stein": 1873,
+          "stodden": null,
+          "supreme": null,
+          "terry": 1030,
+          "trump": 747744,
+          "wells": null,
+          "west": null,
+          "wood": null,
+          "none": null,
+          "scattered": null,
+          "total": 1228008
+        },
+        "electoralVotes": {
+          "electors": 6,
+          "trump": 6,
+          "harris": 0
+        },
+        "winner": "trump",
+        "key": "USA-3544"
+      },
+      {
+        "postal": "MO",
+        "name": "Missouri",
+        "votes": {
+          "ayyadurai": 34,
+          "bowman": null,
+          "de-la-cruz": 618,
+          "duncan": null,
+          "ebke": null,
+          "everylove": null,
+          "fruit": null,
+          "garrity": null,
+          "harris": 1200599,
+          "huber": null,
+          "kennedy": null,
+          "kishore": null,
+          "oliver": 23876,
+          "preston": null,
+          "skousen": null,
+          "sonski": 1069,
+          "stein": 17135,
+          "stodden": null,
+          "supreme": null,
+          "terry": null,
+          "trump": 1751986,
+          "wells": null,
+          "west": null,
+          "wood": null,
+          "none": null,
+          "scattered": 10,
+          "total": 2995327
+        },
+        "electoralVotes": {
+          "electors": 10,
+          "trump": 10,
+          "harris": 0
+        },
+        "winner": "trump",
+        "key": "USA-3531"
+      },
+      {
+        "postal": "MT",
+        "name": "Montana",
+        "votes": {
+          "ayyadurai": 21,
+          "bowman": null,
+          "de-la-cruz": null,
+          "duncan": null,
+          "ebke": null,
+          "everylove": null,
+          "fruit": null,
+          "garrity": null,
+          "harris": 231906,
+          "huber": null,
+          "kennedy": 11825,
+          "kishore": null,
+          "oliver": 4275,
+          "preston": null,
+          "skousen": null,
+          "sonski": null,
+          "stein": 2878,
+          "stodden": null,
+          "supreme": null,
+          "terry": null,
+          "trump": 352079,
+          "wells": null,
+          "west": null,
+          "wood": null,
+          "none": null,
+          "scattered": 6,
+          "total": 602990
+        },
+        "electoralVotes": {
+          "electors": 4,
+          "trump": 4,
+          "harris": 0
+        },
+        "winner": "trump",
+        "key": "USA-3515"
+      },
+      {
+        "postal": "NE",
+        "name": "Nebraska",
+        "votes": {
+          "ayyadurai": null,
+          "bowman": null,
+          "de-la-cruz": null,
+          "duncan": null,
+          "ebke": null,
+          "everylove": null,
+          "fruit": null,
+          "garrity": null,
+          "harris": 369995,
+          "huber": null,
+          "kennedy": null,
+          "kishore": null,
+          "oliver": 6399,
+          "preston": null,
+          "skousen": null,
+          "sonski": null,
+          "stein": 2887,
+          "stodden": null,
+          "supreme": null,
+          "terry": null,
+          "trump": 564816,
+          "wells": null,
+          "west": 3062,
+          "wood": null,
+          "none": null,
+          "scattered": 5023,
+          "total": 952182
+        },
+        "electoralVotes": {
+          "electors": 5,
+          "trump": 4,
+          "harris": 1
+        },
+        "winner": "trump",
+        "key": "USA-3532"
+      },
+      {
+        "postal": "NV",
+        "name": "Nevada",
+        "votes": {
+          "ayyadurai": null,
+          "bowman": null,
+          "de-la-cruz": null,
+          "duncan": null,
+          "ebke": null,
+          "everylove": null,
+          "fruit": null,
+          "garrity": null,
+          "harris": 705197,
+          "huber": null,
+          "kennedy": null,
+          "kishore": null,
+          "oliver": 6059,
+          "preston": null,
+          "skousen": 2754,
+          "sonski": null,
+          "stein": null,
+          "stodden": null,
+          "supreme": null,
+          "terry": null,
+          "trump": 751205,
+          "wells": null,
+          "west": null,
+          "wood": null,
+          "none": 19625,
+          "scattered": null,
+          "total": 1484840
+        },
+        "electoralVotes": {
+          "electors": 6,
+          "trump": 6,
+          "harris": 0
+        },
+        "winner": "trump",
+        "key": "USA-3523"
+      },
+      {
+        "postal": "NH",
+        "name": "New Hampshire",
+        "votes": {
+          "ayyadurai": null,
+          "bowman": null,
+          "de-la-cruz": null,
+          "duncan": null,
+          "ebke": null,
+          "everylove": null,
+          "fruit": null,
+          "garrity": null,
+          "harris": 418488,
+          "huber": null,
+          "kennedy": null,
+          "kishore": null,
+          "oliver": 4425,
+          "preston": null,
+          "skousen": null,
+          "sonski": null,
+          "stein": 3680,
+          "stodden": null,
+          "supreme": null,
+          "terry": null,
+          "trump": 395523,
+          "wells": null,
+          "west": null,
+          "wood": null,
+          "none": null,
+          "scattered": 4073,
+          "total": 826189
+        },
+        "electoralVotes": {
+          "electors": 4,
+          "trump": 0,
+          "harris": 4
+        },
+        "winner": "harris",
+        "key": "USA-3538"
+      },
+      {
+        "postal": "NJ",
+        "name": "New Jersey",
+        "votes": {
+          "ayyadurai": null,
+          "bowman": null,
+          "de-la-cruz": 5105,
+          "duncan": null,
+          "ebke": null,
+          "everylove": null,
+          "fruit": 1277,
+          "garrity": null,
+          "harris": 2220713,
+          "huber": null,
+          "kennedy": 23479,
+          "kishore": 1371,
+          "oliver": 10500,
+          "preston": null,
+          "skousen": null,
+          "sonski": null,
+          "stein": 39041,
+          "stodden": null,
+          "supreme": null,
+          "terry": 3024,
+          "trump": 1968215,
+          "wells": null,
+          "west": null,
+          "wood": null,
+          "none": null,
+          "scattered": null,
+          "total": 4272725
+        },
+        "electoralVotes": {
+          "electors": 14,
+          "trump": 0,
+          "harris": 14
+        },
+        "winner": "harris",
+        "key": "USA-3558"
+      },
+      {
+        "postal": "NM",
+        "name": "New Mexico",
+        "votes": {
+          "ayyadurai": null,
+          "bowman": null,
+          "de-la-cruz": 2442,
+          "duncan": null,
+          "ebke": 859,
+          "everylove": null,
+          "fruit": null,
+          "garrity": null,
+          "harris": 478802,
+          "huber": null,
+          "kennedy": 9553,
+          "kishore": null,
+          "oliver": 3745,
+          "preston": null,
+          "skousen": null,
+          "sonski": null,
+          "stein": 4611,
+          "stodden": null,
+          "supreme": null,
+          "terry": null,
+          "trump": 423391,
+          "wells": null,
+          "west": null,
+          "wood": null,
+          "none": null,
+          "scattered": null,
+          "total": 923403
+        },
+        "electoralVotes": {
+          "electors": 5,
+          "trump": 0,
+          "harris": 5
+        },
+        "winner": "harris",
+        "key": "USA-3524"
+      },
+      {
+        "postal": "NY",
+        "name": "New York",
+        "votes": {
+          "ayyadurai": 134,
+          "bowman": null,
+          "de-la-cruz": 6327,
+          "duncan": null,
+          "ebke": null,
+          "everylove": null,
+          "fruit": null,
+          "garrity": 108,
+          "harris": 4619195,
+          "huber": null,
+          "kennedy": null,
+          "kishore": null,
+          "oliver": 5338,
+          "preston": null,
+          "skousen": null,
+          "sonski": 1544,
+          "stein": 46698,
+          "stodden": null,
+          "supreme": null,
+          "terry": null,
+          "trump": 3578899,
+          "wells": null,
+          "west": 4152,
+          "wood": null,
+          "none": null,
+          "scattered": 100,
+          "total": 8262495
+        },
+        "electoralVotes": {
+          "electors": 28,
+          "trump": 0,
+          "harris": 28
+        },
+        "winner": "harris",
+        "key": "USA-3559"
+      },
+      {
+        "postal": "NC",
+        "name": "North Carolina",
+        "votes": {
+          "ayyadurai": 30,
+          "bowman": null,
+          "de-la-cruz": 528,
+          "duncan": null,
+          "ebke": null,
+          "everylove": null,
+          "fruit": null,
+          "garrity": null,
+          "harris": 2715375,
+          "huber": null,
+          "kennedy": null,
+          "kishore": null,
+          "oliver": 22125,
+          "preston": null,
+          "skousen": null,
+          "sonski": null,
+          "stein": 24762,
+          "stodden": null,
+          "supreme": null,
+          "terry": 6863,
+          "trump": 2898423,
+          "wells": null,
+          "west": 12099,
+          "wood": null,
+          "none": null,
+          "scattered": 18936,
+          "total": 5699141
+        },
+        "electoralVotes": {
+          "electors": 16,
+          "trump": 16,
+          "harris": 0
+        },
+        "winner": "trump",
+        "key": "USA-3549"
+      },
+      {
+        "postal": "ND",
+        "name": "North Dakota",
+        "votes": {
+          "ayyadurai": null,
+          "bowman": null,
+          "de-la-cruz": null,
+          "duncan": null,
+          "ebke": null,
+          "everylove": null,
+          "fruit": null,
+          "garrity": null,
+          "harris": 112327,
+          "huber": null,
+          "kennedy": null,
+          "kishore": null,
+          "oliver": 6227,
+          "preston": null,
+          "skousen": null,
+          "sonski": null,
+          "stein": null,
+          "stodden": null,
+          "supreme": null,
+          "terry": null,
+          "trump": 246505,
+          "wells": null,
+          "west": null,
+          "wood": null,
+          "none": null,
+          "scattered": 3096,
+          "total": 368155
+        },
+        "electoralVotes": {
+          "electors": 3,
+          "trump": 3,
+          "harris": 0
+        },
+        "winner": "trump",
+        "key": "USA-3516"
+      },
+      {
+        "postal": "OH",
+        "name": "Ohio",
+        "votes": {
+          "ayyadurai": 74,
+          "bowman": 7,
+          "de-la-cruz": 1794,
+          "duncan": 12805,
+          "ebke": null,
+          "everylove": null,
+          "fruit": null,
+          "garrity": 13,
+          "harris": 2533699,
+          "huber": null,
+          "kennedy": null,
+          "kishore": null,
+          "oliver": 28200,
+          "preston": null,
+          "skousen": null,
+          "sonski": 10197,
+          "stein": null,
+          "stodden": null,
+          "supreme": null,
+          "terry": null,
+          "trump": 3180116,
+          "wells": null,
+          "west": 852,
+          "wood": null,
+          "none": null,
+          "scattered": 31,
+          "total": 5767788
+        },
+        "electoralVotes": {
+          "electors": 17,
+          "trump": 17,
+          "harris": 0
+        },
+        "winner": "trump",
+        "key": "USA-3550"
+      },
+      {
+        "postal": "OK",
+        "name": "Oklahoma",
+        "votes": {
+          "ayyadurai": null,
+          "bowman": null,
+          "de-la-cruz": null,
+          "duncan": null,
+          "ebke": null,
+          "everylove": null,
+          "fruit": null,
+          "garrity": 5143,
+          "harris": 499599,
+          "huber": null,
+          "kennedy": 16020,
+          "kishore": null,
+          "oliver": 9198,
+          "preston": null,
+          "skousen": null,
+          "sonski": null,
+          "stein": null,
+          "stodden": null,
+          "supreme": null,
+          "terry": null,
+          "trump": 1036213,
+          "wells": null,
+          "west": null,
+          "wood": null,
+          "none": null,
+          "scattered": null,
+          "total": 1566173
+        },
+        "electoralVotes": {
+          "electors": 7,
+          "trump": 7,
+          "harris": 0
+        },
+        "winner": "trump",
+        "key": "USA-3533"
+      },
+      {
+        "postal": "OR",
+        "name": "Oregon",
+        "votes": {
+          "ayyadurai": null,
+          "bowman": null,
+          "de-la-cruz": null,
+          "duncan": null,
+          "ebke": null,
+          "everylove": null,
+          "fruit": null,
+          "garrity": null,
+          "harris": 1240600,
+          "huber": null,
+          "kennedy": 33733,
+          "kishore": null,
+          "oliver": 9061,
+          "preston": null,
+          "skousen": null,
+          "sonski": null,
+          "stein": 19099,
+          "stodden": null,
+          "supreme": null,
+          "terry": 1850,
+          "trump": 919480,
+          "wells": null,
+          "west": 5644,
+          "wood": null,
+          "none": null,
+          "scattered": 15026,
+          "total": 2244493
+        },
+        "electoralVotes": {
+          "electors": 8,
+          "trump": 0,
+          "harris": 8
+        },
+        "winner": "harris",
+        "key": "USA-3525"
+      },
+      {
+        "postal": "PA",
+        "name": "Pennsylvania",
+        "votes": {
+          "ayyadurai": null,
+          "bowman": null,
+          "de-la-cruz": null,
+          "duncan": null,
+          "ebke": null,
+          "everylove": null,
+          "fruit": null,
+          "garrity": null,
+          "harris": 3423042,
+          "huber": null,
+          "kennedy": null,
+          "kishore": null,
+          "oliver": 33318,
+          "preston": null,
+          "skousen": null,
+          "sonski": null,
+          "stein": 34538,
+          "stodden": null,
+          "supreme": null,
+          "terry": null,
+          "trump": 3543308,
+          "wells": null,
+          "west": null,
+          "wood": null,
+          "none": null,
+          "scattered": 24526,
+          "total": 7058732
+        },
+        "electoralVotes": {
+          "electors": 19,
+          "trump": 19,
+          "harris": 0
+        },
+        "winner": "trump",
+        "key": "USA-3560"
+      },
+      {
+        "postal": "RI",
+        "name": "Rhode Island",
+        "votes": {
+          "ayyadurai": null,
+          "bowman": null,
+          "de-la-cruz": 1176,
+          "duncan": null,
+          "ebke": null,
+          "everylove": null,
+          "fruit": null,
+          "garrity": null,
+          "harris": 285156,
+          "huber": null,
+          "kennedy": 5045,
+          "kishore": null,
+          "oliver": 1617,
+          "preston": null,
+          "skousen": null,
+          "sonski": null,
+          "stein": 2900,
+          "stodden": null,
+          "supreme": null,
+          "terry": null,
+          "trump": 214406,
+          "wells": 359,
+          "west": null,
+          "wood": null,
+          "none": null,
+          "scattered": 2727,
+          "total": 513386
+        },
+        "electoralVotes": {
+          "electors": 4,
+          "trump": 0,
+          "harris": 4
+        },
+        "winner": "harris",
+        "key": "USA-3539"
+      },
+      {
+        "postal": "SC",
+        "name": "South Carolina",
+        "votes": {
+          "ayyadurai": null,
+          "bowman": null,
+          "de-la-cruz": 3059,
+          "duncan": null,
+          "ebke": null,
+          "everylove": null,
+          "fruit": null,
+          "garrity": null,
+          "harris": 1028452,
+          "huber": null,
+          "kennedy": null,
+          "kishore": null,
+          "oliver": 12669,
+          "preston": null,
+          "skousen": null,
+          "sonski": null,
+          "stein": 8117,
+          "stodden": null,
+          "supreme": null,
+          "terry": 5352,
+          "trump": 1483747,
+          "wells": null,
+          "west": 6744,
+          "wood": null,
+          "none": null,
+          "scattered": null,
+          "total": 2548140
+        },
+        "electoralVotes": {
+          "electors": 9,
+          "trump": 9,
+          "harris": 0
+        },
+        "winner": "trump",
+        "key": "USA-3545"
+      },
+      {
+        "postal": "SD",
+        "name": "South Dakota",
+        "votes": {
+          "ayyadurai": null,
+          "bowman": null,
+          "de-la-cruz": null,
+          "duncan": null,
+          "ebke": null,
+          "everylove": null,
+          "fruit": null,
+          "garrity": null,
+          "harris": 146859,
+          "huber": null,
+          "kennedy": 7204,
+          "kishore": null,
+          "oliver": 2778,
+          "preston": null,
+          "skousen": null,
+          "sonski": null,
+          "stein": null,
+          "stodden": null,
+          "supreme": null,
+          "terry": null,
+          "trump": 272081,
+          "wells": null,
+          "west": null,
+          "wood": null,
+          "none": null,
+          "scattered": null,
+          "total": 428922
+        },
+        "electoralVotes": {
+          "electors": 3,
+          "trump": 3,
+          "harris": 0
+        },
+        "winner": "trump",
+        "key": "USA-3534"
+      },
+      {
+        "postal": "TN",
+        "name": "Tennessee",
+        "votes": {
+          "ayyadurai": null,
+          "bowman": 5865,
+          "de-la-cruz": 3457,
+          "duncan": null,
+          "ebke": null,
+          "everylove": null,
+          "fruit": 988,
+          "garrity": null,
+          "harris": 1056265,
+          "huber": null,
+          "kennedy": 21535,
+          "kishore": null,
+          "oliver": null,
+          "preston": null,
+          "skousen": null,
+          "sonski": null,
+          "stein": 8967,
+          "stodden": null,
+          "supreme": null,
+          "terry": null,
+          "trump": 1966865,
+          "wells": null,
+          "west": null,
+          "wood": null,
+          "none": null,
+          "scattered": null,
+          "total": 3063942
+        },
+        "electoralVotes": {
+          "electors": 11,
+          "trump": 11,
+          "harris": 0
+        },
+        "winner": "trump",
+        "key": "USA-3551"
+      },
+      {
+        "postal": "TX",
+        "name": "Texas",
+        "votes": {
+          "ayyadurai": 433,
+          "bowman": null,
+          "de-la-cruz": 2374,
+          "duncan": null,
+          "ebke": null,
+          "everylove": null,
+          "fruit": null,
+          "garrity": null,
+          "harris": 4835250,
+          "huber": null,
+          "kennedy": null,
+          "kishore": null,
+          "oliver": 68557,
+          "preston": null,
+          "skousen": null,
+          "sonski": 3780,
+          "stein": 82701,
+          "stodden": null,
+          "supreme": null,
+          "terry": null,
+          "trump": 6393597,
+          "wells": null,
+          "west": 1858,
+          "wood": null,
+          "none": null,
+          "scattered": 124,
+          "total": 11388674
+        },
+        "electoralVotes": {
+          "electors": 40,
+          "trump": 40,
+          "harris": 0
+        },
+        "winner": "trump",
+        "key": "USA-3536"
+      },
+      {
+        "postal": "UT",
+        "name": "Utah",
+        "votes": {
+          "ayyadurai": null,
+          "bowman": 59,
+          "de-la-cruz": 3189,
+          "duncan": null,
+          "ebke": null,
+          "everylove": 2653,
+          "fruit": null,
+          "garrity": null,
+          "harris": 562566,
+          "huber": null,
+          "kennedy": null,
+          "kishore": null,
+          "oliver": 16902,
+          "preston": null,
+          "skousen": 8402,
+          "sonski": 441,
+          "stein": 8222,
+          "stodden": null,
+          "supreme": null,
+          "terry": null,
+          "trump": 883818,
+          "wells": null,
+          "west": 2199,
+          "wood": null,
+          "none": null,
+          "scattered": 43,
+          "total": 1488494
+        },
+        "electoralVotes": {
+          "electors": 6,
+          "trump": 6,
+          "harris": 0
+        },
+        "winner": "trump",
+        "key": "USA-3526"
+      },
+      {
+        "postal": "VT",
+        "name": "Vermont",
+        "votes": {
+          "ayyadurai": 8,
+          "bowman": null,
+          "de-la-cruz": 1710,
+          "duncan": null,
+          "ebke": null,
+          "everylove": null,
+          "fruit": 211,
+          "garrity": null,
+          "harris": 235791,
+          "huber": null,
+          "kennedy": 5905,
+          "kishore": null,
+          "oliver": 1828,
+          "preston": null,
+          "skousen": null,
+          "sonski": 49,
+          "stein": 893,
+          "stodden": null,
+          "supreme": 7,
+          "terry": 4,
+          "trump": 119395,
+          "wells": null,
+          "west": 1549,
+          "wood": null,
+          "none": null,
+          "scattered": 2072,
+          "total": 369422
+        },
+        "electoralVotes": {
+          "electors": 3,
+          "trump": 0,
+          "harris": 3
+        },
+        "winner": "harris",
+        "key": "USA-3540"
+      },
+      {
+        "postal": "VA",
+        "name": "Virginia",
+        "votes": {
+          "ayyadurai": null,
+          "bowman": null,
+          "de-la-cruz": 8408,
+          "duncan": null,
+          "ebke": null,
+          "everylove": null,
+          "fruit": null,
+          "garrity": null,
+          "harris": 2333778,
+          "huber": null,
+          "kennedy": null,
+          "kishore": null,
+          "oliver": 19802,
+          "preston": null,
+          "skousen": null,
+          "sonski": null,
+          "stein": 34880,
+          "stodden": null,
+          "supreme": null,
+          "terry": null,
+          "trump": 2074097,
+          "wells": null,
+          "west": 8975,
+          "wood": null,
+          "none": null,
+          "scattered": 23348,
+          "total": 4503288
+        },
+        "electoralVotes": {
+          "electors": 13,
+          "trump": 0,
+          "harris": 13
+        },
+        "winner": "harris",
+        "key": "USA-3552"
+      },
+      {
+        "postal": "WA",
+        "name": "Washington",
+        "votes": {
+          "ayyadurai": 3323,
+          "bowman": null,
+          "de-la-cruz": 8695,
+          "duncan": null,
+          "ebke": null,
+          "everylove": null,
+          "fruit": 824,
+          "garrity": null,
+          "harris": 2245849,
+          "huber": null,
+          "kennedy": 54868,
+          "kishore": 917,
+          "oliver": 16428,
+          "preston": null,
+          "skousen": null,
+          "sonski": null,
+          "stein": 29754,
+          "stodden": null,
+          "supreme": null,
+          "terry": null,
+          "trump": 1530923,
+          "wells": null,
+          "west": 7254,
+          "wood": null,
+          "none": null,
+          "scattered": 25408,
+          "total": 3924243
+        },
+        "electoralVotes": {
+          "electors": 12,
+          "trump": 0,
+          "harris": 12
+        },
+        "winner": "harris",
+        "key": "USA-3519"
+      },
+      {
+        "postal": "WV",
+        "name": "West Virginia",
+        "votes": {
+          "ayyadurai": 10,
+          "bowman": null,
+          "de-la-cruz": 73,
+          "duncan": null,
+          "ebke": null,
+          "everylove": null,
+          "fruit": null,
+          "garrity": null,
+          "harris": 214309,
+          "huber": null,
+          "kennedy": 8947,
+          "kishore": null,
+          "oliver": 3047,
+          "preston": null,
+          "skousen": null,
+          "sonski": 63,
+          "stein": 2531,
+          "stodden": null,
+          "supreme": null,
+          "terry": null,
+          "trump": 533556,
+          "wells": null,
+          "west": 39,
+          "wood": null,
+          "none": null,
+          "scattered": 7,
+          "total": 762582
+        },
+        "electoralVotes": {
+          "electors": 4,
+          "trump": 4,
+          "harris": 0
+        },
+        "winner": "trump",
+        "key": "USA-3554"
+      },
+      {
+        "postal": "WI",
+        "name": "Wisconsin",
+        "votes": {
+          "ayyadurai": null,
+          "bowman": null,
+          "de-la-cruz": 2035,
+          "duncan": null,
+          "ebke": null,
+          "everylove": null,
+          "fruit": null,
+          "garrity": null,
+          "harris": 1668229,
+          "huber": null,
+          "kennedy": 17740,
+          "kishore": null,
+          "oliver": 10511,
+          "preston": null,
+          "skousen": null,
+          "sonski": 561,
+          "stein": 12275,
+          "stodden": null,
+          "supreme": null,
+          "terry": 4044,
+          "trump": 1697626,
+          "wells": null,
+          "west": 2753,
+          "wood": null,
+          "none": null,
+          "scattered": 7144,
+          "total": 3422918
+        },
+        "electoralVotes": {
+          "electors": 10,
+          "trump": 10,
+          "harris": 0
+        },
+        "winner": "trump",
+        "key": "USA-3553"
+      },
+      {
+        "postal": "WY",
+        "name": "Wyoming",
+        "votes": {
+          "ayyadurai": null,
+          "bowman": null,
+          "de-la-cruz": null,
+          "duncan": null,
+          "ebke": null,
+          "everylove": null,
+          "fruit": null,
+          "garrity": null,
+          "harris": 69527,
+          "huber": null,
+          "kennedy": null,
+          "kishore": null,
+          "oliver": 4193,
+          "preston": null,
+          "skousen": null,
+          "sonski": null,
+          "stein": null,
+          "stodden": null,
+          "supreme": null,
+          "terry": null,
+          "trump": 192633,
+          "wells": null,
+          "west": null,
+          "wood": null,
+          "none": null,
+          "scattered": 2695,
+          "total": 269048
+        },
+        "electoralVotes": {
+          "electors": 3,
+          "trump": 3,
+          "harris": 0
+        },
+        "winner": "trump",
+        "key": "USA-3527"
+      }
+    ],
+    "sources": [
+      {
+        "label": "FEC · official state-certified results · compiled 16 January 2025",
+        "url": "https://www.fec.gov/documents/5644/2024presgeresults.pdf"
+      },
+      {
+        "label": "National Archives · Electoral College certificates",
+        "url": "https://www.archives.gov/electoral-college/2024"
+      }
+    ]
+  },
+  "grat": false,
+  "antarctica": false,
+  "dots": false,
+  "labels": false,
+  "mode": "results",
+  "flagged": {}
+}

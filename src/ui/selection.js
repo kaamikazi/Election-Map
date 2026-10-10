@@ -2,6 +2,7 @@ import { $, esc } from './dom.js';
 import { state, recordFor, partyFor, setValue, clearCountry } from '../state.js';
 import { BY_KEY } from '../geo.js';
 import { FIELDS } from '../metrics.js';
+import { number, share } from '../national-election.js';
 
 /**
  * The values editor for one division. Typing here must not rebuild the panel
@@ -14,6 +15,15 @@ export function syncSelection(force = false) {
   const rec = key ? recordFor(key) : null;
   const feature = key ? BY_KEY.get(key) : null;
   const name = feature ? feature.name : key;
+  if (state.nationalElection) {
+    const e = state.nationalElection, s = e.states.find(s => s.key === key);
+    box.dataset.for = '';
+    box.innerHTML = s ? `<div class="selname">${esc(s.name)} · ${number(s.votes.total)} popular votes</div>` +
+      e.candidates.map(c => `<p class="note">${esc(c.name)}: ${s.votes[c.id] == null ? 'Not reported' : `${number(s.votes[c.id])} · ${share(s.votes[c.id], s.votes.total)}`}</p>`).join('') +
+      `<p class="note">Electoral votes: Trump ${s.electoralVotes.trump}, Harris ${s.electoralVotes.harris}. No parliamentary seats or turnout rate asserted.</p>` :
+      '<p class="empty">Tap a state to inspect the official results. Result editing is disabled for this source-backed post; open or import another document to map different data.</p>';
+    return;
+  }
 
   if (!rec) {
     box.dataset.for = '';

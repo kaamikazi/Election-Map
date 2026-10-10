@@ -48,8 +48,8 @@ onChange((kind) => {
     syncResults();
     syncCountries();
   }
+  syncLegend();
   if (kind !== 'view') {
-    syncLegend();
     syncSelection(kind === 'parties');
     syncFlagPanel();
     syncActive();

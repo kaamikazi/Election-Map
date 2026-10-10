@@ -1,5 +1,8 @@
 /** A file open and a cross-layer undo share the same atomic restoration path. */
-import { state, migrate, reserveIds, pushHistory, emit, DOCUMENT_DEFAULTS } from './state.js';
+import { state, migrate, reserveIds, pushHistory, emit, DOCUMENT_DEFAULTS, SCHEMA_VERSION } from './state.js';
+import { validateExplainer } from './explainer.js';
+import { validateNationalDocument } from './national-election.js';
+import { prepareIdentity } from './identity.js';
 import { prepareLayer, loadLayerData, activate } from './geo.js';
 
 const object = (v) => v && typeof v === 'object' && !Array.isArray(v);
@@ -16,10 +19,11 @@ export function validateDocument(input) {
   };
   safeKeys(input);
   if (!object(input) || !Array.isArray(input.parties) || !object(input.assign)) fail('missing parties or assignments');
-  if (input.version != null && (!Number.isInteger(input.version) || input.version > 6)) fail('unsupported document version');
+  if (input.version != null && (!Number.isInteger(input.version) || input.version > SCHEMA_VERSION)) fail('unsupported document version');
   const doc = { ...structuredClone(DOCUMENT_DEFAULTS), ...migrate(input) };
   // Ignore unrecognised fields; they must never become application state.
   for (const key of Object.keys(doc)) if (!Object.hasOwn(DOCUMENT_DEFAULTS, key)) delete doc[key];
+  if (!['classic', 'history'].includes(doc.identity)) fail('map identity');
   const ids = new Set();
   for (const p of doc.parties) {
     if (!object(p) || !Number.isFinite(p.id) || ids.has(p.id) || typeof p.name !== 'string' ||
@@ -29,8 +33,9 @@ export function validateDocument(input) {
   if (!doc.parties.length) fail('empty party list');
   for (const key of ['title', 'sub', 'handle', 'layer']) if (typeof doc[key] !== 'string') fail(key);
   if (!['world'].includes(doc.layer) && !/^[a-z0-9-]+:[A-Z]{3}:[A-Za-z0-9_-]+$/.test(doc.layer)) fail('boundary layer');
-  if (!['equalEarth', 'mercator', 'globe'].includes(doc.proj) || !['light', 'dark'].includes(doc.theme) ||
+  if (!['equalEarth', 'mercator', 'globe', 'albersUsa'].includes(doc.proj) || !['light', 'dark'].includes(doc.theme) ||
       !['flat', 'vote', 'seats', 'turnout', 'margin'].includes(doc.metric)) fail('map style or metric');
+  if (doc.proj === 'albersUsa' && !/^[^:]+:USA:/.test(doc.layer)) fail('USA insets require United States boundaries');
   if (!Number.isFinite(doc.zoom) || doc.zoom <= 0 || !pair(doc.pan) || !pair(doc.rotate) ||
       (doc.fit !== null && (!Array.isArray(doc.fit) || doc.fit.length !== 2 || !doc.fit.every(pair)))) fail('map framing');
   for (const key of ['grat', 'antarctica', 'dots', 'labels']) if (typeof doc[key] !== 'boolean') fail(key);
@@ -72,6 +77,8 @@ export function validateDocument(input) {
   }
   if (!ids.has(doc.active)) doc.active = doc.parties[0].id;
   if (doc.selected && !doc.assign[doc.selected]) doc.selected = null;
+  validateExplainer(doc);
+  validateNationalDocument(doc);
   return doc;
 }
 
@@ -82,7 +89,9 @@ export async function restoreDocument(input, { remember = true } = {}) {
   const before = JSON.stringify(state);
   try {
     const doc = validateDocument(structuredClone(input));
+    await prepareIdentity(doc.identity);
     const active = await prepareLayer(doc.layer);
+    if (doc.explainer && !active.byKey.has(doc.explainer.countryKey)) throw new Error('Historical locator country is absent from the reference geography.');
     const checkKeys = (assign, layer, id) => {
       const missing = Object.keys(assign).filter((key) => !layer.byKey.has(key));
       if (missing.length) throw new Error(`${missing.length} saved regions are absent from ${id}, including ${missing[0]}. Restore the matching boundary files.`);

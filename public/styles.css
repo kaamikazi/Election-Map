@@ -106,6 +106,8 @@ main{flex:1;display:flex;min-height:0}
 
 .toggles{display:flex;flex-direction:column;gap:7px}
 .tog{display:flex;align-items:center;gap:9px;font-size:13px;color:#C3CDD5;cursor:pointer}
+.tog[hidden]{display:none}
+.projSeg button[hidden]{display:none}
 .tog input{width:15px;height:15px;accent-color:var(--amber);margin:0}
 
 .chips{display:flex;flex-wrap:wrap;gap:5px}
@@ -603,3 +605,5 @@ img.flag.sm{width:16px;height:12px;flex-basis:16px}
 @media (prefers-reduced-motion:reduce){
   *,*::before,*::after{transition:none!important;animation:none!important;scroll-behavior:auto!important}
 }
+
+.identity-note{font-size:12px;color:var(--muted);margin:6px 0 12px}
